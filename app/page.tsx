@@ -1,5 +1,6 @@
 import { getAllProducts, getFeaturedProducts } from '@/lib/products'
 import ProductCard from '@/components/ProductCard'
+import HardwareMatcher from '@/components/HardwareMatcher'
 import Link from 'next/link'
 
 const CATEGORIES = [
@@ -148,6 +149,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── HARDWARE MATCHER ── */}
+      <HardwareMatcher products={allProducts} />
 
       {/* ── BUYING GUIDE ── */}
       <section className="rounded-2xl border border-edge bg-ink-1 overflow-hidden">
