@@ -90,9 +90,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   Independent reviews of AI hardware for running LLMs and Stable Diffusion locally.
                 </p>
               </div>
-              <div className="text-right">
+              <div className="text-right space-y-2">
                 <AffiliateDisclosure className="text-xs text-slate-500" />
-                <p className="text-xs text-slate-600 mt-1">
+                <div className="flex flex-wrap justify-end gap-x-4 gap-y-1">
+                  {[
+                    { href: '/privacy', label: 'Privacy Policy' },
+                    { href: '/terms', label: 'Terms of Service' },
+                    { href: '/accessibility', label: 'Accessibility' },
+                    { href: '/about', label: 'About' },
+                  ].map(({ href, label }) => (
+                    <a key={href} href={href} className="text-xs text-slate-600 hover:text-ore transition-colors">
+                      {label}
+                    </a>
+                  ))}
+                </div>
+                <p className="text-xs text-slate-600">
                   © {new Date().getFullYear()} The AI Desk
                 </p>
               </div>
