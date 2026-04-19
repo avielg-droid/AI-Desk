@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import CookieConsent from '@/components/CookieConsent'
 import { buildOrganizationSchema } from '@/lib/schema'
 
 const inter = Inter({
@@ -112,6 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
 
+      <CookieConsent />
       <Analytics />
       </body>
     </html>
