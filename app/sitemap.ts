@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next'
 import { getAllProducts } from '@/lib/products'
+import { getAllPersonas } from '@/lib/personas'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
+  const personas = getAllPersonas()
   const BASE = 'https://theaidesk.com'
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -20,5 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticPages, ...productPages]
+  const personaPages: MetadataRoute.Sitemap = personas.map(p => ({
+    url: `${BASE}/best/${p.slug}`,
+    lastModified: new Date(p.lastUpdated),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }))
+
+  return [...staticPages, ...productPages, ...personaPages]
 }

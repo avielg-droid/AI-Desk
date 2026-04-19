@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { getAllProducts, getProductBySlug } from '@/lib/products'
 import { buildProductSchema, buildFAQSchema, buildBreadcrumbSchema } from '@/lib/schema'
+import { PRODUCT_PERSONA_MAP } from '@/lib/personaLinks'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ProductHero from '@/components/ProductHero'
 import ComparisonTable from '@/components/ComparisonTable'
@@ -149,6 +151,26 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             ))}
           </div>
         </section>
+
+        {/* Also featured in */}
+        {PRODUCT_PERSONA_MAP[product.slug]?.length > 0 && (
+          <section>
+            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+              Also Featured In
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {PRODUCT_PERSONA_MAP[product.slug].map(p => (
+                <Link
+                  key={p.slug}
+                  href={`/best/${p.slug}`}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+                >
+                  {p.title} →
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <AffiliateDisclosure className="border-t border-edge pt-6 text-slate-500" />
       </div>

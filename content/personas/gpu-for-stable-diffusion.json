@@ -1,0 +1,35 @@
+{
+  "slug": "gpu-for-stable-diffusion",
+  "title": "Best GPUs for Stable Diffusion in 2026",
+  "metaDescription": "Expert-tested GPU picks for Stable Diffusion XL, Flux.1, and SD 3.5 in 2026. Ranked by VRAM, generation speed, and real-world ComfyUI performance.",
+  "h1": "Best GPUs for Stable Diffusion (2026)",
+  "intro": "The best GPU for Stable Diffusion in 2026 is the NVIDIA RTX 4090 — its 24GB GDDR6X VRAM and 1,008 GB/s bandwidth generate SDXL images in under 2 seconds and Flux.1-dev in under 6 seconds, faster than any competing consumer card. For most users running SDXL with ControlNet and LoRA stacks, the RTX 4070 Super's 12GB hits the practical sweet spot at half the price and power draw.",
+  "topPickSlug": "nvidia-rtx-4090",
+  "productSlugs": ["nvidia-rtx-4090", "nvidia-rtx-4070-super", "amd-radeon-rx-7900-xtx"],
+  "productNotes": {
+    "nvidia-rtx-4090": "Fastest Stable Diffusion GPU available. SDXL at 1024×1024 completes in 1.5–2.5 seconds, Flux.1-dev in 3–6 seconds. 24GB VRAM runs any checkpoint with full ControlNet + LoRA stacks without compromise.",
+    "nvidia-rtx-4070-super": "Best value for Stable Diffusion. 12GB VRAM handles SDXL, Flux.1-schnell, and SD 3.5 Medium. ControlNet and multiple LoRA adapters load simultaneously. Runs ~55% as fast as the 4090 at half the power draw.",
+    "amd-radeon-rx-7900-xtx": "Best AMD option for Linux users. 24GB VRAM matches the RTX 4090's capacity — runs Flux.1-dev and SDXL at competitive speeds via ROCm + ComfyUI. On Windows, DirectML works for basic SD 1.5/SDXL but performance drops significantly."
+  },
+  "requirements": "Minimum 8GB VRAM for SDXL 1.0 at 1024×1024. 12GB recommended for SDXL + ControlNet + LoRA simultaneously. 24GB for Flux.1-dev at high resolution or SD 3.5 Large.",
+  "whyThisMatters": "VRAM is the primary constraint for Stable Diffusion. Insufficient VRAM forces CPU offloading, which can slow generation by 10–50×. The checkpoint, resolution, ControlNet models, and LoRA adapters all compete for the same VRAM pool — a card that fits your base model may still run out with a full workflow stack.",
+  "faq": [
+    {
+      "question": "How much VRAM do I need for Stable Diffusion XL?",
+      "answer": "SDXL 1.0 at 1024×1024 requires approximately 6–8GB VRAM for the base model alone. With a refiner model, ControlNet, and two LoRA adapters loaded simultaneously, expect to need 10–12GB. The RTX 4070 Super's 12GB is the practical minimum for a full SDXL workflow without compromising."
+    },
+    {
+      "question": "Can I run Flux.1-dev on a consumer GPU?",
+      "answer": "Yes. Flux.1-dev requires approximately 16–20GB VRAM at BF16 precision, or 10–12GB with 8-bit quantization. The RTX 4090 (24GB) runs it at full precision in 3–6 seconds per image at 1024×1024. The RTX 4070 Super (12GB) can run it quantized at slower speeds. The RX 7900 XTX handles it via ROCm on Linux."
+    },
+    {
+      "question": "Is the RTX 4090 worth the premium for Stable Diffusion?",
+      "answer": "If you generate images professionally or run batch workflows, yes. The 4090 is roughly 2× faster than the RTX 4070 Super for SDXL and handles Flux.1-dev at full precision without quantization. For hobbyist use — a few images per day — the RTX 4070 Super delivers 80% of the capability at half the cost and power draw."
+    },
+    {
+      "question": "Can AMD GPUs run Stable Diffusion in 2026?",
+      "answer": "Yes, on Linux with ROCm. The RX 7900 XTX runs ComfyUI via ROCm at speeds within 15% of the RTX 4090 for equivalent workloads. On Windows, the situation is messier — DirectML works but is 30–50% slower than CUDA for the same GPU generation. AMD's recommended setup is Ubuntu 22.04+ with ROCm 6.x."
+    }
+  ],
+  "lastUpdated": "2026-04-19"
+}
