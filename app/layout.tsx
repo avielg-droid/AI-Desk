@@ -5,7 +5,7 @@ import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
-import { buildOrganizationSchema } from '@/lib/schema'
+import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,7 +28,17 @@ export const metadata: Metadata = {
   },
   description: 'Expert reviews of GPUs, Mini PCs, and AI accessories for running LLMs and Stable Diffusion locally in 2026.',
   metadataBase: new URL('https://theaidesk.com'),
-  openGraph: { siteName: 'The AI Desk', type: 'website' },
+  openGraph: {
+    siteName: 'The AI Desk',
+    type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'The AI Desk — Best AI Hardware for Running AI Locally' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The AI Desk — Best AI Hardware for Running AI Locally',
+    description: 'Expert reviews of GPUs, Mini PCs, and AI accessories for running LLMs and Stable Diffusion locally in 2026.',
+    images: ['/og-image.png'],
+  },
   robots: { index: true, follow: true },
 }
 
@@ -39,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={fontVars}>
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
+        <SchemaMarkup schema={buildWebSiteSchema()} />
       </head>
       <body className="font-sans">
 
@@ -61,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 { href: '/products', label: 'All Products' },
                 { href: '/categories/gpu', label: 'GPUs' },
                 { href: '/categories/mini-pc', label: 'Mini PCs' },
+                { href: '/best', label: 'Buying Guides' },
                 { href: '/about', label: 'About' },
               ].map(({ href, label }) => (
                 <a

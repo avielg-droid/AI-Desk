@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy Policy for The AI Desk — how we collect, use, and protect your information.',
-  robots: { index: true, follow: false },
+  robots: { index: false, follow: false },
 }
 
 export default function PrivacyPage() {

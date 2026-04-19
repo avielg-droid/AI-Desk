@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getProductsByCategory } from '@/lib/products'
+import { buildBreadcrumbSchema, buildItemListSchema } from '@/lib/schema'
+import SchemaMarkup from '@/components/SchemaMarkup'
 import ProductCard from '@/components/ProductCard'
 import type { Category } from '@/types/product'
 
@@ -49,29 +51,53 @@ export default function CategoryPage({ params }: { params: { category: string } 
   if (!meta) notFound()
 
   const products = getProductsByCategory(category)
+  const BASE = 'https://theaidesk.com'
+
+  const schemas = [
+    buildBreadcrumbSchema([
+      { name: 'Home', url: BASE },
+      { name: meta.title, url: `${BASE}/categories/${category}` },
+    ]),
+    buildItemListSchema(
+      meta.h1,
+      products.map(p => ({ name: p.name, url: `${BASE}/products/${p.slug}` }))
+    ),
+  ]
 
   return (
-    <div>
-      <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
-        <ol className="flex gap-2">
-          <li><a href="/" className="hover:text-gray-900">Home</a></li>
-          <li>/</li>
-          <li className="text-gray-900 font-medium">{meta.title}</li>
-        </ol>
-      </nav>
+    <>
+      {schemas.map((schema, i) => <SchemaMarkup key={i} schema={schema} />)}
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-3">{meta.h1}</h1>
-      <p className="text-gray-600 mb-8">{meta.description}</p>
+      <div>
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
+            <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
+            <li className="text-edge">/</li>
+            <li className="text-slate-400">{meta.title}</li>
+          </ol>
+        </nav>
 
-      {products.length === 0 ? (
-        <p className="text-gray-500">No products in this category yet. Check back soon.</p>
-      ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map(product => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
+        <div className="mb-8">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Category</p>
+          <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
+            {meta.h1}
+          </h1>
+          <p className="text-slate-400">{meta.description}</p>
         </div>
-      )}
-    </div>
+
+        {products.length === 0 ? (
+          <div className="rounded-xl border border-dashed border-edge/60 py-16 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-2">Coming soon</p>
+            <p className="text-sm text-slate-600">No products in this category yet.</p>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map(product => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   )
 }

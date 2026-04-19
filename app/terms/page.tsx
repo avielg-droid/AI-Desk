@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for The AI Desk — the rules governing your use of theaidesk.com.',
-  robots: { index: true, follow: false },
+  robots: { index: false, follow: false },
 }
 
 export default function TermsPage() {

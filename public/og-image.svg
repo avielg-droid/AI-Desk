@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <!-- dot grid -->
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1" fill="#14B8A6" opacity="0.18"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- top accent line -->
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="2" fill="url(#accent)"/>
+  <!-- label -->
+  <text x="80" y="210" font-family="monospace" font-size="18" fill="#14B8A6" letter-spacing="6" text-transform="uppercase">INDEPENDENT AI HARDWARE REVIEWS</text>
+  <!-- main headline -->
+  <text x="80" y="310" font-family="sans-serif" font-weight="900" font-size="88" fill="#F1F5F9" letter-spacing="-2">THE AI DESK</text>
+  <!-- sub -->
+  <text x="80" y="380" font-family="sans-serif" font-size="28" fill="#94A3B8">GPUs · Mini PCs · Local LLMs · Stable Diffusion</text>
+  <!-- stats -->
+  <text x="80" y="480" font-family="monospace" font-size="16" fill="#475569">7 PRODUCTS REVIEWED · 2026 BENCHMARKS</text>
+  <!-- bottom accent -->
+  <rect x="0" y="628" width="1200" height="2" fill="url(#accent)"/>
+</svg>

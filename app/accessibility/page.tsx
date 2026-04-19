@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Accessibility Statement',
   description: 'Accessibility commitment and known limitations for The AI Desk (theaidesk.com).',
-  robots: { index: true, follow: false },
+  robots: { index: false, follow: false },
 }
 
 export default function AccessibilityPage() {

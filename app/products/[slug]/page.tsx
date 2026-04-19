@@ -53,15 +53,23 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <SchemaMarkup key={i} schema={schema} />
       ))}
 
-      <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
-          <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
-          <li className="text-edge">/</li>
-          <li><a href="/products" className="hover:text-ore transition-colors">Products</a></li>
-          <li className="text-edge">/</li>
-          <li className="text-slate-400">{product.name}</li>
-        </ol>
-      </nav>
+      <div className="flex items-center justify-between mb-6">
+        <nav aria-label="Breadcrumb">
+          <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
+            <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
+            <li className="text-edge">/</li>
+            <li><a href="/products" className="hover:text-ore transition-colors">Products</a></li>
+            <li className="text-edge">/</li>
+            <li className="text-slate-400">{product.name}</li>
+          </ol>
+        </nav>
+        <time
+          dateTime={product.lastUpdated}
+          className="font-mono text-[10px] uppercase tracking-widest text-slate-600"
+        >
+          Updated {new Date(product.lastUpdated).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </time>
+      </div>
 
       <div className="space-y-10">
         <ProductHero product={product} />

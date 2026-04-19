@@ -14,6 +14,12 @@ export function buildProductSchema(product: Product) {
       '@type': 'Offer',
       url: product.affiliateUrl,
       availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        description: 'See current price on Amazon',
+      },
       seller: {
         '@type': 'Organization',
         name: 'Amazon',
@@ -79,5 +85,40 @@ export function buildOrganizationSchema() {
     name: 'The AI Desk',
     url: 'https://theaidesk.com',
     description: 'Expert reviews of AI hardware for running AI locally — GPUs, Mini PCs, and AI accessories.',
+  }
+}
+
+export function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'The AI Desk',
+    url: 'https://theaidesk.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://theaidesk.com/products?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
+export function buildItemListSchema(
+  name: string,
+  items: { name: string; url: string }[]
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      url: item.url,
+    })),
   }
 }

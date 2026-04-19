@@ -8,11 +8,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const BASE = 'https://theaidesk.com'
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
-    { url: `${BASE}/products`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.9 },
-    { url: `${BASE}/categories/gpu`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/categories/mini-pc`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
+    { url: BASE,                            lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 1.0 },
+    { url: `${BASE}/products`,              lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 0.9 },
+    { url: `${BASE}/best`,                  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/categories/gpu`,        lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/categories/mini-pc`,    lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/categories/ai-pc`,      lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
+    { url: `${BASE}/categories/accessory`,  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
+    { url: `${BASE}/about`,                 lastModified: new Date('2026-04-19'), changeFrequency: 'monthly', priority: 0.3 },
   ]
 
   const productPages: MetadataRoute.Sitemap = products.map(p => ({
