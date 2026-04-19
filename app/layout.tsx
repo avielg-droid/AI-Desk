@@ -1,26 +1,19 @@
 import type { Metadata } from 'next'
-import { Barlow_Condensed, Barlow, JetBrains_Mono } from 'next/font/google'
+import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { buildOrganizationSchema } from '@/lib/schema'
 
-const barlowCondensed = Barlow_Condensed({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-body',
-  display: 'swap',
-})
-
-const jetbrainsMono = JetBrains_Mono({
+const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
@@ -39,7 +32,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fontVars = `${barlowCondensed.variable} ${barlow.variable} ${jetbrainsMono.variable}`
+  const fontVars = `${inter.variable} ${firaCode.variable}`
 
   return (
     <html lang="en" className={fontVars}>

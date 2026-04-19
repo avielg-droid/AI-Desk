@@ -70,7 +70,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/products"
-              className="btn-shimmer inline-flex items-center gap-2 px-7 py-3 rounded-lg font-display font-700 text-sm uppercase tracking-widest text-white shadow-lg shadow-ore/20"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-[4px] bg-cta font-display font-700 text-sm uppercase tracking-widest text-ink-0 shadow-sm hover:bg-yellow-300 transition-colors"
             >
               Browse All Products
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #05080d;
-  --foreground: #dde4ef;
-  --surface-1: #0b1117;
-  --surface-2: #111b27;
-  --edge: #1a2c3d;
-  --ore: #f97316;
-  --data: #22d3ee;
+  --background: #0F172A;
+  --foreground: #F1F5F9;
+  --surface-1: #1E293B;
+  --surface-2: #253347;
+  --edge: #334155;
+  --accent: #14B8A6;
+  --cta: #FBBF24;
 }
 
 html {
@@ -27,11 +27,11 @@ body {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--surface-1); }
 ::-webkit-scrollbar-thumb { background: var(--edge); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--ore); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* Selection */
 ::selection {
-  background: rgba(249, 115, 22, 0.28);
+  background: rgba(20, 184, 166, 0.25);
   color: #fff;
 }
 
@@ -43,14 +43,14 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.028;
+  opacity: 0.025;
   mix-blend-mode: overlay;
 }
 
 /* Dot grid hero background utility */
 .bg-dot-grid {
   background-image:
-    radial-gradient(circle, rgba(249,115,22,0.18) 1px, transparent 1px);
+    radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -60,34 +60,16 @@ body::after {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.08) 2px,
-    rgba(0, 0, 0, 0.08) 4px
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
   );
 }
 
-/* Glow border card */
+/* Glow border card — teal on hover */
 .card-glow {
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .card-glow:hover {
-  box-shadow: 0 0 0 1px rgba(249,115,22,0.3), 0 8px 32px rgba(249,115,22,0.1);
-  border-color: rgba(249,115,22,0.3) !important;
-}
-
-/* Shimmer button */
-.btn-shimmer {
-  background: linear-gradient(
-    90deg,
-    #f97316 0%,
-    #fb923c 40%,
-    #fdba74 50%,
-    #fb923c 60%,
-    #f97316 100%
-  );
-  background-size: 400px 100%;
-  animation: shimmer 2.5s linear infinite;
-}
-@keyframes shimmer {
-  0% { background-position: -400px 0; }
-  100% { background-position: 400px 0; }
+  box-shadow: 0 0 0 1px rgba(20,184,166,0.35), 0 8px 32px rgba(20,184,166,0.1);
+  border-color: rgba(20,184,166,0.35) !important;
 }

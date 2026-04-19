@@ -10,43 +10,42 @@ const config: Config = {
     extend: {
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-display)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // Accent — Neon Teal (links, UI elements, active states)
         ore: {
-          DEFAULT: '#f97316',
-          dim: 'rgba(249,115,22,0.1)',
-          glow: 'rgba(249,115,22,0.2)',
+          DEFAULT: '#14B8A6',
+          dim: 'rgba(20,184,166,0.1)',
+          glow: 'rgba(20,184,166,0.2)',
         },
-        data: '#22d3ee',
+        // Data values — same teal family
+        data: '#14B8A6',
+        // CTA — Cyber Amber (Amazon buttons only)
+        cta: '#FBBF24',
         win: '#34d399',
         loss: '#f87171',
         ink: {
-          0: '#05080d',
-          1: '#0b1117',
-          2: '#111b27',
-          3: '#17243a',
+          0: '#0F172A',
+          1: '#1E293B',
+          2: '#253347',
+          3: '#2D3F57',
         },
         edge: {
-          DEFAULT: '#1a2c3d',
-          hi: '#2a4260',
+          DEFAULT: '#334155',
+          hi: '#475569',
         },
       },
       animation: {
-        'shimmer': 'shimmer 2.5s linear infinite',
         'glow-pulse': 'glowPulse 3s ease-in-out infinite',
       },
       keyframes: {
-        shimmer: {
-          '0%': { backgroundPosition: '-400px 0' },
-          '100%': { backgroundPosition: '400px 0' },
-        },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 12px rgba(249,115,22,0.15)' },
-          '50%': { boxShadow: '0 0 28px rgba(249,115,22,0.35)' },
+          '0%, 100%': { boxShadow: '0 0 12px rgba(20,184,166,0.15)' },
+          '50%': { boxShadow: '0 0 28px rgba(20,184,166,0.35)' },
         },
       },
     },
