@@ -51,65 +51,71 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <SchemaMarkup key={i} schema={schema} />
       ))}
 
-      <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
-        <ol className="flex gap-2">
-          <li><a href="/" className="hover:text-gray-900">Home</a></li>
-          <li>/</li>
-          <li><a href="/products" className="hover:text-gray-900">Products</a></li>
-          <li>/</li>
-          <li className="text-gray-900 font-medium">{product.name}</li>
+      <nav aria-label="Breadcrumb" className="mb-6">
+        <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
+          <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
+          <li className="text-edge">/</li>
+          <li><a href="/products" className="hover:text-ore transition-colors">Products</a></li>
+          <li className="text-edge">/</li>
+          <li className="text-slate-400">{product.name}</li>
         </ol>
       </nav>
 
       <div className="space-y-10">
         <ProductHero product={product} />
 
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">
-            Bottom Line: Is the {product.name} Good for Local AI?
+        {/* Bottom line */}
+        <section className="rounded-xl border border-edge bg-ink-1 p-6">
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
+            Bottom Line
           </h2>
-          <p className="text-gray-700 leading-relaxed">{product.shortDescription}</p>
+          <p className="text-slate-300 leading-relaxed">{product.shortDescription}</p>
         </section>
 
+        {/* Use cases */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">
-            What Can You Run on the {product.name}?
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+            What Can You Run on This?
           </h2>
-          <ul className="space-y-2">
+          <ul className="grid sm:grid-cols-2 gap-2">
             {product.useCases.map(uc => (
-              <li key={uc} className="flex gap-2 text-gray-700">
-                <span className="text-green-500 mt-0.5">✓</span>
-                {uc}
+              <li key={uc} className="flex items-start gap-3 rounded-lg border border-edge/60 bg-ink-1 px-4 py-3">
+                <span className="text-win font-mono mt-0.5 shrink-0 text-sm">✓</span>
+                <span className="text-sm text-slate-300">{uc}</span>
               </li>
             ))}
           </ul>
         </section>
 
+        {/* Specs */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">Full Specifications</h2>
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+            Full Specifications
+          </h2>
           <ComparisonTable specs={product.specs} />
         </section>
 
+        {/* Pros / Cons */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Pros &amp; Cons</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-semibold text-green-700 mb-3">Pros</h3>
-              <ul className="space-y-2">
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">Pros &amp; Cons</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-win/20 bg-win/5 p-5">
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-win mb-4">Pros</h3>
+              <ul className="space-y-2.5">
                 {product.pros.map(pro => (
-                  <li key={pro} className="flex gap-2 text-sm text-gray-700">
-                    <span className="text-green-500 mt-0.5 shrink-0">+</span>
+                  <li key={pro} className="flex gap-3 text-sm text-slate-300">
+                    <span className="text-win shrink-0 mt-0.5">+</span>
                     {pro}
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold text-red-700 mb-3">Cons</h3>
-              <ul className="space-y-2">
+            <div className="rounded-xl border border-loss/20 bg-loss/5 p-5">
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">Cons</h3>
+              <ul className="space-y-2.5">
                 {product.cons.map(con => (
-                  <li key={con} className="flex gap-2 text-sm text-gray-700">
-                    <span className="text-red-500 mt-0.5 shrink-0">−</span>
+                  <li key={con} className="flex gap-3 text-sm text-slate-300">
+                    <span className="text-loss shrink-0 mt-0.5">−</span>
                     {con}
                   </li>
                 ))}
@@ -118,27 +124,33 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <section className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-          <h2 className="text-xl font-bold text-gray-900 mb-3">Our Verdict</h2>
-          <p className="text-gray-700 leading-relaxed">{product.verdict}</p>
-          <div className="mt-6">
-            <AffiliateButton href={product.affiliateUrl} />
-          </div>
+        {/* Verdict */}
+        <section className="rounded-xl border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/60 to-transparent" />
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">Our Verdict</h2>
+          <p className="text-slate-300 leading-relaxed mb-6">{product.verdict}</p>
+          <AffiliateButton href={product.affiliateUrl} />
         </section>
 
+        {/* FAQ */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {product.faq.map(item => (
-              <div key={item.question}>
-                <h3 className="font-semibold text-gray-900 mb-2">{item.question}</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">{item.answer}</p>
+          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-5">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-1">
+            {product.faq.map((item, i) => (
+              <div key={item.question} className="rounded-xl border border-edge bg-ink-1 p-5">
+                <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
+                  <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
+                  {item.question}
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed pl-6">{item.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <AffiliateDisclosure className="border-t border-gray-200 pt-6" />
+        <AffiliateDisclosure className="border-t border-edge pt-6 text-slate-500" />
       </div>
     </>
   )

@@ -14,6 +14,9 @@ const SPEC_LABELS: Partial<Record<keyof ProductSpec, string>> = {
   form_factor: 'Form Factor',
 }
 
+// Keys where the value is a key data point — rendered in data color
+const DATA_KEYS = new Set(['vram_gb', 'unified_memory_gb', 'memory_bandwidth_gbps', 'max_llm_size'])
+
 function formatValue(key: string, value: unknown): string {
   if (typeof value !== 'number') return String(value)
   if (key.includes('_gb') && !key.includes('gbps')) return `${value} GB`
@@ -28,19 +31,21 @@ export default function ComparisonTable({ specs }: { specs: ProductSpec }) {
   )
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-gray-200">
+    <div className="overflow-x-auto rounded-xl border border-edge bg-ink-1">
       <table className="w-full text-sm">
         <caption className="sr-only">Product specifications</caption>
-        <tbody className="divide-y divide-gray-100">
+        <tbody className="divide-y divide-edge/60">
           {rows.map(([key, value]) => (
-            <tr key={key} className="even:bg-gray-50">
+            <tr key={key} className="group hover:bg-ink-2/50 transition-colors">
               <th
                 scope="row"
-                className="px-4 py-3 text-left font-medium text-gray-700 w-48"
+                className="px-5 py-3.5 text-left font-mono text-[11px] uppercase tracking-wider text-slate-500 w-52 whitespace-nowrap"
               >
                 {SPEC_LABELS[key]}
               </th>
-              <td className="px-4 py-3 text-gray-900">
+              <td className={`px-5 py-3.5 font-mono text-sm font-medium ${
+                DATA_KEYS.has(key) ? 'text-data' : 'text-foreground'
+              }`}>
                 {formatValue(key, value)}
               </td>
             </tr>
