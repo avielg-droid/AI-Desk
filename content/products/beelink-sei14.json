@@ -1,0 +1,55 @@
+{
+  "slug": "beelink-sei14",
+  "asin": "B0DP23FPKY",
+  "name": "Beelink SEi14 Mini PC (Intel Core Ultra 7)",
+  "category": "mini-pc",
+  "brand": "Beelink",
+  "shortDescription": "The Beelink SEi14 is a mid-range Windows mini PC with Intel Core Ultra 7 NPU for on-device AI acceleration. Its 32GB DDR5 and Intel Arc integrated graphics make it one of the most capable budget Windows options for local LLM inference in 2026, with Copilot+ PC certification.",
+  "specs": {
+    "chip": "Intel Core Ultra 7 155H",
+    "cpu_cores": 16,
+    "gpu_cores": 8,
+    "unified_memory_gb": 32,
+    "memory_bandwidth_gbps": 68,
+    "storage_gb": 1000,
+    "tdp_watts": 28,
+    "max_llm_size": "13B (Q4 quantized)",
+    "form_factor": "Mini PC"
+  },
+  "useCases": [
+    "Windows Copilot+ AI features (Recall, Cocreator)",
+    "Local LLM inference via Ollama on Windows",
+    "Intel OpenVINO accelerated AI workloads",
+    "NPU-accelerated Whisper transcription",
+    "Budget Windows AI development workstation"
+  ],
+  "pros": [
+    "Intel Core Ultra 7 NPU — hardware-accelerated AI for compatible Windows apps",
+    "32GB DDR5 with upgrade path — handles 13B Q4 models",
+    "1TB NVMe storage included — plenty of space for model weights",
+    "Copilot+ PC certified — future-proofed for Microsoft AI features",
+    "28W TDP — fanless-quiet and energy efficient"
+  ],
+  "cons": [
+    "Intel Arc iGPU AI throughput is below AMD Radeon 780M for raw LLM tokens/sec",
+    "NPU acceleration limited to Intel-optimized apps — not general llama.cpp speedup",
+    "68 GB/s memory bandwidth is the key bottleneck vs Apple Silicon"
+  ],
+  "verdict": "The Beelink SEi14 is the best Intel-based mini PC for AI in 2026, especially for users invested in the Windows AI ecosystem. The Core Ultra NPU accelerates Windows Copilot+ features, and OpenVINO-optimized models run efficiently. For raw LLM tokens/second, the Mac Mini M4 at similar price wins — but the SEi14's Windows compatibility, 1TB storage, and upgradeable RAM make it a compelling alternative for developers who need Windows.",
+  "affiliateUrl": "https://www.amazon.com/dp/B0DP23FPKY?tag=YOUR_ASSOCIATE_TAG",
+  "rating": 4.5,
+  "reviewCount": 0,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-19",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Does the Beelink SEi14 NPU speed up local LLMs like Ollama?",
+      "answer": "Not directly. Ollama and llama.cpp don't yet use the Intel NPU for general LLM inference — they use the CPU or Intel Arc iGPU. The NPU specifically accelerates Intel OpenVINO-optimized models and Windows Copilot+ features. For raw Ollama inference, expect CPU-speed performance similar to other mini PCs."
+    },
+    {
+      "question": "How does the Beelink SEi14 compare to the Mac Mini M4 for local AI?",
+      "answer": "The Mac Mini M4 is faster for LLM inference (120 GB/s vs 68 GB/s memory bandwidth) and significantly more energy efficient (20W vs 28W). The Beelink SEi14 wins on Windows compatibility, NPU support for Windows AI features, upgradeable RAM, and larger default storage. Choose Beelink if you need Windows; Mac Mini if you want maximum inference speed."
+    }
+  ]
+}

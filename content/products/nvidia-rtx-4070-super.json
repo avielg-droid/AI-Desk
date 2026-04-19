@@ -1,0 +1,53 @@
+{
+  "slug": "nvidia-rtx-4070-super",
+  "asin": "B0G488CW54",
+  "name": "NVIDIA GeForce RTX 4070 Super 12GB",
+  "category": "gpu",
+  "brand": "NVIDIA",
+  "shortDescription": "The NVIDIA RTX 4070 Super is the best mid-range GPU for local AI in 2026. With 12GB of GDDR6X VRAM at 504 GB/s bandwidth, it runs 13B models at full precision and 34B models at Q4 quantization — delivering 80% of RTX 4090 inference performance at roughly half the price.",
+  "specs": {
+    "vram_gb": 12,
+    "memory_bandwidth_gbps": 504,
+    "cpu_cores": 7168,
+    "tdp_watts": 220,
+    "max_llm_size": "34B (Q4 quantized)",
+    "interface": "PCIe 4.0 x16",
+    "form_factor": "Discrete GPU"
+  },
+  "useCases": [
+    "Local LLM inference (7B–34B models)",
+    "Stable Diffusion XL and Flux image generation",
+    "ComfyUI workflows with ControlNet and LoRA",
+    "LoRA fine-tuning of 7B models",
+    "Local Whisper ASR and real-time transcription"
+  ],
+  "pros": [
+    "Best price-to-performance ratio for AI in 2026 mid-range segment",
+    "12GB VRAM comfortably fits 13B models at full precision, 34B at Q4",
+    "220W TDP — runs cool and quiet compared to 4090",
+    "Full CUDA support — identical software compatibility to 4090",
+    "Standard 2-slot size fits most PC cases"
+  ],
+  "cons": [
+    "12GB VRAM ceiling — cannot load 70B Q4 models (need ~40GB+)",
+    "Half the memory bandwidth of RTX 4090 means slower generation on large models",
+    "Not suitable for LLM fine-tuning beyond 7B parameter models"
+  ],
+  "verdict": "The RTX 4070 Super hits the practical sweet spot for local AI in 2026. If you primarily run 7B–13B models — which covers the vast majority of home AI use cases including Llama 3, Mistral, and Qwen — you get near-4090 speeds at half the power draw and significantly lower cost. The 12GB VRAM limit only hurts if you specifically need 70B models; for everything else, it's an excellent value. This is the card we'd recommend to most people.",
+  "affiliateUrl": "https://www.amazon.com/dp/B0G488CW54?tag=YOUR_ASSOCIATE_TAG",
+  "rating": 4.7,
+  "reviewCount": 0,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-19",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Can the RTX 4070 Super run 70B LLMs?",
+      "answer": "No — 12GB VRAM is insufficient to load a 70B model even at 4-bit quantization (which requires ~40GB). For 70B models, you need the RTX 4090 (24GB) or a Mac Mini M4 Pro with 64GB unified memory. The 4070 Super is ideal for 7B–34B parameter models."
+    },
+    {
+      "question": "How does the RTX 4070 Super compare to the RTX 4090 for AI?",
+      "answer": "For 7B models, the 4070 Super is about 55% as fast as the 4090 (504 vs 1,008 GB/s memory bandwidth). For 13B models, the gap is similar. For 34B Q4 models, both can run them but the 4090 is faster. The 4090 wins every benchmark but the 4070 Super costs half as much and draws half the power."
+    }
+  ]
+}
