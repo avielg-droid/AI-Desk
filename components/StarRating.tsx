@@ -13,7 +13,7 @@ export default function StarRating({ rating, className = '' }: StarRatingProps) 
         return (
           <svg
             key={i}
-            className={`h-3.5 w-3.5 ${filled ? 'text-cta' : half ? 'text-cta/50' : 'text-slate-700'}`}
+            className={`h-3.5 w-3.5 ${filled ? 'text-ore' : half ? 'text-ore/40' : 'text-slate-700'}`}
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"

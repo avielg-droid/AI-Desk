@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getAllProducts, getProductBySlug } from '@/lib/products'
 import { buildProductSchema, buildFAQSchema, buildBreadcrumbSchema } from '@/lib/schema'
 import { PRODUCT_PERSONA_MAP } from '@/lib/personaLinks'
+import { getProductComparisonSlugs } from '@/lib/comparisons'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ProductHero from '@/components/ProductHero'
 import ComparisonTable from '@/components/ComparisonTable'
@@ -36,6 +37,8 @@ export async function generateMetadata({
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProductBySlug(params.slug)
   if (!product) notFound()
+
+  const comparisonSlugs = getProductComparisonSlugs(product.slug)
 
   const schemas = [
     buildProductSchema(product),
@@ -176,6 +179,30 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   {p.title} →
                 </Link>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Compare with */}
+        {comparisonSlugs.length > 0 && (
+          <section>
+            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+              Compare With
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {comparisonSlugs.map(s => {
+                const other = s.replace(`${product.slug}-vs-`, '').replace(`-vs-${product.slug}`, '')
+                const label = other.replace(/-/g, ' ')
+                return (
+                  <Link
+                    key={s}
+                    href={`/compare/${s}`}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+                  >
+                    vs {label} →
+                  </Link>
+                )
+              })}
             </div>
           </section>
         )}

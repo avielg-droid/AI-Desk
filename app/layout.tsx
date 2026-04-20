@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Fira_Code } from 'next/font/google'
+import { Barlow_Condensed, Barlow, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
@@ -7,14 +7,21 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
-const inter = Inter({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['600', '700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
 })
 
-const firaCode = Fira_Code({
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
@@ -42,8 +49,17 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
+const NAV_LINKS = [
+  { href: '/products',         label: 'Products'       },
+  { href: '/categories/gpu',   label: 'GPUs'           },
+  { href: '/categories/mini-pc', label: 'Mini PCs'     },
+  { href: '/best',             label: 'Buying Guides'  },
+  { href: '/compare',          label: 'Compare'        },
+  { href: '/about',            label: 'About'          },
+]
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fontVars = `${inter.variable} ${firaCode.variable}`
+  const fontVars = `${barlowCondensed.variable} ${barlow.variable} ${ibmPlexMono.variable}`
 
   return (
     <html lang="en" className={fontVars}>
@@ -53,37 +69,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans">
 
-        {/* Compliance strip — Amazon Associates required disclosure */}
-        <div className="bg-ink-1 border-b border-edge/60">
+        {/* Amazon Associates disclosure strip */}
+        <div className="bg-ink-1 border-b border-edge">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex justify-center">
-            <AffiliateDisclosure className="text-xs text-slate-500" />
+            <AffiliateDisclosure className="font-mono text-[10px] text-slate-600" />
           </div>
         </div>
 
         {/* Nav */}
-        <header className="sticky top-0 z-40 bg-ink-0/90 backdrop-blur-md border-b border-edge/70">
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore to-transparent opacity-60" />
-          <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-            <a href="/" className="font-display font-800 text-xl tracking-tight text-foreground hover:text-ore transition-colors">
-              <span className="text-ore">THE</span> AI DESK
+        <header className="sticky top-0 z-40 bg-ink-0 border-b border-edge">
+          {/* Ember top line */}
+          <div className="h-[2px] bg-ore" />
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-8">
+
+            {/* Wordmark */}
+            <a
+              href="/"
+              className="shrink-0 font-display font-900 text-2xl tracking-[-0.01em] uppercase leading-none text-foreground hover:text-ore transition-colors"
+            >
+              The AI Desk
             </a>
-            <div className="flex items-center gap-1">
-              {[
-                { href: '/products', label: 'All Products' },
-                { href: '/categories/gpu', label: 'GPUs' },
-                { href: '/categories/mini-pc', label: 'Mini PCs' },
-                { href: '/best', label: 'Buying Guides' },
-                { href: '/about', label: 'About' },
-              ].map(({ href, label }) => (
+
+            {/* Links */}
+            <div className="hidden md:flex items-center gap-0.5">
+              {NAV_LINKS.map(({ href, label }) => (
                 <a
                   key={href}
                   href={href}
-                  className="px-3 py-1.5 text-sm font-medium text-slate-400 hover:text-foreground hover:bg-ink-2/60 rounded-md transition-colors"
+                  className="relative px-3 py-1 font-body text-sm font-500 text-slate-500 hover:text-foreground transition-colors group"
                 >
                   {label}
+                  <span className="absolute bottom-0 left-3 right-3 h-[1px] bg-ore scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </a>
               ))}
             </div>
+
           </nav>
         </header>
 
@@ -92,41 +112,62 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
 
         {/* Footer */}
-        <footer className="mt-24 border-t border-edge/60 bg-ink-1/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-            <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+        <footer className="mt-24 border-t-2 border-ore bg-ink-1">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+            <div className="grid md:grid-cols-3 gap-10">
+
+              {/* Brand column */}
               <div>
-                <p className="font-display font-800 text-lg text-foreground">
-                  <span className="text-ore">THE</span> AI DESK
+                <p className="font-display font-900 text-3xl uppercase tracking-tight text-foreground mb-3">
+                  The AI Desk
                 </p>
-                <p className="text-xs text-slate-500 mt-1 max-w-xs">
-                  Independent reviews of AI hardware for running LLMs and Stable Diffusion locally.
+                <p className="font-body text-sm text-slate-500 leading-relaxed max-w-xs">
+                  Independent hardware reviews for running large language models and Stable Diffusion locally. No sponsored rankings.
                 </p>
               </div>
-              <div className="text-right space-y-2">
-                <AffiliateDisclosure className="text-xs text-slate-500" />
-                <div className="flex flex-wrap justify-end gap-x-4 gap-y-1">
-                  {[
-                    { href: '/privacy', label: 'Privacy Policy' },
-                    { href: '/terms', label: 'Terms of Service' },
-                    { href: '/accessibility', label: 'Accessibility' },
-                    { href: '/about', label: 'About' },
-                  ].map(({ href, label }) => (
-                    <a key={href} href={href} className="text-xs text-slate-600 hover:text-ore transition-colors">
-                      {label}
-                    </a>
+
+              {/* Navigation */}
+              <div>
+                <p className="text-label mb-4">Navigate</p>
+                <ul className="space-y-2">
+                  {NAV_LINKS.map(({ href, label }) => (
+                    <li key={href}>
+                      <a href={href} className="font-body text-sm text-slate-500 hover:text-ore transition-colors">
+                        {label}
+                      </a>
+                    </li>
                   ))}
-                </div>
-                <p className="text-xs text-slate-600">
+                </ul>
+              </div>
+
+              {/* Legal */}
+              <div>
+                <p className="text-label mb-4">Legal</p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    { href: '/privacy',       label: 'Privacy Policy'   },
+                    { href: '/terms',         label: 'Terms of Service' },
+                    { href: '/accessibility', label: 'Accessibility'    },
+                  ].map(({ href, label }) => (
+                    <li key={href}>
+                      <a href={href} className="font-body text-sm text-slate-500 hover:text-ore transition-colors">
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <AffiliateDisclosure className="font-mono text-[10px] text-slate-600 leading-relaxed" />
+                <p className="font-mono text-[10px] text-slate-700 mt-3">
                   © {new Date().getFullYear()} The AI Desk
                 </p>
               </div>
+
             </div>
           </div>
         </footer>
 
-      <CookieConsent />
-      <Analytics />
+        <CookieConsent />
+        <Analytics />
       </body>
     </html>
   )

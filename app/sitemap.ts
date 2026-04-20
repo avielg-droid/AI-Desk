@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllProducts } from '@/lib/products'
 import { getAllPersonas } from '@/lib/personas'
+import { getAllComparisonSlugs } from '@/lib/comparisons'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                            lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 1.0 },
     { url: `${BASE}/products`,              lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 0.9 },
     { url: `${BASE}/best`,                  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/compare`,               lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.85 },
     { url: `${BASE}/categories/gpu`,        lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/categories/mini-pc`,    lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/categories/ai-pc`,      lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
@@ -32,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  return [...staticPages, ...productPages, ...personaPages]
+  const comparisonPages: MetadataRoute.Sitemap = getAllComparisonSlugs().map(s => ({
+    url: `${BASE}/compare/${s}`,
+    lastModified: new Date('2026-04-19'),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages]
 }

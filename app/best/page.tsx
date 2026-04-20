@@ -52,24 +52,22 @@ export default function BestHubPage() {
       </div>
 
       {/* Guide grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-edge border border-edge">
         {personas.map(persona => (
           <Link
             key={persona.slug}
             href={`/best/${persona.slug}`}
-            className="card-glow group relative rounded-xl border border-edge bg-ink-1 p-6 overflow-hidden flex flex-col"
+            className="group bg-ink-1 p-6 flex flex-col hover:bg-ink-2 transition-colors"
           >
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
-            <span className="inline-block font-mono text-[9px] uppercase tracking-widest text-ore border border-ore/20 bg-ore/5 rounded px-2 py-0.5 mb-4 self-start">
+            <span className="font-mono text-[9px] uppercase tracking-widest text-ore border-l-2 border-ore pl-2 mb-4 self-start">
               {TASK_LABELS[persona.slug] ?? 'Guide'}
             </span>
 
-            <h2 className="font-display font-800 text-lg uppercase leading-tight text-foreground mb-2 group-hover:text-ore transition-colors">
+            <h2 className="font-display font-800 text-xl uppercase leading-tight text-foreground mb-2 group-hover:text-ore transition-colors">
               {persona.h1}
             </h2>
 
-            <p className="font-mono text-[10px] text-slate-500 leading-relaxed flex-1 line-clamp-3">
+            <p className="font-body text-sm text-slate-500 leading-relaxed flex-1 line-clamp-3">
               {persona.intro.slice(0, 120)}…
             </p>
 

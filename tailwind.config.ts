@@ -9,43 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        display: ['var(--font-display)', 'sans-serif'],
+        sans:    ['var(--font-body)',    'sans-serif'],
+        mono:    ['var(--font-mono)',    'monospace'],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Accent — Neon Teal (links, UI elements, active states)
+        // Primary accent — deep ember orange
         ore: {
-          DEFAULT: '#14B8A6',
-          dim: 'rgba(20,184,166,0.1)',
-          glow: 'rgba(20,184,166,0.2)',
+          DEFAULT: '#E05C1A',
+          dim:     'rgba(224,92,26,0.10)',
+          glow:    'rgba(224,92,26,0.18)',
         },
-        // Data values — same teal family
-        data: '#14B8A6',
-        // CTA — Cyber Amber (Amazon buttons only)
-        cta: '#FBBF24',
-        win: '#34d399',
-        loss: '#f87171',
+        data: '#E05C1A',
+        // CTA — same ember (unified, no second color family)
+        cta: '#E05C1A',
+        // Semantic
+        win:  '#5DBB63',
+        loss: '#D94F3D',
+        // Surface stack — warm dark
         ink: {
-          0: '#0F172A',
-          1: '#1E293B',
-          2: '#253347',
-          3: '#2D3F57',
+          0: '#131110',
+          1: '#1C1713',
+          2: '#252018',
+          3: '#2F291F',
         },
+        // Borders — warm taupe
         edge: {
-          DEFAULT: '#334155',
-          hi: '#475569',
-        },
-      },
-      animation: {
-        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-      },
-      keyframes: {
-        glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 12px rgba(20,184,166,0.15)' },
-          '50%': { boxShadow: '0 0 28px rgba(20,184,166,0.35)' },
+          DEFAULT: '#3D342A',
+          hi:      '#514439',
         },
       },
     },
