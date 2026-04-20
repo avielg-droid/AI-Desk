@@ -1,6 +1,6 @@
 {
   "slug": "amd-radeon-rx-7900-xtx",
-  "asin": "B0C85YVQLW",
+  "asin": "B0BQNCSW3X",
   "name": "AMD Radeon RX 7900 XTX 24GB",
   "category": "gpu",
   "brand": "AMD",
@@ -32,7 +32,7 @@
     "355W TDP — high power draw, requires 850W+ PSU"
   ],
   "verdict": "The RX 7900 XTX is a genuine RTX 4090 alternative for AI — but only on Linux. Its 24GB VRAM and 960 GB/s bandwidth are legitimate, and ROCm-accelerated llama.cpp delivers competitive inference speeds. On Windows, the story is messier: ROCm is unstable and many Python AI libraries fall back to CPU. If you run Linux and want 24GB VRAM at a lower price than the 4090, this is compelling. If you use Windows, choose NVIDIA.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0C85YVQLW?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://www.amazon.com/dp/B0BQNCSW3X?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.4,
   "reviewCount": 0,
   "priceDisplay": "Check Price on Amazon",

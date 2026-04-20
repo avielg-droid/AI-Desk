@@ -1,6 +1,6 @@
 {
   "slug": "nvidia-rtx-4070-super",
-  "asin": "B0G488CW54",
+  "asin": "B0CT8LQZ47",
   "image": "/products/nvidia-rtx-4070-super.jpg",
   "name": "NVIDIA GeForce RTX 4070 Super 12GB",
   "category": "gpu",
@@ -35,7 +35,7 @@
     "Not suitable for LLM fine-tuning beyond 7B parameter models"
   ],
   "verdict": "The RTX 4070 Super hits the practical sweet spot for local AI in 2026. If you primarily run 7B–13B models — which covers the vast majority of home AI use cases including Llama 3, Mistral, and Qwen — you get near-4090 speeds at half the power draw and significantly lower cost. The 12GB VRAM limit only hurts if you specifically need 70B models; for everything else, it's an excellent value. This is the card we'd recommend to most people.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0G488CW54?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://www.amazon.com/dp/B0CT8LQZ47?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.7,
   "reviewCount": 0,
   "priceDisplay": "Check Price on Amazon",

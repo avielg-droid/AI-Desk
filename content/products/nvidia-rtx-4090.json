@@ -1,6 +1,6 @@
 {
   "slug": "nvidia-rtx-4090",
-  "asin": "B0BC7S9R5C",
+  "asin": "B0BJFRT43X",
   "name": "NVIDIA GeForce RTX 4090 24GB",
   "category": "gpu",
   "brand": "NVIDIA",
@@ -35,7 +35,7 @@
     "Loud under full AI workload — fans spin hard at 450W"
   ],
   "verdict": "If you're serious about local AI and want maximum performance from a single GPU, the RTX 4090 is the only answer in 2026. Its 24GB VRAM means you never have to compromise on model size. At 1,008 GB/s memory bandwidth, it makes the competition look slow. The caveats are real — 450W draw, massive size, loud fans, and a steep price — but no other single card gives you this capability. For AI researchers, power users, and anyone running inference as a server, the 4090 pays for itself in productivity.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0BC7S9R5C?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://www.amazon.com/dp/B0BJFRT43X?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.9,
   "reviewCount": 0,
   "priceDisplay": "Check Price on Amazon",
