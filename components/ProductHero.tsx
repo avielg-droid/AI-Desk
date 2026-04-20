@@ -28,6 +28,7 @@ export default function ProductHero({ product }: { product: Product }) {
           <AmazonImage
             asin={product.asin}
             name={product.name}
+            localSrc={product.image}
             size={300}
             className="w-full max-w-[180px] md:max-w-full h-auto"
           />

@@ -28,6 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <AmazonImage
           asin={product.asin}
           name={product.name}
+          localSrc={product.image}
           size={200}
           className="max-h-[140px] w-auto mx-auto transition-transform duration-300 group-hover:scale-[1.03]"
         />

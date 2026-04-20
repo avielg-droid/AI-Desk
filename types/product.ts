@@ -20,6 +20,7 @@ export interface FAQ {
 export interface Product {
   slug: string
   asin: string
+  image?: string   // optional local image path, e.g. "/products/beelink-sei14.jpg"
   name: string
   category: 'mini-pc' | 'gpu' | 'ai-pc' | 'accessory'
   brand: string
