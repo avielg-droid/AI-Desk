@@ -54,7 +54,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <StarRating rating={product.rating} className="mb-3" />
 
-        <p className="font-body text-sm text-slate-400 leading-relaxed line-clamp-3 mb-5 flex-1">
+        <p className="font-body text-sm text-zinc-600 leading-relaxed line-clamp-3 mb-5 flex-1">
           {product.shortDescription}
         </p>
 

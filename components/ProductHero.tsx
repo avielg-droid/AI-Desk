@@ -62,7 +62,7 @@ export default function ProductHero({ product }: { product: Product }) {
           </div>
 
           {/* Description — Source Serif 4 */}
-          <p className="font-sans text-base text-zinc-400 leading-relaxed max-w-2xl mb-8">
+          <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-2xl mb-8">
             {product.shortDescription}
           </p>
 

@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background:  #0D0D0F;
-  --foreground:  #FAFAFA;
-  --surface-1:   #18181B;
-  --surface-2:   #1F1F23;
-  --edge:        #3F3F46;
+  --background:  #F7F4EF;
+  --foreground:  #1A1714;
+  --surface-1:   #FFFFFF;
+  --surface-2:   #F0EDE8;
+  --edge:        #D4CEC6;
   --accent:      #E05C1A;
   --cta:         #E05C1A;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -27,17 +27,17 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--surface-1); }
+::-webkit-scrollbar-track { background: var(--surface-2); }
 ::-webkit-scrollbar-thumb { background: var(--edge); border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* Selection */
 ::selection {
-  background: rgba(224, 92, 26, 0.30);
-  color: #fff;
+  background: rgba(224, 92, 26, 0.20);
+  color: #1A1714;
 }
 
-/* Grain overlay */
+/* Grain overlay — lighter on cream */
 body::after {
   content: '';
   position: fixed;
@@ -45,8 +45,8 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  mix-blend-mode: overlay;
+  opacity: 0.018;
+  mix-blend-mode: multiply;
 }
 
 /* Utility: ember accent top rule */
@@ -62,7 +62,7 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #71717A;
+  color: #8C8480;
 }
 
 /* Spec row highlight */
@@ -71,11 +71,11 @@ body::after {
   background: rgba(224, 92, 26, 0.04);
 }
 
-/* Subtle crosshatch texture for hero backgrounds */
+/* Subtle crosshatch texture — dark lines on light background */
 .bg-crosshatch {
   background-image:
-    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

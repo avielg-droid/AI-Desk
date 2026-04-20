@@ -66,7 +66,7 @@ export default function HomePage() {
             AI Age
           </h1>
 
-          <p className="font-sans text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed mb-10">
+          <p className="font-sans text-base md:text-lg text-zinc-600 max-w-xl leading-relaxed mb-10">
             Independent reviews of GPUs, Mini PCs, and AI accessories — benchmarked for LLM inference, Stable Diffusion, and local AI workloads.
           </p>
 
@@ -82,7 +82,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/categories/gpu"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-slate-400 hover:border-ore hover:text-ore transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore hover:text-ore transition-colors"
             >
               GPU Reviews
             </Link>
@@ -175,7 +175,7 @@ export default function HomePage() {
               <h3 className="font-display font-800 text-xl uppercase text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="font-body text-sm text-slate-400 leading-relaxed">{item.body}</p>
+              <p className="font-body text-sm text-zinc-600 leading-relaxed">{item.body}</p>
             </div>
           ))}
         </div>

@@ -19,28 +19,28 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Accent — ember orange (high contrast on zinc-black)
+        // Accent — ember orange
         ore: {
           DEFAULT: '#E05C1A',
-          dim:     'rgba(224,92,26,0.10)',
-          glow:    'rgba(224,92,26,0.18)',
+          dim:     'rgba(224,92,26,0.08)',
+          glow:    'rgba(224,92,26,0.15)',
         },
         data: '#E05C1A',
         cta:  '#E05C1A',
         // Semantic
-        win:  '#4ADE80',
-        loss: '#F87171',
-        // Surface stack — OLED zinc-black
+        win:  '#16a34a',
+        loss: '#dc2626',
+        // Surface stack — warm paper (light theme)
         ink: {
-          0: '#0D0D0F',
-          1: '#18181B',
-          2: '#1F1F23',
-          3: '#27272A',
+          0: '#F7F4EF',  // warm parchment — main background
+          1: '#FFFFFF',  // white — cards, elevated surfaces
+          2: '#F0EDE8',  // warm off-white — hover states
+          3: '#E8E3DC',  // warm light gray — subtle dividers
         },
-        // Borders — zinc
+        // Borders — warm taupe
         edge: {
-          DEFAULT: '#3F3F46',
-          hi:      '#52525B',
+          DEFAULT: '#D4CEC6',
+          hi:      '#A8A09A',
         },
       },
     },

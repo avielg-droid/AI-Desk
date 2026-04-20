@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         {/* Nav */}
-        <header className="sticky top-0 z-40 bg-ink-0/95 border-b border-edge">
+        <header className="sticky top-0 z-40 bg-ink-0/96 backdrop-blur-sm border-b border-edge shadow-sm">
           {/* Ember top rule */}
           <div className="h-[2px] bg-ore" />
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-8">

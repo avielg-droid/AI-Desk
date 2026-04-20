@@ -217,7 +217,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
           <h2 className="font-display font-900 text-3xl md:text-4xl uppercase text-foreground">
             Can I Run It?
           </h2>
-          <p className="text-sm text-slate-400 mt-1 max-w-lg">
+          <p className="text-sm text-zinc-600 mt-1 max-w-lg">
             Select an AI workload to instantly see which hardware can handle it.
           </p>
         </div>
@@ -263,7 +263,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
                 <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">
                   02 — Compatible Hardware
                 </p>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-zinc-600">
                   <span className="text-win font-medium">{compatible.length}</span> of {products.filter(p => effectiveMemory(p) > 0).length} products meet the{' '}
                   <span className="font-mono text-data">{activeTask.minGb} GB</span> requirement
                 </p>
@@ -285,7 +285,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
             ) : (
               <div className="rounded-xl border border-loss/20 bg-loss/5 p-6 text-center">
                 <p className="font-display font-800 text-lg uppercase text-loss mb-1">No matches found</p>
-                <p className="text-sm text-slate-400 mb-4">
+                <p className="text-sm text-zinc-600 mb-4">
                   This workload requires ≥{activeTask.minGb} GB — none of our current seed products qualify.
                 </p>
                 <Link
