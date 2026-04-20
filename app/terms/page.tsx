@@ -22,7 +22,7 @@ export default function TermsPage() {
       </div>
 
       <div className="rounded-xl border border-ore/20 bg-ore/5 p-5">
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p className="text-sm text-zinc-700 leading-relaxed">
           By accessing <strong className="text-foreground">theaidesk.com</strong>, you agree to these terms.
           If you do not agree, please do not use the site.
         </p>
@@ -98,7 +98,7 @@ export default function TermsPage() {
             {section.heading}
           </h2>
           {section.body.map((p, i) => (
-            <p key={i} className="text-sm text-slate-400 leading-relaxed">{p}</p>
+            <p key={i} className="text-sm text-zinc-600 leading-relaxed">{p}</p>
           ))}
         </section>
       ))}

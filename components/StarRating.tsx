@@ -22,7 +22,7 @@ export default function StarRating({ rating, className = '' }: StarRatingProps) 
           </svg>
         )
       })}
-      <span className="font-mono text-[11px] text-slate-400 ml-0.5">{rating.toFixed(1)}</span>
+      <span className="font-mono text-[11px] text-zinc-500 ml-0.5">{rating.toFixed(1)}</span>
     </div>
   )
 }

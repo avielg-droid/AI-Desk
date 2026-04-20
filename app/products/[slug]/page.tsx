@@ -63,7 +63,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             <li className="text-edge">/</li>
             <li><a href="/products" className="hover:text-ore transition-colors">Products</a></li>
             <li className="text-edge">/</li>
-            <li className="text-slate-400">{product.name}</li>
+            <li className="text-zinc-600">{product.name}</li>
           </ol>
         </nav>
         <time
@@ -82,7 +82,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
             Bottom Line
           </h2>
-          <p className="text-slate-300 leading-relaxed">{product.shortDescription}</p>
+          <p className="text-zinc-700 leading-relaxed">{product.shortDescription}</p>
         </section>
 
         {/* Use cases */}
@@ -94,7 +94,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             {product.useCases.map(uc => (
               <li key={uc} className="flex items-start gap-3 rounded-lg border border-edge/60 bg-ink-1 px-4 py-3">
                 <span className="text-win font-mono mt-0.5 shrink-0 text-sm">✓</span>
-                <span className="text-sm text-slate-300">{uc}</span>
+                <span className="text-sm text-zinc-700">{uc}</span>
               </li>
             ))}
           </ul>
@@ -116,7 +116,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-win mb-4">Pros</h3>
               <ul className="space-y-2.5">
                 {product.pros.map(pro => (
-                  <li key={pro} className="flex gap-3 text-sm text-slate-300">
+                  <li key={pro} className="flex gap-3 text-sm text-zinc-700">
                     <span className="text-win shrink-0 mt-0.5">+</span>
                     {pro}
                   </li>
@@ -127,7 +127,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">Cons</h3>
               <ul className="space-y-2.5">
                 {product.cons.map(con => (
-                  <li key={con} className="flex gap-3 text-sm text-slate-300">
+                  <li key={con} className="flex gap-3 text-sm text-zinc-700">
                     <span className="text-loss shrink-0 mt-0.5">−</span>
                     {con}
                   </li>
@@ -141,7 +141,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <section className="rounded-xl border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/60 to-transparent" />
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">Our Verdict</h2>
-          <p className="text-slate-300 leading-relaxed mb-6">{product.verdict}</p>
+          <p className="text-zinc-700 leading-relaxed mb-6">{product.verdict}</p>
           <AffiliateButton href={product.affiliateUrl} />
         </section>
 
@@ -157,7 +157,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed pl-6">{item.answer}</p>
+                <p className="text-sm text-zinc-600 leading-relaxed pl-6">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -174,7 +174,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <Link
                   key={p.slug}
                   href={`/best/${p.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
                 >
                   {p.title} →
                 </Link>
@@ -197,7 +197,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <Link
                     key={s}
                     href={`/compare/${s}`}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
                   >
                     vs {label} →
                   </Link>

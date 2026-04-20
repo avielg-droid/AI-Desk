@@ -104,7 +104,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
         <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
           <li><Link href="/" className="hover:text-ore transition-colors">Home</Link></li>
           <li className="text-edge">/</li>
-          <li className="text-slate-400">{persona.h1}</li>
+          <li className="text-zinc-600">{persona.h1}</li>
         </ol>
       </nav>
 
@@ -131,7 +131,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
               {persona.h1}
             </h1>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base md:text-lg text-zinc-700 leading-relaxed">
               {persona.intro}
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
                       </div>
 
                       {note && (
-                        <p className="text-sm text-slate-400 leading-relaxed">{note}</p>
+                        <p className="text-sm text-zinc-600 leading-relaxed">{note}</p>
                       )}
                     </div>
 
@@ -224,7 +224,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
             Hardware Requirements
           </h2>
-          <p className="text-sm text-slate-300 leading-relaxed">{persona.requirements}</p>
+          <p className="text-sm text-zinc-700 leading-relaxed">{persona.requirements}</p>
         </section>
 
         {/* ── WHY THIS MATTERS ── */}
@@ -232,7 +232,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
             Why This Matters
           </h2>
-          <p className="text-sm text-slate-400 leading-relaxed">{persona.whyThisMatters}</p>
+          <p className="text-sm text-zinc-600 leading-relaxed">{persona.whyThisMatters}</p>
         </section>
 
         {/* ── FAQ ── */}
@@ -247,7 +247,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed pl-6">{item.answer}</p>
+                <p className="text-sm text-zinc-600 leading-relaxed pl-6">{item.answer}</p>
               </div>
             ))}
           </div>

@@ -73,7 +73,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
             <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
             <li className="text-edge">/</li>
-            <li className="text-slate-400">{meta.title}</li>
+            <li className="text-zinc-600">{meta.title}</li>
           </ol>
         </nav>
 
@@ -82,7 +82,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
           <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
             {meta.h1}
           </h1>
-          <p className="text-slate-400">{meta.description}</p>
+          <p className="text-zinc-600">{meta.description}</p>
         </div>
 
         {products.length === 0 ? (

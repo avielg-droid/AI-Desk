@@ -41,7 +41,7 @@ export default function CookieConsent() {
         {/* Text */}
         <div className="flex-1 min-w-0">
           <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-1">Cookie Notice</p>
-          <p className="text-xs text-slate-400 leading-relaxed">
+          <p className="text-xs text-zinc-600 leading-relaxed">
             This site uses no first-party cookies. Third-party services (Amazon affiliate links, Google Fonts)
             may set cookies per their own policies.{' '}
             <Link href="/privacy" className="text-ore hover:underline">
@@ -54,7 +54,7 @@ export default function CookieConsent() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={() => dismiss('declined')}
-            className="font-mono text-[11px] uppercase tracking-widest text-slate-500 hover:text-slate-300 transition-colors px-3 py-2"
+            className="font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-zinc-800 transition-colors px-3 py-2"
           >
             Decline
           </button>

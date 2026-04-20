@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       </div>
 
       <div className="rounded-xl border border-ore/20 bg-ore/5 p-5">
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p className="text-sm text-zinc-700 leading-relaxed">
           The AI Desk (<strong className="text-foreground">theaidesk.com</strong>) is an affiliate review site.
           We do not sell products, process payments, or store accounts. This policy explains what limited data
           we collect and why.
@@ -98,14 +98,14 @@ export default function PrivacyPage() {
             {section.heading}
           </h2>
           {'body' in section && section.body?.map((p, i) => (
-            <p key={i} className="text-sm text-slate-400 leading-relaxed">{p}</p>
+            <p key={i} className="text-sm text-zinc-600 leading-relaxed">{p}</p>
           ))}
           {'items' in section && (
             <ul className="space-y-3">
               {section.items?.map(item => (
                 <li key={item.name} className="rounded-lg border border-edge bg-ink-1 px-4 py-3">
                   <p className="font-mono text-xs text-ore mb-1">{item.name}</p>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.detail}</p>
+                  <p className="text-sm text-zinc-600 leading-relaxed">{item.detail}</p>
                 </li>
               ))}
             </ul>

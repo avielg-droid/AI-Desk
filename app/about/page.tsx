@@ -15,7 +15,7 @@ export default function AboutPage() {
         <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
           The AI Desk
         </h1>
-        <p className="text-base text-slate-400 leading-relaxed">
+        <p className="text-base text-zinc-600 leading-relaxed">
           Independent reviews of hardware for running AI locally — GPUs, Mini PCs, and AI accessories.
           We focus on real-world performance for LLM inference, Stable Diffusion, and home AI server workloads.
         </p>
@@ -25,12 +25,12 @@ export default function AboutPage() {
         <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           Review Methodology
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-zinc-600 leading-relaxed">
           We evaluate hardware on five criteria: memory capacity (VRAM or unified memory), memory bandwidth
           (tokens/second throughput), power efficiency (performance per watt), software ecosystem compatibility
           (CUDA, ROCm, Metal), and value for money relative to the use case.
         </p>
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-zinc-600 leading-relaxed">
           Benchmark figures are based on publicly available data, manufacturer specs, and community-tested
           results from llama.cpp, Ollama, and ComfyUI benchmarking threads. We do not receive hardware from
           manufacturers for review.
@@ -43,7 +43,7 @@ export default function AboutPage() {
         </h2>
         <div className="rounded-xl border border-cta/30 bg-cta/5 p-5">
           <AffiliateDisclosure className="font-mono text-xs text-cta" />
-          <p className="text-sm text-slate-400 mt-3 leading-relaxed">
+          <p className="text-sm text-zinc-600 mt-3 leading-relaxed">
             We earn a commission when you click our product links and make a purchase on Amazon, at no
             additional cost to you. This commission funds our independent research. We are not paid by
             manufacturers for positive reviews — editorial opinions are our own.
@@ -55,7 +55,7 @@ export default function AboutPage() {
         <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           FTC Compliance
         </h2>
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-zinc-600 leading-relaxed">
           In compliance with FTC guidelines, all affiliate links are marked with{' '}
           <span className="font-mono text-xs text-slate-500">(paid link)</span> adjacent to the link.
           A site-wide disclosure banner appears on every page. See our{' '}

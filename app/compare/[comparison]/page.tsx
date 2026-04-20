@@ -62,7 +62,7 @@ function VerdictCard({
           </span>
         )}
       </div>
-      <p className="text-sm text-slate-300 leading-relaxed">{explanation}</p>
+      <p className="text-sm text-zinc-700 leading-relaxed">{explanation}</p>
     </div>
   )
 }
@@ -103,7 +103,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
           <li className="text-edge">/</li>
           <li><Link href="/compare" className="hover:text-ore transition-colors">Compare</Link></li>
           <li className="text-edge">/</li>
-          <li className="text-slate-400 truncate max-w-[200px]">{data.h1}</li>
+          <li className="text-zinc-600 truncate max-w-[200px]">{data.h1}</li>
         </ol>
       </nav>
 
@@ -145,7 +145,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
           {/* BLUF */}
           <div className="rounded-xl border border-ore/20 bg-ore/5 p-5">
             <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Bottom Line Up Front</p>
-            <p className="text-slate-200 leading-relaxed">{data.blufText}</p>
+            <p className="text-zinc-800 leading-relaxed">{data.blufText}</p>
           </div>
         </div>
 
@@ -156,8 +156,8 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
             {/* Header row */}
             <div className="grid grid-cols-[1fr_1fr_1fr] bg-ink-2 border-b border-edge px-4 py-3">
               <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">Spec</span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400 text-center">{a.name.split(' ').slice(-2).join(' ')}</span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400 text-center">{b.name.split(' ').slice(-2).join(' ')}</span>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 text-center">{a.name.split(' ').slice(-2).join(' ')}</span>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 text-center">{b.name.split(' ').slice(-2).join(' ')}</span>
             </div>
             {data.specs.map((row, i) => (
               <div
@@ -169,7 +169,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
                 <span className="font-mono text-[10px] text-slate-500">{row.label}</span>
                 <span
                   className={`text-sm text-center font-mono ${
-                    row.winner === 'a' ? 'text-win font-600' : 'text-slate-300'
+                    row.winner === 'a' ? 'text-win font-600' : 'text-zinc-700'
                   }`}
                 >
                   {row.aVal}
@@ -179,7 +179,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
                 </span>
                 <span
                   className={`text-sm text-center font-mono ${
-                    row.winner === 'b' ? 'text-win font-600' : 'text-slate-300'
+                    row.winner === 'b' ? 'text-win font-600' : 'text-zinc-700'
                   }`}
                 >
                   {row.bVal}
@@ -235,14 +235,14 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
               <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-3">
                 Buy the {a.name.split(' ').slice(-2).join(' ')} if…
               </p>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">{data.buyA}</p>
+              <p className="text-sm text-zinc-700 leading-relaxed mb-4">{data.buyA}</p>
               <AffiliateButton href={a.affiliateUrl} size="sm" />
             </div>
             <div className="rounded-xl border border-edge bg-ink-1 p-5">
               <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-3">
                 Buy the {b.name.split(' ').slice(-2).join(' ')} if…
               </p>
-              <p className="text-sm text-slate-300 leading-relaxed mb-4">{data.buyB}</p>
+              <p className="text-sm text-zinc-700 leading-relaxed mb-4">{data.buyB}</p>
               <AffiliateButton href={b.affiliateUrl} size="sm" />
             </div>
           </div>
@@ -258,7 +258,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
                   <Link
                     key={s}
                     href={`/compare/${s}`}
-                    className="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-edge bg-ink-1 font-mono text-[10px] uppercase tracking-wider text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-edge bg-ink-1 font-mono text-[10px] uppercase tracking-wider text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
                   >
                     {s.replace('-vs-', ' vs ').replace(/-/g, ' ')} →
                   </Link>
@@ -280,7 +280,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed pl-6">{item.answer}</p>
+                <p className="text-sm text-zinc-600 leading-relaxed pl-6">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -294,13 +294,13 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
           <div className="flex flex-wrap gap-3">
             <Link
               href={`/products/${a.slug}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-edge font-mono text-[10px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-edge font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
             >
               {a.name} Review →
             </Link>
             <Link
               href={`/products/${b.slug}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-edge font-mono text-[10px] uppercase tracking-widest text-slate-400 hover:border-ore/40 hover:text-ore transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-edge font-mono text-[10px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
             >
               {b.name} Review →
             </Link>

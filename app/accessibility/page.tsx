@@ -22,7 +22,7 @@ export default function AccessibilityPage() {
       </div>
 
       <div className="rounded-xl border border-ore/20 bg-ore/5 p-5">
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p className="text-sm text-zinc-700 leading-relaxed">
           The AI Desk is committed to making our content accessible to all users, including those who rely on
           assistive technologies. We aim to conform to the{' '}
           <strong className="text-foreground">Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>.
@@ -104,13 +104,13 @@ export default function AccessibilityPage() {
               {section.items?.map(item => (
                 <li key={item.name} className="rounded-lg border border-edge bg-ink-1 px-4 py-3">
                   <p className="font-mono text-xs text-ore mb-1">{item.name}</p>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.detail}</p>
+                  <p className="text-sm text-zinc-600 leading-relaxed">{item.detail}</p>
                 </li>
               ))}
             </ul>
           )}
           {'body' in section && section.body?.map((p, i) => (
-            <p key={i} className="text-sm text-slate-400 leading-relaxed">{p}</p>
+            <p key={i} className="text-sm text-zinc-600 leading-relaxed">{p}</p>
           ))}
         </section>
       ))}

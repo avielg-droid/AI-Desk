@@ -61,7 +61,7 @@ export default function CompareHubPage() {
           <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
             <li><Link href="/" className="hover:text-ore transition-colors">Home</Link></li>
             <li className="text-edge">/</li>
-            <li className="text-slate-400">Compare</li>
+            <li className="text-zinc-600">Compare</li>
           </ol>
         </nav>
 
@@ -69,7 +69,7 @@ export default function CompareHubPage() {
         <h1 className="font-display font-800 text-4xl md:text-5xl uppercase tracking-tight text-foreground mb-4">
           AI Hardware Comparisons
         </h1>
-        <p className="text-slate-400 max-w-xl leading-relaxed">
+        <p className="text-zinc-600 max-w-xl leading-relaxed">
           Spec-by-spec comparisons across all {allSlugs.length} hardware pairs — memory, bandwidth, power draw, and a clear verdict for every use case.
         </p>
       </div>

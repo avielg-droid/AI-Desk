@@ -28,7 +28,7 @@ export default function ProductsPage() {
           <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
             AI Hardware
           </h1>
-          <p className="text-slate-400">{products.length} products reviewed for local AI inference</p>
+          <p className="text-zinc-600">{products.length} products reviewed for local AI inference</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(product => (
