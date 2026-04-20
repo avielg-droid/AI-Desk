@@ -32,7 +32,7 @@ export const PRODUCT_PERSONA_MAP: Record<string, { slug: string; title: string }
     { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
     { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
   ],
-  'beelink-sei14': [
+  'beelink-mini-s12': [
     { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
     { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
   ],
