@@ -116,8 +116,8 @@ export default function HomePage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`group relative bg-white flex items-center justify-center p-6 aspect-square overflow-hidden
-                    hover:bg-ink-1 transition-colors
+                  className={`group relative bg-ink-1 flex items-center justify-center p-6 aspect-square overflow-hidden
+                    hover:bg-ink-2 transition-colors
                     ${i % 2 === 0 ? 'border-r border-edge' : ''}
                     ${i < 2 ? 'border-b border-edge' : ''}
                   `}
