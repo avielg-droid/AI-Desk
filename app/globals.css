@@ -3,20 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background:  #131110;
-  --foreground:  #EDE4D5;
-  --surface-1:   #1C1713;
-  --surface-2:   #252018;
-  --edge:        #3D342A;
+  --background:  #0D0D0F;
+  --foreground:  #FAFAFA;
+  --surface-1:   #18181B;
+  --surface-2:   #1F1F23;
+  --edge:        #3F3F46;
   --accent:      #E05C1A;
   --cta:         #E05C1A;
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body:    'Barlow', sans-serif;
-  --font-mono:    'IBM Plex Mono', monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -28,18 +26,18 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--surface-1); }
 ::-webkit-scrollbar-thumb { background: var(--edge); border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* Selection */
 ::selection {
-  background: rgba(224, 92, 26, 0.28);
+  background: rgba(224, 92, 26, 0.30);
   color: #fff;
 }
 
-/* Grain overlay — subtle texture */
+/* Grain overlay */
 body::after {
   content: '';
   position: fixed;
@@ -47,18 +45,24 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.025;
   mix-blend-mode: overlay;
 }
 
-/* Card hover — left-border accent instead of glow */
-.card-hover {
-  transition: border-color 0.2s ease, transform 0.2s ease;
-  border-left: 2px solid transparent;
+/* Utility: ember accent top rule */
+.rule-ember {
+  height: 2px;
+  background: var(--accent);
+  border: none;
 }
-.card-hover:hover {
-  border-left-color: var(--accent);
-  transform: translateX(1px);
+
+/* Label style — JetBrains Mono uppercase */
+.text-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717A;
 }
 
 /* Spec row highlight */
@@ -67,31 +71,19 @@ body::after {
   background: rgba(224, 92, 26, 0.04);
 }
 
-/* Hero cross-hatch background — industrial grid, no glow */
+/* Subtle crosshatch texture for hero backgrounds */
 .bg-crosshatch {
   background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Ember rule — accent top border utility */
-.border-ember-t {
-  border-top: 2px solid var(--accent);
+/* Card hover — left border reveal */
+.card-hover {
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s ease;
 }
-
-/* Typography utilities */
-.text-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #7A6E65;
-}
-
-/* Horizontal rule with ember accent */
-.rule-ember {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--edge) 30%, transparent 100%);
+.card-hover:hover {
+  border-left-color: var(--accent);
 }

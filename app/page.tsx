@@ -60,13 +60,13 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="font-display font-900 text-6xl md:text-8xl lg:text-[96px] leading-none tracking-tight text-foreground uppercase mb-6">
+          <h1 className="font-display font-900 text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
             Hardware<br />
-            <span className="text-ore">for the</span><br />
+            <em className="text-ore not-italic">for the</em><br />
             AI Age
           </h1>
 
-          <p className="font-body text-base md:text-lg text-slate-400 max-w-xl leading-relaxed mb-10">
+          <p className="font-sans text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed mb-10">
             Independent reviews of GPUs, Mini PCs, and AI accessories — benchmarked for LLM inference, Stable Diffusion, and local AI workloads.
           </p>
 

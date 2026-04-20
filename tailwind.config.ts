@@ -9,36 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'sans-serif'],
-        sans:    ['var(--font-body)',    'sans-serif'],
+        // Playfair Display — editorial serif, 900 weight for hero headlines
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        // Source Serif 4 — body text, UI prose, reviews
+        sans:    ['var(--font-body)',    'Georgia', 'serif'],
+        // JetBrains Mono — specs, labels, stats, badges
         mono:    ['var(--font-mono)',    'monospace'],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Primary accent — deep ember orange
+        // Accent — ember orange (high contrast on zinc-black)
         ore: {
           DEFAULT: '#E05C1A',
           dim:     'rgba(224,92,26,0.10)',
           glow:    'rgba(224,92,26,0.18)',
         },
         data: '#E05C1A',
-        // CTA — same ember (unified, no second color family)
-        cta: '#E05C1A',
+        cta:  '#E05C1A',
         // Semantic
-        win:  '#5DBB63',
-        loss: '#D94F3D',
-        // Surface stack — warm dark
+        win:  '#4ADE80',
+        loss: '#F87171',
+        // Surface stack — OLED zinc-black
         ink: {
-          0: '#131110',
-          1: '#1C1713',
-          2: '#252018',
-          3: '#2F291F',
+          0: '#0D0D0F',
+          1: '#18181B',
+          2: '#1F1F23',
+          3: '#27272A',
         },
-        // Borders — warm taupe
+        // Borders — zinc
         edge: {
-          DEFAULT: '#3D342A',
-          hi:      '#514439',
+          DEFAULT: '#3F3F46',
+          hi:      '#52525B',
         },
       },
     },
