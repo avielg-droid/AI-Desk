@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Playfair Display — editorial serif, 900 weight for hero headlines
-        display: ['var(--font-display)', 'Georgia', 'serif'],
-        // Source Serif 4 — body text, UI prose, reviews
-        sans:    ['var(--font-body)',    'Georgia', 'serif'],
+        // Outfit — geometric sans for headings
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        // DM Sans — body text, reviews, UI prose
+        sans:    ['var(--font-body)',    'system-ui', 'sans-serif'],
         // JetBrains Mono — specs, labels, stats, badges
         mono:    ['var(--font-mono)',    'monospace'],
       },

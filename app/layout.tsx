@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from 'next/font/google'
+import { Outfit, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
@@ -7,19 +7,18 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
-// Playfair Display — editorial serif, 900 Black for dramatic headlines
-const playfairDisplay = Playfair_Display({
+// Outfit — geometric sans for headings, very clean and forward-thinking
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
-  style: ['normal', 'italic'],
+  weight: ['400', '600', '700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
 })
 
-// Source Serif 4 — highly readable optical serif for body + UI prose
-const sourceSerif4 = Source_Serif_4({
+// DM Sans — modern friendly sans for body text and reviews
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '600'],
+  weight: ['400', '500', '600'],
   variable: '--font-body',
   display: 'swap',
 })
@@ -63,7 +62,7 @@ const NAV_LINKS = [
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fontVars = `${playfairDisplay.variable} ${sourceSerif4.variable} ${jetBrainsMono.variable}`
+  const fontVars = `${outfit.variable} ${dmSans.variable} ${jetBrainsMono.variable}`
 
   return (
     <html lang="en" className={fontVars}>
