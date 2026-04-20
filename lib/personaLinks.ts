@@ -3,23 +3,6 @@
  * Used to add "See Best For" internal links from product pages.
  */
 export const PRODUCT_PERSONA_MAP: Record<string, { slug: string; title: string }[]> = {
-  'nvidia-rtx-4090': [
-    { slug: 'gpu-for-stable-diffusion', title: 'Best GPUs for Stable Diffusion' },
-    { slug: 'gpu-for-local-llm', title: 'Best GPUs for Local LLMs' },
-    { slug: 'gpu-for-comfyui', title: 'Best GPUs for ComfyUI' },
-    { slug: 'hardware-for-llama-3-70b', title: 'Best Hardware for Llama 3 70B' },
-  ],
-  'nvidia-rtx-4070-super': [
-    { slug: 'gpu-for-stable-diffusion', title: 'Best GPUs for Stable Diffusion' },
-    { slug: 'gpu-for-local-llm', title: 'Best GPUs for Local LLMs' },
-    { slug: 'gpu-for-comfyui', title: 'Best GPUs for ComfyUI' },
-  ],
-  'amd-radeon-rx-7900-xtx': [
-    { slug: 'gpu-for-stable-diffusion', title: 'Best GPUs for Stable Diffusion' },
-    { slug: 'gpu-for-local-llm', title: 'Best GPUs for Local LLMs' },
-    { slug: 'gpu-for-comfyui', title: 'Best GPUs for ComfyUI' },
-    { slug: 'hardware-for-llama-3-70b', title: 'Best Hardware for Llama 3 70B' },
-  ],
   'apple-mac-mini-m4-pro': [
     { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
     { slug: 'hardware-for-llama-3-70b', title: 'Best Hardware for Llama 3 70B' },
@@ -32,7 +15,19 @@ export const PRODUCT_PERSONA_MAP: Record<string, { slug: string; title: string }
     { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
     { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
   ],
-  'beelink-mini-s12': [
+  'geekom-it12': [
+    { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
+    { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
+  ],
+  'kamrui-hyper-h2': [
+    { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
+    { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
+  ],
+  'kamrui-pinova-p1': [
+    { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
+    { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
+  ],
+  'kamrui-pinova-p2': [
     { slug: 'mini-pc-for-ollama', title: 'Best Mini PCs for Ollama' },
     { slug: 'budget-ai-hardware', title: 'Best Budget Hardware for Local AI' },
   ],

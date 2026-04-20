@@ -1,0 +1,57 @@
+{
+  "slug": "kamrui-pinova-p1",
+  "asin": "B0DP23FPKY",
+  "image": "/products/kamrui-pinova-p1.jpg",
+  "name": "KAMRUI Pinova P1 Mini PC (AMD Ryzen 4300U)",
+  "category": "mini-pc",
+  "brand": "KAMRUI",
+  "shortDescription": "The KAMRUI Pinova P1 is an affordable AMD mini PC for entry-level local AI inference. Powered by the Ryzen 4300U with 16GB DDR4 and 512GB SSD, it runs 7B LLMs via Ollama on Windows 11 Pro and supports triple 4K display output — in a compact black chassis with orange accents.",
+  "specs": {
+    "chip": "AMD Ryzen 3 4300U (Zen 2, 4C/4T)",
+    "cpu_cores": 4,
+    "gpu_cores": 6,
+    "unified_memory_gb": 16,
+    "memory_bandwidth_gbps": 34,
+    "storage_gb": 512,
+    "tdp_watts": 28,
+    "max_llm_size": "13B (Q4 quantized)",
+    "form_factor": "Mini PC"
+  },
+  "useCases": [
+    "Budget local LLM inference (7B models via Ollama)",
+    "Private offline AI assistant for home or small office",
+    "Triple 4K display desktop replacement",
+    "Windows 11 Pro lightweight productivity workstation",
+    "Entry-level AI experimentation"
+  ],
+  "pros": [
+    "Competitive pricing — one of the most affordable AMD mini PCs",
+    "16GB DDR4 runs 7B models comfortably, 13B Q4 with tight margins",
+    "Triple 4K display support — HDMI + DP + USB-C",
+    "28W TDP — energy-efficient for 24/7 always-on operation",
+    "Windows 11 Pro included — full compatibility with Ollama and LM Studio"
+  ],
+  "cons": [
+    "Ryzen 4300U is a 2020 Zen 2 chip — older than current-gen alternatives",
+    "Vega 5 iGPU provides no meaningful AI GPU acceleration",
+    "5–8 tokens/second on 7B models — slow for interactive use",
+    "Limited upgrade path compared to SO-DIMM desktop-class designs"
+  ],
+  "verdict": "The KAMRUI Pinova P1 is a no-frills budget entry point to local AI. It does what it promises: runs 7B models offline and privately at a low price. The Ryzen 4300U is dated by 2026 standards, so if you plan to use it heavily for AI, consider saving for the KAMRUI Hyper H2 which delivers significantly better performance. The P1 makes sense for an always-on lightweight assistant that does not need to be fast.",
+  "affiliateUrl": "https://www.amazon.com/dp/B0DP23FPKY?tag=YOUR_ASSOCIATE_TAG",
+  "rating": 4.1,
+  "reviewCount": 0,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-20",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Can the KAMRUI Pinova P1 run local LLMs?",
+      "answer": "Yes. Using Ollama on Windows 11 Pro, the Pinova P1 runs Llama 3.1 8B at approximately 5–8 tokens/second using the Ryzen 4300U CPU. 13B Q4 models run at 3–5 tokens/second. It works for a private offline chatbot but is not suitable for fast, interactive sessions."
+    },
+    {
+      "question": "How does the KAMRUI Pinova P1 compare to the KAMRUI Hyper H2?",
+      "answer": "The Hyper H2 has a 10-core Intel Core 14450HX that is 40–60% faster for LLM inference than the P1's 4-core Ryzen 4300U. If you want the fastest CPU-only mini PC for local AI, the Hyper H2 is the clear choice. The P1 costs less and uses less power, making it better for lightweight always-on use cases."
+    }
+  ]
+}
