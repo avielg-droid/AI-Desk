@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background:  #F7F4EF;
-  --foreground:  #1A1714;
-  --surface-1:   #FFFFFF;
-  --surface-2:   #F0EDE8;
-  --edge:        #D4CEC6;
+  --background:  #FFFFFF;
+  --foreground:  #111111;
+  --surface-1:   #F8F8F8;
+  --surface-2:   #F0F0F0;
+  --edge:        #E2E2E2;
   --accent:      #E05C1A;
   --cta:         #E05C1A;
 }
@@ -71,11 +71,11 @@ body::after {
   background: rgba(224, 92, 26, 0.04);
 }
 
-/* Subtle crosshatch texture — dark lines on light background */
+/* Subtle crosshatch texture — dark lines on white background */
 .bg-crosshatch {
   background-image:
-    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

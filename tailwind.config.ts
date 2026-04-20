@@ -30,17 +30,17 @@ const config: Config = {
         // Semantic
         win:  '#16a34a',
         loss: '#dc2626',
-        // Surface stack — warm paper (light theme)
+        // Surface stack — clean white
         ink: {
-          0: '#F7F4EF',  // warm parchment — main background
-          1: '#FFFFFF',  // white — cards, elevated surfaces
-          2: '#F0EDE8',  // warm off-white — hover states
-          3: '#E8E3DC',  // warm light gray — subtle dividers
+          0: '#FFFFFF',  // white — main background
+          1: '#F8F8F8',  // off-white — cards
+          2: '#F0F0F0',  // light gray — hover states
+          3: '#E4E4E4',  // gray — subtle dividers
         },
-        // Borders — warm taupe
+        // Borders — neutral gray
         edge: {
-          DEFAULT: '#D4CEC6',
-          hi:      '#A8A09A',
+          DEFAULT: '#E2E2E2',
+          hi:      '#BEBEBE',
         },
       },
     },
