@@ -62,7 +62,6 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, classNam
         alt={name}
         width={size}
         height={size}
-        loading="lazy"
         onLoad={() => setStatus('loaded')}
         onError={handleError}
         style={{ display: status === 'loaded' ? 'block' : 'none' }}
