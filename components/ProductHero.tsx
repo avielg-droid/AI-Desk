@@ -24,7 +24,7 @@ export default function ProductHero({ product }: { product: Product }) {
       <div className="flex flex-col md:flex-row">
 
         {/* Image panel */}
-        <div className="md:w-56 lg:w-64 shrink-0 bg-ink-2 border-b md:border-b-0 md:border-r border-edge flex items-center justify-center p-8">
+        <div className="md:w-56 lg:w-64 shrink-0 bg-white border-b md:border-b-0 md:border-r border-edge flex items-center justify-center p-8">
           <AmazonImage
             asin={product.asin}
             name={product.name}
