@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getAllProducts } from '@/lib/products'
 import { getAllPersonas } from '@/lib/personas'
 import { getAllComparisonSlugs } from '@/lib/comparisons'
+import { getAllGlossarySlugs } from '@/lib/glossary'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
@@ -41,5 +42,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages]
+  const glossaryIndex: MetadataRoute.Sitemap = [
+    { url: `${BASE}/glossary`, lastModified: new Date('2026-04-21'), changeFrequency: 'weekly', priority: 0.85 },
+  ]
+
+  const glossaryPages: MetadataRoute.Sitemap = getAllGlossarySlugs().map(slug => ({
+    url: `${BASE}/glossary/${slug}`,
+    lastModified: new Date('2026-04-21'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages]
 }
