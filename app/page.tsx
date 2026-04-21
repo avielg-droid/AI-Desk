@@ -137,12 +137,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PERSONA FUNNELS ── */}
-      <PersonaFunnels />
-
-      {/* ── CLOUD vs LOCAL ROI ── */}
-      <CloudROICalculator />
-
       {/* ── EDITOR'S PICKS ── */}
       <section>
         <div className="flex items-center justify-between mb-6">
@@ -165,6 +159,12 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── PERSONA FUNNELS ── */}
+      <PersonaFunnels />
+
+      {/* ── CLOUD vs LOCAL ROI ── */}
+      <CloudROICalculator />
 
       {/* ── CAN I RUN IT? ── */}
       <HardwareMatcher products={allProducts} />
