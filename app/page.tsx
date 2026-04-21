@@ -45,22 +45,27 @@ export default function HomePage() {
     <div className="space-y-20">
 
       {/* ── HERO ── */}
-      <section className="relative border border-edge bg-ink-1 min-h-[440px] flex items-center overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-ore" />
+      <section className="relative border border-edge min-h-[480px] flex items-center overflow-hidden" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(8px)' }}>
+        {/* Aurora top rule */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
+        {/* Crosshatch — white lines on void */}
         <div className="absolute inset-0 bg-crosshatch" />
+        {/* Radial glow behind title */}
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.05) 0%, transparent 70%)' }} />
 
         <div className="relative px-8 md:px-14 py-16 max-w-4xl">
           <div className="flex items-center gap-3 mb-6">
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Est. 2026</span>
-            <span className="h-px w-12 bg-ore" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
+            <span className="h-px w-12" style={{ background: 'var(--aurora-gradient)' }} />
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
               {allProducts.length} Products Reviewed
             </span>
           </div>
 
-          <h1 className="font-display font-900 text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
+          <h1 className="font-display font-700 text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
             Hardware<br />
-            <em className="text-ore not-italic">for the</em><br />
+            <span className="text-ore">for the</span><br />
             AI Age
           </h1>
 
@@ -69,32 +74,36 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-3 px-7 py-3 bg-ore font-display font-800 text-sm uppercase tracking-widest text-ink-0 hover:bg-[#c74f14] transition-colors"
-            >
-              Browse All Products
-              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </Link>
+            {/* Primary CTA — aurora bordered */}
+            <div className="aurora-cta-wrap group">
+              <Link
+                href="/products"
+                className="relative inline-flex items-center gap-3 px-7 py-3 bg-foreground font-mono font-500 text-sm uppercase tracking-widest text-ink-0 group-hover:bg-zinc-100 transition-colors"
+              >
+                Browse All Products
+                <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+            </div>
             <Link
               href="/categories/mini-pc"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore hover:text-ore transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/50 hover:text-ore transition-colors duration-200"
             >
               Mini PC Reviews
             </Link>
           </div>
         </div>
 
+        {/* Side stats */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-6">
           {SIDE_STATS.map(s => (
             <div key={s.val} className="text-right">
               <p className="font-mono font-500 text-2xl text-ore leading-none">
                 {s.val}
-                <span className="text-sm text-slate-500 ml-1">{s.unit}</span>
+                <span className="text-sm text-zinc-600 ml-1">{s.unit}</span>
               </p>
-              <p className="font-mono text-[9px] uppercase tracking-widest text-slate-600 mt-0.5">{s.label}</p>
+              <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-0.5">{s.label}</p>
             </div>
           ))}
         </div>
@@ -117,7 +126,7 @@ export default function HomePage() {
           </h2>
           <span className="h-px flex-1 bg-edge" />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-edge border border-edge">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink-3 border border-edge">
           {CATEGORIES.map(cat => (
             <Link
               key={cat.slug}
@@ -150,7 +159,7 @@ export default function HomePage() {
             All {allProducts.length} products →
           </Link>
         </div>
-        <div className="grid md:grid-cols-3 gap-px bg-edge border border-edge">
+        <div className="grid md:grid-cols-3 gap-px bg-ink-3 border border-edge">
           {featured.map(product => (
             <ProductCard key={product.slug} product={product} />
           ))}

@@ -13,7 +13,10 @@
     "memory_bandwidth_gbps": 288,
     "tdp_watts": 150,
     "max_llm_size": "14B (Q4) / 13B (Q8)",
-    "form_factor": "GPU"
+    "form_factor": "GPU",
+    "tokens_per_second_7b": 88,
+    "tokens_per_second_13b": 50,
+    "image_gen_sdxl_seconds": 4.0
   },
   "useCases": [
     "Large local LLM inference (13B\u201314B models with full GPU acceleration)",
@@ -60,5 +63,12 @@
     "silkland-displayport-21",
     "gpu-brace-support",
     "apc-bx1500m"
-  ]
+  ],
+  "notFor": [
+    "Windows users who want plug-and-play AI \u2014 ROCm works best on Linux",
+    "Stable Diffusion heavy users \u2014 AMD ROCm has rougher ComfyUI support than CUDA",
+    "Anyone already invested in CUDA software \u2014 switching ecosystems has friction",
+    "Running 13B+ models at speed \u2014 16 GB is enough capacity, but bandwidth caps throughput"
+  ],
+  "entityHeadline": "Running Mistral 7B on the RX 9060 XT: 88 Tokens Per Second on AMD"
 }

@@ -9,39 +9,44 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Outfit — geometric sans for headings
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        // DM Sans — body text, reviews, UI prose
-        sans:    ['var(--font-body)',    'system-ui', 'sans-serif'],
-        // JetBrains Mono — specs, labels, stats, badges
+        sans:    ['var(--font-display)', 'system-ui', 'sans-serif'],
+        body:    ['var(--font-display)', 'system-ui', 'sans-serif'],
         mono:    ['var(--font-mono)',    'monospace'],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // Accent — ember orange
+        // Primary accent — Electric Cyan
         ore: {
-          DEFAULT: '#E05C1A',
-          dim:     'rgba(224,92,26,0.08)',
-          glow:    'rgba(224,92,26,0.15)',
+          DEFAULT: '#00E5FF',
+          dim:     'rgba(0,229,255,0.08)',
+          glow:    'rgba(0,229,255,0.25)',
         },
-        data: '#E05C1A',
-        cta:  '#E05C1A',
-        // Semantic
-        win:  '#16a34a',
-        loss: '#dc2626',
-        // Surface stack — clean white
+        // Secondary accent — Violet
+        data: '#A855F7',
+        cta:  '#00E5FF',
+        // Semantic — neon green / hot red
+        win:  '#00E599',
+        loss: '#FF4466',
+        // Surface stack — The Void
         ink: {
-          0: '#FFFFFF',  // white — main background
-          1: '#F8F8F8',  // off-white — cards
-          2: '#F0F0F0',  // light gray — hover states
-          3: '#E4E4E4',  // gray — subtle dividers
+          0: '#09090B',   // absolute void
+          1: '#0F0F12',   // glass surface base
+          2: '#141418',   // hover
+          3: '#1A1A20',   // subtle dividers
         },
-        // Borders — neutral gray
+        // Borders — barely-there dark
         edge: {
-          DEFAULT: '#E2E2E2',
-          hi:      '#BEBEBE',
+          DEFAULT: '#1E1E26',
+          hi:      '#2E2E3C',
         },
+      },
+      boxShadow: {
+        'aurora-sm':  '0 0 12px rgba(0,229,255,0.15), 0 0 30px rgba(138,43,226,0.08)',
+        'aurora-md':  '0 0 20px rgba(0,229,255,0.20), 0 0 50px rgba(138,43,226,0.12)',
+        'aurora-lg':  '0 0 40px rgba(0,229,255,0.25), 0 0 80px rgba(138,43,226,0.15), 0 0 120px rgba(255,0,255,0.08)',
+        'win-glow':   '0 0 20px rgba(0,229,153,0.20), 0 0 50px rgba(0,229,153,0.10)',
       },
     },
   },

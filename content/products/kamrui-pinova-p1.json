@@ -15,7 +15,8 @@
     "storage_gb": 512,
     "tdp_watts": 28,
     "max_llm_size": "13B (Q4 quantized)",
-    "form_factor": "Mini PC"
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 8
   },
   "useCases": [
     "Budget local LLM inference (7B models via Ollama)",
@@ -57,5 +58,12 @@
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
     "apc-bx1500m"
-  ]
+  ],
+  "notFor": [
+    "Interactive chat \u2014 8 t/s is too slow for real-time back-and-forth",
+    "Any model larger than 7B \u2014 only 16 GB RAM limits your options",
+    "Stable Diffusion \u2014 no GPU acceleration",
+    "Anyone who can spend $100 more \u2014 the Hyper H2 offers significantly better specs"
+  ],
+  "entityHeadline": "Running TinyLlama on the KAMRUI Pinova P1: Local AI Under $230"
 }

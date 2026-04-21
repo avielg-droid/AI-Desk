@@ -10,6 +10,9 @@ export interface ProductSpec {
   max_llm_size?: string
   interface?: string
   form_factor?: string
+  tokens_per_second_7b?: number
+  tokens_per_second_13b?: number
+  image_gen_sdxl_seconds?: number
 }
 
 export interface FAQ {
@@ -38,6 +41,8 @@ export interface Product {
   featured: boolean
   faq: FAQ[]
   crossSells?: string[]
+  notFor?: string[]
+  entityHeadline?: string
 }
 
 export type Category = Product['category']

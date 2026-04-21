@@ -13,7 +13,10 @@
     "memory_bandwidth_gbps": 672,
     "tdp_watts": 150,
     "max_llm_size": "13B (Q4 quantized)",
-    "form_factor": "GPU"
+    "form_factor": "GPU",
+    "tokens_per_second_7b": 112,
+    "tokens_per_second_13b": 65,
+    "image_gen_sdxl_seconds": 2.8
   },
   "useCases": [
     "Compact Mini-ITX AI workstation builds",
@@ -59,5 +62,12 @@
     "silkland-displayport-21",
     "gpu-brace-support",
     "apc-bx1500m"
-  ]
+  ],
+  "notFor": [
+    "Standard ATX case builds \u2014 the 2-slot SFF design needs a compatible small-form-factor chassis",
+    "Anyone on a tight budget \u2014 there are cheaper GPUs for pure LLM chat use",
+    "Running 70B models \u2014 12 GB VRAM draws the line at 13B Q4",
+    "Macbook or Mac Mini users \u2014 NVIDIA CUDA does not run on Apple hardware"
+  ],
+  "entityHeadline": "Running Stable Diffusion XL on the ASUS RTX 5070 SFF: 2.8s Per Image"
 }

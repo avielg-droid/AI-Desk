@@ -80,6 +80,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="space-y-10">
         <ProductHero product={product} />
 
+        {/* Entity headline — AI model context for GEO/AEO */}
+        {product.entityHeadline && (
+          <section>
+            <h2 className="font-display font-800 text-2xl md:text-3xl tracking-tight text-foreground">
+              {product.entityHeadline}
+            </h2>
+          </section>
+        )}
+
         {/* Bottom line */}
         <section className="rounded-xl border border-edge bg-ink-1 p-6">
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
@@ -139,6 +148,26 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </section>
+
+        {/* Anti-Sell */}
+        {product.notFor && product.notFor.length > 0 && (
+          <section className="rounded-xl border border-loss/20 bg-loss/5 p-6">
+            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-1">
+              Who Should NOT Buy This
+            </h2>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">
+              Honest assessment — skip it if any of these apply to you
+            </p>
+            <ul className="space-y-2.5">
+              {product.notFor.map(item => (
+                <li key={item} className="flex gap-3 text-sm text-zinc-700">
+                  <span className="text-loss shrink-0 mt-0.5 font-mono">✕</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Verdict */}
         <section className="rounded-xl border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">

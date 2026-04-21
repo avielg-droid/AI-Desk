@@ -15,7 +15,9 @@
     "storage_gb": 256,
     "tdp_watts": 20,
     "max_llm_size": "13B (Q4 quantized)",
-    "form_factor": "Mini PC"
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 42,
+    "tokens_per_second_13b": 22
   },
   "useCases": [
     "Local LLM inference for 7B models (Llama 3, Phi-3, Gemma)",
@@ -57,5 +59,12 @@
     "cable-matters-thunderbolt-5",
     "owc-envoy-express",
     "apc-bx1500m"
-  ]
+  ],
+  "notFor": [
+    "Running 70B models \u2014 16 GB unified memory limits you to 7B\u201313B range",
+    "Stable Diffusion power users \u2014 image gen is usable but not fast",
+    "Anyone who needs Windows \u2014 macOS only, no exceptions",
+    "Heavy multi-task users \u2014 16 GB fills up quickly with OS + model loaded simultaneously"
+  ],
+  "entityHeadline": "Running Llama 3.2 on the Mac Mini M4: Zero-Setup Local AI for $599"
 }

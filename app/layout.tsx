@@ -1,35 +1,12 @@
 import type { Metadata } from 'next'
-import { Outfit, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
-
-// Outfit — geometric sans for headings, very clean and forward-thinking
-const outfit = Outfit({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
-  variable: '--font-display',
-  display: 'swap',
-})
-
-// DM Sans — modern friendly sans for body text and reviews
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-body',
-  display: 'swap',
-})
-
-// JetBrains Mono — specs, stats, labels, badges
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-mono',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: {
@@ -53,19 +30,17 @@ export const metadata: Metadata = {
 }
 
 const NAV_LINKS = [
-  { href: '/products',          label: 'Products'      },
-  { href: '/categories/gpu',    label: 'GPUs'          },
-  { href: '/categories/mini-pc',label: 'Mini PCs'      },
-  { href: '/best',              label: 'Buying Guides' },
-  { href: '/compare',           label: 'Compare'       },
-  { href: '/about',             label: 'About'         },
+  { href: '/products',           label: 'Products'      },
+  { href: '/categories/gpu',     label: 'GPUs'          },
+  { href: '/categories/mini-pc', label: 'Mini PCs'      },
+  { href: '/best',               label: 'Buying Guides' },
+  { href: '/compare',            label: 'Compare'       },
+  { href: '/about',              label: 'About'         },
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const fontVars = `${outfit.variable} ${dmSans.variable} ${jetBrainsMono.variable}`
-
   return (
-    <html lang="en" className={fontVars}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />
@@ -73,37 +48,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans">
 
-        {/* Amazon Associates disclosure strip */}
-        <div className="bg-ink-1 border-b border-edge">
+        {/* Affiliate disclosure strip */}
+        <div className="bg-ink-0 border-b border-edge">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex justify-center">
-            <AffiliateDisclosure className="font-mono text-[10px] text-zinc-600" />
+            <AffiliateDisclosure className="font-mono text-[10px] text-zinc-800" />
           </div>
         </div>
 
         {/* Nav */}
-        <header className="sticky top-0 z-40 bg-ink-0/96 backdrop-blur-sm border-b border-edge shadow-sm">
-          {/* Ember top rule */}
-          <div className="h-[2px] bg-ore" />
+        <header className="sticky top-0 z-40 bg-ink-0/90 backdrop-blur-md border-b border-edge">
+          {/* Aurora top rule */}
+          <div className="h-[2px] aurora-bar" />
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-8">
 
-            {/* Wordmark — Playfair Display italic for editorial signature feel */}
+            {/* Wordmark */}
             <a
               href="/"
-              className="shrink-0 font-display font-900 italic text-xl tracking-tight leading-none text-foreground hover:text-ore transition-colors"
+              className="shrink-0 font-display font-600 text-xl tracking-tight leading-none text-foreground hover:text-ore transition-colors duration-200"
             >
               The AI Desk
             </a>
 
-            {/* Nav links — mono for precision/label feel */}
+            {/* Nav links */}
             <div className="hidden md:flex items-center gap-0">
               {NAV_LINKS.map(({ href, label }) => (
                 <a
                   key={href}
                   href={href}
-                  className="relative px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-foreground transition-colors group"
+                  className="relative px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-foreground transition-colors duration-150 group"
                 >
                   {label}
-                  <span className="absolute bottom-0 left-3.5 right-3.5 h-[1px] bg-ore scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  <span className="absolute bottom-0 left-3.5 right-3.5 h-px aurora-bar scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </a>
               ))}
             </div>
@@ -111,21 +86,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10">
           {children}
         </main>
 
         {/* Footer */}
-        <footer className="mt-24 border-t-2 border-ore bg-ink-1">
+        <footer className="relative z-10 mt-24 border-t border-edge bg-ink-0">
+          <div className="h-[2px] aurora-bar" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
             <div className="grid md:grid-cols-3 gap-10">
 
               {/* Brand */}
               <div>
-                <p className="font-display font-900 italic text-2xl text-foreground mb-3">
+                <p className="font-display font-600 text-2xl text-foreground mb-3">
                   The AI Desk
                 </p>
-                <p className="font-sans text-sm text-zinc-500 leading-relaxed max-w-xs">
+                <p className="font-sans text-sm text-zinc-600 leading-relaxed max-w-xs">
                   Independent hardware reviews for running large language models and Stable Diffusion locally. No sponsored rankings.
                 </p>
               </div>
@@ -136,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-2">
                   {NAV_LINKS.map(({ href, label }) => (
                     <li key={href}>
-                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-ore transition-colors">
+                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore transition-colors">
                         {label}
                       </a>
                     </li>
@@ -154,13 +130,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     { href: '/accessibility', label: 'Accessibility'    },
                   ].map(({ href, label }) => (
                     <li key={href}>
-                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-ore transition-colors">
+                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore transition-colors">
                         {label}
                       </a>
                     </li>
                   ))}
                 </ul>
-                <AffiliateDisclosure className="font-mono text-[10px] text-zinc-700 leading-relaxed" />
+                <AffiliateDisclosure className="font-mono text-[10px] text-zinc-800 leading-relaxed" />
                 <p className="font-mono text-[10px] text-zinc-800 mt-3">
                   © {new Date().getFullYear()} The AI Desk
                 </p>

@@ -15,7 +15,8 @@
     "storage_gb": 512,
     "tdp_watts": 45,
     "max_llm_size": "13B (Q4 quantized)",
-    "form_factor": "Mini PC"
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 11
   },
   "useCases": [
     "Budget local LLM inference (7B\u201313B models)",
@@ -61,5 +62,12 @@
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
     "apc-bx1500m"
-  ]
+  ],
+  "notFor": [
+    "Anyone expecting GPU-class speed \u2014 Ryzen AI NPU assists but this is still CPU inference",
+    "Stable Diffusion workflows \u2014 no discrete GPU",
+    "Memory-hungry 13B models at speed \u2014 32 GB RAM is the ceiling here",
+    "Linux AI workflows \u2014 best supported on Windows due to AMD software stack"
+  ],
+  "entityHeadline": "Running Qwen2.5 7B on the GMKtec NUCBox M5 Pro: AMD Ryzen AI in a Mini PC"
 }
