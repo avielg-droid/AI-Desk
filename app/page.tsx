@@ -112,12 +112,6 @@ export default function HomePage() {
       {/* ── WHY LOCAL AI ── */}
       <WhyLocalAI />
 
-      {/* ── PERSONA FUNNELS ── */}
-      <PersonaFunnels />
-
-      {/* ── CLOUD vs LOCAL ROI ── */}
-      <CloudROICalculator />
-
       {/* ── CATEGORIES ── */}
       <section>
         <div className="flex items-center gap-4 mb-6">
@@ -142,6 +136,12 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── PERSONA FUNNELS ── */}
+      <PersonaFunnels />
+
+      {/* ── CLOUD vs LOCAL ROI ── */}
+      <CloudROICalculator />
 
       {/* ── EDITOR'S PICKS ── */}
       <section>

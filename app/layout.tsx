@@ -31,12 +31,13 @@ export const metadata: Metadata = {
 }
 
 const NAV_LINKS = [
-  { href: '/products',           label: 'Products'      },
-  { href: '/categories/gpu',     label: 'GPUs'          },
-  { href: '/categories/mini-pc', label: 'Mini PCs'      },
-  { href: '/best',               label: 'Buying Guides' },
-  { href: '/compare',            label: 'Compare'       },
-  { href: '/about',              label: 'About'         },
+  { href: '/products',                label: 'Products'      },
+  { href: '/categories/gpu',          label: 'GPUs'          },
+  { href: '/categories/mini-pc',      label: 'Mini PCs'      },
+  { href: '/categories/accessory',    label: 'Accessories'   },
+  { href: '/best',                    label: 'Buying Guides' },
+  { href: '/compare',                 label: 'Compare'       },
+  { href: '/about',                   label: 'About'         },
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
