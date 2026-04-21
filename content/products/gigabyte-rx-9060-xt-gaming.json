@@ -1,0 +1,59 @@
+{
+  "slug": "gigabyte-rx-9060-xt-gaming",
+  "asin": "",
+  "image": "/products/gigabyte-rx-9060-xt-gaming.jpg",
+  "name": "GIGABYTE Radeon RX 9060 XT GAMING OC 16G",
+  "category": "gpu",
+  "brand": "GIGABYTE",
+  "shortDescription": "The GIGABYTE RX 9060 XT GAMING OC 16G is the VRAM champion at its price tier. Powered by AMD RDNA 4 with 16GB GDDR6, it runs 13B+ LLMs comfortably where 12GB NVIDIA cards hit their ceiling. The WINDFORCE cooling with graphene nano lubricant handles sustained AI workloads — if you can navigate AMD's ROCm ecosystem.",
+  "specs": {
+    "chip": "AMD Radeon RX 9060 XT (RDNA 4)",
+    "gpu_cores": 2048,
+    "unified_memory_gb": 16,
+    "memory_bandwidth_gbps": 288,
+    "tdp_watts": 150,
+    "max_llm_size": "14B (Q4) / 13B (Q8)",
+    "form_factor": "GPU"
+  },
+  "useCases": [
+    "Large local LLM inference (13B–14B models with full GPU acceleration)",
+    "Stable Diffusion XL and FLUX image generation",
+    "Budget AI builds prioritizing VRAM over raw speed",
+    "AMD ROCm / Linux-native AI development",
+    "Whisper transcription and multimodal AI tasks"
+  ],
+  "pros": [
+    "16GB GDDR6 — 4GB more VRAM than any RTX 5070 at a comparable price",
+    "RDNA 4 architecture — significant IPC improvement over RDNA 3",
+    "Runs 13B Q8 and 14B Q4 models fully in VRAM — no CPU offload",
+    "WINDFORCE cooling with graphene nano lubricant — quiet and sustained",
+    "Best VRAM-per-dollar at the mid-range tier in 2026"
+  ],
+  "cons": [
+    "ROCm required for GPU-accelerated AI — steeper setup than CUDA on Windows",
+    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 — slower tokens/sec",
+    "Windows ROCm support lags Linux — Linux recommended for AI workloads",
+    "Fewer AI software integrations compared to NVIDIA CUDA ecosystem"
+  ],
+  "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU — no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
+  "affiliateUrl": "",
+  "rating": 4.2,
+  "reviewCount": 0,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-21",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Does the RX 9060 XT work with Ollama and LM Studio on Windows?",
+      "answer": "Partially. Ollama on Windows supports AMD GPUs via ROCm, but compatibility is less seamless than NVIDIA. Some models default to CPU inference if ROCm isn't configured correctly. On Linux, ROCm support is mature and Ollama runs fully GPU-accelerated. For Windows users who want a zero-configuration experience, the RTX 5070 WINDFORCE is the safer choice."
+    },
+    {
+      "question": "Why does the RX 9060 XT have 16GB while the RTX 5070 only has 12GB?",
+      "answer": "AMD positioned the RX 9060 XT with 16GB GDDR6 as a direct counter to NVIDIA's 12GB GDDR7 in the RTX 5070. AMD trades raw bandwidth (288 GB/s vs 672 GB/s) for more capacity. For AI workloads, this means slower tokens-per-second but the ability to run larger models without quantization compromises."
+    },
+    {
+      "question": "Can the RX 9060 XT run Stable Diffusion?",
+      "answer": "Yes. Stable Diffusion, SDXL, and FLUX all run on the RX 9060 XT via DirectML on Windows or ROCm on Linux. ROCm on Linux gives the best performance, comparable to similarly-priced NVIDIA cards. With 16GB VRAM, you can run SDXL and FLUX at high resolutions with multiple ControlNet models loaded simultaneously."
+    }
+  ]
+}

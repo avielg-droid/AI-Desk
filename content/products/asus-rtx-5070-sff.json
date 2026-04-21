@@ -1,0 +1,58 @@
+{
+  "slug": "asus-rtx-5070-sff",
+  "asin": "B0DS6V1YSY",
+  "image": "/products/asus-rtx-5070-sff.jpg",
+  "name": "ASUS Prime GeForce RTX 5070 SFF-Ready 12GB",
+  "category": "gpu",
+  "brand": "ASUS",
+  "shortDescription": "The ASUS Prime RTX 5070 SFF-Ready is a 2.5-slot Blackwell GPU built for compact Mini-ITX builds. With 12GB GDDR7 at 672 GB/s and triple Axial-tech fans with a phase-change thermal pad, it delivers full RTX 5070 performance in the smallest possible footprint — ideal for building a custom compact AI workstation.",
+  "specs": {
+    "chip": "NVIDIA GeForce RTX 5070 (Blackwell)",
+    "gpu_cores": 6144,
+    "unified_memory_gb": 12,
+    "memory_bandwidth_gbps": 672,
+    "tdp_watts": 150,
+    "max_llm_size": "13B (Q4 quantized)",
+    "form_factor": "GPU"
+  },
+  "useCases": [
+    "Compact Mini-ITX AI workstation builds",
+    "Stable Diffusion and FLUX image generation",
+    "Local LLM inference in a small form factor PC",
+    "ComfyUI and ControlNet workflows",
+    "Space-constrained home lab AI setups"
+  ],
+  "pros": [
+    "2.5-slot SFF-Ready design — fits Mini-ITX cases where standard GPUs cannot",
+    "Full RTX 5070 performance — no compromise vs. full-size cards",
+    "Phase-change thermal pad + triple Axial-tech fans — excellent sustained cooling",
+    "5th-Gen Tensor Cores — fastest mid-range AI inference from NVIDIA",
+    "672 GB/s GDDR7 — best-in-class bandwidth at the 12GB price tier"
+  ],
+  "cons": [
+    "Same 12GB VRAM limit as all RTX 5070 variants",
+    "SFF cases have less airflow — monitor temps under heavy 24/7 loads",
+    "Premium pricing over non-SFF RTX 5070 cards for the compact design"
+  ],
+  "verdict": "The ASUS Prime RTX 5070 SFF-Ready is the definitive GPU for anyone building a compact AI workstation. The RTX 5070 is already an excellent mid-range AI card, and ASUS's SFF form factor removes the last barrier for Mini-ITX builders. If you want maximum AI performance in minimum desk space, this is the card. The 12GB VRAM ceiling applies here too — pair with a Ryzen or Intel system that has fast system RAM for occasional CPU offload on larger models.",
+  "affiliateUrl": "https://www.amazon.com/dp/B0DS6V1YSY?tag=YOUR_ASSOCIATE_TAG",
+  "rating": 4.5,
+  "reviewCount": 0,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-21",
+  "featured": false,
+  "faq": [
+    {
+      "question": "What makes the ASUS RTX 5070 SFF-Ready different from a standard RTX 5070?",
+      "answer": "The SFF-Ready designation means the card uses a 2.5-slot design that fits Mini-ITX and other compact cases. Performance is identical to full-size RTX 5070 cards — same Blackwell chip, same 12GB GDDR7 at 672 GB/s. You pay a small premium for the compact cooler engineering."
+    },
+    {
+      "question": "Can I build a complete AI workstation around the ASUS RTX 5070 SFF?",
+      "answer": "Yes, and this is its ideal use case. Pair it with a Mini-ITX board, a mid-range AMD Ryzen or Intel Core processor, 32GB+ DDR5 system RAM, and a compact ITX case. The result is a full-power local AI machine that takes up less space than many mini PCs, with proper GPU acceleration."
+    },
+    {
+      "question": "How does the SFF cooling perform under sustained AI loads?",
+      "answer": "ASUS's phase-change thermal pad and triple Axial-tech fans handle sustained loads well in open cases. In very tight SFF cases with limited airflow, expect slightly higher temperatures but still within safe operating range. Ensure your case has at least one 120mm intake fan."
+    }
+  ]
+}
