@@ -10,10 +10,23 @@ interface AmazonImageProps {
   /** Optional local image path in /public, e.g. "/products/beelink-sei14.jpg" */
   localSrc?: string
   size?: number
+  /** Use compact placeholder (icon only, no text) for small thumbnail containers */
+  compact?: boolean
   className?: string
 }
 
-function Placeholder({ name }: { name: string }) {
+function Placeholder({ name, compact }: { name: string; compact?: boolean }) {
+  if (compact) {
+    // Small thumbnail: just icon, no text
+    return (
+      <div className="flex items-center justify-center w-full h-full">
+        <svg className="h-6 w-6 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+    )
+  }
   return (
     <div className="flex flex-col items-center justify-center gap-2 w-full h-full min-h-[120px] p-4">
       <svg className="h-8 w-8 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,14 +42,14 @@ function Placeholder({ name }: { name: string }) {
 
 type Status = 'loading' | 'loaded' | 'error-local' | 'error-amazon' | 'error-all'
 
-export default function AmazonImage({ asin, name, localSrc, size = 250, className = '' }: AmazonImageProps) {
+export default function AmazonImage({ asin, name, localSrc, size = 250, compact = false, className = '' }: AmazonImageProps) {
   // If localSrc provided, try it first. Otherwise go straight to Amazon.
   const [status, setStatus] = useState<Status>(localSrc ? 'loading' : 'error-local')
 
   const amazonSrc = `https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=${asin}&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL${size}_&tag=${ASSOCIATE_TAG}`
 
   // All sources failed — show placeholder
-  if (status === 'error-all') return <Placeholder name={name} />
+  if (status === 'error-all') return <Placeholder name={name} compact={compact} />
 
   // Determine which src to render
   const activeSrc = status === 'error-local' ? amazonSrc : (localSrc ?? amazonSrc)
@@ -53,7 +66,7 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, classNam
 
   return (
     <>
-      {status === 'loading' && <Placeholder name={name} />}
+      {status === 'loading' && <Placeholder name={name} compact={compact} />}
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

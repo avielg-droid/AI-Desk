@@ -7,6 +7,7 @@ import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
 import ThemeToggle from '@/components/ThemeToggle'
+import MobileNav from '@/components/MobileNav'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -75,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               The AI Desk
             </a>
 
-            {/* Nav links + theme toggle */}
+            {/* Nav links + theme toggle (desktop) */}
             <div className="hidden md:flex items-center gap-0">
               {NAV_LINKS.map(({ href, label }) => (
                 <a
@@ -91,6 +92,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ThemeToggle />
               </div>
             </div>
+
+            {/* Hamburger (mobile) */}
+            <MobileNav />
 
           </nav>
         </header>

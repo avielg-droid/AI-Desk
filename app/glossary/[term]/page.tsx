@@ -158,6 +158,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
                       asin={product.asin}
                       name={product.name}
                       size={64}
+                      compact
                       className="w-full h-full p-1"
                     />
                   </div>

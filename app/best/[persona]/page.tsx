@@ -189,6 +189,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
                         asin={product.asin}
                         name={product.name}
                         size={80}
+                        compact
                         className="w-full h-full p-1"
                       />
                     </div>

@@ -167,6 +167,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
                   asin={product.asin}
                   name={product.name}
                   size={64}
+                  compact
                   className="w-full h-full p-1"
                 />
               </div>
