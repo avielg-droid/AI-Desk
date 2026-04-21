@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
@@ -17,28 +18,117 @@ const NAV_LINKS = [
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  // Close on route change / ESC
+  useEffect(() => { setMounted(true) }, [])
+
+  // ESC to close
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  // Prevent body scroll when open
+  // Body scroll lock
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
 
+  const overlay = (
+    <>
+      {/* Backdrop — separate from header stacking context */}
+      <div
+        onClick={() => setOpen(false)}
+        aria-hidden
+        style={{
+          position: 'fixed', inset: 0, zIndex: 9998,
+          background: 'rgba(0,0,0,0.55)',
+          backdropFilter: 'blur(4px)',
+          opacity: open ? 1 : 0,
+          pointerEvents: open ? 'auto' : 'none',
+          transition: 'opacity 250ms ease',
+        }}
+      />
+
+      {/* Drawer */}
+      <div
+        style={{
+          position: 'fixed', top: 0, right: 0, bottom: 0,
+          width: '280px', zIndex: 9999,
+          background: 'var(--color-bg, #09090b)',
+          borderLeft: '1px solid rgba(255,255,255,0.08)',
+          display: 'flex', flexDirection: 'column',
+          transform: open ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 300ms cubic-bezier(0.4,0,0.2,1)',
+        }}
+      >
+        {/* Aurora top bar */}
+        <div className="h-[2px] aurora-bar flex-shrink-0" />
+
+        {/* Header row */}
+        <div
+          style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            padding: '0 24px', height: '56px', flexShrink: 0,
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
+          <span className="font-display font-600 text-base text-foreground">Menu</span>
+          <button
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            style={{ padding: '8px', color: '#71717a', lineHeight: 0 }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Links */}
+        <nav style={{ flex: 1, overflowY: 'auto', paddingTop: '8px', paddingBottom: '8px' }}>
+          {NAV_LINKS.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore hover:bg-ore/5 transition-colors"
+              style={{
+                padding: '14px 24px',
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+                display: 'flex', alignItems: 'center', gap: '12px',
+              }}
+            >
+              <span style={{ color: 'rgb(var(--color-ore))', opacity: 0.4 }}>›</span>
+              {label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Theme toggle footer */}
+        <div
+          style={{
+            padding: '16px 24px', flexShrink: 0,
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          }}
+        >
+          <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">Theme</span>
+          <ThemeToggle />
+        </div>
+      </div>
+    </>
+  )
+
   return (
     <>
-      {/* Hamburger button */}
+      {/* Hamburger button — stays inside header */}
       <button
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
         onClick={() => setOpen(o => !o)}
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] group"
+        className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
       >
         <span className={`block h-px w-5 bg-foreground transition-all duration-200 origin-center
           ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
@@ -48,59 +138,8 @@ export default function MobileNav() {
           ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
       </button>
 
-      {/* Backdrop */}
-      {open && (
-        <div
-          className="fixed inset-0 z-30 bg-ink-0/60 backdrop-blur-sm md:hidden"
-          onClick={() => setOpen(false)}
-          aria-hidden
-        />
-      )}
-
-      {/* Drawer */}
-      <div className={`
-        fixed top-0 right-0 bottom-0 z-40 w-72 md:hidden
-        bg-ink-0 border-l border-edge
-        flex flex-col
-        transition-transform duration-300 ease-in-out
-        ${open ? 'translate-x-0' : 'translate-x-full'}
-      `}>
-        {/* Drawer header */}
-        <div className="h-[2px] aurora-bar" />
-        <div className="flex items-center justify-between px-6 h-14 border-b border-edge">
-          <span className="font-display font-600 text-base text-foreground">Menu</span>
-          <button
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            className="flex items-center justify-center w-8 h-8 text-zinc-600 hover:text-foreground transition-colors"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          </button>
-        </div>
-
-        {/* Links */}
-        <nav className="flex-1 overflow-y-auto py-4">
-          {NAV_LINKS.map(({ href, label }) => (
-            <a
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-6 py-3.5 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore hover:bg-ore/5 transition-colors border-b border-edge/40 last:border-0"
-            >
-              <span className="text-ore opacity-40">›</span>
-              {label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Footer: theme toggle */}
-        <div className="px-6 py-4 border-t border-edge flex items-center justify-between">
-          <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">Theme</span>
-          <ThemeToggle />
-        </div>
-      </div>
+      {/* Portal: escape backdrop-filter containing block of the sticky header */}
+      {mounted && createPortal(overlay, document.body)}
     </>
   )
 }
