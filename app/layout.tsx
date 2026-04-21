@@ -8,6 +8,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
 import ThemeToggle from '@/components/ThemeToggle'
 import MobileNav from '@/components/MobileNav'
+import DesktopNav from '@/components/DesktopNav'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -76,18 +77,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               The AI Desk
             </a>
 
-            {/* Nav links + theme toggle (desktop) */}
+            {/* Nav (desktop) */}
             <div className="hidden md:flex items-center gap-0">
-              {NAV_LINKS.map(({ href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  className="relative px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-foreground transition-colors duration-150 group"
-                >
-                  {label}
-                  <span className="absolute bottom-0 left-3.5 right-3.5 h-px aurora-bar scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                </a>
-              ))}
+              <DesktopNav />
               <div className="ml-4 pl-4 border-l border-edge">
                 <ThemeToggle />
               </div>
