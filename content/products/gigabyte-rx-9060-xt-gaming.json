@@ -5,7 +5,7 @@
   "name": "GIGABYTE Radeon RX 9060 XT GAMING OC 16G",
   "category": "gpu",
   "brand": "GIGABYTE",
-  "shortDescription": "The GIGABYTE RX 9060 XT GAMING OC 16G is the VRAM champion at its price tier. Powered by AMD RDNA 4 with 16GB GDDR6, it runs 13B+ LLMs comfortably where 12GB NVIDIA cards hit their ceiling. The WINDFORCE cooling with graphene nano lubricant handles sustained AI workloads — if you can navigate AMD's ROCm ecosystem.",
+  "shortDescription": "The GIGABYTE RX 9060 XT GAMING OC 16G is the VRAM champion at its price tier. Powered by AMD RDNA 4 with 16GB GDDR6, it runs 13B+ LLMs comfortably where 12GB NVIDIA cards hit their ceiling. The WINDFORCE cooling with graphene nano lubricant handles sustained AI workloads \u2014 if you can navigate AMD's ROCm ecosystem.",
   "specs": {
     "chip": "AMD Radeon RX 9060 XT (RDNA 4)",
     "gpu_cores": 2048,
@@ -16,26 +16,26 @@
     "form_factor": "GPU"
   },
   "useCases": [
-    "Large local LLM inference (13B–14B models with full GPU acceleration)",
+    "Large local LLM inference (13B\u201314B models with full GPU acceleration)",
     "Stable Diffusion XL and FLUX image generation",
     "Budget AI builds prioritizing VRAM over raw speed",
     "AMD ROCm / Linux-native AI development",
     "Whisper transcription and multimodal AI tasks"
   ],
   "pros": [
-    "16GB GDDR6 — 4GB more VRAM than any RTX 5070 at a comparable price",
-    "RDNA 4 architecture — significant IPC improvement over RDNA 3",
-    "Runs 13B Q8 and 14B Q4 models fully in VRAM — no CPU offload",
-    "WINDFORCE cooling with graphene nano lubricant — quiet and sustained",
+    "16GB GDDR6 \u2014 4GB more VRAM than any RTX 5070 at a comparable price",
+    "RDNA 4 architecture \u2014 significant IPC improvement over RDNA 3",
+    "Runs 13B Q8 and 14B Q4 models fully in VRAM \u2014 no CPU offload",
+    "WINDFORCE cooling with graphene nano lubricant \u2014 quiet and sustained",
     "Best VRAM-per-dollar at the mid-range tier in 2026"
   ],
   "cons": [
-    "ROCm required for GPU-accelerated AI — steeper setup than CUDA on Windows",
-    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 — slower tokens/sec",
-    "Windows ROCm support lags Linux — Linux recommended for AI workloads",
+    "ROCm required for GPU-accelerated AI \u2014 steeper setup than CUDA on Windows",
+    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 \u2014 slower tokens/sec",
+    "Windows ROCm support lags Linux \u2014 Linux recommended for AI workloads",
     "Fewer AI software integrations compared to NVIDIA CUDA ecosystem"
   ],
-  "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU — no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
+  "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU \u2014 no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
   "affiliateUrl": "https://www.amazon.com/dp/B0F91KM1CK?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.2,
   "reviewCount": 0,
@@ -55,5 +55,10 @@
       "question": "Can the RX 9060 XT run Stable Diffusion?",
       "answer": "Yes. Stable Diffusion, SDXL, and FLUX all run on the RX 9060 XT via DirectML on Windows or ROCm on Linux. ROCm on Linux gives the best performance, comparable to similarly-priced NVIDIA cards. With 16GB VRAM, you can run SDXL and FLUX at high resolutions with multiple ControlNet models loaded simultaneously."
     }
+  ],
+  "crossSells": [
+    "silkland-displayport-21",
+    "gpu-brace-support",
+    "apc-bx1500m"
   ]
 }

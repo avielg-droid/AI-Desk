@@ -5,7 +5,7 @@
   "name": "Apple Mac Mini (M4, 2024)",
   "category": "mini-pc",
   "brand": "Apple",
-  "shortDescription": "The Apple Mac Mini M4 is the most affordable path to Apple Silicon AI inference in 2026. With 16GB of unified memory at 120 GB/s bandwidth and a 10-core CPU, it runs 7B models at 40–60 tokens/second via Ollama — faster than any competing mini PC at the same price.",
+  "shortDescription": "The Apple Mac Mini M4 is the most affordable path to Apple Silicon AI inference in 2026. With 16GB of unified memory at 120 GB/s bandwidth and a 10-core CPU, it runs 7B models at 40\u201360 tokens/second via Ollama \u2014 faster than any competing mini PC at the same price.",
   "specs": {
     "chip": "Apple M4",
     "cpu_cores": 10,
@@ -26,17 +26,17 @@
   "pros": [
     "Lowest cost Apple Silicon entry point for local AI",
     "16GB unified memory is enough for all 7B and most 13B Q4 models",
-    "20W TDP — cheapest to run 24/7 of any AI-capable machine",
-    "Silent — fanless under light-to-moderate AI workloads",
+    "20W TDP \u2014 cheapest to run 24/7 of any AI-capable machine",
+    "Silent \u2014 fanless under light-to-moderate AI workloads",
     "Native Ollama and llama.cpp Metal support"
   ],
   "cons": [
     "16GB ceiling limits 13B performance and rules out 34B+ models",
     "120 GB/s bandwidth (vs 273 GB/s on M4 Pro) means noticeably slower 13B inference",
     "10-core GPU less capable for Stable Diffusion vs M4 Pro",
-    "Non-upgradeable memory — buy the right configuration upfront"
+    "Non-upgradeable memory \u2014 buy the right configuration upfront"
   ],
-  "verdict": "The Mac Mini M4 base model is the ideal entry-level AI machine for users who primarily run 7B models and want the Apple Silicon experience at the lowest cost. It runs Ollama out of the box, handles most popular LLMs, and consumes only 20W — making it practical to leave on 24/7 as a home AI server. If you anticipate running 13B+ models frequently, spend more and get the M4 Pro; otherwise, this is outstanding value.",
+  "verdict": "The Mac Mini M4 base model is the ideal entry-level AI machine for users who primarily run 7B models and want the Apple Silicon experience at the lowest cost. It runs Ollama out of the box, handles most popular LLMs, and consumes only 20W \u2014 making it practical to leave on 24/7 as a home AI server. If you anticipate running 13B+ models frequently, spend more and get the M4 Pro; otherwise, this is outstanding value.",
   "affiliateUrl": "https://www.amazon.com/dp/B0DLBX4B1K?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.7,
   "reviewCount": 0,
@@ -50,7 +50,12 @@
     },
     {
       "question": "Can the Mac Mini M4 run Stable Diffusion?",
-      "answer": "Yes, but moderately. SD 1.5 at 512×512 runs at 6–10 it/s. SDXL is slow (20–40 seconds per image). For serious image generation, the M4 Pro or a discrete GPU like the RTX 4070 Super is significantly better. The M4 base is adequate for occasional use but not production workflows."
+      "answer": "Yes, but moderately. SD 1.5 at 512\u00d7512 runs at 6\u201310 it/s. SDXL is slow (20\u201340 seconds per image). For serious image generation, the M4 Pro or a discrete GPU like the RTX 4070 Super is significantly better. The M4 base is adequate for occasional use but not production workflows."
     }
+  ],
+  "crossSells": [
+    "cable-matters-thunderbolt-5",
+    "owc-envoy-express",
+    "apc-bx1500m"
   ]
 }

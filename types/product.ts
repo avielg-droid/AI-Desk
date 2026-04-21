@@ -37,6 +37,7 @@ export interface Product {
   lastUpdated: string
   featured: boolean
   faq: FAQ[]
+  crossSells?: string[]
 }
 
 export type Category = Product['category']

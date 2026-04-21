@@ -25,19 +25,19 @@
     "Multi-modal vision model inference"
   ],
   "pros": [
-    "Unified memory architecture eliminates GPU VRAM bottleneck — 24GB or 64GB fully usable by LLMs",
+    "Unified memory architecture eliminates GPU VRAM bottleneck \u2014 24GB or 64GB fully usable by LLMs",
     "273 GB/s memory bandwidth rivals discrete GPUs costing 3x more",
-    "Silent fanless operation — no fan noise during sustained inference workloads",
+    "Silent fanless operation \u2014 no fan noise during sustained inference workloads",
     "macOS native support via llama.cpp Metal backend and Ollama",
-    "Smallest footprint of any 70B-capable system (197mm × 197mm)"
+    "Smallest footprint of any 70B-capable system (197mm \u00d7 197mm)"
   ],
   "cons": [
-    "Memory not upgradeable after purchase — choose 24GB or 64GB at order time",
-    "macOS only — no native CUDA support, NVIDIA-only tools won't run",
+    "Memory not upgradeable after purchase \u2014 choose 24GB or 64GB at order time",
+    "macOS only \u2014 no native CUDA support, NVIDIA-only tools won't run",
     "GPU core count (20) limits parallel image generation throughput vs discrete GPUs",
     "64GB config significantly raises price"
   ],
-  "verdict": "The Mac Mini M4 Pro is the definitive choice for anyone who wants silent, efficient, desk-ready AI inference without building a PC. Its unified memory means you can load a full 70B model into RAM — something that requires two high-end discrete GPUs on Windows. At 30W under load, it runs 24 hours a day for less than $2/month in electricity. If you're on macOS and want to run local LLMs, nothing beats this at its price point.",
+  "verdict": "The Mac Mini M4 Pro is the definitive choice for anyone who wants silent, efficient, desk-ready AI inference without building a PC. Its unified memory means you can load a full 70B model into RAM \u2014 something that requires two high-end discrete GPUs on Windows. At 30W under load, it runs 24 hours a day for less than $2/month in electricity. If you're on macOS and want to run local LLMs, nothing beats this at its price point.",
   "affiliateUrl": "https://www.amazon.com/dp/B0DLBVHSLD?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.8,
   "reviewCount": 0,
@@ -47,11 +47,11 @@
   "faq": [
     {
       "question": "How does the Apple Mac Mini M4 Pro perform on local LLM tasks?",
-      "answer": "The Mac Mini M4 Pro runs 7B models at 60–80 tokens/second and 70B models (Q4_K_M quantization) at 8–12 tokens/second using Ollama or llama.cpp with Metal GPU acceleration. Performance scales linearly with model size — it handles everything up to Llama 3 70B without swapping to disk."
+      "answer": "The Mac Mini M4 Pro runs 7B models at 60\u201380 tokens/second and 70B models (Q4_K_M quantization) at 8\u201312 tokens/second using Ollama or llama.cpp with Metal GPU acceleration. Performance scales linearly with model size \u2014 it handles everything up to Llama 3 70B without swapping to disk."
     },
     {
       "question": "Can the Mac Mini M4 Pro run Stable Diffusion?",
-      "answer": "Yes. Using Automatic1111 or ComfyUI with Apple Silicon optimization, the M4 Pro generates 512×512 images in 4–8 seconds on SDXL. The 20-core GPU handles Flux.1-dev at approximately 12–18 seconds per image at 1024×1024."
+      "answer": "Yes. Using Automatic1111 or ComfyUI with Apple Silicon optimization, the M4 Pro generates 512\u00d7512 images in 4\u20138 seconds on SDXL. The 20-core GPU handles Flux.1-dev at approximately 12\u201318 seconds per image at 1024\u00d71024."
     },
     {
       "question": "What is the maximum LLM size the Mac Mini M4 Pro can run?",
@@ -61,5 +61,10 @@
       "question": "Is the Mac Mini M4 Pro worth it for AI compared to a discrete GPU?",
       "answer": "For users who want silent, low-power, hassle-free AI inference on macOS, yes. A discrete GPU like the RTX 4090 offers higher raw CUDA throughput for training and parallel tasks, but requires a full desktop PC, generates significant heat, and draws 450W. The M4 Pro runs the same 70B models at 30W with zero noise."
     }
+  ],
+  "crossSells": [
+    "cable-matters-thunderbolt-5",
+    "owc-envoy-express",
+    "apc-bx1500m"
   ]
 }

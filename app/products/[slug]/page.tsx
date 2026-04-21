@@ -39,6 +39,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   if (!product) notFound()
 
   const comparisonSlugs = getProductComparisonSlugs(product.slug)
+  const crossSellProducts = (product.crossSells ?? [])
+    .map(slug => getProductBySlug(slug))
+    .filter(Boolean) as NonNullable<ReturnType<typeof getProductBySlug>>[]
 
   const schemas = [
     buildProductSchema(product),
@@ -162,6 +165,48 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             ))}
           </div>
         </section>
+
+        {/* Complete Your Setup */}
+        {crossSellProducts.length > 0 && (
+          <section className="border border-edge bg-ink-1 overflow-hidden">
+            <div className="h-[2px] bg-ore" />
+            <div className="px-6 py-4 border-b border-edge">
+              <h2 className="font-display font-800 text-xl uppercase text-foreground">
+                Complete Your Setup
+              </h2>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-0.5">
+                Recommended accessories
+              </p>
+            </div>
+            <div className="divide-y divide-edge">
+              {crossSellProducts.map(item => (
+                <Link
+                  key={item.slug}
+                  href={`/products/${item.slug}`}
+                  className="flex items-center gap-4 px-6 py-4 hover:bg-ink-2 transition-colors group"
+                >
+                  <div className="w-14 h-14 shrink-0 bg-white border border-edge flex items-center justify-center overflow-hidden">
+                    {item.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-sans font-600 text-sm text-foreground group-hover:text-ore transition-colors truncate">
+                      {item.name}
+                    </p>
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-0.5">
+                      {item.category} · {item.priceDisplay}
+                    </p>
+                  </div>
+                  <span className="font-mono text-xs text-ore shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                    View →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Also featured in */}
         {PRODUCT_PERSONA_MAP[product.slug]?.length > 0 && (

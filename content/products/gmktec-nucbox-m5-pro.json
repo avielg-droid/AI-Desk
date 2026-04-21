@@ -18,16 +18,16 @@
     "form_factor": "Mini PC"
   },
   "useCases": [
-    "Budget local LLM inference (7B–13B models)",
+    "Budget local LLM inference (7B\u201313B models)",
     "Always-on home automation AI server",
     "Windows-native AI workflows (WSL2, Python, Ollama)",
     "Edge AI development and prototyping",
     "Light Stable Diffusion (SD 1.5, SDXL at slow speeds)"
   ],
   "pros": [
-    "Under $300 — lowest cost entry to local AI inference",
+    "Under $300 \u2014 lowest cost entry to local AI inference",
     "32GB DDR5 RAM provides enough headroom for 13B Q4 models",
-    "Windows 11 Pro included — full compatibility with Python AI ecosystem",
+    "Windows 11 Pro included \u2014 full compatibility with Python AI ecosystem",
     "Compact form factor comparable to Mac Mini",
     "Upgradeable RAM and storage unlike Apple Silicon"
   ],
@@ -37,7 +37,7 @@
     "ROCm support on Windows is limited vs Linux for AMD GPU AI workloads",
     "Fan noise audible under sustained AI inference load"
   ],
-  "verdict": "If your budget is under $300 and you want to run local AI on Windows, the GMKtec NucBox M5 Pro is the most capable option at this price. It handles 7B models smoothly and 13B models acceptably. Don't expect Mac Mini speeds — the iGPU is the bottleneck — but for experimenting with Ollama, LM Studio, or self-hosted AI, this is the best cheap starting point in 2026.",
+  "verdict": "If your budget is under $300 and you want to run local AI on Windows, the GMKtec NucBox M5 Pro is the most capable option at this price. It handles 7B models smoothly and 13B models acceptably. Don't expect Mac Mini speeds \u2014 the iGPU is the bottleneck \u2014 but for experimenting with Ollama, LM Studio, or self-hosted AI, this is the best cheap starting point in 2026.",
   "affiliateUrl": "https://www.amazon.com/dp/B0GHDTHM53?tag=YOUR_ASSOCIATE_TAG",
   "rating": 4.3,
   "reviewCount": 0,
@@ -47,15 +47,19 @@
   "faq": [
     {
       "question": "Can the GMKtec NucBox M5 Pro run local LLMs?",
-      "answer": "Yes. Using Ollama on Windows, the NucBox M5 Pro runs Llama 3 8B at approximately 8–15 tokens/second using the CPU. With ROCm on Linux, the Radeon 780M iGPU accelerates inference to 20–35 tokens/second for 7B models. 13B Q4 models run at 5–10 tokens/second CPU-only."
+      "answer": "Yes. Using Ollama on Windows, the NucBox M5 Pro runs Llama 3 8B at approximately 8\u201315 tokens/second using the CPU. With ROCm on Linux, the Radeon 780M iGPU accelerates inference to 20\u201335 tokens/second for 7B models. 13B Q4 models run at 5\u201310 tokens/second CPU-only."
     },
     {
       "question": "How does the GMKtec NucBox M5 Pro compare to the Mac Mini for AI?",
-      "answer": "The Mac Mini M4 Pro is 4–6x faster for AI inference and significantly more power efficient. However, the GMKtec costs a fraction of the price and runs Windows, making it better for users who need Windows compatibility or are on a budget. The NucBox M5 Pro is a starting point; the Mac Mini is a serious workstation."
+      "answer": "The Mac Mini M4 Pro is 4\u20136x faster for AI inference and significantly more power efficient. However, the GMKtec costs a fraction of the price and runs Windows, making it better for users who need Windows compatibility or are on a budget. The NucBox M5 Pro is a starting point; the Mac Mini is a serious workstation."
     },
     {
       "question": "Can I upgrade the RAM in the GMKtec NucBox M5 Pro?",
       "answer": "Yes. Unlike Apple Silicon Macs, the NucBox M5 Pro uses standard SO-DIMM DDR5 slots. It ships with 32GB and can be upgraded to 64GB, which improves LLM headroom for 70B models (though generation speed is still CPU-limited without a discrete GPU)."
     }
+  ],
+  "crossSells": [
+    "silkland-usb4-thunderbolt-5",
+    "apc-bx1500m"
   ]
 }
