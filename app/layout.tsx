@@ -6,6 +6,7 @@ import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
+import ThemeToggle from '@/components/ThemeToggle'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -44,6 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />
+        {/* Anti-FOUC: apply stored theme before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();` }} />
         <script defer src="https://cloud.umami.is/script.js" data-website-id="9f2772fc-7052-4936-a9e8-475174b113f0" />
       </head>
       <body className="font-sans">
@@ -69,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               The AI Desk
             </a>
 
-            {/* Nav links */}
+            {/* Nav links + theme toggle */}
             <div className="hidden md:flex items-center gap-0">
               {NAV_LINKS.map(({ href, label }) => (
                 <a
@@ -81,6 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <span className="absolute bottom-0 left-3.5 right-3.5 h-px aurora-bar scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </a>
               ))}
+              <div className="ml-4 pl-4 border-l border-edge">
+                <ThemeToggle />
+              </div>
             </div>
 
           </nav>

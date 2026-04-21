@@ -2,47 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Design Tokens ─────────────────────────────────────────────────────────── */
+/* ── Font bridge ───────────────────────────────────────────────────────────── */
 :root {
-  /* Bridge geist package CSS vars → our font vars */
   --font-display: var(--font-geist-sans);
   --font-body:    var(--font-geist-sans);
   --font-mono:    var(--font-geist-mono);
-
-  --background:       #09090B;
-  --foreground:       #FFFFFF;
-  --surface-1:        #0F0F12;
-  --surface-2:        #141418;
-  --edge:             #1E1E26;
-
-  /* Aurora palette */
-  --aurora-cyan:      #00E5FF;
-  --aurora-violet:    #8A2BE2;
-  --aurora-magenta:   #FF00FF;
-  --aurora-gradient:  linear-gradient(135deg, #00E5FF 0%, #8A2BE2 50%, #FF00FF 100%);
-  --aurora-gradient-animated: linear-gradient(135deg, #00E5FF, #8A2BE2, #FF00FF, #00E5FF);
-
-  /* Glass surface */
-  --glass-bg:         rgba(255,255,255,0.03);
-  --glass-border:     rgba(255,255,255,0.07);
-  --glass-hover-bg:   rgba(255,255,255,0.06);
 }
 
-html {
-  scroll-behavior: smooth;
+/* ── Dark Theme (default) — The Void ──────────────────────────────────────── */
+:root {
   color-scheme: dark;
+
+  --bg: #09090B;
+  --fg: #FFFFFF;
+
+  /* RGB triplets for Tailwind opacity modifiers */
+  --color-ore:     0 229 255;    /* electric cyan */
+  --color-data:    168 85 247;   /* violet */
+  --color-win:     0 229 153;    /* neon green */
+  --color-loss:    255 68 102;   /* hot red */
+  --color-ink-0:   9 9 11;
+  --color-ink-1:   15 15 18;
+  --color-ink-2:   20 20 24;
+  --color-ink-3:   26 26 32;
+  --color-edge:    30 30 38;
+  --color-edge-hi: 46 46 60;
+
+  /* Aurora palette */
+  --aurora-cyan:    #00E5FF;
+  --aurora-violet:  #8A2BE2;
+  --aurora-magenta: #FF00FF;
+  --aurora-gradient: linear-gradient(135deg, #00E5FF 0%, #8A2BE2 50%, #FF00FF 100%);
+  --aurora-gradient-animated: linear-gradient(135deg, #00E5FF, #8A2BE2, #FF00FF, #00E5FF);
+
+  /* Glass */
+  --glass-bg:       rgba(255,255,255,0.03);
+  --glass-border:   rgba(255,255,255,0.07);
+  --glass-hover-bg: rgba(255,255,255,0.06);
+
+  /* Text */
+  --text-muted:  #A1A1AA;
+  --text-subtle: #71717A;
+}
+
+/* ── Light Theme — Ambient Bright ─────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #FAFAF9;
+  --fg: #111111;
+
+  --color-ore:     8 145 178;    /* cyan-600 — readable on white */
+  --color-data:    124 58 237;   /* violet-600 */
+  --color-win:     22 163 74;    /* green-600 */
+  --color-loss:    220 38 38;    /* red-600 */
+  --color-ink-0:   255 255 255;
+  --color-ink-1:   248 248 245;
+  --color-ink-2:   240 240 235;
+  --color-ink-3:   228 228 222;
+  --color-edge:    218 218 212;
+  --color-edge-hi: 196 196 190;
+
+  /* Glass — solid frosted white on light bg */
+  --glass-bg:       rgba(255,255,255,0.75);
+  --glass-border:   rgba(0,0,0,0.08);
+  --glass-hover-bg: rgba(255,255,255,0.92);
+
+  /* Text */
+  --text-muted:  #52525B;
+  --text-subtle: #71717A;
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-display);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Aurora ambient background — subtle depth pools behind the void */
+/* Aurora ambient mesh — dark mode */
 body::before {
   content: '';
   position: fixed;
@@ -53,9 +98,13 @@ body::before {
     radial-gradient(ellipse 60% 40% at 15% 25%, rgba(0,229,255,0.04) 0%, transparent 70%),
     radial-gradient(ellipse 50% 60% at 85% 15%, rgba(138,43,226,0.04) 0%, transparent 70%),
     radial-gradient(ellipse 70% 50% at 50% 85%, rgba(255,0,255,0.03) 0%, transparent 70%);
+  transition: opacity 0.3s ease;
+}
+[data-theme="light"] body::before {
+  opacity: 0.35;
 }
 
-/* Subtle grain overlay — more visible on dark */
+/* Grain overlay */
 body::after {
   content: '';
   position: fixed;
@@ -66,26 +115,25 @@ body::after {
   opacity: 0.03;
   mix-blend-mode: overlay;
 }
+[data-theme="light"] body::after {
+  opacity: 0.015;
+  mix-blend-mode: multiply;
+}
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #09090B; }
-::-webkit-scrollbar-thumb {
-  background: #1E1E26;
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0,229,255,0.4);
-}
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-edge)); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: rgba(var(--color-ore), 0.4); }
 
 /* ── Selection ─────────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(0,229,255,0.15);
-  color: #FFFFFF;
+  background: rgba(var(--color-ore), 0.15);
+  color: var(--fg);
 }
 
-/* ── Dark-mode text overrides ──────────────────────────────────────────────── */
-/* Tailwind zinc/slate colors are designed for light mode. Override for void. */
+/* ── Text color corrections ────────────────────────────────────────────────── */
+/* Dark mode: Tailwind's zinc/slate are too dark on void — lighten them */
 .text-zinc-600,
 .text-zinc-700 { color: #A1A1AA !important; }
 .text-zinc-800  { color: #71717A !important; }
@@ -93,13 +141,21 @@ body::after {
 .text-slate-600 { color: #94A3B8 !important; }
 .text-slate-700 { color: #8B98A8 !important; }
 
+/* Light mode: restore native Tailwind values */
+[data-theme="light"] .text-zinc-600 { color: #52525B !important; }
+[data-theme="light"] .text-zinc-700 { color: #3F3F46 !important; }
+[data-theme="light"] .text-zinc-800 { color: #27272A !important; }
+[data-theme="light"] .text-slate-500 { color: #64748B !important; }
+[data-theme="light"] .text-slate-600 { color: #475569 !important; }
+[data-theme="light"] .text-slate-700 { color: #334155 !important; }
+
 /* ── Typography ────────────────────────────────────────────────────────────── */
 .text-label {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #71717A;
+  color: var(--text-subtle);
 }
 
 /* ── Glass Surfaces ────────────────────────────────────────────────────────── */
@@ -109,11 +165,8 @@ body::after {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
 }
-
 .glass-hover:hover {
   background: var(--glass-hover-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 
 /* ── Aurora Gradient Border ────────────────────────────────────────────────── */
@@ -131,19 +184,17 @@ body::after {
   opacity: 0.6;
   transition: opacity 0.2s ease;
 }
-.aurora-border:hover::before {
-  opacity: 1;
-}
+.aurora-border:hover::before { opacity: 1; }
 
-/* ── Aurora Glow Effects ───────────────────────────────────────────────────── */
+/* ── Aurora Glow ───────────────────────────────────────────────────────────── */
 .aurora-glow-hover {
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .aurora-glow-hover:hover {
   box-shadow:
-    0 0 0 1px rgba(0,229,255,0.3),
-    0 0 20px rgba(0,229,255,0.12),
-    0 0 50px rgba(138,43,226,0.08);
+    0 0 0 1px rgba(var(--color-ore), 0.25),
+    0 0 20px rgba(var(--color-ore), 0.10),
+    0 0 50px rgba(138,43,226,0.07);
 }
 
 /* ── Aurora Animated Bar ───────────────────────────────────────────────────── */
@@ -152,19 +203,17 @@ body::after {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%;   }
 }
-
 .aurora-bar {
   background: var(--aurora-gradient-animated);
   background-size: 300% 300%;
   animation: aurora-flow 6s ease infinite;
 }
 
-/* ── Aurora CTA Button ─────────────────────────────────────────────────────── */
+/* ── Aurora CTA Wrapper ────────────────────────────────────────────────────── */
 .aurora-cta-wrap {
   position: relative;
   display: inline-flex;
 }
-
 .aurora-cta-wrap::before {
   content: '';
   position: absolute;
@@ -175,43 +224,46 @@ body::after {
   z-index: 0;
   border-radius: inherit;
 }
+.aurora-cta-wrap > * { position: relative; z-index: 1; }
 
-.aurora-cta-wrap > * {
-  position: relative;
-  z-index: 1;
+/* ── Light mode: tone down aurora CTA ─────────────────────────────────────── */
+[data-theme="light"] .aurora-cta-wrap::before {
+  opacity: 0.75;
 }
 
-/* ── Spec Row Highlight ────────────────────────────────────────────────────── */
+/* ── Spec row ──────────────────────────────────────────────────────────────── */
 .spec-row:hover td,
 .spec-row:hover th {
-  background: rgba(0, 229, 255, 0.04);
+  background: rgba(var(--color-ore), 0.04);
 }
 
 /* ── Background Patterns ───────────────────────────────────────────────────── */
-/* White grid lines on void */
 .bg-crosshatch {
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(128,128,128,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128,128,128,0.04) 1px, transparent 1px);
   background-size: 48px 48px;
 }
-
-/* Dot grid for section headers */
+[data-theme="light"] .bg-crosshatch {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(128,128,128,0.12) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-/* ── Card Hover ────────────────────────────────────────────────────────────── */
+/* ── Card hover ────────────────────────────────────────────────────────────── */
 .card-hover {
   border-left: 2px solid transparent;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 .card-hover:hover {
-  border-left-color: var(--aurora-cyan);
+  border-left-color: rgb(var(--color-ore));
 }
 
-/* ── Utility: rule ─────────────────────────────────────────────────────────── */
+/* ── Misc ──────────────────────────────────────────────────────────────────── */
 .rule-ember {
   height: 2px;
   background: var(--aurora-gradient);
