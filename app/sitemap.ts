@@ -3,6 +3,7 @@ import { getAllProducts } from '@/lib/products'
 import { getAllPersonas } from '@/lib/personas'
 import { getAllComparisonSlugs } from '@/lib/comparisons'
 import { getAllGlossarySlugs } from '@/lib/glossary'
+import { getAllGuideSlugs } from '@/lib/guides'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
@@ -53,5 +54,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages]
+  const guidesIndex: MetadataRoute.Sitemap = [
+    { url: `${BASE}/guides`, lastModified: new Date('2026-04-21'), changeFrequency: 'weekly', priority: 0.85 },
+  ]
+
+  const guidePages: MetadataRoute.Sitemap = getAllGuideSlugs().map(slug => ({
+    url: `${BASE}/guides/${slug}`,
+    lastModified: new Date('2026-04-21'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages, ...guidesIndex, ...guidePages]
 }

@@ -36,6 +36,7 @@ const NAV_LINKS = [
   { href: '/categories/mini-pc',      label: 'Mini PCs'      },
   { href: '/categories/accessory',    label: 'Accessories'   },
   { href: '/best',                    label: 'Buying Guides' },
+  { href: '/guides',                  label: 'Setup Guides'  },
   { href: '/glossary',               label: 'Glossary'      },
   { href: '/compare',                 label: 'Compare'       },
   { href: '/about',                   label: 'About'         },

@@ -10,6 +10,7 @@ import {
 import { getProductBySlug } from '@/lib/products'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import AffiliateButton from '@/components/AffiliateButton'
+import AmazonImage from '@/components/AmazonImage'
 
 export const revalidate = 3600
 
@@ -152,6 +153,14 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
                   key={product.slug}
                   className="flex items-center gap-4 border border-edge bg-ink-1 p-5 hover:border-ore/30 transition-colors"
                 >
+                  <div className="shrink-0 w-16 h-16 bg-white rounded-lg overflow-hidden border border-edge flex items-center justify-center">
+                    <AmazonImage
+                      asin={product.asin}
+                      name={product.name}
+                      size={64}
+                      className="w-full h-full p-1"
+                    />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <Link
                       href={`/products/${product.slug}`}

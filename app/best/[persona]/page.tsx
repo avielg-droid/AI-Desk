@@ -6,6 +6,7 @@ import { getProductBySlug } from '@/lib/products'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import AffiliateButton from '@/components/AffiliateButton'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
+import AmazonImage from '@/components/AmazonImage'
 import type { Product } from '@/types/product'
 
 export const revalidate = 3600
@@ -180,6 +181,16 @@ export default function PersonaPage({ params }: { params: { persona: string } })
                           Top Pick
                         </p>
                       )}
+                    </div>
+
+                    {/* Image */}
+                    <div className="shrink-0 w-20 h-20 bg-white rounded-lg overflow-hidden border border-edge flex items-center justify-center">
+                      <AmazonImage
+                        asin={product.asin}
+                        name={product.name}
+                        size={80}
+                        className="w-full h-full p-1"
+                      />
                     </div>
 
                     {/* Product info */}
