@@ -69,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="9f2772fc-7052-4936-a9e8-475174b113f0" />
       </head>
       <body className="font-sans">
 
