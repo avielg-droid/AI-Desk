@@ -1,37 +1,40 @@
 import { getAllProducts, getFeaturedProducts } from '@/lib/products'
 import ProductCard from '@/components/ProductCard'
 import HardwareMatcher from '@/components/HardwareMatcher'
+import WhyLocalAI from '@/components/WhyLocalAI'
+import PersonaFunnels from '@/components/PersonaFunnels'
+import CloudROICalculator from '@/components/CloudROICalculator'
 import Link from 'next/link'
 
 const CATEGORIES = [
-  { slug: 'gpu',       label: 'GPUs',        sub: 'Discrete cards',       stat: '24 GB VRAM max'  },
+  { slug: 'gpu',       label: 'GPUs',        sub: 'Discrete cards',       stat: '16 GB VRAM max'  },
   { slug: 'mini-pc',  label: 'Mini PCs',     sub: 'Compact workstations', stat: '70B capable'     },
   { slug: 'ai-pc',    label: 'AI PCs',       sub: 'Full desktop rigs',    stat: 'Max throughput'  },
-  { slug: 'accessory',label: 'Accessories',  sub: 'Cooling & peripherals', stat: 'Thermal control' },
+  { slug: 'accessory',label: 'Accessories',  sub: 'Cables, UPS & more',   stat: 'Protect your rig'},
 ]
 
 const GUIDE = [
   {
     num: '01',
     title: 'Memory Capacity First',
-    body: 'VRAM or unified memory determines which models you can run. 7B needs ~4–8 GB; 13B needs ~8–16 GB; 70B needs ~40 GB+.',
+    body: 'VRAM or unified memory determines which models you can run. 7B needs ~8 GB; 13B needs ~16 GB; 70B needs ~40 GB+.',
   },
   {
     num: '02',
     title: 'Bandwidth = Speed',
-    body: 'Tokens/second scales with memory bandwidth. RTX 4090 at 1,008 GB/s runs 70B roughly 15× faster than a budget mini PC at 68 GB/s.',
+    body: 'Tokens/second scales with memory bandwidth. 672 GB/s GDDR7 (RTX 5070) generates roughly 8× more tokens per second than a budget mini PC at 68 GB/s.',
   },
   {
     num: '03',
     title: 'Pick Your OS First',
-    body: 'macOS + Ollama is zero-friction. NVIDIA on Windows/Linux has the broadest software support. AMD GPU = Linux + ROCm only.',
+    body: 'macOS + Ollama is zero-friction. NVIDIA on Windows/Linux has the broadest software support. AMD GPU requires Linux + ROCm for best results.',
   },
 ]
 
 const SIDE_STATS = [
-  { val: '1,008', unit: 'GB/s',   label: 'RTX 4090 bandwidth' },
-  { val: '70B',   unit: 'params', label: 'Max local model'    },
-  { val: '20W',   unit: 'TDP',    label: 'M4 idle draw'       },
+  { val: '672',  unit: 'GB/s',   label: 'RTX 5070 bandwidth' },
+  { val: '70B',  unit: 'params', label: 'Max local model'    },
+  { val: '20W',  unit: 'TDP',    label: 'M4 idle draw'       },
 ]
 
 export default function HomePage() {
@@ -43,17 +46,12 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="relative border border-edge bg-ink-1 min-h-[440px] flex items-center overflow-hidden">
-        {/* Ember top rule */}
         <div className="absolute top-0 left-0 right-0 h-[2px] bg-ore" />
-        {/* Crosshatch grid — subtle industrial texture */}
         <div className="absolute inset-0 bg-crosshatch" />
 
-        {/* Content */}
         <div className="relative px-8 md:px-14 py-16 max-w-4xl">
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">
-              Est. 2026
-            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Est. 2026</span>
             <span className="h-px w-12 bg-ore" />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
               {allProducts.length} Products Reviewed
@@ -81,15 +79,14 @@ export default function HomePage() {
               </svg>
             </Link>
             <Link
-              href="/categories/gpu"
+              href="/categories/mini-pc"
               className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore hover:text-ore transition-colors"
             >
-              GPU Reviews
+              Mini PC Reviews
             </Link>
           </div>
         </div>
 
-        {/* Right side stats */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-6">
           {SIDE_STATS.map(s => (
             <div key={s.val} className="text-right">
@@ -102,6 +99,15 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ── WHY LOCAL AI ── */}
+      <WhyLocalAI />
+
+      {/* ── PERSONA FUNNELS ── */}
+      <PersonaFunnels />
+
+      {/* ── CLOUD vs LOCAL ROI ── */}
+      <CloudROICalculator />
 
       {/* ── CATEGORIES ── */}
       <section>
@@ -151,12 +157,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HARDWARE MATCHER ── */}
+      {/* ── CAN I RUN IT? ── */}
       <HardwareMatcher products={allProducts} />
 
       {/* ── BUYING GUIDE ── */}
       <section className="border border-edge bg-ink-1 overflow-hidden">
-        {/* Ember top rule */}
         <div className="h-[2px] bg-ore" />
         <div className="border-b border-edge px-8 py-5">
           <h2 className="font-display font-800 text-2xl uppercase tracking-tight text-foreground">

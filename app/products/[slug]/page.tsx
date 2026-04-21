@@ -166,16 +166,20 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        {/* Complete Your Setup */}
+        {/* Cross-sell: Don't Bottleneck Your Rig (GPU/PC) or Complete Your Setup (accessory) */}
         {crossSellProducts.length > 0 && (
           <section className="border border-edge bg-ink-1 overflow-hidden">
             <div className="h-[2px] bg-ore" />
             <div className="px-6 py-4 border-b border-edge">
               <h2 className="font-display font-800 text-xl uppercase text-foreground">
-                Complete Your Setup
+                {(product.category === 'gpu' || product.category === 'mini-pc')
+                  ? "Don't Bottleneck Your Rig"
+                  : 'Complete Your Setup'}
               </h2>
               <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-0.5">
-                Recommended accessories
+                {(product.category === 'gpu' || product.category === 'mini-pc')
+                  ? 'Accessories that unlock this hardware\'s full potential'
+                  : 'Recommended accessories'}
               </p>
             </div>
             <div className="divide-y divide-edge">
