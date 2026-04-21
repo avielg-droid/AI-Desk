@@ -9,7 +9,7 @@
   "specs": {
     "chip": "NVIDIA GeForce RTX 5070 (Blackwell)",
     "gpu_cores": 6144,
-    "unified_memory_gb": 12,
+    "vram_gb": 12,
     "memory_bandwidth_gbps": 672,
     "tdp_watts": 150,
     "max_llm_size": "13B (Q4 quantized)",

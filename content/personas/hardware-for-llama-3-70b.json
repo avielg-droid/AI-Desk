@@ -1,35 +1,33 @@
 {
   "slug": "hardware-for-llama-3-70b",
   "title": "Best Hardware for Running Llama 3 70B Locally in 2026",
-  "metaDescription": "What hardware can actually run Llama 3 70B locally? Ranked by tokens/sec, memory capacity, and total cost — RTX 4090, Mac Mini M4 Pro, and RX 7900 XTX compared.",
+  "metaDescription": "What hardware can actually run Llama 3 70B locally? Ranked by tokens/sec and memory capacity — with honest notes on which consumer devices make the cut in 2026.",
   "h1": "Best Hardware for Llama 3 70B Local Inference (2026)",
-  "intro": "Running Llama 3 70B locally requires at least 39GB of memory (at Q4_K_M quantization) and enough bandwidth to keep generation above 5 tokens/sec. In 2026, three consumer setups meet the bar: the NVIDIA RTX 4090 (24GB VRAM, with CPU offloading to RAM), the Mac Mini M4 Pro (64GB unified memory, fully in-memory), and the AMD RX 7900 XTX (24GB VRAM, Linux with ROCm). The Mac Mini M4 Pro is the only single-device consumer option that fits 70B entirely in memory without offloading.",
+  "intro": "Running Llama 3 70B locally requires at least 39GB of accessible memory at Q4_K_M quantization. In 2026, the only consumer device in our lineup that can handle this is the Apple Mac Mini M4 Pro — configured with 64GB unified memory, it fits 70B fully in-memory and delivers 10–18 tokens/sec without offloading. Our current GPU lineup (RTX 5070 at 12GB, RX 9060 XT at 16GB) cannot fit 70B without significant CPU offloading, which drops throughput to 1–3 tok/s — borderline unusable for interactive chat. For 70B inference on a GPU, you need 24GB+ VRAM (RTX 4090-class or multi-GPU) which falls outside our current catalog.",
   "topPickSlug": "apple-mac-mini-m4-pro",
-  "productSlugs": ["apple-mac-mini-m4-pro", "nvidia-rtx-4090", "amd-radeon-rx-7900-xtx"],
+  "productSlugs": ["apple-mac-mini-m4-pro"],
   "productNotes": {
-    "apple-mac-mini-m4-pro": "Only consumer device that fits Llama 3 70B (Q4_K_M, ~39GB) entirely in unified memory without CPU offloading. Delivers 10–18 tok/s — not fast, but steady and reliable. Zero configuration friction on macOS with Ollama. The 64GB model is essential; the 24GB base M4 cannot run 70B comfortably.",
-    "nvidia-rtx-4090": "With 24GB VRAM and 64GB+ system RAM, llama.cpp offloads ~40% of 70B layers to CPU RAM over PCIe 4.0. Result: 5–15 tok/s depending on how many layers fit in VRAM. Faster than the M4 Pro for the GPU-resident layers, slower overall due to PCIe transfer overhead. Best for users who already own the card.",
-    "amd-radeon-rx-7900-xtx": "Same 24GB VRAM situation as the RTX 4090 — requires CPU offloading for 70B. On Linux with ROCm 6.x, delivers 5–13 tok/s. Setup is more complex than the Mac Mini or NVIDIA. Worth it if you already run Linux and need the 24GB pool for other tasks too."
+    "apple-mac-mini-m4-pro": "The only product in our lineup that can run Llama 3 70B meaningfully. Requires the 64GB unified memory configuration — the base 24GB M4 Pro cannot fit 70B at Q4_K_M (~39GB) without heavy offloading. At 64GB, Ollama on macOS runs 70B fully in-memory at 10–18 tok/s. Zero configuration friction compared to GPU + CPU offloading setups."
   },
-  "requirements": "Minimum 39GB total addressable memory (VRAM + RAM for offloading) at Q4_K_M quantization for Llama 3 70B. For in-memory inference without PCIe penalty: 48GB unified memory (Apple Silicon) or 40GB+ VRAM (multi-GPU). PCIe 4.0 or 5.0 required for tolerable offload performance — PCIe 3.0 makes 70B inference painfully slow.",
-  "whyThisMatters": "Llama 3 70B is a qualitatively different class of model than 8B/13B variants — it reasons across longer contexts, follows complex instructions more reliably, and produces more nuanced outputs. The hardware gap is real: machines that run 8B at 60+ tok/s may deliver 2–3 tok/s on 70B with offloading, which is unusable for interactive chat.",
+  "requirements": "Minimum 39GB total accessible memory at Q4_K_M quantization for Llama 3 70B. For in-memory inference without performance penalties: 48GB unified memory (Apple Silicon) or 40GB+ VRAM (multi-GPU or high-end single GPU). GPU options with less than 24GB VRAM require CPU offloading over PCIe, which severely limits throughput.",
+  "whyThisMatters": "Llama 3 70B is a qualitatively different class of model than 8B/13B — it reasons across longer contexts, follows complex instructions more reliably, and produces more nuanced outputs. The hardware gap is real: machines that run 8B at 60+ tok/s may deliver 2–3 tok/s on 70B with offloading, which is unusable for interactive sessions.",
   "faq": [
     {
       "question": "What is the minimum hardware to run Llama 3 70B?",
-      "answer": "You need at least 39GB of accessible memory for Q4_K_M quantization of Llama 3 70B. With an RTX 4090 (24GB VRAM) + 64GB system RAM, llama.cpp will split the model — about 60% in VRAM, 40% in RAM over PCIe. This delivers 5–15 tok/s. The Mac Mini M4 Pro with 64GB unified memory is the cleanest single-device solution at 10–18 tok/s without offloading."
+      "answer": "You need at least 39GB of accessible memory for Q4_K_M quantization. A Mac Mini M4 Pro with 64GB unified memory is the cleanest single-device consumer solution — it fits the entire model in memory and delivers 10–18 tok/s via Ollama. GPU setups need 24GB+ VRAM (like the RTX 4090) plus large system RAM for offloading, adding setup complexity."
+    },
+    {
+      "question": "Can the Mac Mini M4 Pro with 24GB run Llama 3 70B?",
+      "answer": "Not comfortably. Q4_K_M quantized Llama 3 70B is approximately 39GB — more than the 24GB M4 Pro's unified memory. Ollama will offload layers to swap, resulting in very slow generation (1–3 tok/s). For 70B inference, the 64GB M4 Pro configuration is required. The base 24GB M4 Pro is excellent for 7B–13B models."
+    },
+    {
+      "question": "Can current mid-range GPUs like the RTX 5070 run Llama 3 70B?",
+      "answer": "With heavy CPU offloading. The RTX 5070's 12GB VRAM holds roughly 30% of the 70B model — the remaining 70% spills to system RAM over PCIe. Result: 1–4 tok/s, which is impractical for interactive chat. 70B inference on a GPU requires 24GB+ VRAM. For our GPU lineup, stick to 7B–13B models for a usable experience."
     },
     {
       "question": "How many tokens per second can consumer hardware achieve on Llama 3 70B?",
-      "answer": "Current consumer hardware ranges: Mac Mini M4 Pro (64GB): 10–18 tok/s; RTX 4090 with CPU offload: 5–15 tok/s; RX 7900 XTX with CPU offload on Linux: 5–13 tok/s. For comparison, Llama 3 70B via API (Groq) delivers 200–300 tok/s. Local 70B inference is practical for batch tasks and longer-form generation where latency tolerance is higher."
-    },
-    {
-      "question": "Can I run Llama 3 70B on a Mac Mini?",
-      "answer": "Yes, but only the Mac Mini M4 Pro with 64GB unified memory. The base Mac Mini M4 has 16GB or 24GB — not enough for 70B without heavy CPU offloading that drops performance to 1–3 tok/s. The M4 Pro 64GB model fits the Q4_K_M quantized version (approximately 39GB) fully in unified memory and delivers consistent 10–18 tok/s through Ollama."
-    },
-    {
-      "question": "Is two RTX 4070 Super cards better than one RTX 4090 for 70B?",
-      "answer": "In theory, dual RTX 4070 Super (2×12GB = 24GB combined) provides the same VRAM as a single 4090. In practice, NVLink is not available on the 4070 Super — GPUs communicate over PCIe, which limits cross-GPU bandwidth. llama.cpp's tensor parallel support is improving but adds complexity. For 70B inference, a single RTX 4090 with CPU offloading typically outperforms dual 4070 Super due to lower overhead."
+      "answer": "Mac Mini M4 Pro (64GB): 10–18 tok/s fully in-memory. RTX 4090 (24GB) with CPU offload: 5–15 tok/s. Mid-range GPUs (12–16GB) with heavy offload: 1–4 tok/s. For reference, 10 tok/s is usable for interactive chat. Below 5 tok/s, you're better off batching longer prompts and waiting for the full response."
     }
   ],
-  "lastUpdated": "2026-04-19"
+  "lastUpdated": "2026-04-21"
 }

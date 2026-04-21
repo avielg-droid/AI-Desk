@@ -1,35 +1,35 @@
 {
   "slug": "gpu-for-comfyui",
   "title": "Best GPUs for ComfyUI in 2026",
-  "metaDescription": "Top GPU picks for ComfyUI workflows in 2026. Benchmarked on SDXL, Flux.1-dev, and complex node graphs — ranked by VRAM, speed, and CUDA compatibility.",
+  "metaDescription": "Top GPU picks for ComfyUI workflows in 2026. Benchmarked on SDXL, Flux.1-dev, and complex node graphs — ranked by VRAM, speed, and CUDA compatibility. Updated for NVIDIA Blackwell and AMD RDNA 4.",
   "h1": "Best GPUs for ComfyUI (2026)",
-  "intro": "The best GPU for ComfyUI in 2026 is the NVIDIA RTX 4090 — 24GB VRAM means you can run Flux.1-dev at full BF16 precision, stack ControlNet + IP-Adapter + multiple LoRAs simultaneously, and generate SDXL at 1024×1024 in under 2 seconds. For users building complex multi-model workflows where VRAM is the constant bottleneck, the 4090's 24GB is the only consumer GPU that avoids compromise.",
-  "topPickSlug": "nvidia-rtx-4090",
-  "productSlugs": ["nvidia-rtx-4090", "nvidia-rtx-4070-super", "amd-radeon-rx-7900-xtx"],
+  "intro": "The best GPU for ComfyUI in 2026 is the GIGABYTE RTX 5070 WINDFORCE OC — Blackwell's 5th-Gen Tensor Cores and 672 GB/s GDDR7 bandwidth make it the fastest mid-range GPU for SDXL and Flux workflows, with 12GB VRAM handling ControlNet + LoRA stacks comfortably. For complex multi-model pipelines where VRAM is the bottleneck — running Flux.1-dev at higher precision alongside multiple ControlNets — the GIGABYTE RX 9060 XT 16G provides the extra headroom, at the cost of setting up ROCm on Linux.",
+  "topPickSlug": "gigabyte-rtx-5070-windforce",
+  "productSlugs": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"],
   "productNotes": {
-    "nvidia-rtx-4090": "Ideal ComfyUI GPU. CUDA + xformers + flash-attention 2 all supported natively. 24GB VRAM runs Flux.1-dev at BF16 (no quantization required), SDXL with full ControlNet + IP-Adapter + 3 LoRAs simultaneously. Batching 4 SDXL images at once stays under VRAM limit. The reference card for all ComfyUI node developers.",
-    "nvidia-rtx-4070-super": "Strong ComfyUI performer for SDXL workloads. 12GB VRAM handles SDXL with 1–2 ControlNets and multiple LoRAs. Flux.1-dev requires 8-bit quantization (nf4 or fp8) — loses some quality but remains practical. Cannot fit Flux.1-dev at BF16 or SD 3.5 Large without quantization tricks.",
-    "amd-radeon-rx-7900-xtx": "Capable ComfyUI GPU on Linux with ROCm. 24GB VRAM matches the 4090's capacity — runs all models at full precision. ComfyUI's ROCm support is solid on Ubuntu 22.04+ with ROCm 6.x. Some custom nodes that depend on CUDA-specific extensions (xformers, triton) don't work on AMD. Windows performance via DirectML is poor for complex workflows."
+    "gigabyte-rtx-5070-windforce": "Top ComfyUI pick. CUDA + xformers + flash-attention 2 all supported. 12GB GDDR7 runs SDXL with ControlNet + IP-Adapter + multiple LoRAs simultaneously. Flux.1-schnell at full precision, Flux.1-dev with NF4/FP8 quantization. Blackwell's Tensor Cores accelerate every node that uses Tensor operations. The safest choice for maximum custom node compatibility.",
+    "asus-rtx-5070-sff": "Best for SFF ComfyUI rigs. Identical RTX 5070 performance in a compact 2.5-slot form factor. Same CUDA ecosystem, same 12GB GDDR7, same node compatibility. Choose this if building a compact dedicated ComfyUI workstation. The phase-change thermal pad handles sustained generation loads well in smaller cases.",
+    "gigabyte-rx-9060-xt-gaming": "Best VRAM headroom for complex workflows. 16GB GDDR6 lets you stack Flux.1-dev at higher precision, load more ControlNet models simultaneously, and run larger workflows without model swapping. Caveat: some custom nodes depend on CUDA-specific libraries (xformers, triton) that don't work on AMD. ROCm on Linux is required. Best for Linux-native ComfyUI users who need maximum VRAM."
   },
-  "requirements": "Minimum 8GB VRAM for basic SDXL workflows. 12GB for SDXL + ControlNet + LoRA stacking. 16GB for Flux.1-schnell at full precision. 24GB for Flux.1-dev at BF16, SD 3.5 Large, or complex multi-model ComfyUI graphs with multiple ControlNets active simultaneously.",
-  "whyThisMatters": "ComfyUI workflows compound VRAM usage multiplicatively. Each active model node (checkpoint, ControlNet, VAE, IP-Adapter, LoRA adapter) occupies VRAM simultaneously when caching is enabled. A workflow that uses SDXL base + refiner + two ControlNets + IP-Adapter can consume 18–22GB VRAM — well beyond what the RTX 4070 Super's 12GB can hold without model swapping that kills throughput.",
+  "requirements": "Minimum 8GB VRAM for basic SDXL workflows. 12GB for SDXL + ControlNet + LoRA stacking. 16GB for Flux.1-dev at higher precision or complex multi-model ComfyUI graphs with multiple ControlNets active simultaneously.",
+  "whyThisMatters": "ComfyUI workflows compound VRAM usage multiplicatively. Each active model node (checkpoint, ControlNet, VAE, IP-Adapter, LoRA adapter) occupies VRAM simultaneously when caching is enabled. A workflow that uses SDXL base + two ControlNets + IP-Adapter can consume 14–18GB VRAM — beyond what any 12GB card can hold without model swapping that kills throughput.",
   "faq": [
     {
-      "question": "How much VRAM do I need for ComfyUI?",
-      "answer": "For basic SDXL 1.0 generation at 1024×1024: 8GB minimum, 12GB comfortable. For SDXL with ControlNet and multiple LoRAs: 12GB minimum, 16GB recommended. For Flux.1-dev at BF16 precision (no quantization): 20–24GB. For SD 3.5 Large: 18–24GB. If you're running complex multi-model pipelines with ControlNet + IP-Adapter + refiners: 24GB is the practical ceiling for consumer GPUs."
+      "question": "How much VRAM do I need for ComfyUI in 2026?",
+      "answer": "For basic SDXL at 1024×1024: 8GB minimum, 12GB comfortable. For SDXL with ControlNet and multiple LoRAs: 12GB minimum. For Flux.1-schnell at full precision: 12GB. For Flux.1-dev at higher precision or complex multi-ControlNet pipelines: 16GB recommended. Both RTX 5070 variants cover most workflows at 12GB; the RX 9060 XT 16G covers the rest."
     },
     {
-      "question": "Does ComfyUI work with AMD GPUs?",
-      "answer": "Yes, on Linux with ROCm. ComfyUI added official ROCm support and the RX 7900 XTX delivers competitive performance — typically within 10–20% of the RTX 4090 for SDXL and Flux workflows. The caveat is custom nodes: many popular nodes use CUDA-specific libraries (xformers, triton kernels) that don't have ROCm equivalents. On Windows, DirectML works for basic workflows but performance degrades significantly for complex graphs."
+      "question": "Does ComfyUI work with AMD GPUs via ROCm in 2026?",
+      "answer": "Yes, on Linux with ROCm 6.x. ComfyUI's ROCm support is solid for core functionality — SDXL, Flux, VAE, ControlNet all work. The gap is custom nodes: many popular nodes use CUDA-specific libraries (xformers, triton kernels) that don't have ROCm equivalents. If your workflow uses standard nodes only, the RX 9060 XT is viable. If you rely on cutting-edge custom nodes, stick with NVIDIA."
     },
     {
-      "question": "Is the RTX 4090 still worth buying for ComfyUI in 2026?",
-      "answer": "Yes, for professional use. The 4090 is the only consumer GPU that runs Flux.1-dev and SD 3.5 Large at full precision without quantization, handles batching, and has 100% custom node compatibility via CUDA. For hobbyist use or primarily SDXL workflows, the RTX 4070 Super covers 80% of use cases at half the price. The 4090 pays off when you're running batch jobs, training LoRAs, or need maximum VRAM headroom for experimental workflows."
+      "question": "Is the RTX 5070 a good upgrade from the RTX 4070 Super for ComfyUI?",
+      "answer": "Yes. Blackwell's 5th-Gen Tensor Cores and GDDR7 bandwidth improve SDXL generation speed by 30–50% over the 4070 Super. The VRAM stays at 12GB, so model compatibility is the same — but everything runs faster. If you're currently on a 4070 Super and spending hours on batch jobs, the RTX 5070 meaningfully cuts that time."
     },
     {
-      "question": "Can I run ComfyUI on a Mac?",
-      "answer": "Yes, via the MPS (Metal Performance Shaders) backend. ComfyUI runs on Apple Silicon and uses unified memory — the Mac Mini M4 Pro with 64GB can run Flux.1-dev at full precision. However, some custom nodes written for CUDA/ROCm don't work on MPS. For most standard ComfyUI workflows (SDXL, Flux, ControlNet, LoRA), macOS is fully supported and getting better with each ComfyUI update."
+      "question": "Can I run ComfyUI on a compact PC with the ASUS SFF RTX 5070?",
+      "answer": "Yes — that's exactly its design intent. The ASUS Prime RTX 5070 SFF fits Mini-ITX cases where standard 3-slot GPUs won't. Pair it with a compact ITX build for a full-power ComfyUI workstation that takes minimal desk space. Ensure the case has at least one 120mm intake fan for adequate airflow."
     }
   ],
-  "lastUpdated": "2026-04-19"
+  "lastUpdated": "2026-04-21"
 }

@@ -9,7 +9,7 @@
   "specs": {
     "chip": "AMD Radeon RX 9060 XT (RDNA 4)",
     "gpu_cores": 2048,
-    "unified_memory_gb": 16,
+    "vram_gb": 16,
     "memory_bandwidth_gbps": 288,
     "tdp_watts": 150,
     "max_llm_size": "14B (Q4) / 13B (Q8)",
