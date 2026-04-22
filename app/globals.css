@@ -209,7 +209,7 @@ body::after {
   animation: aurora-flow 6s ease infinite;
 }
 
-/* ── Aurora CTA Wrapper ────────────────────────────────────────────────────── */
+/* ── Aurora CTA Wrapper (hero/secondary links only) ───────────────────────── */
 .aurora-cta-wrap {
   position: relative;
   display: inline-flex;
@@ -226,9 +226,46 @@ body::after {
 }
 .aurora-cta-wrap > * { position: relative; z-index: 1; }
 
-/* ── Light mode: tone down aurora CTA ─────────────────────────────────────── */
 [data-theme="light"] .aurora-cta-wrap::before {
-  opacity: 0.75;
+  opacity: 0.5;
+}
+
+/* ── Affiliate Button ──────────────────────────────────────────────────────── */
+/* Dark mode: high-contrast white pill with cyan glow on hover */
+.affiliate-btn {
+  background: #ffffff;
+  color: #09090b;
+  border: 1.5px solid rgba(255,255,255,0.9);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 0px rgba(0,229,255,0);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.affiliate-btn:hover {
+  background: #f0fffe;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.4),
+    0 0 0 2px rgba(0,229,255,0.35),
+    0 0 20px rgba(0,229,255,0.15);
+  transform: translateY(-1px);
+}
+.affiliate-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Light mode: dark pill — trustworthy, high contrast */
+[data-theme="light"] .affiliate-btn {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+[data-theme="light"] .affiliate-btn:hover {
+  background: #1a1a1a;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.2),
+    0 0 0 2px rgba(8,145,178,0.25);
+  transform: translateY(-1px);
 }
 
 /* ── Spec row ──────────────────────────────────────────────────────────────── */

@@ -78,7 +78,7 @@ export default function HomePage() {
             <div className="aurora-cta-wrap group">
               <Link
                 href="/products"
-                className="relative inline-flex items-center gap-3 px-7 py-3 bg-foreground font-mono font-500 text-sm uppercase tracking-widest text-ink-0 group-hover:bg-zinc-100 transition-colors"
+                className="relative inline-flex items-center gap-3 px-7 py-3 bg-foreground font-mono font-500 text-sm uppercase tracking-widest text-ink-0 group-hover:opacity-90 transition-colors"
               >
                 Browse All Products
                 <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>

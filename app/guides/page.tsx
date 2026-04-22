@@ -103,7 +103,7 @@ export default function GuidesIndexPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link href="/best" className="aurora-cta-wrap group">
-            <span className="relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground font-mono text-sm text-ink-0 group-hover:bg-zinc-100 transition-colors">
+            <span className="relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground font-mono text-sm text-ink-0 group-hover:opacity-90 transition-colors">
               Browse Buying Guides →
             </span>
           </Link>
