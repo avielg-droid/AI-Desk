@@ -20,10 +20,9 @@ export default function AffiliateButton({
         target="_blank"
         rel="noopener noreferrer nofollow"
         className={`
-          affiliate-btn
+          view-deal-btn
           inline-flex items-center gap-2
           font-sans font-700 tracking-tight
-          transition-all duration-150
           ${isMd
             ? 'px-7 py-3.5 text-base'
             : 'px-4 py-2.5 text-sm'
