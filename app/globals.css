@@ -9,8 +9,43 @@
   --font-mono:    var(--font-geist-mono);
 }
 
-/* ── Dark Theme (default) — The Void ──────────────────────────────────────── */
+/* ── Light Theme (default) — Ambient Bright ───────────────────────────────── */
 :root {
+  color-scheme: light;
+
+  --bg: #FAFAF9;
+  --fg: #111111;
+
+  --color-ore:     8 145 178;    /* cyan-600 — readable on white */
+  --color-data:    124 58 237;   /* violet-600 */
+  --color-win:     22 163 74;    /* green-600 */
+  --color-loss:    220 38 38;    /* red-600 */
+  --color-ink-0:   255 255 255;
+  --color-ink-1:   248 248 245;
+  --color-ink-2:   240 240 235;
+  --color-ink-3:   228 228 222;
+  --color-edge:    218 218 212;
+  --color-edge-hi: 196 196 190;
+
+  /* Aurora palette */
+  --aurora-cyan:    #00E5FF;
+  --aurora-violet:  #8A2BE2;
+  --aurora-magenta: #FF00FF;
+  --aurora-gradient: linear-gradient(135deg, #00E5FF 0%, #8A2BE2 50%, #FF00FF 100%);
+  --aurora-gradient-animated: linear-gradient(135deg, #00E5FF, #8A2BE2, #FF00FF, #00E5FF);
+
+  /* Glass — solid frosted white on light bg */
+  --glass-bg:       rgba(255,255,255,0.75);
+  --glass-border:   rgba(0,0,0,0.08);
+  --glass-hover-bg: rgba(255,255,255,0.92);
+
+  /* Text */
+  --text-muted:  #52525B;
+  --text-subtle: #71717A;
+}
+
+/* ── Dark Theme — The Void ─────────────────────────────────────────────────── */
+[data-theme="dark"] {
   color-scheme: dark;
 
   --bg: #09090B;
@@ -28,13 +63,6 @@
   --color-edge:    30 30 38;
   --color-edge-hi: 46 46 60;
 
-  /* Aurora palette */
-  --aurora-cyan:    #00E5FF;
-  --aurora-violet:  #8A2BE2;
-  --aurora-magenta: #FF00FF;
-  --aurora-gradient: linear-gradient(135deg, #00E5FF 0%, #8A2BE2 50%, #FF00FF 100%);
-  --aurora-gradient-animated: linear-gradient(135deg, #00E5FF, #8A2BE2, #FF00FF, #00E5FF);
-
   /* Glass */
   --glass-bg:       rgba(255,255,255,0.03);
   --glass-border:   rgba(255,255,255,0.07);
@@ -42,34 +70,6 @@
 
   /* Text */
   --text-muted:  #A1A1AA;
-  --text-subtle: #71717A;
-}
-
-/* ── Light Theme — Ambient Bright ─────────────────────────────────────────── */
-[data-theme="light"] {
-  color-scheme: light;
-
-  --bg: #FAFAF9;
-  --fg: #111111;
-
-  --color-ore:     8 145 178;    /* cyan-600 — readable on white */
-  --color-data:    124 58 237;   /* violet-600 */
-  --color-win:     22 163 74;    /* green-600 */
-  --color-loss:    220 38 38;    /* red-600 */
-  --color-ink-0:   255 255 255;
-  --color-ink-1:   248 248 245;
-  --color-ink-2:   240 240 235;
-  --color-ink-3:   228 228 222;
-  --color-edge:    218 218 212;
-  --color-edge-hi: 196 196 190;
-
-  /* Glass — solid frosted white on light bg */
-  --glass-bg:       rgba(255,255,255,0.75);
-  --glass-border:   rgba(0,0,0,0.08);
-  --glass-hover-bg: rgba(255,255,255,0.92);
-
-  /* Text */
-  --text-muted:  #52525B;
   --text-subtle: #71717A;
 }
 
@@ -87,7 +87,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Aurora ambient mesh — dark mode */
+/* Aurora ambient mesh */
 body::before {
   content: '';
   position: fixed;
@@ -98,10 +98,11 @@ body::before {
     radial-gradient(ellipse 60% 40% at 15% 25%, rgba(0,229,255,0.04) 0%, transparent 70%),
     radial-gradient(ellipse 50% 60% at 85% 15%, rgba(138,43,226,0.04) 0%, transparent 70%),
     radial-gradient(ellipse 70% 50% at 50% 85%, rgba(255,0,255,0.03) 0%, transparent 70%);
+  opacity: 0.35;
   transition: opacity 0.3s ease;
 }
-[data-theme="light"] body::before {
-  opacity: 0.35;
+[data-theme="dark"] body::before {
+  opacity: 1;
 }
 
 /* Grain overlay */
@@ -112,12 +113,12 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  mix-blend-mode: overlay;
-}
-[data-theme="light"] body::after {
   opacity: 0.015;
   mix-blend-mode: multiply;
+}
+[data-theme="dark"] body::after {
+  opacity: 0.03;
+  mix-blend-mode: overlay;
 }
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────────── */
@@ -134,20 +135,12 @@ body::after {
 
 /* ── Text color corrections ────────────────────────────────────────────────── */
 /* Dark mode: Tailwind's zinc/slate are too dark on void — lighten them */
-.text-zinc-600,
-.text-zinc-700 { color: #A1A1AA !important; }
-.text-zinc-800  { color: #71717A !important; }
-.text-slate-500,
-.text-slate-600 { color: #94A3B8 !important; }
-.text-slate-700 { color: #8B98A8 !important; }
-
-/* Light mode: restore native Tailwind values */
-[data-theme="light"] .text-zinc-600 { color: #52525B !important; }
-[data-theme="light"] .text-zinc-700 { color: #3F3F46 !important; }
-[data-theme="light"] .text-zinc-800 { color: #27272A !important; }
-[data-theme="light"] .text-slate-500 { color: #64748B !important; }
-[data-theme="light"] .text-slate-600 { color: #475569 !important; }
-[data-theme="light"] .text-slate-700 { color: #334155 !important; }
+[data-theme="dark"] .text-zinc-600,
+[data-theme="dark"] .text-zinc-700 { color: #A1A1AA !important; }
+[data-theme="dark"] .text-zinc-800  { color: #71717A !important; }
+[data-theme="dark"] .text-slate-500,
+[data-theme="dark"] .text-slate-600 { color: #94A3B8 !important; }
+[data-theme="dark"] .text-slate-700 { color: #8B98A8 !important; }
 
 /* ── Typography ────────────────────────────────────────────────────────────── */
 .text-label {
@@ -226,26 +219,49 @@ body::after {
 }
 .aurora-cta-wrap > * { position: relative; z-index: 1; }
 
-[data-theme="light"] .aurora-cta-wrap::before {
+.aurora-cta-wrap::before {
   opacity: 0.5;
+}
+[data-theme="dark"] .aurora-cta-wrap::before {
+  opacity: 1;
+}
+
+/* ── Nav CTA (internal links — hero, guides, etc.) ────────────────────────── */
+.nav-cta {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.18),
+    0 0 0 2px rgba(8,145,178,0.2);
+}
+.nav-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+[data-theme="dark"] .nav-cta:hover {
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.5),
+    0 0 0 2px rgba(0,229,255,0.2),
+    0 0 20px rgba(0,229,255,0.08);
 }
 
 /* ── Affiliate Button ──────────────────────────────────────────────────────── */
-/* Dark mode: high-contrast white pill with cyan glow on hover */
+/* Light mode (default): dark pill — trustworthy, high contrast */
 .affiliate-btn {
-  background: #ffffff;
-  color: #09090b;
-  border: 1.5px solid rgba(255,255,255,0.9);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 0px rgba(0,229,255,0);
+  background: #111111;
+  color: #ffffff;
+  border: 1.5px solid #111111;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   border-radius: 2px;
   cursor: pointer;
 }
 .affiliate-btn:hover {
-  background: #f0fffe;
+  background: #1a1a1a;
   box-shadow:
-    0 2px 8px rgba(0,0,0,0.4),
-    0 0 0 2px rgba(0,229,255,0.35),
-    0 0 20px rgba(0,229,255,0.15);
+    0 4px 12px rgba(0,0,0,0.2),
+    0 0 0 2px rgba(8,145,178,0.25);
   transform: translateY(-1px);
 }
 .affiliate-btn:active {
@@ -253,19 +269,23 @@ body::after {
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
-/* Light mode: dark pill — trustworthy, high contrast */
-[data-theme="light"] .affiliate-btn {
-  background: #111111;
-  color: #ffffff;
-  border-color: #111111;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+/* Dark mode: white pill with cyan glow on hover */
+[data-theme="dark"] .affiliate-btn {
+  background: #ffffff;
+  color: #09090b;
+  border-color: rgba(255,255,255,0.9);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 0px rgba(0,229,255,0);
 }
-[data-theme="light"] .affiliate-btn:hover {
-  background: #1a1a1a;
+[data-theme="dark"] .affiliate-btn:hover {
+  background: #f0fffe;
   box-shadow:
-    0 4px 12px rgba(0,0,0,0.2),
-    0 0 0 2px rgba(8,145,178,0.25);
+    0 2px 8px rgba(0,0,0,0.4),
+    0 0 0 2px rgba(0,229,255,0.35),
+    0 0 20px rgba(0,229,255,0.15);
   transform: translateY(-1px);
+}
+[data-theme="dark"] .affiliate-btn:active {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 /* ── Spec row ──────────────────────────────────────────────────────────────── */
@@ -277,14 +297,14 @@ body::after {
 /* ── Background Patterns ───────────────────────────────────────────────────── */
 .bg-crosshatch {
   background-image:
-    linear-gradient(rgba(128,128,128,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(128,128,128,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-[data-theme="light"] .bg-crosshatch {
-  background-image:
     linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+[data-theme="dark"] .bg-crosshatch {
+  background-image:
+    linear-gradient(rgba(128,128,128,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128,128,128,0.04) 1px, transparent 1px);
 }
 .bg-dot-grid {
   background-image: radial-gradient(rgba(128,128,128,0.12) 1px, transparent 1px);

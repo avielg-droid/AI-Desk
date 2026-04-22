@@ -102,12 +102,10 @@ export default function GuidesIndexPage() {
           Every guide recommends specific hardware. Our buying guides match you to the right GPU or mini PC for your budget and workload.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/best" className="aurora-cta-wrap group">
-            <span className="relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground font-mono text-sm text-ink-0 group-hover:opacity-90 transition-colors">
-              Browse Buying Guides →
-            </span>
+          <Link href="/best" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-700 text-sm">
+            Browse Buying Guides →
           </Link>
-          <Link href="/products" className="inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors">
+          <Link href="/products" className="nav-cta inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore">
             All Products
           </Link>
         </div>

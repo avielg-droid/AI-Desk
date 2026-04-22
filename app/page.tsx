@@ -75,20 +75,18 @@ export default function HomePage() {
 
           <div className="flex flex-wrap items-center gap-4">
             {/* Primary CTA — aurora bordered */}
-            <div className="aurora-cta-wrap group">
-              <Link
-                href="/products"
-                className="relative inline-flex items-center gap-3 px-7 py-3 bg-foreground font-mono font-500 text-sm uppercase tracking-widest text-ink-0 group-hover:opacity-90 transition-colors"
-              >
-                Browse All Products
-                <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </Link>
-            </div>
+            <Link
+              href="/products"
+              className="affiliate-btn inline-flex items-center gap-3 px-7 py-3.5 font-sans font-700 text-base tracking-tight"
+            >
+              Browse All Products
+              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </Link>
             <Link
               href="/categories/mini-pc"
-              className="inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/50 hover:text-ore transition-colors duration-200"
+              className="nav-cta inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/50 hover:text-ore"
             >
               Mini PC Reviews
             </Link>

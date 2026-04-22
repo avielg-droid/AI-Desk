@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />
         {/* Anti-FOUC: apply stored theme before first paint */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();` }} />
         <script defer src="https://cloud.umami.is/script.js" data-website-id="9f2772fc-7052-4936-a9e8-475174b113f0" />
       </head>
       <body className="font-sans">

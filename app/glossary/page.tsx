@@ -97,12 +97,10 @@ export default function GlossaryIndexPage() {
           Every product page shows benchmarks and specs with inline definitions — hover any term to see what it means.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/products" className="aurora-cta-wrap group">
-            <span className="relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground font-mono text-sm text-ink-0 group-hover:opacity-90 transition-colors">
-              Browse All Products →
-            </span>
+          <Link href="/products" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-700 text-sm">
+            Browse All Products →
           </Link>
-          <Link href="/compare" className="inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors">
+          <Link href="/compare" className="nav-cta inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore">
             Compare Hardware
           </Link>
         </div>
