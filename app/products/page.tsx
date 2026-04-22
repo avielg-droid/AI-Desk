@@ -23,13 +23,31 @@ export default function ProductsPage() {
     <>
       <SchemaMarkup schema={schema} />
       <div>
-        <div className="mb-8">
-          <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">All Reviews</p>
-          <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
-            AI Hardware
-          </h1>
-          <p className="text-zinc-600">{products.length} products reviewed for local AI inference</p>
-        </div>
+        <section className="relative border border-edge overflow-hidden mb-8" style={{ background: 'var(--glass-bg)' }}>
+          <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
+          <div className="absolute inset-0 bg-crosshatch" />
+          <div className="relative px-8 py-10 flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-2">All Reviews</p>
+              <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
+                AI Hardware
+              </h1>
+              <p className="text-zinc-600 text-sm">{products.length} products reviewed for LLM inference &amp; Stable Diffusion</p>
+            </div>
+            <div className="flex gap-6">
+              {[
+                { val: `${products.length}`, label: 'Products' },
+                { val: '16 GB', label: 'Max VRAM tracked' },
+                { val: '70B', label: 'Largest model run' },
+              ].map(s => (
+                <div key={s.label} className="text-right">
+                  <p className="font-mono font-600 text-xl text-ore leading-none">{s.val}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-0.5">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map(product => (
             <ProductCard key={product.slug} product={product} />

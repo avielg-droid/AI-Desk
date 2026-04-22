@@ -28,7 +28,7 @@ export default function AffiliateButton({
             font-mono font-500 uppercase tracking-widest
             bg-foreground text-ink-0
             transition-all duration-200
-            group-hover:bg-zinc-100
+            group-hover:opacity-85
           `}
         >
           {label}

@@ -10,6 +10,7 @@ import ProductHero from '@/components/ProductHero'
 import ComparisonTable from '@/components/ComparisonTable'
 import AffiliateButton from '@/components/AffiliateButton'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
+import AmazonImage from '@/components/AmazonImage'
 
 export const revalidate = 3600
 
@@ -59,19 +60,19 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <SchemaMarkup key={i} schema={schema} />
       ))}
 
-      <div className="flex items-center justify-between mb-6">
+      <div className="mb-6">
         <nav aria-label="Breadcrumb">
-          <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
+          <ol className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-zinc-600">
             <li><a href="/" className="hover:text-ore transition-colors">Home</a></li>
             <li className="text-edge">/</li>
             <li><a href="/products" className="hover:text-ore transition-colors">Products</a></li>
             <li className="text-edge">/</li>
-            <li className="text-zinc-600">{product.name}</li>
+            <li className="text-ore truncate max-w-[200px]">{product.name}</li>
           </ol>
         </nav>
         <time
           dateTime={product.lastUpdated}
-          className="font-mono text-[10px] uppercase tracking-widest text-slate-600"
+          className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 mt-1 block"
         >
           Updated {new Date(product.lastUpdated).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
         </time>
@@ -89,14 +90,6 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-        {/* Bottom line */}
-        <section className="rounded-xl border border-edge bg-ink-1 p-6">
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
-            Bottom Line
-          </h2>
-          <p className="text-zinc-700 leading-relaxed">{product.shortDescription}</p>
-        </section>
-
         {/* Use cases */}
         <section>
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
@@ -104,9 +97,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </h2>
           <ul className="grid sm:grid-cols-2 gap-2">
             {product.useCases.map(uc => (
-              <li key={uc} className="flex items-start gap-3 rounded-lg border border-edge/60 bg-ink-1 px-4 py-3">
+              <li key={uc} className="flex items-start gap-3 border border-edge/60 bg-ink-1 px-4 py-3">
                 <span className="text-win font-mono mt-0.5 shrink-0 text-sm">✓</span>
-                <span className="text-sm text-zinc-700">{uc}</span>
+                <span className="text-sm text-zinc-600">{uc}</span>
               </li>
             ))}
           </ul>
@@ -124,22 +117,22 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <section>
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">Pros &amp; Cons</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-win/20 bg-win/5 p-5">
+            <div className="border border-win/20 bg-win/5 p-5">
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-win mb-4">Pros</h3>
               <ul className="space-y-2.5">
                 {product.pros.map(pro => (
-                  <li key={pro} className="flex gap-3 text-sm text-zinc-700">
+                  <li key={pro} className="flex gap-3 text-sm text-zinc-600">
                     <span className="text-win shrink-0 mt-0.5">+</span>
                     {pro}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-loss/20 bg-loss/5 p-5">
+            <div className="border border-loss/20 bg-loss/5 p-5">
               <h3 className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">Cons</h3>
               <ul className="space-y-2.5">
                 {product.cons.map(con => (
-                  <li key={con} className="flex gap-3 text-sm text-zinc-700">
+                  <li key={con} className="flex gap-3 text-sm text-zinc-600">
                     <span className="text-loss shrink-0 mt-0.5">−</span>
                     {con}
                   </li>
@@ -147,11 +140,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </ul>
             </div>
           </div>
+          {/* Repeat CTA after pros/cons — high purchase intent moment */}
+          <div className="mt-5 flex items-center gap-4 flex-wrap">
+            <AffiliateButton href={product.affiliateUrl} size="sm" />
+            <span className="font-mono text-sm text-foreground">{product.priceDisplay}</span>
+          </div>
         </section>
 
         {/* Anti-Sell */}
         {product.notFor && product.notFor.length > 0 && (
-          <section className="rounded-xl border border-loss/20 bg-loss/5 p-6">
+          <section className="border border-loss/20 bg-loss/5 p-6">
             <h2 className="font-display font-800 text-xl uppercase text-foreground mb-1">
               Who Should NOT Buy This
             </h2>
@@ -160,7 +158,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </p>
             <ul className="space-y-2.5">
               {product.notFor.map(item => (
-                <li key={item} className="flex gap-3 text-sm text-zinc-700">
+                <li key={item} className="flex gap-3 text-sm text-zinc-600">
                   <span className="text-loss shrink-0 mt-0.5 font-mono">✕</span>
                   {item}
                 </li>
@@ -170,11 +168,14 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         {/* Verdict */}
-        <section className="rounded-xl border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
+        <section className="border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/60 to-transparent" />
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">Our Verdict</h2>
-          <p className="text-zinc-700 leading-relaxed mb-6">{product.verdict}</p>
-          <AffiliateButton href={product.affiliateUrl} />
+          <p className="text-zinc-600 leading-relaxed mb-6">{product.verdict}</p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <AffiliateButton href={product.affiliateUrl} />
+            <span className="font-mono text-lg text-foreground">{product.priceDisplay}</span>
+          </div>
         </section>
 
         {/* FAQ */}
@@ -184,7 +185,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </h2>
           <div className="space-y-1">
             {product.faq.map((item, i) => (
-              <div key={item.question} className="rounded-xl border border-edge bg-ink-1 p-5">
+              <div key={item.question} className="border border-edge bg-ink-1 p-5">
                 <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
@@ -219,10 +220,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   className="flex items-center gap-4 px-6 py-4 hover:bg-ink-2 transition-colors group"
                 >
                   <div className="w-14 h-14 shrink-0 bg-white border border-edge flex items-center justify-center overflow-hidden">
-                    {item.image && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
-                    )}
+                    <AmazonImage asin={item.asin} name={item.name} size={56} compact className="w-full h-full p-1" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-sans font-600 text-sm text-foreground group-hover:text-ore transition-colors truncate">
@@ -252,7 +250,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <Link
                   key={p.slug}
                   href={`/best/${p.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 border border-edge bg-ink-1 font-mono text-xs tracking-wide text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
                 >
                   {p.title} →
                 </Link>
@@ -275,7 +273,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <Link
                     key={s}
                     href={`/compare/${s}`}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-edge bg-ink-1 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 border border-edge bg-ink-1 font-mono text-xs tracking-wide text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
                   >
                     vs {label} →
                   </Link>

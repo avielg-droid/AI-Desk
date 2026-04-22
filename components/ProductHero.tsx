@@ -55,11 +55,16 @@ export default function ProductHero({ product }: { product: Product }) {
             {product.name}
           </h1>
 
-          {/* Rating */}
-          <div className="flex items-center gap-3 mb-5">
-            <StarRating rating={product.rating} />
-            <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">
-              Editorial rating
+          {/* Rating + Price */}
+          <div className="flex items-center gap-4 mb-5 flex-wrap">
+            <div className="flex items-center gap-3">
+              <StarRating rating={product.rating} />
+              <span className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">
+                Editorial rating
+              </span>
+            </div>
+            <span className="font-mono text-xl font-600 text-foreground">
+              {product.priceDisplay}
             </span>
           </div>
 

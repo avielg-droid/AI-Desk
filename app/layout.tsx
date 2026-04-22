@@ -9,6 +9,7 @@ import CookieConsent from '@/components/CookieConsent'
 import ThemeToggle from '@/components/ThemeToggle'
 import MobileNav from '@/components/MobileNav'
 import DesktopNav from '@/components/DesktopNav'
+import BackToTop from '@/components/BackToTop'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -151,6 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
 
+        <BackToTop />
         <CookieConsent />
         <Analytics />
       </body>

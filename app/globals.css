@@ -263,6 +263,12 @@ body::after {
   border-left-color: rgb(var(--color-ore));
 }
 
+/* ── Focus visible ─────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 1px solid rgb(var(--color-ore));
+  outline-offset: 2px;
+}
+
 /* ── Misc ──────────────────────────────────────────────────────────────────── */
 .rule-ember {
   height: 2px;

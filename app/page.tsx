@@ -96,7 +96,7 @@ export default function HomePage() {
         </div>
 
         {/* Side stats */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-6">
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-end gap-6">
           {SIDE_STATS.map(s => (
             <div key={s.val} className="text-right">
               <p className="font-mono font-500 text-2xl text-ore leading-none">
@@ -130,7 +130,7 @@ export default function HomePage() {
               <p className="font-display font-800 text-xl uppercase text-foreground mb-1 group-hover:text-ore transition-colors">
                 {cat.label}
               </p>
-              <p className="font-body text-xs text-slate-500 mb-4">{cat.sub}</p>
+              <p className="font-sans text-xs text-slate-500 mb-4">{cat.sub}</p>
               <p className="font-mono text-[10px] text-ore mt-auto">{cat.stat}</p>
             </Link>
           ))}
@@ -176,7 +176,7 @@ export default function HomePage() {
           <h2 className="font-display font-800 text-2xl uppercase tracking-tight text-foreground">
             How to Choose AI Hardware
           </h2>
-          <p className="font-body text-sm text-slate-500 mt-1">
+          <p className="font-sans text-sm text-slate-500 mt-1">
             Three principles that determine local AI performance
           </p>
         </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
               <h3 className="font-display font-800 text-xl uppercase text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="font-body text-sm text-zinc-600 leading-relaxed">{item.body}</p>
+              <p className="font-sans text-sm text-zinc-600 leading-relaxed">{item.body}</p>
             </div>
           ))}
         </div>

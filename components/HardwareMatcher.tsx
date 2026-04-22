@@ -87,7 +87,7 @@ function TaskCard({
         </p>
         <span className={`font-mono text-[9px] uppercase tracking-widest shrink-0 mt-0.5 px-1.5 py-0.5 border transition-colors
           ${selected
-            ? 'text-ore border-ore/30 bg-ore/8'
+            ? 'text-ore border-ore/30 bg-ore/10'
             : 'text-zinc-600 border-edge'
           }`}>
           ≥{task.minGb} GB
@@ -98,7 +98,7 @@ function TaskCard({
 
       {selected && (
         <p className="font-mono text-[9px] uppercase tracking-widest text-ore/60 mt-3">
-          ▶ Scanning hardware…
+          ▶ Showing matches below
         </p>
       )}
     </button>
@@ -124,7 +124,7 @@ function MatchCard({ product, memGb }: { product: Product; memGb: number }) {
       <div className="p-5">
         {/* Status + memory */}
         <div className="flex items-start justify-between gap-2 mb-3">
-          <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-win border border-win/30 bg-win/8 px-2 py-0.5">
+          <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-win border border-win/30 bg-win/10 px-2 py-0.5">
             ✓ Compatible
           </span>
           <span className="font-mono text-[10px] text-ore">{memoryLabel(product)}</span>
@@ -172,7 +172,7 @@ function MatchCard({ product, memGb }: { product: Product; memGb: number }) {
 
 function IncompatibleCard({ product }: { product: Product }) {
   return (
-    <div className="relative border border-edge/30 bg-ink-1/50 overflow-hidden opacity-40">
+    <div className="relative border border-edge/30 bg-ink-1/50 overflow-hidden opacity-60">
       <div className="p-5">
         <div className="flex items-start justify-between gap-2 mb-3">
           <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-loss/70 border border-loss/20 bg-loss/5 px-2 py-0.5">
@@ -282,7 +282,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
                 </p>
               </div>
               {compatible.length > 0 && (
-                <span className="font-mono text-[9px] uppercase tracking-widest text-win border border-win/30 bg-win/8 px-2 py-1">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-win border border-win/30 bg-win/10 px-2 py-1">
                   {compatible.length} compatible
                 </span>
               )}
