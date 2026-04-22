@@ -57,13 +57,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans">
 
-        {/* Affiliate disclosure strip */}
-        <div className="bg-ink-0 border-b border-edge">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex justify-center">
-            <AffiliateDisclosure className="font-mono text-[10px] text-zinc-800" />
-          </div>
-        </div>
-
         {/* Nav */}
         <header className="sticky top-0 z-40 bg-ink-0/90 backdrop-blur-md border-b border-edge">
           {/* Aurora top rule */}

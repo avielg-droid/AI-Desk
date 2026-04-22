@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import type { Product } from '@/types/product'
-import AffiliateButton from './AffiliateButton'
 import AmazonImage from './AmazonImage'
 import StarRating from './StarRating'
 
@@ -38,7 +37,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Product image — white panel pops on void */}
       <Link
         href={`/products/${product.slug}`}
-        className="block bg-white border-b border-edge p-6 flex items-center justify-center min-h-[160px]"
+        className="block bg-white border-b border-edge p-4 flex items-center justify-center min-h-[120px] md:min-h-[160px]"
       >
         <AmazonImage
           asin={product.asin}
@@ -84,7 +83,15 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
-        <AffiliateButton href={product.affiliateUrl} size="sm" />
+        <a
+          href={product.affiliateUrl}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          className="inline-flex items-center gap-2 w-full justify-between px-4 py-2.5 border border-edge hover:border-ore/40 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore transition-colors"
+        >
+          <span>Check Price</span>
+          <span className="font-sans font-600 text-foreground text-sm">{product.priceDisplay}</span>
+        </a>
       </div>
     </article>
   )

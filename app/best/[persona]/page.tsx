@@ -112,10 +112,10 @@ export default function PersonaPage({ params }: { params: { persona: string } })
       <div className="space-y-12">
 
         {/* ── HERO ── */}
-        <section className="relative rounded-2xl overflow-hidden border border-edge bg-ink-1 py-12 px-8 md:px-14">
+        <section className="relative overflow-hidden border border-edge bg-ink-1 py-12 px-8 md:px-14">
           <div className="absolute inset-0 bg-dot-grid opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-br from-ink-1 via-ink-1/90 to-ore/5" />
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-ore to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
 
           <div className="relative max-w-3xl">
             <div className="flex items-center gap-3 mb-4">

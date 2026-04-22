@@ -56,7 +56,7 @@ export default function MobileNav() {
         style={{
           position: 'fixed', top: 0, right: 0, bottom: 0,
           width: '280px', zIndex: 9999,
-          background: 'var(--color-bg, #09090b)',
+          background: 'var(--bg, #09090b)',
           borderLeft: '1px solid rgba(255,255,255,0.08)',
           display: 'flex', flexDirection: 'column',
           transform: open ? 'translateX(0)' : 'translateX(100%)',

@@ -56,7 +56,7 @@ export default function WhyLocalAI() {
         {PILLARS.map((p) => (
           <div key={p.id} className="relative bg-ink-1 p-8 flex flex-col group">
             {/* Number watermark */}
-            <span className="absolute top-6 right-6 font-mono text-4xl font-500 text-ore/8 select-none leading-none">
+            <span className="absolute top-6 right-6 font-mono text-4xl font-500 text-ore/10 select-none leading-none">
               {p.id}
             </span>
 

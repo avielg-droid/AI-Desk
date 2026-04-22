@@ -258,12 +258,9 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
 
         {/* Results */}
         {!activeTask && (
-          <div className="border border-dashed border-edge/50 py-12 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 mb-2">
-              Awaiting input
-            </p>
-            <p className="text-sm text-zinc-600">Select a workload above to scan compatible hardware</p>
-          </div>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">
+            Select a workload above to see compatible hardware
+          </p>
         )}
 
         {activeTask && (

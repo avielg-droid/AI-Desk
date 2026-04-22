@@ -199,7 +199,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Cross-sell: Don't Bottleneck Your Rig (GPU/PC) or Complete Your Setup (accessory) */}
         {crossSellProducts.length > 0 && (
           <section className="border border-edge bg-ink-1 overflow-hidden">
-            <div className="h-[2px] bg-ore" />
+            <div className="h-[2px] aurora-bar" />
             <div className="px-6 py-4 border-b border-edge">
               <h2 className="font-display font-800 text-xl uppercase text-foreground">
                 {(product.category === 'gpu' || product.category === 'mini-pc')
