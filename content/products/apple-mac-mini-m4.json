@@ -17,7 +17,9 @@
     "max_llm_size": "13B (Q4 quantized)",
     "form_factor": "Mini PC",
     "tokens_per_second_7b": 42,
-    "tokens_per_second_13b": 22
+    "tokens_per_second_13b": 22,
+    "architecture": "Apple Silicon (M4)",
+    "cooling": "Fanless + blower"
   },
   "useCases": [
     "Local LLM inference for 7B models (Llama 3, Phi-3, Gemma)",

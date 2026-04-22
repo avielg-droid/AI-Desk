@@ -1,5 +1,7 @@
 export interface ProductSpec {
   chip?: string
+  architecture?: string          // e.g. 'NVIDIA Blackwell', 'AMD RDNA 4', 'Apple Silicon M4 Pro'
+  cooling?: string               // e.g. 'Triple-fan active', 'Single blower', 'Fanless + blower'
   cpu_cores?: number
   gpu_cores?: number
   unified_memory_gb?: number

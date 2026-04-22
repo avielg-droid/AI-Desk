@@ -4,6 +4,7 @@ import { getAllProducts } from '@/lib/products'
 import { getAllComparisonSlugs, parseComparisonSlug, memLabel } from '@/lib/comparisons'
 import { buildBreadcrumbSchema, buildItemListSchema } from '@/lib/schema'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import CompareSelector from '@/components/CompareSelector'
 
 export const revalidate = 3600
 
@@ -74,7 +75,21 @@ export default function CompareHubPage() {
         </p>
       </div>
 
-      {/* Grouped sections */}
+      {/* ── Interactive Compare Tool ── */}
+      <section className="relative border border-edge overflow-hidden mb-12" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(12px)' }}>
+        <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
+        <div className="absolute inset-0 bg-crosshatch" />
+        <div className="relative px-6 py-8">
+          <div className="flex items-center gap-3 mb-6">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Live Compare Tool</p>
+            <span className="h-px flex-1 bg-edge" />
+            <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">AI-native metrics</span>
+          </div>
+          <CompareSelector products={products} />
+        </div>
+      </section>
+
+      {/* ── Grouped sections ── */}
       {[
         { label: 'GPU vs GPU', items: gpuVsGpu, badge: 'Max Performance' },
         { label: 'GPU vs Mini PC', items: gpuVsMini, badge: 'Power vs Simplicity' },

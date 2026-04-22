@@ -16,7 +16,9 @@
     "form_factor": "GPU",
     "tokens_per_second_7b": 118,
     "tokens_per_second_13b": 68,
-    "image_gen_sdxl_seconds": 2.5
+    "image_gen_sdxl_seconds": 2.5,
+    "architecture": "NVIDIA Blackwell (GB205)",
+    "cooling": "Triple-fan active"
   },
   "useCases": [
     "Stable Diffusion and SDXL image generation",

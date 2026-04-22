@@ -16,7 +16,9 @@
     "form_factor": "GPU",
     "tokens_per_second_7b": 88,
     "tokens_per_second_13b": 50,
-    "image_gen_sdxl_seconds": 4.0
+    "image_gen_sdxl_seconds": 4.0,
+    "architecture": "AMD RDNA 4 (Navi 48)",
+    "cooling": "Triple-fan active"
   },
   "useCases": [
     "Large local LLM inference (13B\u201314B models with full GPU acceleration)",
