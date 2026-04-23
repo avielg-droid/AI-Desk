@@ -93,8 +93,14 @@ export default function ProductHero({ product }: { product: Product }) {
             </div>
           )}
 
-          <div className="mt-auto">
+          <div className="mt-auto flex items-center gap-5 flex-wrap">
             <AffiliateButton href={product.affiliateUrl} />
+            <a
+              href="#verdict"
+              className="font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-ore transition-colors"
+            >
+              Skip to verdict ↓
+            </a>
           </div>
         </div>
       </div>

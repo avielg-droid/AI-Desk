@@ -2,35 +2,88 @@
   "slug": "run-deepseek-r1-locally-hardware",
   "title": "Can You Run DeepSeek R1 Locally? Hardware Requirements",
   "headline": "Running DeepSeek R1 Locally: Which Hardware Can Handle It?",
-  "description": "DeepSeek R1 hardware requirements for local inference. Which GPU or mini PC can run the 7B, 14B, 32B, and 671B variants — with real performance numbers.",
+  "description": "DeepSeek R1 hardware requirements for local inference. Which GPU or mini PC can run the 7B, 14B, 32B, and 671B variants \u2014 with real performance numbers.",
   "publishedAt": "2026-04-22",
   "updatedAt": "2026-04-22",
   "category": "how-to",
-  "tags": ["deepseek", "llm", "hardware", "ollama", "r1"],
+  "tags": [
+    "deepseek",
+    "llm",
+    "hardware",
+    "ollama",
+    "r1"
+  ],
   "featured": false,
   "readingTimeMinutes": 6,
   "intro": "DeepSeek R1 went viral for matching GPT-4o reasoning at a fraction of the training cost. Now everyone wants to run it locally. The good news: the distilled variants (7B, 14B, 32B) run on consumer hardware. The bad news: the full 671B model needs enterprise-grade memory. Here's exactly what you need for each variant.",
   "content": [
+    {
+      "type": "callout",
+      "variant": "verdict",
+      "html": "<strong>TL;DR:</strong> DeepSeek R1 7B runs on 8 GB VRAM, 14B needs 12 GB, 32B needs 24 GB. The full 671B model is cloud-only. Best local pick: <strong>R1 14B Q4</strong> on an RTX 5070 \u2014 strong reasoning at 90+ t/s."
+    },
     {
       "type": "h2",
       "text": "DeepSeek R1 Model Variants and Their Hardware Requirements"
     },
     {
       "type": "table",
-      "headers": ["Model", "Parameters", "VRAM (Q4)", "Min Hardware", "Speed (est.)"],
+      "headers": [
+        "Model",
+        "Parameters",
+        "VRAM (Q4)",
+        "Min Hardware",
+        "Speed (est.)"
+      ],
       "rows": [
-        ["DeepSeek-R1-Distill-Qwen-1.5B", "1.5B", "~1 GB", "Any GPU or CPU", "Fast on anything"],
-        ["DeepSeek-R1-Distill-Qwen-7B", "7B", "~4 GB", "6 GB+ VRAM", "40–120 t/s on GPU"],
-        ["DeepSeek-R1-Distill-Llama-8B", "8B", "~5 GB", "8 GB+ VRAM", "35–100 t/s on GPU"],
-        ["DeepSeek-R1-Distill-Qwen-14B", "14B", "~8 GB", "10 GB+ VRAM", "20–60 t/s on GPU"],
-        ["DeepSeek-R1-Distill-Qwen-32B", "32B", "~19 GB", "24 GB+ VRAM or 32 GB RAM", "5–20 t/s"],
-        ["DeepSeek-R1 (full)", "671B MoE", "~400 GB active", "Multiple A100s or H100s", "Not feasible at home"]
+        [
+          "DeepSeek-R1-Distill-Qwen-1.5B",
+          "1.5B",
+          "~1 GB",
+          "Any GPU or CPU",
+          "Fast on anything"
+        ],
+        [
+          "DeepSeek-R1-Distill-Qwen-7B",
+          "7B",
+          "~4 GB",
+          "6 GB+ VRAM",
+          "40\u2013120 t/s on GPU"
+        ],
+        [
+          "DeepSeek-R1-Distill-Llama-8B",
+          "8B",
+          "~5 GB",
+          "8 GB+ VRAM",
+          "35\u2013100 t/s on GPU"
+        ],
+        [
+          "DeepSeek-R1-Distill-Qwen-14B",
+          "14B",
+          "~8 GB",
+          "10 GB+ VRAM",
+          "20\u201360 t/s on GPU"
+        ],
+        [
+          "DeepSeek-R1-Distill-Qwen-32B",
+          "32B",
+          "~19 GB",
+          "24 GB+ VRAM or 32 GB RAM",
+          "5\u201320 t/s"
+        ],
+        [
+          "DeepSeek-R1 (full)",
+          "671B MoE",
+          "~400 GB active",
+          "Multiple A100s or H100s",
+          "Not feasible at home"
+        ]
       ]
     },
     {
       "type": "callout",
       "variant": "info",
-      "html": "The distilled variants are trained to reproduce R1's reasoning behavior in a smaller model. <strong>DeepSeek-R1-Distill-Qwen-32B performs close to the full 671B model</strong> on most benchmarks — and it runs on consumer hardware."
+      "html": "The distilled variants are trained to reproduce R1's reasoning behavior in a smaller model. <strong>DeepSeek-R1-Distill-Qwen-32B performs close to the full 671B model</strong> on most benchmarks \u2014 and it runs on consumer hardware."
     },
     {
       "type": "h2",
@@ -42,7 +95,7 @@
     },
     {
       "type": "p",
-      "html": "The RTX 5070 comfortably handles <strong>DeepSeek-R1-Distill-Qwen-14B at Q4</strong> (8 GB, leaving 4 GB headroom for context). The 7B and 8B distills run fast — expect 80–120 tokens/second. The 32B distill requires CPU offloading: you'd run about 12 layers on GPU, rest on system RAM, landing at ~8–12 t/s."
+      "html": "The RTX 5070 comfortably handles <strong>DeepSeek-R1-Distill-Qwen-14B at Q4</strong> (8 GB, leaving 4 GB headroom for context). The 7B and 8B distills run fast \u2014 expect 80\u2013120 tokens/second. The 32B distill requires CPU offloading: you'd run about 12 layers on GPU, rest on system RAM, landing at ~8\u201312 t/s."
     },
     {
       "type": "h3",
@@ -50,7 +103,7 @@
     },
     {
       "type": "p",
-      "html": "The Mac Mini M4 Pro is the best consumer option for DeepSeek R1 32B. With 24 GB unified memory and 273 GB/s bandwidth, it runs the 32B distill at roughly <strong>15–20 tokens/second</strong> — fully usable for extended reasoning sessions. The 7B distill runs at ~65 t/s."
+      "html": "The Mac Mini M4 Pro is the best consumer option for DeepSeek R1 32B. With 24 GB unified memory and 273 GB/s bandwidth, it runs the 32B distill at roughly <strong>15\u201320 tokens/second</strong> \u2014 fully usable for extended reasoning sessions. The 7B distill runs at ~65 t/s."
     },
     {
       "type": "h3",
@@ -58,7 +111,7 @@
     },
     {
       "type": "p",
-      "html": "The base Mac Mini M4 handles the 7B and 8B distills well (40–50 t/s). The 14B distill runs at ~22 t/s with 16 GB. The 32B distill is too large — it would need to spill into swap, dropping performance to unusable levels."
+      "html": "The base Mac Mini M4 handles the 7B and 8B distills well (40\u201350 t/s). The 14B distill runs at ~22 t/s with 16 GB. The 32B distill is too large \u2014 it would need to spill into swap, dropping performance to unusable levels."
     },
     {
       "type": "h3",
@@ -66,7 +119,7 @@
     },
     {
       "type": "p",
-      "html": "The 7B distill runs on any mini PC — expect 8–12 t/s on GMKtec NucBox M5 Pro, which is slow but usable for non-interactive tasks. The 14B distill is uncomfortable. If you're on x86 and want DeepSeek R1 quality, the 7B distill is your only comfortable option."
+      "html": "The 7B distill runs on any mini PC \u2014 expect 8\u201312 t/s on GMKtec NucBox M5 Pro, which is slow but usable for non-interactive tasks. The 14B distill is uncomfortable. If you're on x86 and want DeepSeek R1 quality, the 7B distill is your only comfortable option."
     },
     {
       "type": "h2",
@@ -75,26 +128,62 @@
     {
       "type": "code",
       "lang": "bash",
-      "text": "# Install Ollama (if not already installed)\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Pull DeepSeek R1 distill — start with 7B\nollama pull deepseek-r1:7b\n\n# Run it\nollama run deepseek-r1:7b\n\n# For 14B (needs 10+ GB VRAM)\nollama pull deepseek-r1:14b\n\n# For 32B (needs 24+ GB RAM or unified memory)\nollama pull deepseek-r1:32b"
+      "text": "# Install Ollama (if not already installed)\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Pull DeepSeek R1 distill \u2014 start with 7B\nollama pull deepseek-r1:7b\n\n# Run it\nollama run deepseek-r1:7b\n\n# For 14B (needs 10+ GB VRAM)\nollama pull deepseek-r1:14b\n\n# For 32B (needs 24+ GB RAM or unified memory)\nollama pull deepseek-r1:32b"
     },
     {
       "type": "h2",
-      "text": "DeepSeek R1 vs Other Local Models — Is It Worth It?"
+      "text": "DeepSeek R1 vs Other Local Models \u2014 Is It Worth It?"
     },
     {
       "type": "table",
-      "headers": ["Model", "Size", "Reasoning Quality", "Speed (7B equiv.)", "Best For"],
+      "headers": [
+        "Model",
+        "Size",
+        "Reasoning Quality",
+        "Speed (7B equiv.)",
+        "Best For"
+      ],
       "rows": [
-        ["DeepSeek-R1-Distill 7B", "7B", "★★★★☆", "High", "Fast reasoning tasks"],
-        ["DeepSeek-R1-Distill 32B", "32B", "★★★★★", "Medium", "Complex reasoning"],
-        ["Llama 3.3 70B Q4", "70B", "★★★★☆", "Low", "General capability"],
-        ["Qwen2.5 14B", "14B", "★★★★☆", "High", "Balanced performance"],
-        ["Mistral 7B", "7B", "★★★☆☆", "High", "Fast, general use"]
+        [
+          "DeepSeek-R1-Distill 7B",
+          "7B",
+          "\u2605\u2605\u2605\u2605\u2606",
+          "High",
+          "Fast reasoning tasks"
+        ],
+        [
+          "DeepSeek-R1-Distill 32B",
+          "32B",
+          "\u2605\u2605\u2605\u2605\u2605",
+          "Medium",
+          "Complex reasoning"
+        ],
+        [
+          "Llama 3.3 70B Q4",
+          "70B",
+          "\u2605\u2605\u2605\u2605\u2606",
+          "Low",
+          "General capability"
+        ],
+        [
+          "Qwen2.5 14B",
+          "14B",
+          "\u2605\u2605\u2605\u2605\u2606",
+          "High",
+          "Balanced performance"
+        ],
+        [
+          "Mistral 7B",
+          "7B",
+          "\u2605\u2605\u2605\u2606\u2606",
+          "High",
+          "Fast, general use"
+        ]
       ]
     },
     {
       "type": "p",
-      "html": "DeepSeek R1 distills are best for tasks requiring <strong>explicit reasoning chains</strong> — math problems, logical deduction, code debugging. For general conversation and writing, Llama 3.3 or Qwen2.5 may feel more natural. Run both and see what fits your workflow."
+      "html": "DeepSeek R1 distills are best for tasks requiring <strong>explicit reasoning chains</strong> \u2014 math problems, logical deduction, code debugging. For general conversation and writing, Llama 3.3 or Qwen2.5 may feel more natural. Run both and see what fits your workflow."
     },
     {
       "type": "h2",
@@ -102,7 +191,7 @@
     },
     {
       "type": "p",
-      "html": "Technically possible with extreme setups — but not practical. The full 671B model uses a Mixture-of-Experts architecture where only ~37B parameters are active per token. But loading the full model requires roughly <strong>400 GB of memory</strong> (at Q4 quantization). That means either 16× 32 GB GPUs or a machine with 512 GB+ of RAM running at CPU speeds."
+      "html": "Technically possible with extreme setups \u2014 but not practical. The full 671B model uses a Mixture-of-Experts architecture where only ~37B parameters are active per token. But loading the full model requires roughly <strong>400 GB of memory</strong> (at Q4 quantization). That means either 16\u00d7 32 GB GPUs or a machine with 512 GB+ of RAM running at CPU speeds."
     },
     {
       "type": "p",
@@ -118,15 +207,15 @@
   "faq": [
     {
       "question": "What is the best DeepSeek R1 model to run locally?",
-      "answer": "DeepSeek-R1-Distill-Qwen-32B is the best quality you can get on consumer hardware. If you have 24+ GB of unified memory (Mac Mini M4 Pro) or 32+ GB system RAM, it runs at usable speeds. For GPU setups with 12 GB VRAM, the 14B distill is the sweet spot — fits fully in VRAM and delivers excellent reasoning."
+      "answer": "DeepSeek-R1-Distill-Qwen-32B is the best quality you can get on consumer hardware. If you have 24+ GB of unified memory (Mac Mini M4 Pro) or 32+ GB system RAM, it runs at usable speeds. For GPU setups with 12 GB VRAM, the 14B distill is the sweet spot \u2014 fits fully in VRAM and delivers excellent reasoning."
     },
     {
       "question": "How long does DeepSeek R1 take to think before answering?",
-      "answer": "R1 generates a 'thinking' section before its final answer — this can be 200–2000 tokens. At 65 t/s (Mac Mini M4 Pro), a medium reasoning chain takes 3–30 seconds before the answer starts. At 12 t/s (budget PC), the same chain takes 16–160 seconds. Faster hardware makes R1 much more pleasant to use."
+      "answer": "R1 generates a 'thinking' section before its final answer \u2014 this can be 200\u20132000 tokens. At 65 t/s (Mac Mini M4 Pro), a medium reasoning chain takes 3\u201330 seconds before the answer starts. At 12 t/s (budget PC), the same chain takes 16\u2013160 seconds. Faster hardware makes R1 much more pleasant to use."
     },
     {
       "question": "Is DeepSeek R1 safe to run locally?",
-      "answer": "The distilled models are open-source weights published on Hugging Face. Running them locally means your prompts never leave your machine — there's no telemetry or data collection in the model weights themselves. This is one of the key reasons to prefer local inference with models like DeepSeek R1."
+      "answer": "The distilled models are open-source weights published on Hugging Face. Running them locally means your prompts never leave your machine \u2014 there's no telemetry or data collection in the model weights themselves. This is one of the key reasons to prefer local inference with models like DeepSeek R1."
     }
   ]
 }

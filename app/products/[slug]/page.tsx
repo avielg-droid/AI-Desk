@@ -11,6 +11,7 @@ import ComparisonTable from '@/components/ComparisonTable'
 import AffiliateButton from '@/components/AffiliateButton'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import AmazonImage from '@/components/AmazonImage'
+import StickyAffiliateCta from '@/components/StickyAffiliateCta'
 
 export const revalidate = 3600
 
@@ -25,8 +26,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = getProductBySlug(params.slug)
   if (!product) return {}
+  const tps = product.specs.tokens_per_second_7b
+  const titleSuffix = tps ? `: ${tps} t/s on Llama 3` : ' — Best for Local AI?'
   return {
-    title: `${product.name} Review — Best for Local AI?`,
+    title: `${product.name} Review${titleSuffix}`,
     description: product.shortDescription,
     alternates: {
       canonical: `https://theaidesk.com/products/${product.slug}`,
@@ -171,7 +174,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         {/* Verdict */}
-        <section className="border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
+        <section id="verdict" className="border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/60 to-transparent" />
           <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">Our Verdict</h2>
           <p className="text-zinc-600 leading-relaxed mb-6">{product.verdict}</p>
@@ -288,6 +291,12 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         <AffiliateDisclosure className="border-t border-edge pt-6 text-slate-500" />
       </div>
+
+      <StickyAffiliateCta
+        href={product.affiliateUrl}
+        productName={product.name}
+        priceDisplay={product.priceDisplay}
+      />
     </>
   )
 }
