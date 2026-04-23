@@ -1,0 +1,176 @@
+{
+  "slug": "run-llama-3-locally-hardware-guide",
+  "title": "How to Run Llama 3 Locally — Hardware & Setup Guide (2026)",
+  "headline": "Run Llama 3 Locally: Hardware Requirements and Setup Guide",
+  "description": "Complete hardware guide for running Llama 3.1 8B, 13B, and 70B locally in 2026. Minimum specs, recommended hardware, and step-by-step Ollama setup.",
+  "publishedAt": "2026-04-22",
+  "updatedAt": "2026-04-22",
+  "category": "how-to",
+  "tags": ["llama-3", "llm", "hardware", "ollama", "how-to", "local-ai"],
+  "featured": false,
+  "readingTimeMinutes": 8,
+  "intro": "Llama 3.3 70B is one of the best open-source language models available in 2026 — and it's free to run on your own hardware. The 8B variant is fast and capable enough for daily use. Here's exactly what hardware you need, how to set it up in under 10 minutes, and what to expect in terms of performance.",
+  "content": [
+    {
+      "type": "h2",
+      "text": "Llama 3 Model Variants and Hardware Requirements"
+    },
+    {
+      "type": "table",
+      "headers": ["Model", "VRAM Needed (Q4)", "Min Hardware", "Recommended", "Speed Range"],
+      "rows": [
+        ["Llama 3.2 1B", "~1 GB", "Any device", "Any device", "100+ t/s anywhere"],
+        ["Llama 3.2 3B", "~2 GB", "4 GB VRAM or 8 GB RAM", "Any GPU", "80–150 t/s"],
+        ["Llama 3.1 8B", "~5 GB", "6 GB VRAM or M4 Mac", "8–12 GB VRAM", "40–120 t/s"],
+        ["Llama 3.1 70B", "~40 GB", "24 GB unified or multi-GPU", "Mac Mini M4 Pro 48 GB", "15–35 t/s"],
+        ["Llama 3.3 70B", "~40 GB", "24 GB unified or multi-GPU", "Mac Mini M4 Pro 48 GB", "15–35 t/s"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "html": "<strong>Which Llama 3 to use?</strong> Start with <strong>llama3.1:8b</strong> for daily use — it's fast everywhere and covers 90% of tasks. Upgrade to <strong>llama3.3:70b</strong> only if you have the hardware and need the extra reasoning quality."
+    },
+    {
+      "type": "h2",
+      "text": "Hardware Recommendations by Budget"
+    },
+    {
+      "type": "h3",
+      "text": "Under $400: Budget x86 Mini PC (7B models only)"
+    },
+    {
+      "type": "p",
+      "html": "A GMKtec NucBox M5 Pro (~$350) with 32 GB DDR5 runs Llama 3.1 8B at about 11 tokens/second. Slow, but functional. This is the entry point for trying local LLMs without major investment. Expect prompts to take 10–20 seconds before the first token appears at 70B (CPU-only)."
+    },
+    {
+      "type": "h3",
+      "text": "$800: Apple Mac Mini M4 (16 GB) — Best value"
+    },
+    {
+      "type": "p",
+      "html": "The Mac Mini M4 with 16 GB unified memory delivers <strong>42 tokens/second on Llama 3.1 8B</strong>. This is the minimum hardware worth recommending for daily Llama use. Conversation feels natural at 42 t/s. Llama 3.3 70B requires offloading and is too slow for comfortable chat on 16 GB."
+    },
+    {
+      "type": "h3",
+      "text": "$1,400: Apple Mac Mini M4 Pro (24 GB) — Best all-rounder"
+    },
+    {
+      "type": "p",
+      "html": "65 tokens/second on Llama 3.1 8B and <strong>18 tokens/second on Llama 3.3 70B</strong>. This is the sweet spot: fast enough for real-time chat on all model sizes, quiet, efficient, and zero driver hassles. The 24 GB unified memory pool means 70B runs fully in memory without offloading."
+    },
+    {
+      "type": "h3",
+      "text": "$1,200–1,800: RTX 5070 + Desktop Build — Best for GPU workloads"
+    },
+    {
+      "type": "p",
+      "html": "If you also do Stable Diffusion, gaming, or other GPU-accelerated work, an RTX 5070 build makes sense. Llama 3.1 8B runs at ~120 t/s — nearly 2× faster than M4 Pro for small models. The 12 GB VRAM ceiling means 70B requires CPU offloading, dropping to ~4–6 t/s."
+    },
+    {
+      "type": "h2",
+      "text": "Setting Up Llama 3 with Ollama (10-Minute Guide)"
+    },
+    {
+      "type": "h3",
+      "text": "Step 1: Install Ollama"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# macOS / Linux\ncurl -fsSL https://ollama.com/install.sh | sh\n\n# Windows: download installer from https://ollama.com"
+    },
+    {
+      "type": "h3",
+      "text": "Step 2: Download and Run Llama 3"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# Start with 8B — fast and capable\nollama run llama3.1:8b\n\n# 70B if you have 24+ GB unified memory or 48+ GB RAM\nollama run llama3.3:70b\n\n# Smaller 3B variant for fast responses\nollama run llama3.2:3b"
+    },
+    {
+      "type": "h3",
+      "text": "Step 3: (Optional) Install Open WebUI for a Chat Interface"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# Requires Docker\ndocker run -d \\\n  -p 3000:8080 \\\n  --add-host=host.docker.internal:host-gateway \\\n  -v open-webui:/app/backend/data \\\n  --name open-webui \\\n  ghcr.io/open-webui/open-webui:main\n\n# Then open http://localhost:3000 in your browser"
+    },
+    {
+      "type": "h2",
+      "text": "Real-World Llama 3 Performance by Hardware"
+    },
+    {
+      "type": "table",
+      "headers": ["Hardware", "8B t/s", "70B t/s", "User Experience"],
+      "rows": [
+        ["Mac Mini M4 Pro 24 GB", "65", "18", "Excellent — daily driver quality"],
+        ["Mac Mini M4 16 GB", "42", "~4 (offloaded)", "Good for 8B, poor for 70B"],
+        ["RTX 5070 12 GB", "~120", "~5 (offloaded)", "Blazing fast at 8B, can't do 70B well"],
+        ["RTX 5070 + 64 GB DDR5", "~120 / ~5", "~5 (offloaded)", "RAM helps 70B slightly"],
+        ["GMKtec NucBox M5 Pro", "11", "~2 (CPU)", "Usable for testing only"],
+        ["M3 Pro MacBook 18 GB", "~55", "~12", "Good portable option"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Optimizing Llama 3 Performance"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Use Q4_K_M quantization:</strong> Best quality/size balance. Ollama uses this by default.",
+        "<strong>Increase context window carefully:</strong> Each extra 1K tokens of context uses ~0.5 GB VRAM. Don't set context higher than needed.",
+        "<strong>Close other GPU apps:</strong> Browsers with hardware acceleration, games, and other ML apps all consume VRAM.",
+        "<strong>Use flash attention:</strong> Enabled by default in recent llama.cpp versions. Reduces KV cache memory by ~30%.",
+        "<strong>On Mac:</strong> Set Ollama to use all GPU cores — <code>OLLAMA_GPU_OVERHEAD=0</code> environment variable."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Llama 3 vs Other Local Models — Which Is Best?"
+    },
+    {
+      "type": "table",
+      "headers": ["Model", "Size", "Llama 3 Comparison", "Better At"],
+      "rows": [
+        ["Llama 3.3 70B", "70B", "—", "General reasoning benchmark"],
+        ["DeepSeek-R1-Distill 32B", "32B", "Better at math/logic", "Explicit reasoning chains"],
+        ["Qwen2.5 72B", "72B", "Similar quality", "Multilingual, coding"],
+        ["Mistral 7B", "7B", "Faster, slightly less capable", "Speed-sensitive use cases"],
+        ["Phi-3 Mini 3.8B", "3.8B", "Much smaller", "Edge devices, testing"]
+      ]
+    },
+    {
+      "type": "p",
+      "html": "Llama 3.3 70B is the safe default recommendation. For reasoning-heavy tasks, DeepSeek-R1-Distill 32B competes well at lower hardware requirements. For coding, Qwen2.5-Coder 32B is worth trying alongside Llama."
+    }
+  ],
+  "relatedProductSlugs": [
+    "apple-mac-mini-m4-pro",
+    "apple-mac-mini-m4",
+    "gigabyte-rtx-5070-windforce",
+    "gmktec-nucbox-m5-pro"
+  ],
+  "relatedGuideSlugs": ["run-llama-3-mac-mini-m4"],
+  "faq": [
+    {
+      "question": "What is the minimum hardware to run Llama 3 locally?",
+      "answer": "Any machine with 8 GB of RAM can run Llama 3.2 3B at CPU speeds (6–15 t/s). For comfortable Llama 3.1 8B at GPU speeds, you need at least 8 GB VRAM or 16 GB Apple Silicon unified memory. For Llama 3.3 70B at usable speeds, you need 24+ GB of unified memory or multiple GPUs."
+    },
+    {
+      "question": "Is Llama 3 free to use commercially?",
+      "answer": "Llama 3 uses Meta's custom license. For most small businesses and individuals, commercial use is permitted. The license restricts use only if you have over 700 million monthly active users — essentially Meta-scale. Read the full license on Meta's website to confirm for your specific use case."
+    },
+    {
+      "question": "How long does it take to download Llama 3?",
+      "answer": "Llama 3.1 8B at Q4 quantization is about 4.7 GB. On a 500 Mbps connection, that's roughly 1 minute. Llama 3.3 70B is about 42 GB — closer to 10–15 minutes. Ollama handles the download automatically and resumes interrupted downloads."
+    },
+    {
+      "question": "Does Llama 3 work offline after download?",
+      "answer": "Yes — completely offline. Once downloaded, Ollama runs entirely locally with no internet connection required. This is one of the key advantages of local LLMs for privacy-sensitive use cases."
+    }
+  ]
+}

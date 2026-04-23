@@ -40,6 +40,7 @@ const NAV_LINKS = [
   { href: '/categories/accessory',    label: 'Accessories'   },
   { href: '/best',                    label: 'Buying Guides' },
   { href: '/guides',                  label: 'Setup Guides'  },
+  { href: '/blog',                   label: 'Blog'          },
   { href: '/glossary',               label: 'Glossary'      },
   { href: '/compare',                 label: 'Compare'       },
   { href: '/about',                   label: 'About'         },

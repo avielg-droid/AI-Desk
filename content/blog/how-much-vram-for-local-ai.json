@@ -1,0 +1,173 @@
+{
+  "slug": "how-much-vram-for-local-ai",
+  "title": "How Much VRAM Do You Need for Local AI in 2026?",
+  "headline": "How Much VRAM Do You Need to Run AI Locally?",
+  "description": "A practical VRAM guide for local AI in 2026 — exact memory requirements for 7B, 13B, 34B, and 70B LLMs plus Stable Diffusion, FLUX, and multimodal models.",
+  "publishedAt": "2026-04-22",
+  "updatedAt": "2026-04-22",
+  "category": "analysis",
+  "tags": ["vram", "llm", "hardware", "memory", "buying-guide"],
+  "featured": true,
+  "readingTimeMinutes": 7,
+  "intro": "VRAM is the most confusing part of buying AI hardware. Vendors advertise GPU compute specs. YouTube benchmarks focus on gaming. And the actual AI community guidance is scattered across Reddit threads and Discord servers. This guide gives you the definitive 2026 answer: exactly how much VRAM you need, for which models, and what happens when you don't have enough.",
+  "content": [
+    {
+      "type": "h2",
+      "text": "The Simple Rule: Model Size ÷ 2 = Minimum VRAM (GB)"
+    },
+    {
+      "type": "p",
+      "html": "LLMs are stored as weights — floating-point numbers. At <strong>Q4 quantization</strong> (the most common format for local use), each billion parameters uses approximately 0.5 GB of VRAM. So a 7B model needs ~3.5 GB, a 13B model needs ~7 GB, and a 70B model needs ~35 GB."
+    },
+    {
+      "type": "p",
+      "html": "But you also need headroom for the KV cache (attention buffers that grow with context length) and the runtime itself. Add 20–30% to the model weight size for a safe estimate."
+    },
+    {
+      "type": "table",
+      "headers": ["Model Size", "Q4 Weights", "+ KV Cache", "Recommended VRAM", "Fits In"],
+      "rows": [
+        ["1B–3B", "0.5–1.5 GB", "+1 GB", "4 GB", "Almost any GPU"],
+        ["7B", "3.5 GB", "+1.5 GB", "6–8 GB", "8 GB GPU (tight)"],
+        ["13B", "6.5 GB", "+2 GB", "10–12 GB", "12 GB GPU"],
+        ["34B", "17 GB", "+3 GB", "24 GB", "24 GB GPU or dual 12 GB"],
+        ["70B", "35 GB", "+5 GB", "40–48 GB", "Mac Mini M4 Pro 48 GB or multi-GPU"],
+        ["70B MoE", "~22 GB active", "+5 GB", "32 GB", "Mac Pro M4 or 48 GB GPU"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "What Happens When You Don't Have Enough VRAM?"
+    },
+    {
+      "type": "p",
+      "html": "Modern LLM runtimes (llama.cpp, Ollama) don't crash — they <strong>offload layers to system RAM</strong>. Each layer that runs on CPU instead of GPU drops throughput significantly:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Full GPU inference: 40–120+ tokens/second",
+        "50% GPU / 50% CPU offload: 8–15 tokens/second",
+        "Full CPU inference: 2–6 tokens/second (on a fast CPU)"
+      ]
+    },
+    {
+      "type": "p",
+      "html": "CPU offloading is usable for slow queries — overnight summaries, batch processing — but not comfortable chat. If you plan to chat with a model, fit it entirely in VRAM."
+    },
+    {
+      "type": "h2",
+      "text": "8 GB VRAM: Entry Level"
+    },
+    {
+      "type": "p",
+      "html": "8 GB is the minimum you'll see recommended in 2026. You can run <strong>7B models at Q4 quantization</strong> with enough headroom for a 4K context window. Gemma 2 9B runs at Q4 in 8 GB too."
+    },
+    {
+      "type": "p",
+      "html": "What you can't do comfortably at 8 GB: 13B models (they require offloading), SDXL at high batch sizes, or FLUX.1 Dev (needs ~12 GB). 8 GB was the sweet spot in 2023–2024; in 2026, it's a constraint."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "html": "<strong>Avoid 4 GB and 6 GB GPUs entirely</strong> for LLMs in 2026. Even quantized 7B models run poorly and the context window is severely limited."
+    },
+    {
+      "type": "h2",
+      "text": "12 GB VRAM: The 2026 Sweet Spot"
+    },
+    {
+      "type": "p",
+      "html": "12 GB fits <strong>13B models at Q4</strong> fully in VRAM — a significant quality jump over 7B. At this tier you also get comfortable FLUX.1 Schnell image generation and can run two smaller models simultaneously if needed."
+    },
+    {
+      "type": "p",
+      "html": "The RTX 5070 (12 GB GDDR7, 672 GB/s) is the best 12 GB GPU available. Its bandwidth advantage means you generate tokens roughly 33% faster than a 12 GB RTX 4070 Super despite identical VRAM capacity."
+    },
+    {
+      "type": "h2",
+      "text": "16 GB VRAM: Room to Breathe"
+    },
+    {
+      "type": "p",
+      "html": "16 GB lets you run <strong>13B models at Q8</strong> (near-lossless quality) or push toward 34B at Q4. The RX 9060 XT ships with 16 GB GDDR6 — giving it a VRAM edge over the RTX 5070 despite lower bandwidth."
+    },
+    {
+      "type": "p",
+      "html": "For Stable Diffusion, 16 GB handles FLUX.1 Dev, SD 3.5 Large, and SDXL at high resolutions with ease. At 12 GB you sometimes hit walls with newer architectures."
+    },
+    {
+      "type": "h2",
+      "text": "24 GB+ VRAM: Serious Workloads"
+    },
+    {
+      "type": "p",
+      "html": "24 GB is where you can run <strong>34B models fully in VRAM</strong> and begin to approach 70B at aggressive quantization. No consumer discrete GPU currently ships with 24 GB at mainstream price points — you're looking at workstation cards (RTX 4090, RTX 6000 Ada) or Apple Silicon unified memory."
+    },
+    {
+      "type": "p",
+      "html": "The <strong>Mac Mini M4 Pro</strong> with 24 GB unified memory is the most accessible 24 GB AI machine in 2026. It runs 70B Q4 models at ~18 tokens/second — not fast, but functional. Upgrade to 48 GB and you get comfortable 70B inference at ~35 t/s."
+    },
+    {
+      "type": "h2",
+      "text": "Discrete VRAM vs Apple Unified Memory: Are They the Same?"
+    },
+    {
+      "type": "p",
+      "html": "Not exactly. Discrete GPU VRAM is dedicated and has higher bandwidth than system RAM. Apple's unified memory is shared between CPU and GPU — which means the GPU sees the full memory pool without a penalty, but the bandwidth is lower than equivalent GDDR7."
+    },
+    {
+      "type": "table",
+      "headers": ["Memory Type", "Example", "Bandwidth", "LLM Advantage"],
+      "rows": [
+        ["GDDR7 (discrete)", "RTX 5070 12 GB", "672 GB/s", "Fastest token gen at model size"],
+        ["GDDR6 (discrete)", "RX 9060 XT 16 GB", "~384 GB/s", "More capacity, slower per-token"],
+        ["Unified (Apple M4)", "Mac Mini M4 Pro 24 GB", "273 GB/s", "Full pool available to GPU, runs 70B"],
+        ["DDR5 system RAM", "Any mini PC 32 GB", "51–68 GB/s", "CPU offload only, very slow"]
+      ]
+    },
+    {
+      "type": "p",
+      "html": "For models that <em>fit</em> in your VRAM, discrete is faster. For models that don't fit, Apple unified memory is your only affordable option short of enterprise hardware."
+    },
+    {
+      "type": "h2",
+      "text": "VRAM Requirements for Image Generation"
+    },
+    {
+      "type": "table",
+      "headers": ["Model", "Min VRAM", "Recommended", "Notes"],
+      "rows": [
+        ["Stable Diffusion 1.5", "4 GB", "6 GB", "Legacy, still useful for LoRAs"],
+        ["SDXL", "8 GB", "10 GB", "Standard quality benchmark"],
+        ["FLUX.1 Schnell", "10 GB", "12 GB", "Fast, high quality"],
+        ["FLUX.1 Dev", "12 GB", "16 GB", "Best open-source image model"],
+        ["SD 3.5 Large", "14 GB", "16 GB", "Latest Stability AI flagship"]
+      ]
+    }
+  ],
+  "relatedProductSlugs": [
+    "gigabyte-rtx-5070-windforce",
+    "gigabyte-rx-9060-xt-gaming",
+    "apple-mac-mini-m4-pro",
+    "apple-mac-mini-m4"
+  ],
+  "faq": [
+    {
+      "question": "Is 8 GB VRAM enough for AI in 2026?",
+      "answer": "Barely. 8 GB runs 7B models at Q4 quantization but struggles with 13B models, newer architectures, and high-resolution image generation. It was the sweet spot in 2023 but models have grown. If you're buying new hardware in 2026, target 12 GB minimum."
+    },
+    {
+      "question": "Does system RAM help when you don't have enough VRAM?",
+      "answer": "Yes — llama.cpp and Ollama offload layers to system RAM automatically. But speed drops dramatically: you might go from 80 tokens/second (full GPU) to 8 tokens/second (half offloaded). More system RAM lets you run larger models at slow speeds. Fast DDR5 RAM helps slightly."
+    },
+    {
+      "question": "Why does the Mac Mini M4 Pro feel fast despite lower bandwidth than the RTX 5070?",
+      "answer": "Two reasons. First, the M4 Pro chip is highly optimized for matrix operations at low power. Second, unified memory means models don't need to be split between VRAM and system RAM — the GPU sees all 24 GB at 273 GB/s, versus a GPU that might only see 12 GB at 672 GB/s before offloading starts."
+    },
+    {
+      "question": "What is Q4 quantization and does it hurt quality?",
+      "answer": "Q4 quantization stores model weights at 4-bit precision instead of 16-bit, cutting memory use by 75%. Quality loss is minimal for most tasks — perplexity scores typically increase by 1–5%. For casual use, Q4 is indistinguishable from fp16. For precise technical tasks, Q8 is preferred if your VRAM allows it."
+    }
+  ]
+}

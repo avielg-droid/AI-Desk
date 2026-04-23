@@ -122,3 +122,42 @@ export function buildItemListSchema(
     })),
   }
 }
+
+
+export function buildBlogPostingSchema({
+  title,
+  description,
+  publishedAt,
+  updatedAt,
+  slug,
+}: {
+  title: string
+  description: string
+  publishedAt: string
+  updatedAt: string
+  slug: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
+    url: `https://theaidesk.com/blog/${slug}`,
+    author: {
+      '@type': 'Organization',
+      name: 'The AI Desk',
+      url: 'https://theaidesk.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The AI Desk',
+      url: 'https://theaidesk.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://theaidesk.com/blog/${slug}`,
+    },
+  }
+}

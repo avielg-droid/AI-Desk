@@ -4,6 +4,7 @@ import { getAllPersonas } from '@/lib/personas'
 import { getAllComparisonSlugs } from '@/lib/comparisons'
 import { getAllGlossarySlugs } from '@/lib/glossary'
 import { getAllGuideSlugs } from '@/lib/guides'
+import { getAllBlogSlugs } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
@@ -65,5 +66,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages, ...guidesIndex, ...guidePages]
+  const blogIndex: MetadataRoute.Sitemap = [
+    { url: `${BASE}/blog`, lastModified: new Date('2026-04-22'), changeFrequency: 'daily', priority: 0.85 },
+  ]
+
+  const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map(slug => ({
+    url: `${BASE}/blog/${slug}`,
+    lastModified: new Date('2026-04-22'),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages, ...guidesIndex, ...guidePages, ...blogIndex, ...blogPages]
 }
