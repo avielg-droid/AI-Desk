@@ -4,6 +4,8 @@ import HardwareMatcher from '@/components/HardwareMatcher'
 import WhyLocalAI from '@/components/WhyLocalAI'
 import PersonaFunnels from '@/components/PersonaFunnels'
 import CloudROICalculator from '@/components/CloudROICalculator'
+import SchemaMarkup from '@/components/SchemaMarkup'
+import { buildSpeakableSchema } from '@/lib/schema'
 import Link from 'next/link'
 
 const CATEGORIES = [
@@ -43,6 +45,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20">
+      <SchemaMarkup schema={buildSpeakableSchema(['h1', '.hero-summary', '.key-facts'])} />
 
       {/* ── HERO ── */}
       <section className="relative border border-edge min-h-[480px] flex items-center overflow-hidden" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(8px)' }}>

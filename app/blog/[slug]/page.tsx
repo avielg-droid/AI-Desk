@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts, CATEGORY_LABEL } from '@/lib/blog'
 import { getProductBySlug } from '@/lib/products'
-import { buildBreadcrumbSchema, buildFAQSchema, buildBlogPostingSchema } from '@/lib/schema'
+import { buildBreadcrumbSchema, buildFAQSchema, buildBlogPostingSchema, buildSpeakableSchema } from '@/lib/schema'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import AffiliateButton from '@/components/AffiliateButton'
 import BlogContent from '@/components/BlogContent'
@@ -24,6 +24,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `https://theaidesk.com/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -56,6 +59,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       updatedAt: post.updatedAt,
       slug: post.slug,
     }),
+    buildSpeakableSchema(['h1', '.blog-intro', '.blog-verdict']),
     ...(post.faq.length > 0 ? [buildFAQSchema(post.faq)] : []),
   ]
 

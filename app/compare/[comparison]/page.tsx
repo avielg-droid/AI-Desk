@@ -28,6 +28,9 @@ export async function generateMetadata({
   return {
     title: data.title,
     description: data.metaDescription,
+    alternates: {
+      canonical: `https://theaidesk.com/compare/${params.comparison}`,
+    },
     openGraph: { title: data.title, description: data.metaDescription },
   }
 }

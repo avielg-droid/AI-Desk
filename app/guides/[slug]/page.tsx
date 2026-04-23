@@ -7,6 +7,7 @@ import {
   GUIDE_ENTRIES,
 } from '@/lib/guides'
 import { getProductBySlug } from '@/lib/products'
+import { buildBreadcrumbSchema } from '@/lib/schema'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import AffiliateButton from '@/components/AffiliateButton'
 import AmazonImage from '@/components/AmazonImage'
@@ -27,6 +28,9 @@ export async function generateMetadata({
   return {
     title: `${guide.title} — Local AI Setup Guide`,
     description: guide.description,
+    alternates: {
+      canonical: `https://theaidesk.com/guides/${params.slug}`,
+    },
     openGraph: {
       title: guide.title,
       description: guide.description,
@@ -92,8 +96,15 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
     ],
   }
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: 'https://theaidesk.com' },
+    { name: 'Setup Guides', url: 'https://theaidesk.com/guides' },
+    { name: guide.title, url: `https://theaidesk.com/guides/${guide.slug}` },
+  ])
+
   return (
     <>
+      <SchemaMarkup schema={breadcrumbSchema} />
       <SchemaMarkup schema={howToSchema} />
       <SchemaMarkup schema={faqSchema} />
 

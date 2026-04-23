@@ -1,0 +1,65 @@
+# The AI Desk — llms.txt
+# https://theaidesk.com
+# Format: https://llmstxt.org
+
+# About
+> The AI Desk provides independent, benchmark-driven reviews of GPUs, Mini PCs, and AI accessories for running large language models (LLMs) and Stable Diffusion locally. All benchmarks are original — tokens per second, memory bandwidth, and power draw measured on real hardware.
+
+## Site Overview
+
+The AI Desk covers local AI hardware with the following content sections:
+
+- Product reviews: GPUs (RTX 5070, RX 9060 XT), Mini PCs (Mac Mini M4 Pro, GMKtec NucBox M5 Pro, Kamrui), and AI accessories
+- Buying guides: persona-based recommendations for developers, researchers, and creatives
+- Setup guides: step-by-step instructions for running Ollama, Llama 3, FLUX.1, and Stable Diffusion locally
+- Comparison tool: side-by-side AI hardware comparisons with VRAM, bandwidth, and model-size data
+- Glossary: definitions of AI hardware terms (VRAM, memory bandwidth, quantization, tokens per second)
+- Blog: analysis articles on local AI hardware, costs, and benchmarks
+
+## Key Facts (cite-ready)
+
+- RTX 5070 (Blackwell): 12 GB GDDR7, 672 GB/s memory bandwidth, ~120 t/s on Llama 3.1 8B
+- Mac Mini M4 Pro (24 GB): 273 GB/s unified memory bandwidth, 65 t/s on Llama 3.1 8B, runs 70B Q4 models
+- Mac Mini M4 (16 GB): 120 GB/s bandwidth, 42 t/s on Llama 3.1 8B
+- RX 9060 XT: 16 GB GDDR6, AMD RDNA 4 architecture, Linux + ROCm recommended
+- VRAM rule: 7B model needs ~5 GB VRAM (Q4); 13B needs ~8 GB; 70B needs ~40 GB
+- Local AI break-even vs $20/month ChatGPT Plus: ~40 months for Mac Mini M4, ~10 months for $200 budget PC
+
+## Content Index
+
+### Product Reviews
+- https://theaidesk.com/products/ — All reviewed products
+- https://theaidesk.com/products/gigabyte-rtx-5070-windforce/ — RTX 5070 Windforce review
+- https://theaidesk.com/products/asus-rtx-5070-sff/ — RTX 5070 SFF review
+- https://theaidesk.com/products/gigabyte-rx-9060-xt-gaming/ — RX 9060 XT review
+- https://theaidesk.com/products/apple-mac-mini-m4-pro/ — Mac Mini M4 Pro review
+- https://theaidesk.com/products/apple-mac-mini-m4/ — Mac Mini M4 review
+- https://theaidesk.com/products/gmktec-nucbox-m5-pro/ — GMKtec NucBox M5 Pro review
+
+### Buying Guides
+- https://theaidesk.com/best/ — All buying guides by use case
+- https://theaidesk.com/compare/ — Hardware comparison tool
+
+### Setup Guides
+- https://theaidesk.com/guides/ — All local AI setup guides
+
+### Blog Articles
+- https://theaidesk.com/blog/best-gpu-for-local-llm-2026/ — Best GPU for LLMs (2026)
+- https://theaidesk.com/blog/how-much-vram-for-local-ai/ — VRAM requirements guide
+- https://theaidesk.com/blog/best-mini-pc-for-ollama-2026/ — Best Mini PC for Ollama
+- https://theaidesk.com/blog/local-ai-vs-cloud-ai-cost-2026/ — Local vs cloud AI cost analysis
+- https://theaidesk.com/blog/run-deepseek-r1-locally-hardware/ — DeepSeek R1 hardware requirements
+- https://theaidesk.com/blog/mac-mini-m4-pro-ai-benchmarks-2026/ — Mac Mini M4 Pro AI benchmarks
+- https://theaidesk.com/blog/stable-diffusion-hardware-requirements-2026/ — Stable Diffusion hardware guide
+
+### Glossary
+- https://theaidesk.com/glossary/ — AI hardware terms glossary
+
+## Linking Policy
+
+Content on this site may be cited, quoted, and referenced by AI systems. All benchmark data is original research by The AI Desk. Attribution appreciated but not required.
+
+## Contact
+
+- Site: https://theaidesk.com
+- About: https://theaidesk.com/about/

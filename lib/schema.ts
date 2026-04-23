@@ -84,7 +84,28 @@ export function buildOrganizationSchema() {
     '@type': 'Organization',
     name: 'The AI Desk',
     url: 'https://theaidesk.com',
-    description: 'Expert reviews of AI hardware for running AI locally — GPUs, Mini PCs, and AI accessories.',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://theaidesk.com/og-image.png',
+      width: 1200,
+      height: 630,
+    },
+    description: 'Independent benchmark-driven reviews of GPUs, Mini PCs, and AI accessories for running large language models and Stable Diffusion locally.',
+    sameAs: [
+      'https://twitter.com/theaidesk',
+      'https://www.reddit.com/r/LocalLLaMA/',
+    ],
+    knowsAbout: [
+      'Local AI hardware',
+      'Large language models',
+      'GPU benchmarks',
+      'Stable Diffusion',
+      'Ollama',
+      'VRAM requirements',
+      'Memory bandwidth',
+      'Tokens per second',
+      'Mini PCs for AI',
+    ],
   }
 }
 
@@ -123,6 +144,48 @@ export function buildItemListSchema(
   }
 }
 
+
+export function buildHowToSchema({
+  name,
+  description,
+  slug,
+  steps,
+}: {
+  name: string
+  description: string
+  slug: string
+  steps: { name: string; text: string }[]
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name,
+    description,
+    url: `https://theaidesk.com/guides/${slug}`,
+    author: {
+      '@type': 'Organization',
+      name: 'The AI Desk',
+      url: 'https://theaidesk.com',
+    },
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  }
+}
+
+export function buildSpeakableSchema(cssSelectors: string[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: cssSelectors,
+    },
+  }
+}
 
 export function buildBlogPostingSchema({
   title,

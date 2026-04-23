@@ -28,6 +28,9 @@ export async function generateMetadata({
   return {
     title: `${product.name} Review — Best for Local AI?`,
     description: product.shortDescription,
+    alternates: {
+      canonical: `https://theaidesk.com/products/${product.slug}`,
+    },
     openGraph: {
       title: `${product.name} Review`,
       description: product.shortDescription,
