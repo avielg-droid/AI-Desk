@@ -43,17 +43,18 @@ export default function HowWeTestPage() {
       { name: 'Home', url: BASE },
       { name: 'How We Test', url: `${BASE}/how-we-test` },
     ]),
-    buildHowToSchema(
-      'How We Benchmark AI Hardware',
-      'Our process for measuring tokens-per-second, image generation speed, and memory capacity on GPUs and Mini PCs.',
-      [
+    buildHowToSchema({
+      name: 'How We Benchmark AI Hardware',
+      description: 'Our process for measuring tokens-per-second, image generation speed, and memory capacity on GPUs and Mini PCs.',
+      slug: 'how-we-test',
+      steps: [
         { name: 'Configure hardware', text: 'Install OS, update drivers (CUDA, ROCm, or Metal). No BIOS overclocking. Stock thermal paste and cooler. System idle for 10 minutes before testing.' },
         { name: 'Install inference software', text: 'Ollama latest stable release. llama.cpp compiled from source for CPU tests. ComfyUI latest for image generation. No custom forks.' },
         { name: 'Run benchmark protocol', text: 'Pull standardized model (Llama 3.1 8B Q4_K_M). Run 3 identical inference passes with a 500-token seed prompt. Record median tokens/second.' },
         { name: 'Record and verify results', text: 'Cross-reference against community benchmarks from r/LocalLLaMA and official llama.cpp benchmark threads. Outliers investigated before publishing.' },
         { name: 'Publish with version tags', text: 'All results tagged with model name, quantization, tool version, and test date. Updated when new driver or tool versions significantly change results.' },
-      ]
-    ),
+      ],
+    }),
   ]
 
   return (
@@ -127,7 +128,7 @@ export default function HowWeTestPage() {
         {/* What we don't test */}
         <section className="space-y-3">
           <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
-            What We Don't Test
+            What We Don&apos;t Test
           </h2>
           <ul className="space-y-2.5">
             {[
@@ -172,7 +173,7 @@ export default function HowWeTestPage() {
           <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground mb-2">Update Policy</h2>
           <p className="text-sm text-zinc-600 leading-relaxed">
             Benchmark results are updated when a new driver or software version causes a meaningful performance change
-            (≥10%). Each product page shows a "Last Updated" date. If you notice a benchmark that no longer matches
+            (≥10%). Each product page shows a &quot;Last Updated&quot; date. If you notice a benchmark that no longer matches
             your real-world results, the most likely explanation is a driver update — check the date and compare
             to your software version.
           </p>
