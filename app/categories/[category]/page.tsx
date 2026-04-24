@@ -95,12 +95,14 @@ export default function CategoryPage({ params }: { params: { category: string } 
             {meta.h1}
           </h1>
 
-          {/* Our pick badge */}
-          <div className="inline-flex items-center gap-3 border border-ore/30 bg-ore/5 px-4 py-2 mb-5">
-            <span className="font-mono text-[9px] uppercase tracking-widest text-ore">Our Pick</span>
-            <span className="font-sans font-600 text-sm text-foreground">{meta.pick.label}</span>
-            <span className="font-mono text-[10px] text-zinc-600">{meta.pick.reason}</span>
-          </div>
+          {/* Our pick badge — GPUs and Mini PCs only */}
+          {(category === 'gpu' || category === 'mini-pc') && (
+            <div className="inline-flex items-center gap-3 border border-ore/30 bg-ore/5 px-4 py-2 mb-5">
+              <span className="font-mono text-[9px] uppercase tracking-widest text-ore">Our Pick</span>
+              <span className="font-sans font-600 text-sm text-foreground">{meta.pick.label}</span>
+              <span className="font-mono text-[10px] text-zinc-600">{meta.pick.reason}</span>
+            </div>
+          )}
 
           {/* Editorial lede */}
           <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl">{meta.lede}</p>
