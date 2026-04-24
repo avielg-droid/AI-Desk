@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/categories/ai-pc`,      lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
     { url: `${BASE}/categories/accessory`,  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
     { url: `${BASE}/about`,                 lastModified: new Date('2026-04-19'), changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${BASE}/how-we-test`,           lastModified: new Date('2026-04-24'), changeFrequency: 'monthly', priority: 0.5 },
   ]
 
   const productPages: MetadataRoute.Sitemap = products.map(p => ({

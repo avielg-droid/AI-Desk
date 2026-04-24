@@ -44,6 +44,7 @@ const NAV_LINKS = [
   { href: '/glossary',               label: 'Glossary'      },
   { href: '/compare',                 label: 'Compare'       },
   { href: '/about',                   label: 'About'         },
+  { href: '/how-we-test',             label: 'How We Test'   },
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -35,6 +35,10 @@ export default function AboutPage() {
           results from llama.cpp, Ollama, and ComfyUI benchmarking threads. We do not receive hardware from
           manufacturers for review.
         </p>
+        <p className="text-sm text-zinc-600 leading-relaxed">
+          For the complete benchmark protocol, test conditions, and data sources, see our{' '}
+          <a href="/how-we-test" className="text-ore hover:underline">full methodology page →</a>
+        </p>
       </section>
 
       <section className="space-y-3">

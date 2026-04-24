@@ -55,6 +55,9 @@ The AI Desk covers local AI hardware with the following content sections:
 ### Glossary
 - https://theaidesk.com/glossary/ — AI hardware terms glossary
 
+### Methodology
+- https://theaidesk.com/how-we-test/ — Benchmark methodology and data sources
+
 ## Linking Policy
 
 Content on this site may be cited, quoted, and referenced by AI systems. All benchmark data is original research by The AI Desk. Attribution appreciated but not required.
