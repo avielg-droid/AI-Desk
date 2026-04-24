@@ -5,7 +5,7 @@
   "name": "GIGABYTE Radeon RX 9060 XT GAMING OC 16G",
   "category": "gpu",
   "brand": "GIGABYTE",
-  "shortDescription": "The GIGABYTE RX 9060 XT GAMING OC 16G is the VRAM champion at its price tier. Powered by AMD RDNA 4 with 16GB GDDR6, it runs 13B+ LLMs comfortably where 12GB NVIDIA cards hit their ceiling. The WINDFORCE cooling with graphene nano lubricant handles sustained AI workloads \u2014 if you can navigate AMD's ROCm ecosystem.",
+  "shortDescription": "The GIGABYTE RX 9060 XT GAMING OC 16G is the VRAM champion at its price tier. Powered by AMD RDNA 4 with 16GB GDDR6, it runs 13B+ LLMs comfortably where 12GB NVIDIA cards hit their ceiling. The WINDFORCE cooling with graphene nano lubricant handles sustained AI workloads — if you can navigate AMD's ROCm ecosystem.",
   "specs": {
     "chip": "AMD Radeon RX 9060 XT (RDNA 4)",
     "gpu_cores": 2048,
@@ -21,26 +21,26 @@
     "cooling": "Triple-fan active"
   },
   "useCases": [
-    "Large local LLM inference (13B\u201314B models with full GPU acceleration)",
+    "Large local LLM inference (13B–14B models with full GPU acceleration)",
     "Stable Diffusion XL and FLUX image generation",
     "Budget AI builds prioritizing VRAM over raw speed",
     "AMD ROCm / Linux-native AI development",
     "Whisper transcription and multimodal AI tasks"
   ],
   "pros": [
-    "16GB GDDR6 \u2014 4GB more VRAM than any RTX 5070 at a comparable price",
-    "RDNA 4 architecture \u2014 significant IPC improvement over RDNA 3",
-    "Runs 13B Q8 and 14B Q4 models fully in VRAM \u2014 no CPU offload",
-    "WINDFORCE cooling with graphene nano lubricant \u2014 quiet and sustained",
+    "16GB GDDR6 — 4GB more VRAM than any RTX 5070 at a comparable price",
+    "RDNA 4 architecture — significant IPC improvement over RDNA 3",
+    "Runs 13B Q8 and 14B Q4 models fully in VRAM — no CPU offload",
+    "WINDFORCE cooling with graphene nano lubricant — quiet and sustained",
     "Best VRAM-per-dollar at the mid-range tier in 2026"
   ],
   "cons": [
-    "ROCm required for GPU-accelerated AI \u2014 steeper setup than CUDA on Windows",
-    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 \u2014 slower tokens/sec",
-    "Windows ROCm support lags Linux \u2014 Linux recommended for AI workloads",
+    "ROCm required for GPU-accelerated AI — steeper setup than CUDA on Windows",
+    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 — slower tokens/sec",
+    "Windows ROCm support lags Linux — Linux recommended for AI workloads",
     "Fewer AI software integrations compared to NVIDIA CUDA ecosystem"
   ],
-  "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU \u2014 no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
+  "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU — no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
   "affiliateUrl": "https://amzn.to/4vNwVel",
   "rating": 4.2,
   "reviewCount": 1,
@@ -59,6 +59,26 @@
     {
       "question": "Can the RX 9060 XT run Stable Diffusion?",
       "answer": "Yes. Stable Diffusion, SDXL, and FLUX all run on the RX 9060 XT via DirectML on Windows or ROCm on Linux. ROCm on Linux gives the best performance, comparable to similarly-priced NVIDIA cards. With 16GB VRAM, you can run SDXL and FLUX at high resolutions with multiple ControlNet models loaded simultaneously."
+    },
+    {
+      "question": "How do I set up ROCm on Linux for the RX 9060 XT?",
+      "answer": "Install the AMDGPU-PRO or ROCM package from AMD's official repository (amdgpu-install on Ubuntu/Debian). After install, add your user to the 'render' and 'video' groups, reboot, and verify with `rocminfo`. Ollama detects ROCm automatically after this — run `ollama run llama3` and it will use the GPU. The whole process takes 15–20 minutes on Ubuntu 22.04."
+    },
+    {
+      "question": "How does the RX 9060 XT 16G compare to the Mac Mini M4 Pro for local AI?",
+      "answer": "The RX 9060 XT in a desktop PC costs significantly less than the Mac Mini M4 Pro for comparable model capacity. The RX 9060 XT's 288 GB/s bandwidth is slower than the M4 Pro's 273 GB/s (similar), but the 16GB GDDR6 is more than the M4 Pro's base 24GB for 13B workloads. The Mac Mini M4 Pro wins on power efficiency (30W vs 150W), noise, and macOS ecosystem. The GPU wins on image generation throughput and CUDA-equivalent (ROCm) flexibility."
+    },
+    {
+      "question": "Can the RX 9060 XT run ComfyUI and ControlNet?",
+      "answer": "Yes on Linux with ROCm; with more friction on Windows. ROCm on Linux gives near-CUDA parity for PyTorch-based tools — ComfyUI, A1111, and InvokeAI all support it. Windows support via DirectML is functional but slower and occasionally incompatible with specific ComfyUI nodes. If you rely heavily on ControlNet or custom ComfyUI workflows, Linux is the recommended OS."
+    },
+    {
+      "question": "Is 288 GB/s bandwidth fast enough for 13B models?",
+      "answer": "At Q4 quantization, a 13B model requires ~8GB VRAM and generates approximately 50 tokens/second on the RX 9060 XT. That's interactive for chat and fast enough for coding assistants. For 7B models the card does ~88 t/s — comfortably real-time. Where bandwidth shows its limits: 14B+ at Q8 precision drops to ~30–35 t/s. For sustained 13B inference at quality, it's sufficient; for 70B it isn't competitive."
+    },
+    {
+      "question": "Does the RX 9060 XT support AMD AI hardware acceleration beyond ROCm?",
+      "answer": "Yes. The RDNA 4 architecture includes dedicated AI accelerators (AMD WMMA instructions) that are leveraged by ROCm 6.x and newer PyTorch AMD builds. Hugging Face Transformers also supports ROCm. Additionally, Windows users can use DirectML for models via ONNX Runtime, which works without ROCm but at lower performance than native ROCm on Linux."
     }
   ],
   "crossSells": [
@@ -67,10 +87,10 @@
     "apc-bx1500m"
   ],
   "notFor": [
-    "Windows users who want plug-and-play AI \u2014 ROCm works best on Linux",
-    "Stable Diffusion heavy users \u2014 AMD ROCm has rougher ComfyUI support than CUDA",
-    "Anyone already invested in CUDA software \u2014 switching ecosystems has friction",
-    "Running 13B+ models at speed \u2014 16 GB is enough capacity, but bandwidth caps throughput"
+    "Windows users who want plug-and-play AI — ROCm works best on Linux",
+    "Stable Diffusion heavy users — AMD ROCm has rougher ComfyUI support than CUDA",
+    "Anyone already invested in CUDA software — switching ecosystems has friction",
+    "Running 13B+ models at speed — 16 GB is enough capacity, but bandwidth caps throughput"
   ],
   "entityHeadline": "Running Mistral 7B on the RX 9060 XT: 88 Tokens Per Second on AMD"
 }

@@ -2,7 +2,7 @@
   "slug": "mac-mini-m4-pro-ai-benchmarks-2026",
   "title": "Mac Mini M4 Pro for AI: Real Benchmarks (2026)",
   "headline": "Mac Mini M4 Pro AI Benchmarks: LLM Speed, Stable Diffusion & Local AI Performance",
-  "description": "Real-world AI benchmarks for the Mac Mini M4 Pro in 2026 \u2014 tokens per second on Llama 3, DeepSeek, and Mistral, plus Stable Diffusion generation times and power draw.",
+  "description": "Real-world AI benchmarks for the Mac Mini M4 Pro in 2026 — tokens per second on Llama 3, DeepSeek, and Mistral, plus Stable Diffusion generation times and power draw.",
   "publishedAt": "2026-04-22",
   "updatedAt": "2026-04-22",
   "category": "benchmarks",
@@ -16,12 +16,12 @@
   ],
   "featured": false,
   "readingTimeMinutes": 7,
-  "intro": "The Mac Mini M4 Pro has become the go-to recommendation for local AI on macOS \u2014 but the marketing numbers don't tell you what actually matters for LLM inference. This article publishes the real benchmark numbers: tokens per second across model sizes, Stable Diffusion generation times, power consumption, and where the M4 Pro falls short.",
+  "intro": "The Mac Mini M4 Pro has become the go-to recommendation for local AI on macOS — but the marketing numbers don't tell you what actually matters for LLM inference. This article publishes the real benchmark numbers: tokens per second across model sizes, Stable Diffusion generation times, power consumption, and where the M4 Pro falls short.",
   "content": [
     {
       "type": "callout",
       "variant": "verdict",
-      "html": "<strong>TL;DR:</strong> Mac Mini M4 Pro hits <strong>65 t/s on Llama 3.1 8B</strong> and runs 70B Q4 models with 24 GB unified memory. Best plug-and-play local AI for macOS \u2014 no drivers, silent operation, 20W idle draw."
+      "html": "<strong>TL;DR:</strong> Mac Mini M4 Pro hits <strong>65 t/s on Llama 3.1 8B</strong> and runs 70B Q4 models with 24 GB unified memory. Best plug-and-play local AI for macOS — no drivers, silent operation, 20W idle draw."
     },
     {
       "type": "h2",
@@ -151,7 +151,7 @@
     {
       "type": "callout",
       "variant": "verdict",
-      "html": "<strong>Key finding:</strong> 65 t/s on Llama 3.1 8B is faster than most people's reading speed \u2014 genuinely pleasant to use. 18 t/s on 70B models is the interesting number: no $700 GPU can run 70B at all, and the Mac Mini does it at a pace comfortable for reading."
+      "html": "<strong>Key finding:</strong> 65 t/s on Llama 3.1 8B is faster than most people's reading speed — genuinely pleasant to use. 18 t/s on 70B models is the interesting number: no $700 GPU can run 70B at all, and the Mac Mini does it at a pace comfortable for reading."
     },
     {
       "type": "h2",
@@ -199,7 +199,7 @@
     },
     {
       "type": "p",
-      "html": "The 7B speed comparison is misleading. The RTX 5070 generates tokens faster at 7B, but it can't run 70B at all. The Mac Mini M4 Pro does both \u2014 and runs off 30W instead of 200W."
+      "html": "The 7B speed comparison is misleading. The RTX 5070 generates tokens faster at 7B, but it can't run 70B at all. The Mac Mini M4 Pro does both — and runs off 30W instead of 200W."
     },
     {
       "type": "h2",
@@ -207,7 +207,7 @@
     },
     {
       "type": "p",
-      "html": "Tested on ComfyUI with MPS backend, 1024\u00d71024 resolution, 20 steps DPM++ 2M sampler:"
+      "html": "Tested on ComfyUI with MPS backend, 1024×1024 resolution, 20 steps DPM++ 2M sampler:"
     },
     {
       "type": "table",
@@ -222,37 +222,37 @@
           "SDXL 1.0",
           "12 sec",
           "8 GB",
-          "2\u00d7 slower"
+          "2× slower"
         ],
         [
           "FLUX.1 Schnell",
           "7 sec",
           "10 GB",
-          "~1.5\u00d7 slower"
+          "~1.5× slower"
         ],
         [
           "FLUX.1 Dev",
           "18 sec",
           "13 GB",
-          "~1.5\u00d7 slower"
+          "~1.5× slower"
         ],
         [
           "SD 3.5 Large",
           "22 sec",
           "15 GB",
-          "~1.5\u00d7 slower"
+          "~1.5× slower"
         ],
         [
           "SD 1.5",
           "8 sec",
           "3 GB",
-          "2\u00d7 slower"
+          "2× slower"
         ]
       ]
     },
     {
       "type": "p",
-      "html": "The M4 Pro is roughly 1.5\u20132\u00d7 slower than an RTX 5070 for image generation. That's a real difference for high-volume workflows, but acceptable for casual use. The advantage: you can have FLUX.1 Dev and a 70B LLM both loaded in the same 24 GB memory pool."
+      "html": "The M4 Pro is roughly 1.5–2× slower than an RTX 5070 for image generation. That's a real difference for high-volume workflows, but acceptable for casual use. The advantage: you can have FLUX.1 Dev and a 70B LLM both loaded in the same 24 GB memory pool."
     },
     {
       "type": "h2",
@@ -295,7 +295,7 @@
     },
     {
       "type": "p",
-      "html": "The power draw is the Mac Mini M4 Pro's silent advantage. Running LLM inference at 28\u201335W 24/7 costs about $35/year. A comparable RTX 5070 build draws 200\u2013250W under load \u2014 roughly $200\u2013280/year if used all day. Over 3 years, the power savings alone are $500+."
+      "html": "The power draw is the Mac Mini M4 Pro's silent advantage. Running LLM inference at 28–35W 24/7 costs about $35/year. A comparable RTX 5070 build draws 200–250W under load — roughly $200–280/year if used all day. Over 3 years, the power savings alone are $500+."
     },
     {
       "type": "h2",
@@ -304,10 +304,10 @@
     {
       "type": "ul",
       "items": [
-        "<strong>Raw 7B speed:</strong> RTX 5070 generates ~120 t/s vs 65 t/s \u2014 nearly 2\u00d7 faster for interactive use.",
+        "<strong>Raw 7B speed:</strong> RTX 5070 generates ~120 t/s vs 65 t/s — nearly 2× faster for interactive use.",
         "<strong>Stable Diffusion speed:</strong> GPU wins here. For high-volume image generation workflows, a discrete GPU is faster.",
-        "<strong>Windows/Linux software:</strong> Some AI tools are CUDA-first and don't support MPS. Llama.cpp, Ollama, and ComfyUI all support M4 Pro \u2014 but more specialized research tools may not.",
-        "<strong>Memory upgrades:</strong> The M4 Pro's memory is soldered \u2014 you cannot add RAM later. Order what you need upfront."
+        "<strong>Windows/Linux software:</strong> Some AI tools are CUDA-first and don't support MPS. Llama.cpp, Ollama, and ComfyUI all support M4 Pro — but more specialized research tools may not.",
+        "<strong>Memory upgrades:</strong> The M4 Pro's memory is soldered — you cannot add RAM later. Order what you need upfront."
       ]
     },
     {
@@ -320,7 +320,7 @@
     },
     {
       "type": "p",
-      "html": "The 48 GB config also doubles bandwidth to 546 GB/s (for M4 Max configs) \u2014 70B inference jumps from 18 t/s to ~35 t/s. That's the number that makes 70B feel genuinely fast rather than just usable."
+      "html": "The 48 GB config also doubles bandwidth to 546 GB/s (for M4 Max configs) — 70B inference jumps from 18 t/s to ~35 t/s. That's the number that makes 70B feel genuinely fast rather than just usable."
     }
   ],
   "relatedProductSlugs": [
@@ -334,19 +334,35 @@
   "faq": [
     {
       "question": "How does the Mac Mini M4 Pro compare to the M3 Pro for AI?",
-      "answer": "The M4 Pro offers roughly 20\u201325% more memory bandwidth and improved neural engine performance vs M3 Pro. If you already have an M3 Pro Mac and it runs your models at acceptable speeds, there's no urgent need to upgrade. If you're buying new, M4 Pro is the clear choice."
+      "answer": "The M4 Pro offers roughly 20–25% more memory bandwidth and improved neural engine performance vs M3 Pro. If you already have an M3 Pro Mac and it runs your models at acceptable speeds, there's no urgent need to upgrade. If you're buying new, M4 Pro is the clear choice."
     },
     {
       "question": "Can the Mac Mini M4 Pro run models 24/7 without overheating?",
-      "answer": "Yes \u2014 this is one of its strongest features. The thermal design handles sustained LLM inference indefinitely. Temperatures stay in a normal operating range and the fan stays quiet or inaudible during 7B inference. Many users run the M4 Pro as a home AI server without any thermal concerns."
+      "answer": "Yes — this is one of its strongest features. The thermal design handles sustained LLM inference indefinitely. Temperatures stay in a normal operating range and the fan stays quiet or inaudible during 7B inference. Many users run the M4 Pro as a home AI server without any thermal concerns."
     },
     {
       "question": "Does the Mac Mini M4 Pro support GPU acceleration for Ollama?",
-      "answer": "Yes. Ollama on macOS uses the MPS (Metal Performance Shaders) backend, which runs inference on the M4 Pro's GPU cores. All benchmark numbers in this article use GPU acceleration via MPS \u2014 they're not CPU-only numbers."
+      "answer": "Yes. Ollama on macOS uses the MPS (Metal Performance Shaders) backend, which runs inference on the M4 Pro's GPU cores. All benchmark numbers in this article use GPU acceleration via MPS — they're not CPU-only numbers."
     },
     {
       "question": "What software should I install on a Mac Mini M4 Pro for local AI?",
-      "answer": "Start with Ollama for LLMs \u2014 one-command install, massive model library, automatic GPU acceleration. For image generation, install ComfyUI (most flexible) or DiffusionBee (easiest). For a chat web interface, Open WebUI pairs perfectly with Ollama."
+      "answer": "Start with Ollama for LLMs — one-command install, massive model library, automatic GPU acceleration. For image generation, install ComfyUI (most flexible) or DiffusionBee (easiest). For a chat web interface, Open WebUI pairs perfectly with Ollama."
+    },
+    {
+      "question": "What tokens per second does the Mac Mini M4 Pro achieve on Llama 3.1 70B?",
+      "answer": "With the 64GB memory configuration and Q4_K_M quantization, the M4 Pro runs Llama 3.1 70B at approximately 8–12 tokens/second. This is interactive for chat but noticeably slower than 7B or 13B inference. The 24GB base config cannot fit 70B; you'll need the 64GB upgrade for this model size. Llama 3.1 8B runs at approximately 60–70 t/s on the same hardware."
+    },
+    {
+      "question": "How does the Mac Mini M4 Pro benchmark against a Windows PC with RTX 5070 for LLMs?",
+      "answer": "For 7B models: RTX 5070 wins (~118 t/s vs ~65 t/s) due to higher memory bandwidth (672 vs 273 GB/s). For 13B models: RTX 5070 still faster (~68 t/s vs ~40 t/s) but both are interactive. For 70B models: Mac Mini M4 Pro with 64GB wins outright — the RTX 5070 can't fit the model in 12GB VRAM. The Mac Mini M4 Pro also wins on power draw (30W vs 150W+) and silence."
+    },
+    {
+      "question": "What is the Mac Mini M4 Pro's image generation performance for Stable Diffusion?",
+      "answer": "Using ComfyUI with Apple Silicon support: SD 1.5 at 512×512 runs at approximately 3–4 seconds per image. SDXL at 1024×1024 takes 8–15 seconds. FLUX.1-dev at 1024×1024 takes approximately 12–20 seconds. These speeds are functional but slower than an RTX 5070 (~2–3 seconds for SDXL). For image generation as a primary use case, a dedicated GPU PC is faster. For occasional use alongside LLMs, the M4 Pro is adequate."
+    },
+    {
+      "question": "How does memory configuration affect AI performance on the M4 Pro?",
+      "answer": "Memory bandwidth scales proportionally on Apple Silicon. Both 24GB and 64GB M4 Pro configurations have the same 273 GB/s bandwidth — so per-token speed for the same model at the same quantization is identical. The difference is model capacity: 24GB fits up to 34B Q4, while 64GB fits 70B Q4. Buy 64GB if you plan to run 70B models; otherwise 24GB is sufficient and significantly cheaper."
     }
   ]
 }

@@ -49,13 +49,13 @@
         ],
         [
           "OpenAI API (GPT-4o)",
-          "~$5\u201350/mo",
+          "~$5–50/mo",
           "Pay per token",
           "$0.005/1K input tokens"
         ],
         [
           "Anthropic API",
-          "~$5\u201380/mo",
+          "~$5–80/mo",
           "Pay per token",
           "$0.003/1K input tokens"
         ],
@@ -83,7 +83,7 @@
         [
           "Mac Mini M4 (16 GB)",
           "~$799",
-          "7B\u201313B daily use",
+          "7B–13B daily use",
           "~$2/mo"
         ],
         [
@@ -94,9 +94,9 @@
         ],
         [
           "RTX 5070 + PC build",
-          "~$1,200\u20131,800",
+          "~$1,200–1,800",
           "GPU workloads, SD, gaming",
-          "~$15\u201325/mo"
+          "~$15–25/mo"
         ],
         [
           "GMKtec NucBox M5 Pro",
@@ -163,7 +163,7 @@
     {
       "type": "callout",
       "variant": "verdict",
-      "html": "<strong>Bottom line:</strong> If you pay $20/month for ChatGPT Plus and use it casually, local hardware rarely makes financial sense \u2014 break-even is 3+ years. If you use the API heavily or pay $100+/month, local hardware pays off in under a year."
+      "html": "<strong>Bottom line:</strong> If you pay $20/month for ChatGPT Plus and use it casually, local hardware rarely makes financial sense — break-even is 3+ years. If you use the API heavily or pay $100+/month, local hardware pays off in under a year."
     },
     {
       "type": "h2",
@@ -192,7 +192,7 @@
       "items": [
         "<strong>Frontier models:</strong> GPT-4o and Claude Opus run trillions of parameters. No consumer hardware can match them.",
         "<strong>Zero setup:</strong> Browser tab, done. Local AI requires hardware, installation, and ongoing maintenance.",
-        "<strong>Multimodal features:</strong> Voice mode, image generation, web browsing \u2014 cloud providers are years ahead on integrated features.",
+        "<strong>Multimodal features:</strong> Voice mode, image generation, web browsing — cloud providers are years ahead on integrated features.",
         "<strong>Always up to date:</strong> Cloud models update automatically. Local models require manual downloads."
       ]
     },
@@ -202,11 +202,11 @@
     },
     {
       "type": "p",
-      "html": "Most serious AI users end up running both. Use local AI (Llama 3.3, Mistral, DeepSeek) for <em>high-volume, private, or routine tasks</em> \u2014 summarization, code assistance, drafting. Use cloud AI (Claude, GPT-4o) for <em>complex reasoning tasks</em> where frontier model quality actually matters."
+      "html": "Most serious AI users end up running both. Use local AI (Llama 3.3, Mistral, DeepSeek) for <em>high-volume, private, or routine tasks</em> — summarization, code assistance, drafting. Use cloud AI (Claude, GPT-4o) for <em>complex reasoning tasks</em> where frontier model quality actually matters."
     },
     {
       "type": "p",
-      "html": "In practice this cuts your API bill by 60\u201380% while maintaining access to frontier capabilities when you need them. A Mac Mini M4 Pro ($1,399 one-time) replacing $80/month of API usage pays for itself in 18 months \u2014 and then runs free forever."
+      "html": "In practice this cuts your API bill by 60–80% while maintaining access to frontier capabilities when you need them. A Mac Mini M4 Pro ($1,399 one-time) replacing $80/month of API usage pays for itself in 18 months — and then runs free forever."
     },
     {
       "type": "h2",
@@ -229,7 +229,7 @@
     {
       "type": "ul",
       "items": [
-        "Casual users (< 20 prompts/day) \u2014 the $20/month subscriptions are unbeatable value",
+        "Casual users (< 20 prompts/day) — the $20/month subscriptions are unbeatable value",
         "Anyone who needs frontier-level reasoning for complex tasks daily",
         "Users without technical interest in setup and maintenance",
         "Teams that need audit logs, compliance features, and enterprise SLAs"
@@ -245,7 +245,7 @@
   "faq": [
     {
       "question": "Is running LLMs locally free?",
-      "answer": "After the hardware purchase, yes \u2014 plus a small electricity cost (roughly $2\u201325/month depending on hardware). The models themselves are free and open-source. The upfront hardware cost is the only significant expense."
+      "answer": "After the hardware purchase, yes — plus a small electricity cost (roughly $2–25/month depending on hardware). The models themselves are free and open-source. The upfront hardware cost is the only significant expense."
     },
     {
       "question": "How does local AI quality compare to ChatGPT?",
@@ -253,11 +253,27 @@
     },
     {
       "question": "What's the cheapest way to try local AI before buying hardware?",
-      "answer": "Run Ollama on your existing laptop or desktop. Even a 2022 MacBook Pro with 16 GB unified memory can run 7B models at 15\u201325 t/s. This costs nothing and gives you a realistic feel for local AI performance before investing in dedicated hardware."
+      "answer": "Run Ollama on your existing laptop or desktop. Even a 2022 MacBook Pro with 16 GB unified memory can run 7B models at 15–25 t/s. This costs nothing and gives you a realistic feel for local AI performance before investing in dedicated hardware."
     },
     {
       "question": "Do I need a GPU to run local AI?",
-      "answer": "No \u2014 Ollama and llama.cpp run on CPU-only machines. Performance is much lower (4\u201312 t/s for 7B models) but usable for testing. Apple Silicon Macs are the exception: their neural engine and GPU work together, delivering 40\u201365 t/s without a discrete GPU."
+      "answer": "No — Ollama and llama.cpp run on CPU-only machines. Performance is much lower (4–12 t/s for 7B models) but usable for testing. Apple Silicon Macs are the exception: their neural engine and GPU work together, delivering 40–65 t/s without a discrete GPU."
+    },
+    {
+      "question": "How much does it cost to run a Mac Mini M4 Pro for local AI 24/7?",
+      "answer": "At approximately 30W under load and $0.12/kWh average US electricity cost, the Mac Mini M4 Pro costs about $2.60/month running 24 hours a day. Even at peak load (40W), that's under $4/month. A comparable cloud API bill for 24/7 LLM access would run $50–300+/month depending on usage. The hardware pays for itself within 4–12 months for moderate to heavy users."
+    },
+    {
+      "question": "Which local AI hardware gives the best cost per token?",
+      "answer": "After hardware ROI, the Mac Mini M4 (base model) delivers the best cost per token for 7B models: ~42 t/s at $0.003/hour in electricity = roughly 50 million tokens per dollar of electricity. The RTX 5070 at 118 t/s but 150W costs more per token in electricity but delivers faster responses. For always-on servers, Apple Silicon efficiency wins; for burst inference, NVIDIA raw speed wins."
+    },
+    {
+      "question": "What are the hidden costs of local AI beyond hardware?",
+      "answer": "Storage: larger models (70B Q4 = ~40GB) require NVMe storage — a 2TB NVMe is ~$80–120. Electricity: varies by hardware from ~$2/month (Mac Mini M4) to ~$13/month (RTX 5070 PC at 150W). Your time: setup, model management, and troubleshooting isn't zero. UPS backup ($80–150) if uptime matters. These add $200–400 upfront beyond hardware, but remain fixed costs vs. indefinitely scaling API bills."
+    },
+    {
+      "question": "Is local AI worth it for casual users who rarely use LLMs?",
+      "answer": "Probably not for pure cost optimization. If you use an LLM less than 30 minutes per day, free tiers from OpenAI, Anthropic, or Google are sufficient. Local AI makes financial sense when you're hitting API limits, need privacy for sensitive data, want to run models unavailable via API (fine-tuned or specialized), or use AI programmatically in scripts that would rack up large API bills."
     }
   ]
 }
