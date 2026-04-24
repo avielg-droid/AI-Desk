@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
+  other: { 'msvalidate.01': '96851A4CB49BB6869C9BFDABAAA7AAE1' },
 }
 
 const NAV_LINKS = [
@@ -53,7 +54,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />
-        <meta name="msvalidate.01" content="96851A4CB49BB6869C9BFDABAAA7AAE1" />
         {/* Anti-FOUC: apply stored theme before first paint */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();` }} />
         <script defer src="https://cloud.umami.is/script.js" data-website-id="9f2772fc-7052-4936-a9e8-475174b113f0" />
