@@ -1,36 +1,41 @@
 {
   "slug": "mini-pc-for-ollama",
   "title": "Best Mini PCs for Ollama in 2026",
-  "metaDescription": "Best mini PCs for running Ollama locally in 2026. Ranked by LLM speed, memory capacity, and power efficiency — Apple Silicon vs x86 compared.",
+  "metaDescription": "Best mini PCs for running Ollama locally in 2026. Ranked by LLM speed, memory capacity, and power efficiency \u2014 Apple Silicon vs x86 compared.",
   "h1": "Best Mini PCs for Ollama (2026)",
-  "intro": "The best mini PC for Ollama in 2026 is the Apple Mac Mini M4 Pro — its 64GB of unified memory at 273 GB/s delivers 30–45 tokens/sec on Llama 3.1 8B and can run 70B models at 10–18 tok/s, all within a 30W idle envelope. For Windows users who need x86 compatibility, the Beelink SEI14 with 32GB RAM handles 7B–13B models comfortably at lower cost, though GPU-acceleration in Ollama is limited to iGPU on Intel platforms.",
+  "intro": "The best mini PC for Ollama in 2026 is the Apple Mac Mini M4 Pro \u2014 its 64GB of unified memory at 273 GB/s delivers 30\u201345 tokens/sec on Llama 3.1 8B and can run 70B models at 10\u201318 tok/s, all within a 30W idle envelope. For Windows users who need x86 compatibility, the Beelink SEI14 with 32GB RAM handles 7B\u201313B models comfortably at lower cost, though GPU-acceleration in Ollama is limited to iGPU on Intel platforms.",
   "topPickSlug": "apple-mac-mini-m4-pro",
-  "productSlugs": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "beelink-sei14", "gmktec-nucbox-m5-pro"],
+  "productSlugs": [
+    "apple-mac-mini-m4-pro",
+    "apple-mac-mini-m4",
+    "geekom-a6",
+    "gmktec-nucbox-m5-pro"
+  ],
   "productNotes": {
-    "apple-mac-mini-m4-pro": "Best mini PC for Ollama. Unified memory means the GPU and CPU share the same 64GB pool — Ollama models load once and run fully accelerated. Zero configuration: install Ollama, pull a model, done. 273 GB/s bandwidth makes 70B inference practical at 10–18 tok/s.",
-    "apple-mac-mini-m4": "Entry point for serious local LLMs. 24GB configuration fits Llama 3.1 8B and 13B models with room for context. 120 GB/s bandwidth delivers 25–35 tok/s on 8B. Cannot fit 70B without offloading — upgrade to M4 Pro's 64GB if 70B is a goal.",
-    "beelink-sei14": "Best x86 mini PC for Ollama. 32GB DDR5 RAM lets llama.cpp run 7B–13B models fully in RAM. CPU-only inference delivers 8–12 tok/s on 8B — functional for occasional use, not real-time chat. Intel Arc iGPU acceleration requires Ollama's OpenVINO backend (experimental in 2026).",
-    "gmktec-nucbox-m5-pro": "Budget entry point. 32GB RAM handles 7B models fine. AMD Radeon 780M iGPU can accelerate smaller models via ROCm on Linux. Windows users get CPU-only inference at 6–10 tok/s. Best if price is the primary constraint."
+    "apple-mac-mini-m4-pro": "Best mini PC for Ollama. Unified memory means the GPU and CPU share the same 64GB pool \u2014 Ollama models load once and run fully accelerated. Zero configuration: install Ollama, pull a model, done. 273 GB/s bandwidth makes 70B inference practical at 10\u201318 tok/s.",
+    "apple-mac-mini-m4": "Entry point for serious local LLMs. 24GB configuration fits Llama 3.1 8B and 13B models with room for context. 120 GB/s bandwidth delivers 25\u201335 tok/s on 8B. Cannot fit 70B without offloading \u2014 upgrade to M4 Pro's 64GB if 70B is a goal.",
+    "gmktec-nucbox-m5-pro": "Budget entry point. 32GB RAM handles 7B models fine. AMD Radeon 780M iGPU can accelerate smaller models via ROCm on Linux. Windows users get CPU-only inference at 6\u201310 tok/s. Best if price is the primary constraint.",
+    "geekom-a6": "Best x86 mini PC for Ollama. 32GB DDR5 runs 14B models fully in RAM and can attempt 32B Q4 at 4\u20136 t/s. CPU inference at ~16 t/s on 7B \u2014 functional for non-interactive use. The USB4 port means you can add an eGPU later for proper GPU-accelerated inference. Best pick if you need 14B+ models on a Windows/Linux budget."
   },
   "requirements": "Minimum 8GB RAM for Llama 3.1 8B (Q4 quantization, ~5GB). 16GB recommended for comfortable 7B inference with context headroom. 32GB+ for 13B models. 64GB for 70B models at Q4_K_M without offloading.",
-  "whyThisMatters": "Unlike desktop GPUs where VRAM and system RAM are separate, mini PCs use unified or shared memory. On Apple Silicon, this is a major advantage — the GPU can use all available memory for model weights at full bandwidth. On x86 mini PCs, the iGPU shares system DDR5/LPDDR5 RAM, which is slower than discrete GDDR6X but faster than CPU-only inference.",
+  "whyThisMatters": "Unlike desktop GPUs where VRAM and system RAM are separate, mini PCs use unified or shared memory. On Apple Silicon, this is a major advantage \u2014 the GPU can use all available memory for model weights at full bandwidth. On x86 mini PCs, the iGPU shares system DDR5/LPDDR5 RAM, which is slower than discrete GDDR6X but faster than CPU-only inference.",
   "faq": [
     {
       "question": "Can a mini PC run Ollama for real-time chat?",
-      "answer": "Yes, with the right hardware. The Mac Mini M4 Pro delivers 30–45 tok/s on 8B models — comfortable for real-time chat at typical reading speed (15–30 tok/s feels instantaneous). The Mac Mini M4 base model at 24GB hits 25–35 tok/s. X86 mini PCs with CPU-only inference average 8–12 tok/s — noticeable lag but usable for non-interactive tasks."
+      "answer": "Yes, with the right hardware. The Mac Mini M4 Pro delivers 30\u201345 tok/s on 8B models \u2014 comfortable for real-time chat at typical reading speed (15\u201330 tok/s feels instantaneous). The Mac Mini M4 base model at 24GB hits 25\u201335 tok/s. X86 mini PCs with CPU-only inference average 8\u201312 tok/s \u2014 noticeable lag but usable for non-interactive tasks."
     },
     {
       "question": "Why is Apple Silicon better for Ollama than Windows mini PCs?",
-      "answer": "Three reasons: unified memory means the GPU accelerates models fully without discrete VRAM limits; memory bandwidth is 120–273 GB/s vs 50–90 GB/s for LPDDR5 in x86 mini PCs; and Ollama's Metal backend for Apple Silicon is production-grade and maintained by the Ollama team. Windows mini PCs rely on iGPU acceleration (OpenVINO/ROCm) that is less mature."
+      "answer": "Three reasons: unified memory means the GPU accelerates models fully without discrete VRAM limits; memory bandwidth is 120\u2013273 GB/s vs 50\u201390 GB/s for LPDDR5 in x86 mini PCs; and Ollama's Metal backend for Apple Silicon is production-grade and maintained by the Ollama team. Windows mini PCs rely on iGPU acceleration (OpenVINO/ROCm) that is less mature."
     },
     {
       "question": "Can a mini PC run Llama 3 70B?",
-      "answer": "The Mac Mini M4 Pro with 64GB unified memory can run Llama 3 70B at Q4_K_M quantization (~39GB) fully in memory at 10–18 tok/s. The Mac Mini M4 with 24GB cannot fit it without offloading — you'd get 2–4 tok/s. No x86 mini PC reviewed here has the bandwidth to make 70B practical."
+      "answer": "The Mac Mini M4 Pro with 64GB unified memory can run Llama 3 70B at Q4_K_M quantization (~39GB) fully in memory at 10\u201318 tok/s. The Mac Mini M4 with 24GB cannot fit it without offloading \u2014 you'd get 2\u20134 tok/s. No x86 mini PC reviewed here has the bandwidth to make 70B practical."
     },
     {
       "question": "How much power does a mini PC use for AI inference?",
-      "answer": "The Mac Mini M4 Pro idles at 12W and peaks around 35–40W under full LLM load — dramatically lower than a desktop GPU that draws 300–450W. The Beelink SEI14 idles at 8W and peaks at 25–30W under load. For always-on AI inference, a mini PC saves 1,000–3,000 kWh per year compared to a desktop GPU workstation."
+      "answer": "The Mac Mini M4 Pro idles at 12W and peaks around 35\u201340W under full LLM load \u2014 dramatically lower than a desktop GPU that draws 300\u2013450W. The Beelink SEI14 idles at 8W and peaks at 25\u201330W under load. For always-on AI inference, a mini PC saves 1,000\u20133,000 kWh per year compared to a desktop GPU workstation."
     }
   ],
-  "lastUpdated": "2026-04-19"
+  "lastUpdated": "2026-04-24"
 }

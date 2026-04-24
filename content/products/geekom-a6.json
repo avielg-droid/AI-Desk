@@ -1,0 +1,83 @@
+{
+  "slug": "geekom-a6",
+  "asin": "B0DRP316J1",
+  "image": "/products/geekom-a6.jpg",
+  "name": "GEEKOM A6 Mini PC (Ryzen 7 6800H, 32GB DDR5)",
+  "category": "mini-pc",
+  "brand": "GEEKOM",
+  "shortDescription": "The GEEKOM A6 packs an AMD Ryzen 7 6800H, 32GB DDR5, and a USB4 port into a compact aluminium chassis — making it the best x86 mini PC for running 14B–32B LLMs via CPU and the only budget mini PC ready for an external GPU upgrade.",
+  "specs": {
+    "chip": "AMD Ryzen 7 6800H (Zen 3+, 8 Cores / 16 Threads, up to 4.7 GHz)",
+    "architecture": "AMD Zen 3+ (Rembrandt)",
+    "cpu_cores": 8,
+    "gpu_cores": 768,
+    "unified_memory_gb": 32,
+    "memory_bandwidth_gbps": 68,
+    "storage_gb": 1000,
+    "tdp_watts": 45,
+    "max_llm_size": "32B (Q4 via CPU)",
+    "interface": "USB4 40Gbps (eGPU), Wi-Fi 6E, 2.5GbE LAN, BT 5.2",
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 16,
+    "cooling": "Single-fan active"
+  },
+  "useCases": [
+    "Running 14B–32B LLMs locally via CPU with llama.cpp or Ollama",
+    "Future-proof eGPU setup via USB4 40Gbps",
+    "Always-on private AI server with WiFi 6E and 2.5GbE",
+    "AMD Radeon 680M iGPU-accelerated AI with ROCm on Linux",
+    "Developer workstation for local AI experimentation"
+  ],
+  "pros": [
+    "32GB DDR5 — runs 14B Q4 models fully in RAM, 32B Q4 with headroom",
+    "USB4 40Gbps — connect an external GPU enclosure for full discrete performance",
+    "Ryzen 7 6800H — fastest CPU inference of any reviewed budget mini PC",
+    "AMD Radeon 680M — iGPU acceleration with ROCm on Linux",
+    "1TB PCIe 4.0 NVMe — loads 32B model weights (~20GB) in under 10 seconds",
+    "WiFi 6E + 2.5GbE — ideal for always-on home AI server use"
+  ],
+  "cons": [
+    "CPU-only inference at ~16 t/s — noticeably slower than Apple Silicon",
+    "68 GB/s DDR5 bandwidth — 4× slower than Mac Mini M4 Pro's 273 GB/s",
+    "No Thunderbolt — USB4 eGPU is slower than TB4 at full GPU bandwidth",
+    "Windows ROCm support immature — iGPU AI acceleration works best on Linux",
+    "32B models run at ~4–6 t/s via CPU — functional but not interactive-speed"
+  ],
+  "verdict": "The GEEKOM A6 is the best x86 mini PC for LLMs in 2026. The 32GB DDR5 is the key differentiator — it's the only mini PC under $500 that runs 14B models comfortably and can attempt 32B Q4. The USB4 port adds a future upgrade path: connect an RTX 5070 in an eGPU enclosure and you suddenly have a serious AI workstation. If Apple Silicon isn't an option and you need more than 7B models, the A6 is the answer.",
+  "affiliateUrl": "https://amzn.to/3OkpZVi",
+  "rating": 4.5,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-24",
+  "featured": true,
+  "crossSells": [
+    "silkland-usb4-thunderbolt-5",
+    "apc-bx1500m",
+    "gigabyte-rtx-5070-windforce"
+  ],
+  "notFor": [
+    "Users who want fast, real-time LLM chat — 16 t/s is functional but sluggish vs Apple Silicon",
+    "Stable Diffusion — the Radeon 680M iGPU is too slow for SDXL or FLUX",
+    "Running 70B models — 32GB RAM fits it but CPU speed makes it impractical",
+    "Windows users who want plug-and-play iGPU AI — ROCm requires Linux"
+  ],
+  "entityHeadline": "The GEEKOM A6: Best x86 Mini PC for 14B–32B LLMs and eGPU Upgrades",
+  "faq": [
+    {
+      "question": "Can the GEEKOM A6 run 14B or 32B language models?",
+      "answer": "Yes. With 32GB DDR5, the A6 loads a 14B Q4 model (~9GB) and a 32B Q4 model (~20GB) fully into RAM. Inference via llama.cpp CPU runs at roughly 8–10 t/s for 14B and 4–6 t/s for 32B. That's slow for interactive chat but practical for batch tasks, coding assistants, and summarization workloads."
+    },
+    {
+      "question": "Does the USB4 port support an external GPU?",
+      "answer": "Yes. The USB4 40Gbps port supports eGPU enclosures (such as Razer Core X or Sonnet Breakaway). Connecting an RTX 5070 via USB4 gives you full discrete GPU performance for AI inference and Stable Diffusion — though USB4 has lower bandwidth than Thunderbolt 4 PCIe, so expect 10–20% lower throughput vs a native PCIe slot."
+    },
+    {
+      "question": "How does the GEEKOM A6 compare to the Mac Mini M4 for Ollama?",
+      "answer": "The Mac Mini M4 runs Llama 3.1 8B at 42 t/s vs the A6's 16 t/s — roughly 2.5× faster. The A6 wins on model capacity: 32GB vs 16GB base configuration. If budget is tight and you need 14B+ model support, the A6 is the better choice. If you want the fastest LLM speed without an eGPU, the Mac Mini M4 Pro is superior."
+    },
+    {
+      "question": "Can the GEEKOM A6 run Stable Diffusion?",
+      "answer": "Technically yes, but slowly. The AMD Radeon 680M on Linux with ROCm can run SD 1.5 at 512×512 in 30–60 seconds. SDXL and FLUX.1 are impractical. The USB4 port is the real path to image generation: add an RTX 5070 in an eGPU enclosure and you get full FLUX.1 capability."
+    }
+  ]
+}
