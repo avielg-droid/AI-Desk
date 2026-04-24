@@ -41,7 +41,7 @@
     "Fan noise audible under sustained AI inference load"
   ],
   "verdict": "If your budget is under $300 and you want to run local AI on Windows, the GMKtec NucBox M5 Pro is the most capable option at this price. It handles 7B models smoothly and 13B models acceptably. Don't expect Mac Mini speeds \u2014 the iGPU is the bottleneck \u2014 but for experimenting with Ollama, LM Studio, or self-hosted AI, this is the best cheap starting point in 2026.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0GHDTHM53?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/48oozQm",
   "rating": 4.3,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",

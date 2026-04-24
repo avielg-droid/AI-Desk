@@ -31,7 +31,7 @@
     "Premium OWC pricing vs third-party Thunderbolt enclosures"
   ],
   "verdict": "The OWC Envoy Express is the right external storage solution for Mac Mini users running serious AI workloads. The 256GB or 512GB internal SSD that ships with most Mac Mini M4 configurations fills up fast with LLM libraries \u2014 a single 4-bit quantized 70B model is ~40GB. Pair this with a 2\u20134TB NVMe SSD and load any model in seconds over Thunderbolt at 3,000+ MB/s. The fanless aluminum body keeps it silent for always-on operation.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0FKPGF3BH?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/3OWYYr6",
   "rating": 4.6,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",

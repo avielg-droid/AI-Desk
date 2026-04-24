@@ -1,11 +1,10 @@
 {
   "slug": "gpu-brace-support",
-  "asin": "B09FPJL1K",
-  "image": "/products/gpu-brace-support.jpg",
-  "name": "Aluminum GPU Brace Support Bracket",
+  "asin": "B0DPPYB2QF",
+  "name": "GPU Anti-Sag Bracket with Magnet & Non-Slip Base (74\u2013120mm)",
   "category": "accessory",
   "brand": "Generic",
-  "shortDescription": "An adjustable aluminum GPU brace with anti-slip magnetic base that prevents GPU sag during sustained AI inference runs. Modern Blackwell and RDNA 4 GPUs have massive heatsinks that stress the PCIe slot under the constant fan vibration of long training sessions \u2014 this bracket is cheap insurance.",
+  "shortDescription": "Adjustable GPU sag bracket with magnetic base and non-slip sheet. Fits GPUs 74\u2013120mm wide. Supports heavy triple-fan cards like the RTX 5070 and RX 9060 XT during sustained AI inference runs.",
   "specs": {
     "interface": "Universal PCIe GPU support",
     "form_factor": "Accessory"
@@ -29,11 +28,11 @@
     "Magnetic base may not adhere well to plastic case floors"
   ],
   "verdict": "A $10\u201315 accessory that protects a $400+ GPU investment. Modern AI GPUs like the RTX 5070 and RX 9060 XT have large, heavy triple-fan heatsinks. During sustained inference \u2014 fans at high RPM for hours \u2014 micro-vibrations accelerate PCIe slot fatigue. GPU sag causes intermittent connection issues and, over time, bent slots. Get the brace when you get the GPU.",
-  "affiliateUrl": "https://www.amazon.com/dp/B09FPJL1K?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/4ctnoS5",
   "rating": 4.5,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",
-  "lastUpdated": "2026-04-21",
+  "lastUpdated": "2026-04-24",
   "featured": false,
   "crossSells": [
     "gigabyte-rtx-5070-windforce",

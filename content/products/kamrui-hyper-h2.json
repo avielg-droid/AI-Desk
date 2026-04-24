@@ -41,7 +41,7 @@
     "No macOS option \u2014 Windows or Linux only"
   ],
   "verdict": "The KAMRUI Hyper H2 is the top CPU-only mini PC for local AI in this lineup. The 10-core 14450HX outperforms AMD Ryzen 4300U in multi-threaded inference by 40\u201360%, and the PCIe 4.0 SSD makes model loading noticeably faster. If you want the most tokens per second from a Windows mini PC without a discrete GPU, the Hyper H2 is the choice. Upgrading to 32GB RAM is highly recommended for comfortable 13B inference.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0G488CW54?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/4cGqAsm",
   "rating": 4.3,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",

@@ -41,7 +41,7 @@
     "Fewer AI software integrations compared to NVIDIA CUDA ecosystem"
   ],
   "verdict": "The GIGABYTE RX 9060 XT 16G is the right choice if VRAM is your top priority. The extra 4GB over RTX 5070 variants means you can run 13B models at Q8 and 14B models at Q4 entirely on the GPU \u2014 no CPU offload slowdowns. The trade-off is ROCm: AMD's software stack works well on Linux but requires more setup than plug-and-play CUDA on Windows. If you run Linux and want the most capable mid-range card for larger models, this is it. If you run Windows and just want it to work, choose the RTX 5070 WINDFORCE instead.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0F91KM1CK?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/4vNwVel",
   "rating": 4.2,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",

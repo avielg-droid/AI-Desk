@@ -40,7 +40,7 @@
     "No advantage over 5070 Ti for workloads that fit in 12GB"
   ],
   "verdict": "The GIGABYTE RTX 5070 WINDFORCE OC is a strong mid-range GPU for local AI in 2026. The jump to Blackwell's 5th-Gen Tensor Cores is meaningful for inference speed, and GDDR7 bandwidth at 672 GB/s makes image generation and Whisper transcription noticeably faster than last-gen. The 12GB VRAM limit is the only real constraint \u2014 if you need to run 13B+ models comfortably, look at the RX 9060 XT 16G for more headroom, or save for a 16GB RTX 5070 Ti.",
-  "affiliateUrl": "https://www.amazon.com/dp/B0DTQMLX4F?tag=YOUR_ASSOCIATE_TAG",
+  "affiliateUrl": "https://amzn.to/4vEu7Qy",
   "rating": 4.4,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",
