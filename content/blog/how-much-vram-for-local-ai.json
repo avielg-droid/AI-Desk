@@ -4,7 +4,7 @@
   "headline": "How Much VRAM Do You Need to Run AI Locally?",
   "description": "A practical VRAM guide for local AI in 2026 \u2014 exact memory requirements for 7B, 13B, 34B, and 70B LLMs plus Stable Diffusion, FLUX, and multimodal models.",
   "publishedAt": "2026-04-22",
-  "updatedAt": "2026-04-22",
+  "updatedAt": "2026-04-24",
   "category": "analysis",
   "tags": [
     "vram",
@@ -87,6 +87,11 @@
           "Mac Pro M4 or 48 GB GPU"
         ]
       ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "html": "Reviewed hardware: <a href='/products/gigabyte-rtx-5070-windforce'><strong>RTX 5070 (12 GB)</strong></a> \u00b7 <a href='/products/gigabyte-rx-9060-xt-gaming'><strong>RX 9060 XT (16 GB)</strong></a> \u00b7 <a href='/products/apple-mac-mini-m4-pro'><strong>Mac Mini M4 Pro (24 GB unified)</strong></a> \u00b7 <a href='/products/apple-mac-mini-m4'><strong>Mac Mini M4 (16 GB unified)</strong></a>"
     },
     {
       "type": "h2",
@@ -276,6 +281,22 @@
     {
       "question": "What is Q4 quantization and does it hurt quality?",
       "answer": "Q4 quantization stores model weights at 4-bit precision instead of 16-bit, cutting memory use by 75%. Quality loss is minimal for most tasks \u2014 perplexity scores typically increase by 1\u20135%. For casual use, Q4 is indistinguishable from fp16. For precise technical tasks, Q8 is preferred if your VRAM allows it."
+    },
+    {
+      "question": "Can I use system RAM instead of VRAM to run LLMs?",
+      "answer": "Yes, via CPU offloading. llama.cpp and Ollama can split a model between GPU VRAM and system RAM. The catch: any layer that runs on CPU is roughly 10\u00d7 slower than GPU inference. A 70B model split across 12 GB VRAM and 32 GB RAM might run at 3\u20135 t/s instead of 10\u201315 t/s on a fully in-VRAM Mac Mini M4 Pro. On Apple Silicon this penalty is smaller because CPU and GPU share the same unified memory pool."
+    },
+    {
+      "question": "How much VRAM do I need for FLUX.1 image generation?",
+      "answer": "FLUX.1 Dev at full bfloat16 precision requires 24 GB VRAM. With 8-bit quantization (Q8): 12 GB. With 4-bit quantization (NF4/Q4): 8 GB, though quality degrades slightly. SDXL 1.0: 8 GB minimum, 10\u201312 GB comfortable. Stable Diffusion 1.5: 4 GB minimum. The RTX 5070 (12 GB) hits the FLUX.1 Q8 sweet spot."
+    },
+    {
+      "question": "Does quantization affect the quality of LLM outputs?",
+      "answer": "At Q4 (4-bit), perplexity increases slightly vs full float16 \u2014 most users cannot detect the difference in conversational use. Q8 (8-bit) is near-identical to float16 for all practical purposes. Q2 starts showing noticeable quality degradation. The rule of thumb: use Q4 if VRAM is the constraint; use Q8 if you have headroom; use float16 only on high-VRAM hardware for critical tasks."
+    },
+    {
+      "question": "What happens when a model doesn't fully fit in VRAM?",
+      "answer": "Modern runtimes don't crash \u2014 they split the model. llama.cpp's --n-gpu-layers parameter lets you specify how many layers to offload to GPU. Layers not offloaded run on CPU. The result is a speed penalty proportional to the CPU-offloaded fraction. A 13B model with 4 layers on CPU might run at 60\u201370% of full GPU speed. A 70B model with 50% on CPU might run at 10\u201320% of theoretical GPU speed."
     }
   ]
 }

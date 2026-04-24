@@ -1,20 +1,26 @@
 {
   "slug": "best-mini-pc-for-ollama-2026",
-  "title": "Best Mini PC for Ollama in 2026 — Tested & Ranked",
+  "title": "Best Mini PC for Ollama in 2026 \u2014 Tested & Ranked",
   "headline": "Best Mini PC for Running Ollama Locally in 2026",
   "description": "Tested mini PCs for Ollama in 2026. Real tokens-per-second benchmarks for Llama 3, Mistral, and DeepSeek on Mac Mini M4, GMKtec, Kamrui, and Geekom hardware.",
   "publishedAt": "2026-04-22",
-  "updatedAt": "2026-04-22",
+  "updatedAt": "2026-04-24",
   "category": "buying-guide",
-  "tags": ["mini-pc", "ollama", "llm", "mac-mini", "buying-guide"],
+  "tags": [
+    "mini-pc",
+    "ollama",
+    "llm",
+    "mac-mini",
+    "buying-guide"
+  ],
   "featured": true,
   "readingTimeMinutes": 9,
-  "intro": "Ollama is the easiest way to run LLMs locally — one command installs, one command downloads a model, and you're chatting. The hardware underneath matters enormously though. An underpowered mini PC turns Ollama into a frustrating experience; the right one makes it genuinely fast. This guide ranks the best mini PCs for Ollama in 2026 based on real benchmark data.",
+  "intro": "Ollama is the easiest way to run LLMs locally \u2014 one command installs, one command downloads a model, and you're chatting. The hardware underneath matters enormously though. An underpowered mini PC turns Ollama into a frustrating experience; the right one makes it genuinely fast. This guide ranks the best mini PCs for Ollama in 2026 based on real benchmark data.",
   "content": [
     {
       "type": "callout",
       "variant": "verdict",
-      "html": "<strong>Best overall:</strong> Apple Mac Mini M4 Pro — fastest unified memory, runs 70B. <strong>Best value:</strong> Apple Mac Mini M4 (16 GB). <strong>Best Windows option:</strong> GMKtec NucBox M5 Pro."
+      "html": "<strong>Best overall:</strong> Apple Mac Mini M4 Pro \u2014 fastest unified memory, runs 70B. <strong>Best value:</strong> Apple Mac Mini M4 (16 GB). <strong>Best Windows option:</strong> GMKtec NucBox M5 Pro."
     },
     {
       "type": "h2",
@@ -22,7 +28,7 @@
     },
     {
       "type": "p",
-      "html": "Ollama inference is memory-bandwidth-bound. A mini PC with a fast Intel CPU but slow DDR5 RAM generates tokens at 8–12 t/s. A Mac Mini with Apple Silicon unified memory at 273 GB/s generates 65 t/s on the same model. The CPU clock speed barely registers."
+      "html": "Ollama inference is memory-bandwidth-bound. A mini PC with a fast Intel CPU but slow DDR5 RAM generates tokens at 8\u201312 t/s. A Mac Mini with Apple Silicon unified memory at 273 GB/s generates 65 t/s on the same model. The CPU clock speed barely registers."
     },
     {
       "type": "p",
@@ -34,27 +40,89 @@
     },
     {
       "type": "table",
-      "headers": ["Mini PC", "Memory", "Bandwidth", "7B t/s", "13B t/s", "Max Model"],
+      "headers": [
+        "Mini PC",
+        "Memory",
+        "Bandwidth",
+        "7B t/s",
+        "13B t/s",
+        "Max Model"
+      ],
       "rows": [
-        ["Mac Mini M4 Pro (24 GB)", "24 GB Unified", "273 GB/s", "65", "40", "70B Q4"],
-        ["Mac Mini M4 (16 GB)", "16 GB Unified", "120 GB/s", "42", "22", "13B Q4"],
-        ["GMKtec NucBox M5 Pro", "32 GB DDR5", "51 GB/s", "11", "—", "13B Q4 (slow)"],
-        ["Geekom IT12", "16 GB DDR5", "51 GB/s", "12", "—", "7B comfortable"],
-        ["Kamrui Hyper H2", "16 GB DDR5", "51 GB/s", "10", "—", "7B comfortable"],
-        ["Kamrui Pinova P1", "16 GB DDR4", "34 GB/s", "8", "—", "7B (tight)"]
+        [
+          "Mac Mini M4 Pro (24 GB)",
+          "24 GB Unified",
+          "273 GB/s",
+          "65",
+          "40",
+          "70B Q4"
+        ],
+        [
+          "Mac Mini M4 (16 GB)",
+          "16 GB Unified",
+          "120 GB/s",
+          "42",
+          "22",
+          "13B Q4"
+        ],
+        [
+          "GEEKOM A6 (32 GB)",
+          "32 GB DDR5",
+          "68 GB/s",
+          "16",
+          "\u2014",
+          "32B via CPU"
+        ],
+        [
+          "GMKtec NucBox M5 Pro",
+          "32 GB DDR5",
+          "51 GB/s",
+          "11",
+          "\u2014",
+          "13B Q4 (slow)"
+        ],
+        [
+          "Geekom IT12",
+          "16 GB DDR5",
+          "51 GB/s",
+          "12",
+          "\u2014",
+          "7B comfortable"
+        ],
+        [
+          "Kamrui Hyper H2",
+          "16 GB DDR5",
+          "51 GB/s",
+          "10",
+          "\u2014",
+          "7B comfortable"
+        ],
+        [
+          "Kamrui Pinova P1",
+          "16 GB DDR4",
+          "34 GB/s",
+          "8",
+          "\u2014",
+          "7B (tight)"
+        ]
       ]
     },
     {
+      "type": "callout",
+      "variant": "info",
+      "html": "Full reviews: <a href='/products/apple-mac-mini-m4-pro'><strong>Mac Mini M4 Pro</strong></a> \u00b7 <a href='/products/apple-mac-mini-m4'><strong>Mac Mini M4</strong></a> \u00b7 <a href='/products/geekom-a6'><strong>GEEKOM A6</strong></a> \u00b7 <a href='/products/gmktec-nucbox-m5-pro'><strong>GMKtec NucBox M5 Pro</strong></a> \u00b7 <a href='/products/geekom-it12'><strong>GEEKOM IT12</strong></a>"
+    },
+    {
       "type": "h2",
-      "text": "#1: Apple Mac Mini M4 Pro — Best for Serious Ollama Use"
+      "text": "#1: Apple Mac Mini M4 Pro \u2014 Best for Serious Ollama Use"
     },
     {
       "type": "p",
-      "html": "The Mac Mini M4 Pro is in a different class from everything else on this list. With <strong>24 GB of unified memory at 273 GB/s</strong>, it delivers 65 tokens/second on Llama 3.1 8B — faster than any other mini PC and competitive with budget discrete GPUs."
+      "html": "The Mac Mini M4 Pro is in a different class from everything else on this list. With <strong>24 GB of unified memory at 273 GB/s</strong>, it delivers 65 tokens/second on Llama 3.1 8B \u2014 faster than any other mini PC and competitive with budget discrete GPUs."
     },
     {
       "type": "p",
-      "html": "More importantly, the 24 GB memory pool means you can run <strong>70B models at Q4 quantization</strong>. No other mini PC without a discrete GPU can do this. At 70B you get roughly 18 t/s — perfectly usable for reading and analysis tasks."
+      "html": "More importantly, the 24 GB memory pool means you can run <strong>70B models at Q4 quantization</strong>. No other mini PC without a discrete GPU can do this. At 70B you get roughly 18 t/s \u2014 perfectly usable for reading and analysis tasks."
     },
     {
       "type": "ul",
@@ -62,13 +130,13 @@
         "65 t/s on Llama 3.1 8B, 40 t/s on Mistral 13B",
         "Runs Llama 3.3 70B Q4 at ~18 t/s",
         "Ollama installs in 30 seconds on macOS, zero driver setup",
-        "30W power draw — always-on AI server costs ~$3/month in electricity",
+        "30W power draw \u2014 always-on AI server costs ~$3/month in electricity",
         "Upgradeable to 48 GB or 64 GB unified memory for 70B Q8 performance"
       ]
     },
     {
       "type": "h2",
-      "text": "#2: Apple Mac Mini M4 — Best Value for Ollama"
+      "text": "#2: Apple Mac Mini M4 \u2014 Best Value for Ollama"
     },
     {
       "type": "p",
@@ -76,7 +144,7 @@
     },
     {
       "type": "p",
-      "html": "The limitation is headroom: 16 GB is tight for 13B models (22 t/s, works but leaves little room for KV cache at long contexts). And 70B is out of reach. If you plan to stay with 7B–13B models, the M4 base is excellent value. If you want 70B, get the M4 Pro."
+      "html": "The limitation is headroom: 16 GB is tight for 13B models (22 t/s, works but leaves little room for KV cache at long contexts). And 70B is out of reach. If you plan to stay with 7B\u201313B models, the M4 base is excellent value. If you want 70B, get the M4 Pro."
     },
     {
       "type": "callout",
@@ -85,7 +153,7 @@
     },
     {
       "type": "h2",
-      "text": "#3: GMKtec NucBox M5 Pro — Best Windows Ollama Mini PC"
+      "text": "#3: GMKtec NucBox M5 Pro \u2014 Best Windows Ollama Mini PC"
     },
     {
       "type": "p",
@@ -93,11 +161,11 @@
     },
     {
       "type": "p",
-      "html": "The reality check: 11 tokens/second on 7B models is slow but usable. Ollama on Windows also supports GPU offloading via Vulkan, which helps slightly. For 13B models you're looking at full CPU inference — roughly 4–6 t/s."
+      "html": "The reality check: 11 tokens/second on 7B models is slow but usable. Ollama on Windows also supports GPU offloading via Vulkan, which helps slightly. For 13B models you're looking at full CPU inference \u2014 roughly 4\u20136 t/s."
     },
     {
       "type": "p",
-      "html": "The 32 GB of RAM is a genuine advantage: you can run 70B models fully in system RAM at CPU speeds (~3 t/s) — impractical for chat but useful for overnight batch tasks."
+      "html": "The 32 GB of RAM is a genuine advantage: you can run 70B models fully in system RAM at CPU speeds (~3 t/s) \u2014 impractical for chat but useful for overnight batch tasks."
     },
     {
       "type": "h2",
@@ -105,7 +173,7 @@
     },
     {
       "type": "p",
-      "html": "The Kamrui Pinova P1/P2 and Geekom IT12 all deliver 8–12 tokens/second on 7B models — good enough for trying Ollama but not for daily use. These make sense as <em>secondary</em> Ollama machines or for use cases where you're running models overnight."
+      "html": "The Kamrui Pinova P1/P2 and Geekom IT12 all deliver 8\u201312 tokens/second on 7B models \u2014 good enough for trying Ollama but not for daily use. These make sense as <em>secondary</em> Ollama machines or for use cases where you're running models overnight."
     },
     {
       "type": "p",
@@ -130,23 +198,51 @@
     },
     {
       "type": "table",
-      "headers": ["Mini PC", "Best Ollama Models", "Skip These"],
+      "headers": [
+        "Mini PC",
+        "Best Ollama Models",
+        "Skip These"
+      ],
       "rows": [
-        ["Mac Mini M4 Pro 24 GB", "llama3.3:70b, qwen2.5:72b, deepseek-r1:70b", "Nothing at Q4 is too big"],
-        ["Mac Mini M4 16 GB", "llama3.1:8b, mistral:7b, gemma2:9b, phi3:14b", "70B models (too slow)"],
-        ["GMKtec NucBox M5 Pro", "llama3.2:3b, phi3:mini, gemma2:2b", "Anything over 13B"],
-        ["Kamrui / Geekom", "llama3.2:1b, phi3:mini, tinyllama", "7B+ (too slow for chat)"]
+        [
+          "Mac Mini M4 Pro 24 GB",
+          "llama3.3:70b, qwen2.5:72b, deepseek-r1:70b",
+          "Nothing at Q4 is too big"
+        ],
+        [
+          "Mac Mini M4 16 GB",
+          "llama3.1:8b, mistral:7b, gemma2:9b, phi3:14b",
+          "70B models (too slow)"
+        ],
+        [
+          "GEEKOM A6 32 GB",
+          "llama3.1:8b, llama3.1:14b, deepseek-r1:14b",
+          "70B+, image gen"
+        ],
+        [
+          "GMKtec NucBox M5 Pro",
+          "llama3.2:3b, phi3:mini, gemma2:2b",
+          "Anything over 13B"
+        ],
+        [
+          "Kamrui / Geekom",
+          "llama3.2:1b, phi3:mini, tinyllama",
+          "7B+ (too slow for chat)"
+        ]
       ]
     }
   ],
   "relatedProductSlugs": [
     "apple-mac-mini-m4-pro",
     "apple-mac-mini-m4",
+    "geekom-a6",
     "gmktec-nucbox-m5-pro",
     "geekom-it12",
     "kamrui-pinova-p1"
   ],
-  "relatedGuideSlugs": ["run-llama-3-mac-mini-m4"],
+  "relatedGuideSlugs": [
+    "run-llama-3-mac-mini-m4"
+  ],
   "faq": [
     {
       "question": "Is the Mac Mini M4 worth it just for Ollama?",
@@ -154,15 +250,31 @@
     },
     {
       "question": "Can I run Ollama on a mini PC without a GPU?",
-      "answer": "Yes — Ollama falls back to CPU inference automatically. On x86 mini PCs, expect 4–12 tokens/second depending on CPU speed and RAM bandwidth. It's usable for testing but not comfortable for daily chat. Apple Silicon is the exception: its neural engine and GPU work together for much higher performance."
+      "answer": "Yes \u2014 Ollama falls back to CPU inference automatically. On x86 mini PCs, expect 4\u201312 tokens/second depending on CPU speed and RAM bandwidth. It's usable for testing but not comfortable for daily chat. Apple Silicon is the exception: its neural engine and GPU work together for much higher performance."
     },
     {
       "question": "Does more RAM always mean faster Ollama performance?",
-      "answer": "Not directly. More RAM lets you run larger models, but speed is determined by memory bandwidth — how fast data moves, not how much there is. A 32 GB DDR5 system at 51 GB/s is much slower than a 16 GB Apple M4 at 120 GB/s, even though the x86 system has more total memory."
+      "answer": "Not directly. More RAM lets you run larger models, but speed is determined by memory bandwidth \u2014 how fast data moves, not how much there is. A 32 GB DDR5 system at 51 GB/s is much slower than a 16 GB Apple M4 at 120 GB/s, even though the x86 system has more total memory."
     },
     {
       "question": "What's the best Ollama model to start with on a 16 GB Mac Mini?",
-      "answer": "Start with llama3.1:8b — it's fast (42 t/s), capable, and fits comfortably in 16 GB. Once you're comfortable, try gemma2:9b (different strength profile) or phi3:medium (14B but highly compressed). Avoid 70B models — they'll run but at ~8 t/s which makes chat uncomfortable."
+      "answer": "Start with llama3.1:8b \u2014 it's fast (42 t/s), capable, and fits comfortably in 16 GB. Once you're comfortable, try gemma2:9b (different strength profile) or phi3:medium (14B but highly compressed). Avoid 70B models \u2014 they'll run but at ~8 t/s which makes chat uncomfortable."
+    },
+    {
+      "question": "Is the GEEKOM A6 good for running LLMs locally?",
+      "answer": "Yes, with caveats. The 32GB DDR5 lets you run 14B models comfortably and 32B Q4 at 4\u20136 t/s. CPU inference via Ryzen 7 6800H hits ~16 t/s on 7B \u2014 functional but slower than Apple Silicon. The big differentiator is the USB4 port: add an RTX 5070 in an eGPU enclosure later and you have a full discrete-GPU AI workstation. Best x86 mini PC for LLMs under $500."
+    },
+    {
+      "question": "How does the Mac Mini M4 compare to the M4 Pro for Ollama?",
+      "answer": "The M4 Pro is roughly 55% faster on 7B models (65 t/s vs 42 t/s) and the only one that runs 70B models at usable speed. The base M4 (16 GB) cannot fit a 70B Q4 model without heavy CPU offloading. If you only run 7B and 13B models, the base M4 at $599 is excellent. If 70B or maximum context window matters, pay for the M4 Pro."
+    },
+    {
+      "question": "What's the best mini PC under $500 for local LLMs?",
+      "answer": "The GEEKOM A6 (Ryzen 7 6800H, 32GB DDR5) for x86 users \u2014 32GB RAM lets you run 14B models, and USB4 adds an eGPU upgrade path. For macOS users, the Mac Mini M4 base at $599 is only slightly over budget and significantly faster. Budget-constrained Windows users who only need 7B: GMKtec NucBox M5 Pro with 32GB DDR5 at ~$299 is the entry point."
+    },
+    {
+      "question": "Can a mini PC run Stable Diffusion?",
+      "answer": "Poorly \u2014 iGPUs are too slow for practical image generation. SD 1.5 at 512\u00d7512 takes 30\u201390 seconds on AMD Radeon 680M or Intel Iris Xe. SDXL and FLUX.1 are impractical. The exception is adding an eGPU via USB4/Thunderbolt: the GEEKOM A6 with an RTX 5070 eGPU runs FLUX.1 at full speed. For native image generation without an eGPU, buy a GPU instead of a mini PC."
     }
   ]
 }
