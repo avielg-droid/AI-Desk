@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   },
   description: 'Expert reviews of GPUs, Mini PCs, and AI accessories for running LLMs and Stable Diffusion locally in 2026.',
   metadataBase: new URL('https://theaidesk.com'),
+  verification: {
+    other: { 'msvalidate.01': '96851A4CB49BB6869C9BFDABAAA7AAE1' },
+  },
   openGraph: {
     siteName: 'The AI Desk',
     type: 'website',
