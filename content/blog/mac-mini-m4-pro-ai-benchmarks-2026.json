@@ -73,6 +73,11 @@
       ]
     },
     {
+      "type": "callout",
+      "variant": "info",
+      "html": "Ready to buy? <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro review →</a> — full specs, pros/cons, and affiliate link. Also compare: <a href='/products/apple-mac-mini-m4'>Mac Mini M4 (base)</a> · <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> · <a href='/products/geekom-a6'>GEEKOM A6 (best x86)</a>."
+    },
+    {
       "type": "h2",
       "text": "LLM Tokens Per Second Benchmarks"
     },

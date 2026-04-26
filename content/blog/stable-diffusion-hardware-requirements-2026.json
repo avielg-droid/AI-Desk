@@ -89,6 +89,11 @@
       ]
     },
     {
+      "type": "callout",
+      "variant": "info",
+      "html": "Top GPUs for Stable Diffusion and FLUX in 2026: <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> — SDXL in 2–3 seconds, FLUX.1 in 4–6 seconds. <a href='/products/gigabyte-rx-9060-xt-gaming'>RX 9060 XT 16G</a> — 16GB VRAM for large batch SDXL. <a href='/products/asus-rtx-5070-sff'>RTX 5070 SFF</a> — compact build with full Blackwell performance."
+    },
+    {
       "type": "p",
       "html": "*Generation speeds at 1024×1024, 20 steps, on an RTX 5070. Lower-VRAM GPUs will be slower."
     },

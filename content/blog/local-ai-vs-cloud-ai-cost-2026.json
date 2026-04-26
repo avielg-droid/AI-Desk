@@ -68,6 +68,11 @@
       ]
     },
     {
+      "type": "callout",
+      "variant": "info",
+      "html": "Best hardware for local AI ROI: <a href='/products/apple-mac-mini-m4'>Mac Mini M4</a> — lowest cost Apple Silicon entry, 20W, breaks even vs ChatGPT Plus in ~12 months. <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro</a> — runs 70B models, breaks even for heavy users in ~8 months. <a href='/products/geekom-a6'>GEEKOM A6</a> — best x86 alternative under $500."
+    },
+    {
       "type": "h2",
       "text": "Local AI Hardware Costs (One-Time)"
     },

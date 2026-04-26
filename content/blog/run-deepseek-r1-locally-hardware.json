@@ -83,6 +83,11 @@
     {
       "type": "callout",
       "variant": "info",
+      "html": "Need hardware to run DeepSeek R1 locally? <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro (64GB)</a> handles R1 70B at 8–12 t/s. For Windows: <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> runs R1 8B and 14B at 100+ t/s. <a href='/products/gigabyte-rx-9060-xt-gaming'>RX 9060 XT 16G</a> fits R1 14B in VRAM with room to spare."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
       "html": "The distilled variants are trained to reproduce R1's reasoning behavior in a smaller model. <strong>DeepSeek-R1-Distill-Qwen-32B performs close to the full 671B model</strong> on most benchmarks — and it runs on consumer hardware."
     },
     {

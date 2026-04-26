@@ -77,6 +77,11 @@
     {
       "type": "callout",
       "variant": "info",
+      "html": "Hardware for running Llama 3 locally: <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> — fastest consumer GPU at 118 t/s on 8B. <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro</a> — silent, 65 t/s, runs 70B with 64GB. <a href='/products/apple-mac-mini-m4'>Mac Mini M4</a> — 42 t/s, best entry-level Apple Silicon option."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
       "html": "<strong>Which Llama 3 to use?</strong> Start with <strong>llama3.1:8b</strong> for daily use — it's fast everywhere and covers 90% of tasks. Upgrade to <strong>llama3.3:70b</strong> only if you have the hardware and need the extra reasoning quality."
     },
     {

@@ -87,6 +87,11 @@
       ]
     },
     {
+      "type": "callout",
+      "variant": "info",
+      "html": "Looking for hardware that runs these apps well? <strong>Ollama and LM Studio</strong> perform best on Apple Silicon or NVIDIA. Top picks: <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro</a> (65 t/s, 70B capable) · <a href='/products/apple-mac-mini-m4'>Mac Mini M4</a> (42 t/s, best value) · <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> (118 t/s, Windows/Linux)."
+    },
+    {
       "type": "h2",
       "text": "Ollama: Best for Developers and Power Users"
     },
