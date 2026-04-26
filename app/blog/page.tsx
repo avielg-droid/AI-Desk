@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getAllBlogPosts, CATEGORY_LABEL } from '@/lib/blog'
 import { buildBreadcrumbSchema } from '@/lib/schema'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import BlogThumbnail from '@/components/BlogThumbnail'
 
 export const revalidate = 3600
 
@@ -123,32 +124,41 @@ function PostCard({ post, featured }: { post: ReturnType<typeof getAllBlogPosts>
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex flex-col border border-edge bg-ink-1 p-5 hover:border-ore/30 aurora-glow-hover transition-all duration-200"
+      className="group flex flex-col border border-edge bg-ink-1 hover:border-ore/30 aurora-glow-hover transition-all duration-200 overflow-hidden"
     >
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <span className={`font-mono text-[9px] uppercase tracking-widest border px-1.5 py-0.5 shrink-0 ${catColor}`}>
-          {CATEGORY_LABEL[post.category]}
-        </span>
-        <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 shrink-0">
-          {post.readingTimeMinutes} min read
-        </span>
-      </div>
+      {/* Thumbnail */}
+      <BlogThumbnail
+        category={post.category}
+        tags={post.tags}
+        className={`w-full border-b border-edge ${featured ? 'h-28' : 'h-20'}`}
+      />
 
-      <h3 className={`font-mono font-600 leading-snug group-hover:text-ore transition-colors mb-2 ${featured ? 'text-base' : 'text-sm'} text-foreground`}>
-        {post.headline}
-      </h3>
+      <div className="flex flex-col flex-1 p-5">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <span className={`font-mono text-[9px] uppercase tracking-widest border px-1.5 py-0.5 shrink-0 ${catColor}`}>
+            {CATEGORY_LABEL[post.category]}
+          </span>
+          <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 shrink-0">
+            {post.readingTimeMinutes} min read
+          </span>
+        </div>
 
-      <p className="font-sans text-xs text-zinc-600 leading-relaxed line-clamp-2 flex-1 mb-4">
-        {post.description}
-      </p>
+        <h3 className={`font-mono font-600 leading-snug group-hover:text-ore transition-colors mb-2 ${featured ? 'text-base' : 'text-sm'} text-foreground`}>
+          {post.headline}
+        </h3>
 
-      <div className="flex items-center justify-between border-t border-edge/60 pt-3">
-        <span className="font-mono text-[9px] text-zinc-600">
-          {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-        </span>
-        <span className="font-mono text-[10px] text-ore opacity-0 group-hover:opacity-100 transition-opacity">
-          Read →
-        </span>
+        <p className="font-sans text-xs text-zinc-600 leading-relaxed line-clamp-2 flex-1 mb-4">
+          {post.description}
+        </p>
+
+        <div className="flex items-center justify-between border-t border-edge/60 pt-3">
+          <span className="font-mono text-[9px] text-zinc-600">
+            {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span className="font-mono text-[10px] text-ore opacity-0 group-hover:opacity-100 transition-opacity">
+            Read →
+          </span>
+        </div>
       </div>
     </Link>
   )

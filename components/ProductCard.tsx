@@ -75,11 +75,11 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.shortDescription}
         </p>
 
-        {/* Benchmark badge */}
+        {/* Benchmark — hero stat */}
         {bench && (
-          <div className="flex items-center gap-2 mb-4">
-            <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">{bench.label}</span>
-            <span className="font-mono text-xs font-500 text-win">{bench.value} t/s</span>
+          <div className="flex items-end gap-1.5 mb-4 border-l-2 border-win/40 pl-3">
+            <span className="font-mono font-700 text-2xl leading-none text-win">{bench.value}</span>
+            <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mb-0.5">t/s · Llama 8B</span>
           </div>
         )}
 

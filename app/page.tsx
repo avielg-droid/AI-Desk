@@ -9,10 +9,46 @@ import { buildSpeakableSchema } from '@/lib/schema'
 import Link from 'next/link'
 
 const CATEGORIES = [
-  { slug: 'gpu',       label: 'GPUs',        sub: 'Discrete cards',       stat: '16 GB VRAM max'  },
-  { slug: 'mini-pc',  label: 'Mini PCs',     sub: 'Compact workstations', stat: '70B capable'     },
-  { slug: 'ai-pc',    label: 'AI PCs',       sub: 'Full desktop rigs',    stat: 'Max throughput'  },
-  { slug: 'accessory',label: 'Accessories',  sub: 'Cables, UPS & more',   stat: 'Protect your rig'},
+  {
+    slug: 'gpu', label: 'GPUs', sub: 'Discrete cards', stat: '16 GB VRAM max',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7 text-ore opacity-70 mb-3">
+        <rect x="2" y="7" width="20" height="10" rx="1" />
+        <path d="M6 7V5M10 7V5M14 7V5M18 7V5M6 17v2M10 17v2M14 17v2M18 17v2" />
+        <rect x="6" y="9" width="4" height="6" rx="0.5" fill="currentColor" fillOpacity="0.15" />
+      </svg>
+    ),
+  },
+  {
+    slug: 'mini-pc', label: 'Mini PCs', sub: 'Compact workstations', stat: '70B capable',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7 text-ore opacity-70 mb-3">
+        <rect x="3" y="4" width="18" height="13" rx="1" />
+        <path d="M8 20h8M12 17v3" />
+        <circle cx="12" cy="10.5" r="2.5" fill="currentColor" fillOpacity="0.15" />
+        <path d="M12 8v1M12 12v1M9.5 10.5H8.5M15.5 10.5H14.5" strokeWidth={1} />
+      </svg>
+    ),
+  },
+  {
+    slug: 'ai-pc', label: 'AI PCs', sub: 'Full desktop rigs', stat: 'Max throughput',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7 text-ore opacity-70 mb-3">
+        <rect x="5" y="2" width="14" height="20" rx="1" />
+        <rect x="7" y="5" width="10" height="6" rx="0.5" fill="currentColor" fillOpacity="0.12" />
+        <circle cx="12" cy="17" r="1.5" fill="currentColor" fillOpacity="0.3" />
+        <path d="M9 14h6M9 16h4" strokeWidth={1} />
+      </svg>
+    ),
+  },
+  {
+    slug: 'accessory', label: 'Accessories', sub: 'Cables, UPS & more', stat: 'Protect your rig',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7 text-ore opacity-70 mb-3">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" fillOpacity="0.12" />
+      </svg>
+    ),
+  },
 ]
 
 const GUIDE = [
@@ -76,8 +112,8 @@ export default function HomePage() {
             Independent reviews of GPUs, Mini PCs, and AI accessories — benchmarked for LLM inference, Stable Diffusion, and local AI workloads.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            {/* Primary CTA — aurora bordered */}
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            {/* Primary CTA */}
             <Link
               href="/products"
               className="affiliate-btn inline-flex items-center gap-3 px-7 py-3.5 font-sans font-700 text-base tracking-tight"
@@ -94,19 +130,36 @@ export default function HomePage() {
               Mini PC Reviews
             </Link>
           </div>
+
+          {/* Stats strip — visible on all screen sizes */}
+          <div className="flex items-center gap-6 border-t border-edge/40 pt-6">
+            {SIDE_STATS.map((s, i) => (
+              <div key={s.val} className={`flex flex-col ${i > 0 ? 'border-l border-edge/40 pl-6' : ''}`}>
+                <p className="font-mono font-600 text-xl text-ore leading-none">
+                  {s.val}
+                  <span className="text-sm text-zinc-600 ml-1">{s.unit}</span>
+                </p>
+                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Side stats */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-end gap-6">
-          {SIDE_STATS.map(s => (
-            <div key={s.val} className="text-right">
-              <p className="font-mono font-500 text-2xl text-ore leading-none">
-                {s.val}
-                <span className="text-sm text-zinc-600 ml-1">{s.unit}</span>
-              </p>
-              <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-0.5">{s.label}</p>
-            </div>
-          ))}
+        {/* Side accent — desktop only decorative */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block opacity-10">
+          <svg viewBox="0 0 120 120" className="w-32 h-32" fill="none">
+            <circle cx="60" cy="60" r="55" stroke="url(#heroGrad)" strokeWidth="1" />
+            <circle cx="60" cy="60" r="40" stroke="url(#heroGrad)" strokeWidth="0.5" />
+            <circle cx="60" cy="60" r="25" stroke="url(#heroGrad)" strokeWidth="0.5" />
+            <line x1="5" y1="60" x2="115" y2="60" stroke="url(#heroGrad)" strokeWidth="0.5" />
+            <line x1="60" y1="5" x2="60" y2="115" stroke="url(#heroGrad)" strokeWidth="0.5" />
+            <defs>
+              <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#00E5FF" />
+                <stop offset="100%" stopColor="#8A2BE2" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </section>
 
@@ -126,8 +179,9 @@ export default function HomePage() {
             <Link
               key={cat.slug}
               href={`/categories/${cat.slug}`}
-              className="group bg-ink-1 p-6 flex flex-col hover:bg-ink-2 transition-colors"
+              className="group bg-ink-1 p-6 flex flex-col hover:bg-ink-2 transition-colors aurora-glow-hover"
             >
+              {cat.icon}
               <p className="font-display font-800 text-xl uppercase text-foreground mb-1 group-hover:text-ore transition-colors">
                 {cat.label}
               </p>
