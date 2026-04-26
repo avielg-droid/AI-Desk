@@ -24,8 +24,8 @@ export default function BestHubPage() {
   const personas = getAllPersonas()
 
   const schema = buildBreadcrumbSchema([
-    { name: 'Home', url: 'https://theaidesk.com' },
-    { name: 'Buying Guides', url: 'https://theaidesk.com/best' },
+    { name: 'Home', url: 'https://ai-desk.tech' },
+    { name: 'Buying Guides', url: 'https://ai-desk.tech/best' },
   ])
 
   return (

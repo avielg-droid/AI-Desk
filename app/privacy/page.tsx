@@ -23,7 +23,7 @@ export default function PrivacyPage() {
 
       <div className="rounded-xl border border-ore/20 bg-ore/5 p-5">
         <p className="text-sm text-zinc-700 leading-relaxed">
-          The AI Desk (<strong className="text-foreground">theaidesk.com</strong>) is an affiliate review site.
+          The AI Desk (<strong className="text-foreground">ai-desk.tech</strong>) is an affiliate review site.
           We do not sell products, process payments, or store accounts. This policy explains what limited data
           we collect and why.
         </p>

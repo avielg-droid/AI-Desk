@@ -5,7 +5,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 export const metadata: Metadata = {
   title: 'How We Test AI Hardware — Review Methodology | The AI Desk',
   description: 'Our benchmark methodology for testing GPUs, Mini PCs, and AI accessories. Real tokens-per-second measurements on Llama 3.1 8B, SDXL, and FLUX using Ollama, llama.cpp, and ComfyUI.',
-  alternates: { canonical: 'https://theaidesk.com/how-we-test' },
+  alternates: { canonical: 'https://ai-desk.tech/how-we-test' },
 }
 
 const BENCHMARKS = [
@@ -36,7 +36,7 @@ const BENCHMARKS = [
 ]
 
 export default function HowWeTestPage() {
-  const BASE = 'https://theaidesk.com'
+  const BASE = 'https://ai-desk.tech'
 
   const schemas = [
     buildBreadcrumbSchema([

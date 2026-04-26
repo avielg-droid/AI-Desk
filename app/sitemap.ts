@@ -9,7 +9,7 @@ import { getAllBlogSlugs } from '@/lib/blog'
 export default function sitemap(): MetadataRoute.Sitemap {
   const products = getAllProducts()
   const personas = getAllPersonas()
-  const BASE = 'https://theaidesk.com'
+  const BASE = 'https://ai-desk.tech'
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE,                            lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 1.0 },

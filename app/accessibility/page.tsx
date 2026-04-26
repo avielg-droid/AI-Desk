@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement',
-  description: 'Accessibility commitment and known limitations for The AI Desk (theaidesk.com).',
+  description: 'Accessibility commitment and known limitations for The AI Desk (ai-desk.tech).',
   robots: { index: false, follow: false },
 }
 

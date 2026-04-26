@@ -83,10 +83,10 @@ export function buildOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'The AI Desk',
-    url: 'https://theaidesk.com',
+    url: 'https://ai-desk.tech',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://theaidesk.com/og-image.png',
+      url: 'https://ai-desk.tech/og-image.png',
       width: 1200,
       height: 630,
     },
@@ -114,12 +114,12 @@ export function buildWebSiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'The AI Desk',
-    url: 'https://theaidesk.com',
+    url: 'https://ai-desk.tech',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://theaidesk.com/products?q={search_term_string}',
+        urlTemplate: 'https://ai-desk.tech/products?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -161,11 +161,11 @@ export function buildHowToSchema({
     '@type': 'HowTo',
     name,
     description,
-    url: `https://theaidesk.com/guides/${slug}`,
+    url: `https://ai-desk.tech/guides/${slug}`,
     author: {
       '@type': 'Organization',
       name: 'The AI Desk',
-      url: 'https://theaidesk.com',
+      url: 'https://ai-desk.tech',
     },
     step: steps.map((s, i) => ({
       '@type': 'HowToStep',
@@ -207,20 +207,20 @@ export function buildBlogPostingSchema({
     description,
     datePublished: publishedAt,
     dateModified: updatedAt,
-    url: `https://theaidesk.com/blog/${slug}`,
+    url: `https://ai-desk.tech/blog/${slug}`,
     author: {
       '@type': 'Organization',
       name: 'The AI Desk',
-      url: 'https://theaidesk.com',
+      url: 'https://ai-desk.tech',
     },
     publisher: {
       '@type': 'Organization',
       name: 'The AI Desk',
-      url: 'https://theaidesk.com',
+      url: 'https://ai-desk.tech',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://theaidesk.com/blog/${slug}`,
+      '@id': `https://ai-desk.tech/blog/${slug}`,
     },
   }
 }

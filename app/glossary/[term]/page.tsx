@@ -80,7 +80,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
       name: 'The AI Desk Glossary',
-      url: 'https://theaidesk.com/glossary',
+      url: 'https://ai-desk.tech/glossary',
     },
   }
 

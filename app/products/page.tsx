@@ -34,7 +34,7 @@ export default function ProductsPage({
 
   const schema = buildItemListSchema(
     'AI Hardware Products',
-    products.map(p => ({ name: p.name, url: `https://theaidesk.com/products/${p.slug}` }))
+    products.map(p => ({ name: p.name, url: `https://ai-desk.tech/products/${p.slug}` }))
   )
 
   return (

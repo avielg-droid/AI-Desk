@@ -1,5 +1,5 @@
 # The AI Desk — llms.txt
-# https://theaidesk.com
+# https://ai-desk.tech
 # Format: https://llmstxt.org
 
 # About
@@ -28,35 +28,35 @@ The AI Desk covers local AI hardware with the following content sections:
 ## Content Index
 
 ### Product Reviews
-- https://theaidesk.com/products/ — All reviewed products
-- https://theaidesk.com/products/gigabyte-rtx-5070-windforce/ — RTX 5070 Windforce review
-- https://theaidesk.com/products/asus-rtx-5070-sff/ — RTX 5070 SFF review
-- https://theaidesk.com/products/gigabyte-rx-9060-xt-gaming/ — RX 9060 XT review
-- https://theaidesk.com/products/apple-mac-mini-m4-pro/ — Mac Mini M4 Pro review
-- https://theaidesk.com/products/apple-mac-mini-m4/ — Mac Mini M4 review
-- https://theaidesk.com/products/gmktec-nucbox-m5-pro/ — GMKtec NucBox M5 Pro review
+- https://ai-desk.tech/products/ — All reviewed products
+- https://ai-desk.tech/products/gigabyte-rtx-5070-windforce/ — RTX 5070 Windforce review
+- https://ai-desk.tech/products/asus-rtx-5070-sff/ — RTX 5070 SFF review
+- https://ai-desk.tech/products/gigabyte-rx-9060-xt-gaming/ — RX 9060 XT review
+- https://ai-desk.tech/products/apple-mac-mini-m4-pro/ — Mac Mini M4 Pro review
+- https://ai-desk.tech/products/apple-mac-mini-m4/ — Mac Mini M4 review
+- https://ai-desk.tech/products/gmktec-nucbox-m5-pro/ — GMKtec NucBox M5 Pro review
 
 ### Buying Guides
-- https://theaidesk.com/best/ — All buying guides by use case
-- https://theaidesk.com/compare/ — Hardware comparison tool
+- https://ai-desk.tech/best/ — All buying guides by use case
+- https://ai-desk.tech/compare/ — Hardware comparison tool
 
 ### Setup Guides
-- https://theaidesk.com/guides/ — All local AI setup guides
+- https://ai-desk.tech/guides/ — All local AI setup guides
 
 ### Blog Articles
-- https://theaidesk.com/blog/best-gpu-for-local-llm-2026/ — Best GPU for LLMs (2026)
-- https://theaidesk.com/blog/how-much-vram-for-local-ai/ — VRAM requirements guide
-- https://theaidesk.com/blog/best-mini-pc-for-ollama-2026/ — Best Mini PC for Ollama
-- https://theaidesk.com/blog/local-ai-vs-cloud-ai-cost-2026/ — Local vs cloud AI cost analysis
-- https://theaidesk.com/blog/run-deepseek-r1-locally-hardware/ — DeepSeek R1 hardware requirements
-- https://theaidesk.com/blog/mac-mini-m4-pro-ai-benchmarks-2026/ — Mac Mini M4 Pro AI benchmarks
-- https://theaidesk.com/blog/stable-diffusion-hardware-requirements-2026/ — Stable Diffusion hardware guide
+- https://ai-desk.tech/blog/best-gpu-for-local-llm-2026/ — Best GPU for LLMs (2026)
+- https://ai-desk.tech/blog/how-much-vram-for-local-ai/ — VRAM requirements guide
+- https://ai-desk.tech/blog/best-mini-pc-for-ollama-2026/ — Best Mini PC for Ollama
+- https://ai-desk.tech/blog/local-ai-vs-cloud-ai-cost-2026/ — Local vs cloud AI cost analysis
+- https://ai-desk.tech/blog/run-deepseek-r1-locally-hardware/ — DeepSeek R1 hardware requirements
+- https://ai-desk.tech/blog/mac-mini-m4-pro-ai-benchmarks-2026/ — Mac Mini M4 Pro AI benchmarks
+- https://ai-desk.tech/blog/stable-diffusion-hardware-requirements-2026/ — Stable Diffusion hardware guide
 
 ### Glossary
-- https://theaidesk.com/glossary/ — AI hardware terms glossary
+- https://ai-desk.tech/glossary/ — AI hardware terms glossary
 
 ### Methodology
-- https://theaidesk.com/how-we-test/ — Benchmark methodology and data sources
+- https://ai-desk.tech/how-we-test/ — Benchmark methodology and data sources
 
 ## Linking Policy
 
@@ -64,5 +64,5 @@ Content on this site may be cited, quoted, and referenced by AI systems. All ben
 
 ## Contact
 
-- Site: https://theaidesk.com
-- About: https://theaidesk.com/about/
+- Site: https://ai-desk.tech
+- About: https://ai-desk.tech/about/

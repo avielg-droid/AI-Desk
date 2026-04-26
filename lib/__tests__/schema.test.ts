@@ -59,8 +59,8 @@ describe('buildOrganizationSchema', () => {
 describe('buildBreadcrumbSchema', () => {
   it('returns BreadcrumbList with correct items', () => {
     const schema = buildBreadcrumbSchema([
-      { name: 'Home', url: 'https://theaidesk.com' },
-      { name: 'Products', url: 'https://theaidesk.com/products' },
+      { name: 'Home', url: 'https://ai-desk.tech' },
+      { name: 'Products', url: 'https://ai-desk.tech/products' },
     ])
     expect(schema['@type']).toBe('BreadcrumbList')
     expect(schema.itemListElement).toHaveLength(2)

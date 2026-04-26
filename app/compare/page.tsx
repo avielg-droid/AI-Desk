@@ -39,15 +39,15 @@ export default function CompareHubPage() {
   const miniVsMini = pairs.filter(p => p.type === 'Mini PC vs Mini PC')
 
   const breadcrumb = buildBreadcrumbSchema([
-    { name: 'Home', url: 'https://theaidesk.com' },
-    { name: 'Compare', url: 'https://theaidesk.com/compare' },
+    { name: 'Home', url: 'https://ai-desk.tech' },
+    { name: 'Compare', url: 'https://ai-desk.tech/compare' },
   ])
 
   const itemList = buildItemListSchema(
     'AI Hardware Comparisons',
     allSlugs.map(s => ({
       name: s.replace(/-vs-/g, ' vs ').replace(/-/g, ' '),
-      url: `https://theaidesk.com/compare/${s}`,
+      url: `https://ai-desk.tech/compare/${s}`,
     }))
   )
 

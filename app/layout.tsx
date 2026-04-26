@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s | The AI Desk',
   },
   description: 'Expert reviews of GPUs, Mini PCs, and AI accessories for running LLMs and Stable Diffusion locally in 2026.',
-  metadataBase: new URL('https://theaidesk.com'),
+  metadataBase: new URL('https://ai-desk.tech'),
   openGraph: {
     siteName: 'The AI Desk',
     type: 'website',

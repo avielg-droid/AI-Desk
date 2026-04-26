@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${guide.title} — Local AI Setup Guide`,
     description: guide.description,
     alternates: {
-      canonical: `https://theaidesk.com/guides/${params.slug}`,
+      canonical: `https://ai-desk.tech/guides/${params.slug}`,
     },
     openGraph: {
       title: guide.title,
@@ -97,9 +97,9 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
-    { name: 'Home', url: 'https://theaidesk.com' },
-    { name: 'Setup Guides', url: 'https://theaidesk.com/guides' },
-    { name: guide.title, url: `https://theaidesk.com/guides/${guide.slug}` },
+    { name: 'Home', url: 'https://ai-desk.tech' },
+    { name: 'Setup Guides', url: 'https://ai-desk.tech/guides' },
+    { name: guide.title, url: `https://ai-desk.tech/guides/${guide.slug}` },
   ])
 
   return (

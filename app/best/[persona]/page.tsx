@@ -44,7 +44,7 @@ function buildItemListSchema(persona: ReturnType<typeof getPersonaBySlug>, produ
       '@type': 'ListItem',
       position: i + 1,
       name: p.name,
-      url: `https://theaidesk.com/products/${p.slug}`,
+      url: `https://ai-desk.tech/products/${p.slug}`,
     })),
   }
 }
@@ -66,9 +66,9 @@ function buildBreadcrumbSchema(persona: { slug: string; title: string }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theaidesk.com' },
-      { '@type': 'ListItem', position: 2, name: 'Best For', item: 'https://theaidesk.com/best' },
-      { '@type': 'ListItem', position: 3, name: persona.title, item: `https://theaidesk.com/best/${persona.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ai-desk.tech' },
+      { '@type': 'ListItem', position: 2, name: 'Best For', item: 'https://ai-desk.tech/best' },
+      { '@type': 'ListItem', position: 3, name: persona.title, item: `https://ai-desk.tech/best/${persona.slug}` },
     ],
   }
 }

@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: data.title,
     description: data.metaDescription,
     alternates: {
-      canonical: `https://theaidesk.com/compare/${params.comparison}`,
+      canonical: `https://ai-desk.tech/compare/${params.comparison}`,
     },
     openGraph: { title: data.title, description: data.metaDescription },
   }
@@ -110,9 +110,9 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
 
   const schemas = [
     buildBreadcrumbSchema([
-      { name: 'Home', url: 'https://theaidesk.com' },
-      { name: 'Compare', url: 'https://theaidesk.com/compare' },
-      { name: data.h1, url: `https://theaidesk.com/compare/${data.slug}` },
+      { name: 'Home', url: 'https://ai-desk.tech' },
+      { name: 'Compare', url: 'https://ai-desk.tech/compare' },
+      { name: data.h1, url: `https://ai-desk.tech/compare/${data.slug}` },
     ]),
     buildFAQSchema(data.faq),
   ]

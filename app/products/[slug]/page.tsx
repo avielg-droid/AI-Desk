@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: `${product.name} Review${titleSuffix}`,
     description: product.shortDescription,
     alternates: {
-      canonical: `https://theaidesk.com/products/${product.slug}`,
+      canonical: `https://ai-desk.tech/products/${product.slug}`,
     },
     openGraph: {
       title: `${product.name} Review`,
@@ -54,9 +54,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
     buildProductSchema(product),
     buildFAQSchema(product.faq),
     buildBreadcrumbSchema([
-      { name: 'Home', url: 'https://theaidesk.com' },
-      { name: 'Products', url: 'https://theaidesk.com/products' },
-      { name: product.name, url: `https://theaidesk.com/products/${product.slug}` },
+      { name: 'Home', url: 'https://ai-desk.tech' },
+      { name: 'Products', url: 'https://ai-desk.tech/products' },
+      { name: product.name, url: `https://ai-desk.tech/products/${product.slug}` },
     ]),
   ]
 

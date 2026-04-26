@@ -53,7 +53,7 @@ export async function generateMetadata({
   return {
     title: meta.title,
     description: meta.description,
-    alternates: { canonical: `https://theaidesk.com/categories/${params.category}` },
+    alternates: { canonical: `https://ai-desk.tech/categories/${params.category}` },
   }
 }
 
@@ -63,7 +63,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
   if (!meta) notFound()
 
   const products = getProductsByCategory(category)
-  const BASE = 'https://theaidesk.com'
+  const BASE = 'https://ai-desk.tech'
 
   const schemas = [
     buildBreadcrumbSchema([

@@ -29,8 +29,8 @@ export default function BlogIndexPage() {
   const rest = posts.filter(p => !p.featured)
 
   const breadcrumb = buildBreadcrumbSchema([
-    { name: 'Home', url: 'https://theaidesk.com' },
-    { name: 'Blog', url: 'https://theaidesk.com/blog' },
+    { name: 'Home', url: 'https://ai-desk.tech' },
+    { name: 'Blog', url: 'https://ai-desk.tech/blog' },
   ])
 
   return (

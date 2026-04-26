@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `https://theaidesk.com/blog/${post.slug}`,
+      canonical: `https://ai-desk.tech/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
@@ -48,9 +48,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const schemas = [
     buildBreadcrumbSchema([
-      { name: 'Home', url: 'https://theaidesk.com' },
-      { name: 'Blog', url: 'https://theaidesk.com/blog' },
-      { name: post.title, url: `https://theaidesk.com/blog/${post.slug}` },
+      { name: 'Home', url: 'https://ai-desk.tech' },
+      { name: 'Blog', url: 'https://ai-desk.tech/blog' },
+      { name: post.title, url: `https://ai-desk.tech/blog/${post.slug}` },
     ]),
     buildBlogPostingSchema({
       title: post.title,
