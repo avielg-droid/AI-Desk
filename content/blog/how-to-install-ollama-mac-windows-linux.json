@@ -1,0 +1,206 @@
+{
+  "slug": "how-to-install-ollama-mac-windows-linux",
+  "title": "How to Install and Use Ollama — Mac, Windows, and Linux Guide (2026)",
+  "headline": "How to Install Ollama and Run Local LLMs — Full Setup Guide (2026)",
+  "description": "Step-by-step guide to installing Ollama on Mac, Windows, and Linux. How to download and run Llama 3, DeepSeek R1, and Mistral locally with GPU acceleration. Includes API setup and Open WebUI integration.",
+  "category": "how-to",
+  "tags": [
+    "ollama",
+    "llama3",
+    "local-ai",
+    "setup",
+    "how-to"
+  ],
+  "publishedAt": "2026-04-26",
+  "updatedAt": "2026-04-26",
+  "readingTimeMinutes": 7,
+  "featured": false,
+  "relatedProductSlugs": [
+    "apple-mac-mini-m4-pro",
+    "apple-mac-mini-m4",
+    "gigabyte-rtx-5070-windforce",
+    "geekom-a6"
+  ],
+  "content": [
+    {
+      "type": "callout",
+      "variant": "verdict",
+      "html": "<strong>TL;DR:</strong> Install Ollama from <strong>ollama.com</strong>, run <code>ollama pull llama3.1:8b</code>, then <code>ollama run llama3.1:8b</code>. GPU acceleration is automatic — no configuration needed on Mac (Metal), Windows (CUDA/ROCm), or Linux (CUDA/ROCm)."
+    },
+    {
+      "type": "h2",
+      "text": "What is Ollama?"
+    },
+    {
+      "type": "p",
+      "html": "Ollama is a local LLM runtime that makes running large language models on your own hardware as simple as pulling a Docker image. It handles model downloading, GPU acceleration, quantization, and serving — including an OpenAI-compatible REST API on port 11434. It supports Apple Silicon Metal, NVIDIA CUDA, and AMD ROCm automatically."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "html": "Best hardware for Ollama in 2026: <a href='/products/apple-mac-mini-m4-pro'>Mac Mini M4 Pro</a> (65 t/s · silent · 70B capable) · <a href='/products/apple-mac-mini-m4'>Mac Mini M4</a> (42 t/s · best value) · <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 Windforce</a> (118 t/s · Windows/Linux) · <a href='/products/geekom-a6'>GEEKOM A6</a> (best x86 mini PC)"
+    },
+    {
+      "type": "h2",
+      "text": "Install Ollama on Mac"
+    },
+    {
+      "type": "p",
+      "html": "Download the Ollama macOS app from ollama.com. Open the .dmg, drag to Applications, and launch. Ollama runs as a menu bar app and automatically uses Apple Silicon Metal acceleration — no configuration required. Open Terminal and verify:"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "ollama --version\n# Should output: ollama version 0.x.x"
+    },
+    {
+      "type": "h2",
+      "text": "Install Ollama on Windows"
+    },
+    {
+      "type": "p",
+      "html": "Download OllamaSetup.exe from ollama.com and run the installer. Ollama installs as a Windows service and automatically detects NVIDIA CUDA or AMD ROCm. Verify in PowerShell:"
+    },
+    {
+      "type": "code",
+      "lang": "powershell",
+      "text": "ollama --version\nollama list  # Shows installed models"
+    },
+    {
+      "type": "h2",
+      "text": "Install Ollama on Linux"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "curl -fsSL https://ollama.com/install.sh | sh\n# Installs Ollama as a systemd service\nsystemctl status ollama  # Verify running"
+    },
+    {
+      "type": "p",
+      "html": "For NVIDIA: install CUDA drivers first. For AMD: install ROCm 6.x before running the install script — Ollama will detect it automatically."
+    },
+    {
+      "type": "h2",
+      "text": "Download and Run Your First Model"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# Download Llama 3.1 8B (5GB, Q4_K_M quantization)\nollama pull llama3.1:8b\n\n# Start interactive chat\nollama run llama3.1:8b\n\n# Other popular models:\nollama pull deepseek-r1:8b      # DeepSeek R1 reasoning model\nollama pull mistral:7b          # Mistral 7B\nollama pull phi3:mini           # Microsoft Phi-3 Mini (3.8B)\nollama pull qwen2.5:14b         # Qwen 2.5 14B"
+    },
+    {
+      "type": "h2",
+      "text": "Check GPU Acceleration is Active"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# While a model is running, check GPU usage:\nollama ps\n\n# Example output:\n# NAME              ID    SIZE   PROCESSOR    UNTIL\n# llama3.1:8b       ...   5.0GB  100% GPU     ...  ← GPU acceleration active\n# llama3.1:8b       ...   5.0GB  100% CPU     ...  ← CPU only (no GPU detected)"
+    },
+    {
+      "type": "h2",
+      "text": "Use Ollama as an API"
+    },
+    {
+      "type": "p",
+      "html": "Ollama exposes an OpenAI-compatible REST API on port 11434 by default. Any app that supports OpenAI's API can connect to it by setting the base URL to http://localhost:11434/v1."
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "# Simple API call\ncurl http://localhost:11434/api/generate \\\n  -d '{\"model\": \"llama3.1:8b\", \"prompt\": \"What is VRAM?\", \"stream\": false}'\n\n# OpenAI-compatible endpoint\ncurl http://localhost:11434/v1/chat/completions \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"model\": \"llama3.1:8b\", \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'"
+    },
+    {
+      "type": "h2",
+      "text": "Connect Open WebUI for a ChatGPT-Like Interface"
+    },
+    {
+      "type": "p",
+      "html": "Open WebUI provides a browser-based chat UI that connects to your local Ollama instance. Install with Docker:"
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "text": "docker run -d -p 3000:8080 \\\n  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \\\n  -v open-webui:/app/backend/data \\\n  --name open-webui \\\n  ghcr.io/open-webui/open-webui:main\n\n# Open http://localhost:3000 in your browser"
+    },
+    {
+      "type": "h2",
+      "text": "Recommended Models by Hardware"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Hardware",
+        "RAM/VRAM",
+        "Recommended Model",
+        "Speed"
+      ],
+      "rows": [
+        [
+          "Mac Mini M4",
+          "16 GB unified",
+          "llama3.1:8b or phi3:mini",
+          "42 t/s"
+        ],
+        [
+          "Mac Mini M4 Pro (24 GB)",
+          "24 GB unified",
+          "llama3.1:8b or qwen2.5:14b",
+          "65 t/s (8B)"
+        ],
+        [
+          "Mac Mini M4 Pro (64 GB)",
+          "64 GB unified",
+          "llama3.1:70b",
+          "10 t/s (70B)"
+        ],
+        [
+          "RTX 5070 Windforce",
+          "12 GB VRAM",
+          "llama3.1:8b or qwen2.5:14b",
+          "118 t/s (8B)"
+        ],
+        [
+          "GEEKOM A6 (32 GB DDR5)",
+          "32 GB system RAM",
+          "llama3.1:8b (CPU)",
+          "16 t/s"
+        ]
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Ollama free to use?",
+      "answer": "Yes. Ollama is free and open-source (MIT license). The models it runs are also free to download — Llama 3.1, Mistral, DeepSeek R1, Phi-3, and Qwen are all available at no cost. There are no usage limits, no API keys, and no subscription required."
+    },
+    {
+      "question": "Does Ollama use GPU automatically?",
+      "answer": "Yes. On Mac, Ollama uses Metal automatically. On Windows with an NVIDIA GPU, it uses CUDA automatically — no configuration needed. On Linux, it uses CUDA (NVIDIA) or ROCm (AMD) if the respective drivers are installed. Run `ollama ps` while a model is running to confirm: it shows '100% GPU' when GPU acceleration is active."
+    },
+    {
+      "question": "What models can Ollama run?",
+      "answer": "Ollama supports all major open models: Llama 3.1 (8B, 70B), Mistral (7B), DeepSeek R1 (1.5B to 671B), Phi-3 Mini/Medium, Qwen 2.5 (0.5B to 72B), Gemma 2 (2B, 9B, 27B), Command R, and hundreds more. Browse all available models at ollama.com/library."
+    },
+    {
+      "question": "How much storage does Ollama use?",
+      "answer": "Each model takes 2–40 GB of storage depending on size and quantization. Llama 3.1 8B (Q4_K_M) is ~5 GB. Llama 3.1 70B (Q4_K_M) is ~40 GB. Models are stored in ~/.ollama/models on Mac/Linux and C:\\Users\\username\\.ollama\\models on Windows. An NVMe SSD is strongly recommended — loading a 40 GB model from a slow drive takes 60+ seconds."
+    },
+    {
+      "question": "Can I run Ollama on a CPU without a GPU?",
+      "answer": "Yes. Ollama falls back to CPU inference if no GPU is detected. On a modern 8-core CPU (Intel 12th Gen, AMD Ryzen 5000+), expect 5–15 tokens/second for 7B models — functional but noticeably slower than GPU inference. The GEEKOM A6 with 32GB DDR5 RAM is a good CPU-only option, running 7B at ~16 t/s and 14B at ~8 t/s."
+    },
+    {
+      "question": "How do I update models in Ollama?",
+      "answer": "Run `ollama pull modelname` again — it checks for updates and downloads only changed layers. To see all installed models: `ollama list`. To remove a model: `ollama rm modelname`. Ollama stores models efficiently using layer deduplication, so multiple model variants share common layers."
+    },
+    {
+      "question": "Can multiple apps use Ollama at the same time?",
+      "answer": "Yes. Ollama runs as a background service and can handle multiple concurrent API requests. However, GPU VRAM is a shared resource — if two apps request different models simultaneously, Ollama loads one and queues the other (or unloads/reloads if VRAM is insufficient). For single-model workflows, concurrent requests work well."
+    },
+    {
+      "question": "How do I expose Ollama to other devices on my network?",
+      "answer": "By default, Ollama only listens on localhost. To allow network access, set the environment variable OLLAMA_HOST=0.0.0.0:11434 before starting Ollama. On Mac: set it in the launchd plist. On Linux: set it in the systemd service file. Then access from other devices using your machine's local IP: http://192.168.x.x:11434. Use Tailscale for secure remote access."
+    }
+  ]
+}
