@@ -29,7 +29,18 @@ jobs:
       - name: Install Anthropic SDK
         run: npm install @anthropic-ai/sdk
 
+      - name: Check pause flag
+        id: pause
+        run: |
+          if [ -f "scripts/paused.flag" ]; then
+            echo "paused=true" >> $GITHUB_OUTPUT
+            echo "Agent is paused — skipping."
+          else
+            echo "paused=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run SEO agent
+        if: steps.pause.outputs.paused != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/seo-agent.mjs
