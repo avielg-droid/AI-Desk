@@ -2,8 +2,8 @@ name: SEO Agent — Daily Content Generation
 
 on:
   schedule:
-    # Mon, Wed, Fri at 08:00 UTC — 3 posts/week
-    - cron: '0 8 * * 1,3,5'
+    # Every day at 08:00 UTC
+    - cron: '0 8 * * *'
   workflow_dispatch:
     # Allow manual trigger from GitHub Actions UI
 
