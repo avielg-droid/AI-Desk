@@ -1,9 +1,10 @@
 /**
  * SEO Agent — generates one blog post per run using Claude API.
+ * Saves draft to scripts/pending-post.json and notifies via Telegram.
  * Runs via GitHub Actions on a cron schedule.
  *
  * Usage: node scripts/seo-agent.mjs
- * Requires: ANTHROPIC_API_KEY env var
+ * Requires: ANTHROPIC_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID env vars
  */
 
 import Anthropic from '@anthropic-ai/sdk'
@@ -15,6 +16,27 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
 const BLOG_DIR = path.join(ROOT, 'content', 'blog')
 const PRODUCTS_DIR = path.join(ROOT, 'content', 'products')
+const PENDING_PATH = path.join(__dirname, 'pending-post.json')
+
+// ── Telegram ───────────────────────────────────────────────────────────────────
+
+async function sendTelegram(text) {
+  const token = process.env.TELEGRAM_BOT_TOKEN
+  const chatId = process.env.TELEGRAM_CHAT_ID
+  if (!token || !chatId) {
+    console.log('Telegram not configured — skipping notification')
+    return
+  }
+  try {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown' }),
+    })
+  } catch (err) {
+    console.error('Telegram send failed:', err.message)
+  }
+}
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -146,7 +168,7 @@ Return ONLY the JSON. Nothing else.`
 
 // ── llms.txt updater ───────────────────────────────────────────────────────────
 
-function updateLLMsTxt(products, blogSlugs) {
+function updateLLMsTxt(blogSlugs) {
   const llmsPath = path.join(ROOT, 'public', 'llms.txt')
   if (!fs.existsSync(llmsPath)) return
 
@@ -155,11 +177,10 @@ function updateLLMsTxt(products, blogSlugs) {
     .map(s => `- https://ai-desk.tech/blog/${s}`)
     .join('\n')
 
-  const updated = existing
-    .replace(
-      /## Blog Posts[\s\S]*?(?=##|$)/,
-      `## Blog Posts\n${blogSection}\n\n`
-    )
+  const updated = existing.replace(
+    /## Blog Posts[\s\S]*?(?=##|$)/,
+    `## Blog Posts\n${blogSection}\n\n`
+  )
 
   if (updated !== existing) {
     fs.writeFileSync(llmsPath, updated)
@@ -176,6 +197,16 @@ async function main() {
     process.exit(1)
   }
 
+  // Skip if a post is already pending approval
+  if (fs.existsSync(PENDING_PATH)) {
+    const pending = readJSON(PENDING_PATH)
+    console.log(`Pending post already waiting for approval: "${pending.title}"`)
+    await sendTelegram(
+      `⏳ *Reminder: post awaiting approval*\n\n*${pending.title}*\n\nReply /approve to publish or /skip to discard.`
+    )
+    process.exit(0)
+  }
+
   // Load targets and find next unwritten one
   const targets = readJSON(path.join(__dirname, 'keyword-targets.json'))
   const existingSlugs = new Set(getExistingBlogSlugs())
@@ -183,12 +214,12 @@ async function main() {
   const target = targets.find(t => !existingSlugs.has(t.slug))
   if (!target) {
     console.log('All keyword targets already written. Add more to keyword-targets.json.')
+    await sendTelegram('📭 *SEO Agent*: All keyword targets are published. Add more with /add.')
     process.exit(0)
   }
 
   console.log(`→ Generating post: ${target.slug}`)
   console.log(`  Keyword: ${target.keyword}`)
-  console.log(`  Category: ${target.category}`)
 
   const products = getAllProducts()
   const today = new Date().toISOString().split('T')[0]
@@ -206,17 +237,17 @@ async function main() {
     raw = message.content[0].text
   } catch (err) {
     console.error('Claude API error:', err.message)
+    await sendTelegram(`❌ *SEO Agent error*: Claude API failed — ${err.message}`)
     process.exit(1)
   }
 
   // Parse JSON
   let post
   try {
-    const cleaned = stripCodeFence(raw)
-    post = JSON.parse(cleaned)
+    post = JSON.parse(stripCodeFence(raw))
   } catch (err) {
     console.error('Failed to parse JSON response:', err.message)
-    console.error('Raw response (first 500 chars):', raw.slice(0, 500))
+    await sendTelegram(`❌ *SEO Agent error*: JSON parse failed — ${err.message}`)
     process.exit(1)
   }
 
@@ -225,28 +256,40 @@ async function main() {
     validatePost(post)
   } catch (err) {
     console.error('Validation failed:', err.message)
+    await sendTelegram(`❌ *SEO Agent error*: Validation failed — ${err.message}`)
     process.exit(1)
   }
 
-  // Force slug to match target (Claude might drift)
   post.slug = target.slug
 
-  // Save
-  const outPath = path.join(BLOG_DIR, `${target.slug}.json`)
-  fs.writeFileSync(outPath, JSON.stringify(post, null, 2))
-  console.log(`✓ Saved: content/blog/${target.slug}.json`)
+  // Save as pending draft
+  fs.writeFileSync(PENDING_PATH, JSON.stringify(post, null, 2))
+  console.log(`✓ Draft saved: scripts/pending-post.json`)
 
-  // Update llms.txt
-  const allSlugs = [...existingSlugs, target.slug]
-  updateLLMsTxt(products, allSlugs)
+  // Notify via Telegram
+  const excerpt = post.intro?.slice(0, 200) ?? post.description?.slice(0, 200) ?? ''
+  const msg = [
+    `📝 *New post ready for review*`,
+    ``,
+    `*${post.title}*`,
+    `Category: ${post.category} | ${post.readingTimeMinutes} min read`,
+    ``,
+    `${excerpt}...`,
+    ``,
+    `FAQ items: ${post.faq.length} | Content blocks: ${post.content.length}`,
+    ``,
+    `✅ /approve — publish now`,
+    `⏭ /skip — discard and move to next keyword`,
+    `👁 /preview — show full FAQ list`,
+  ].join('\n')
 
-  console.log(`✓ Done. Post: "${post.title}"`)
-  console.log(`  Reading time: ${post.readingTimeMinutes} min`)
-  console.log(`  FAQ items: ${post.faq.length}`)
-  console.log(`  Content blocks: ${post.content.length}`)
+  await sendTelegram(msg)
+  console.log(`✓ Telegram notification sent`)
+  console.log(`✓ Done. Awaiting approval for: "${post.title}"`)
 }
 
-main().catch(err => {
+main().catch(async err => {
   console.error('Fatal:', err)
+  await sendTelegram(`❌ *SEO Agent fatal error*: ${err.message}`)
   process.exit(1)
 })

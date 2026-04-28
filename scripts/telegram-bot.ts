@@ -15,6 +15,7 @@ const ALLOWED_USER_ID = Number(process.env.TELEGRAM_ALLOWED_USER_ID || '0')
 const OWNER = 'avielg-droid'
 const REPO = 'AI-Desk'
 const BRANCH = 'main'
+const PENDING_PATH = 'scripts/pending-post.json'
 
 if (!BOT_TOKEN) throw new Error('TELEGRAM_BOT_TOKEN not set')
 if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN not set')
@@ -83,9 +84,19 @@ async function isPaused(): Promise<boolean> {
   return (await getFile('scripts/paused.flag')) !== null
 }
 
+async function getPendingPost(): Promise<{ post: any; sha: string } | null> {
+  const file = await getFile(PENDING_PATH)
+  if (!file) return null
+  return { post: JSON.parse(file.content), sha: file.sha }
+}
+
 function toSlug(keyword: string): string {
   return keyword.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim()
     .replace(/\s+/g, '-').replace(/-+/g, '-').slice(0, 80)
+}
+
+function escape(text: string): string {
+  return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&')
 }
 
 // ── /help ──────────────────────────────────────────────────────────────────────
@@ -94,14 +105,95 @@ bot.onText(/\/help/, async (msg) => {
   if (!guard(msg)) return
   bot.sendMessage(msg.chat.id,
     `🤖 *AI Desk SEO Agent*\n\n` +
+    `*Approval flow:*\n` +
+    `/approve — publish pending post live\n` +
+    `/skip — discard pending post, move to next\n` +
+    `/preview — show pending post details\n\n` +
+    `*Controls:*\n` +
     `/run — generate a post now\n` +
-    `/status — keywords left \\+ recent posts\n` +
+    `/status — queue status \\+ recent posts\n` +
     `/add \\[keyword\\] — add keyword to queue\n` +
     `/pause — pause scheduled runs\n` +
     `/resume — resume scheduled runs\n` +
     `/help — this message`,
     { parse_mode: 'MarkdownV2' }
   )
+})
+
+// ── /preview ───────────────────────────────────────────────────────────────────
+
+bot.onText(/\/preview/, async (msg) => {
+  if (!guard(msg)) return
+  const pending = await getPendingPost()
+  if (!pending) return void bot.sendMessage(msg.chat.id, '📭 No post pending approval.')
+
+  const { post } = pending
+  const faqs = post.faq?.slice(0, 5).map((f: any, i: number) => `  Q${i+1}: ${f.question}`).join('\n') ?? ''
+
+  bot.sendMessage(msg.chat.id,
+    `👁 *Pending post preview*\n\n` +
+    `*Title:* ${post.title}\n` +
+    `*Category:* ${post.category}\n` +
+    `*Reading time:* ${post.readingTimeMinutes} min\n` +
+    `*Tags:* ${post.tags?.join(', ')}\n\n` +
+    `*Intro:*\n${post.intro?.slice(0, 300)}...\n\n` +
+    `*FAQ (first 5):*\n${faqs}\n\n` +
+    `✅ /approve | ⏭ /skip`,
+    { parse_mode: 'Markdown' }
+  )
+})
+
+// ── /approve ───────────────────────────────────────────────────────────────────
+
+bot.onText(/\/approve/, async (msg) => {
+  if (!guard(msg)) return
+  await bot.sendMessage(msg.chat.id, '⏳ Publishing...')
+
+  const pending = await getPendingPost()
+  if (!pending) return void bot.sendMessage(msg.chat.id, '📭 No post pending approval.')
+
+  const { post, sha } = pending
+
+  try {
+    // Write post to content/blog/
+    const blogPath = `content/blog/${post.slug}.json`
+    const existing = await getFile(blogPath)
+    await putFile(
+      blogPath,
+      JSON.stringify(post, null, 2),
+      `feat(blog): publish "${post.title}"`,
+      existing?.sha
+    )
+
+    // Delete pending file
+    await deleteFile(PENDING_PATH, sha, 'chore: clear pending post after approval')
+
+    bot.sendMessage(msg.chat.id,
+      `✅ *Published!*\n\n*${post.title}*\n\nLive in ~30s: [ai\\-desk\\.tech/blog/${post.slug}](https://ai-desk.tech/blog/${post.slug})`,
+      { parse_mode: 'MarkdownV2' }
+    )
+  } catch (err: any) {
+    bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)
+  }
+})
+
+// ── /skip ──────────────────────────────────────────────────────────────────────
+
+bot.onText(/\/skip/, async (msg) => {
+  if (!guard(msg)) return
+
+  const pending = await getPendingPost()
+  if (!pending) return void bot.sendMessage(msg.chat.id, '📭 No post pending approval.')
+
+  try {
+    await deleteFile(PENDING_PATH, pending.sha, 'chore: skip pending post')
+    bot.sendMessage(msg.chat.id,
+      `⏭ Discarded: *${pending.post.title}*\n\nNext run will generate the next keyword.`,
+      { parse_mode: 'Markdown' }
+    )
+  } catch (err: any) {
+    bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)
+  }
 })
 
 // ── /run ───────────────────────────────────────────────────────────────────────
@@ -112,11 +204,17 @@ bot.onText(/\/run/, async (msg) => {
     if (await isPaused()) {
       return void bot.sendMessage(msg.chat.id, '⏸ Agent is paused. Use /resume first.')
     }
+    const pending = await getPendingPost()
+    if (pending) {
+      return void bot.sendMessage(msg.chat.id,
+        `⚠️ Post already pending approval:\n*${pending.post.title}*\n\nUse /approve or /skip first.`,
+        { parse_mode: 'Markdown' }
+      )
+    }
     await bot.sendMessage(msg.chat.id, '⚡ Triggering SEO agent...')
     await triggerWorkflow('seo-agent.yml')
     bot.sendMessage(msg.chat.id,
-      '✅ Workflow started\\. New post live in ~2 min\\.\n' +
-      '[View progress](https://github.com/avielg-droid/AI-Desk/actions)',
+      '✅ Generating post now\\. You\'ll get a Telegram preview in ~2 min\\.',
       { parse_mode: 'MarkdownV2' }
     )
   } catch (err: any) {
@@ -130,22 +228,26 @@ bot.onText(/\/status/, async (msg) => {
   if (!guard(msg)) return
   await bot.sendMessage(msg.chat.id, '⏳ Fetching...')
   try {
-    const [targets, posts, paused] = await Promise.all([getKeywordTargets(), getBlogPosts(), isPaused()])
+    const [targets, posts, paused, pending] = await Promise.all([
+      getKeywordTargets(), getBlogPosts(), isPaused(), getPendingPost(),
+    ])
     const published = new Set(posts)
     const remaining = targets.filter(t => !published.has(t.slug))
     const recent = posts.slice(-3).reverse()
 
     const lines = [
       paused ? '⏸ *Status: PAUSED*' : '▶️ *Status: RUNNING*',
+      pending ? `📝 *Pending approval:* ${escape(pending.post.title)}` : '',
       '',
       `📋 *Queue:* ${remaining.length} remaining / ${targets.length} total`,
       '*Next up:*',
-      ...remaining.slice(0, 3).map((t, i) => `  ${i + 1}\\. ${t.keyword.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&')}`),
+      ...remaining.slice(0, 3).map((t, i) => `  ${i + 1}\\. ${escape(t.keyword)}`),
       '',
-      `📝 *Published:* ${posts.length} posts`,
+      `✅ *Published:* ${posts.length} posts`,
       '*Recent:*',
-      ...recent.map(s => `  • ${s.replace(/-/g, ' ').replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&')}`),
-    ]
+      ...recent.map(s => `  • ${escape(s.replace(/-/g, ' '))}`),
+    ].filter(Boolean)
+
     bot.sendMessage(msg.chat.id, lines.join('\n'), { parse_mode: 'MarkdownV2' })
   } catch (err: any) {
     bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)

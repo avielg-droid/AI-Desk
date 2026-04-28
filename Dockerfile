@@ -9,4 +9,4 @@ RUN npm install
 COPY scripts/telegram-bot.ts ./scripts/
 COPY tsconfig.json ./
 
-CMD ["sh", "-c", "echo 'BOT_TOKEN set:' ${TELEGRAM_BOT_TOKEN:+yes} && npx tsx scripts/telegram-bot.ts"]
+CMD ["npx", "tsx", "scripts/telegram-bot.ts"]

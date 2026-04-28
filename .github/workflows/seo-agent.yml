@@ -5,7 +5,6 @@ on:
     # Every day at 08:00 UTC
     - cron: '0 8 * * *'
   workflow_dispatch:
-    # Allow manual trigger from GitHub Actions UI
 
 permissions:
   contents: write
@@ -43,17 +42,19 @@ jobs:
         if: steps.pause.outputs.paused != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/seo-agent.mjs
 
-      - name: Commit and push new content
+      - name: Commit pending draft
+        if: steps.pause.outputs.paused != 'true'
         run: |
           git config user.name "SEO Agent"
           git config user.email "seo-agent@ai-desk.tech"
-          git add content/blog/ public/llms.txt
-          # Only commit if there are staged changes
+          git add scripts/pending-post.json public/llms.txt
           if git diff --cached --quiet; then
-            echo "No new content to commit."
+            echo "No new draft to commit."
           else
-            git commit -m "feat(blog): auto-generate SEO post [skip ci]"
+            git commit -m "draft: pending post awaiting approval [skip ci]"
             git push
           fi
