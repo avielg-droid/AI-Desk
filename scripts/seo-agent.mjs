@@ -262,17 +262,91 @@ async function main() {
 
   post.slug = target.slug
 
+  // ── Self-review ────────────────────────────────────────────────────────────
+  console.log('→ Running self-review...')
+  let reviewScore = null
+  let reviewNotes = null
+  try {
+    const reviewPrompt = `You are a senior SEO editor reviewing a blog post draft for The AI Desk (ai-desk.tech).
+The site reviews hardware for running local AI. Audience: technical users comparing GPUs and Mini PCs.
+
+Review this post draft and return a JSON object with this shape:
+{
+  "score": number,        // 1-10 overall quality score
+  "approved": boolean,    // true if score >= 7, false otherwise
+  "issues": string[],     // list of specific problems found (empty if none)
+  "improvements": string[], // top 3 specific improvements to make
+  "strengths": string[]   // what's good about it
+}
+
+Evaluate on:
+- Does it answer the target keyword intent completely?
+- Are claims backed by real spec data (not vague)?
+- Is the comparison table useful and accurate?
+- Are FAQ questions ones people actually search?
+- Is the writing direct and technical (not fluffy)?
+- Is there a clear verdict/recommendation?
+- Word count sufficient for the topic (aim 1000-2000 words)?
+
+Target keyword: "${target.keyword}"
+
+Post to review:
+${JSON.stringify({ title: post.title, description: post.description, intro: post.intro, faq: post.faq, contentBlockCount: post.content.length }, null, 2)}
+
+Return ONLY the JSON. No explanation.`
+
+    const reviewMsg = await client.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1024,
+      messages: [{ role: 'user', content: reviewPrompt }],
+    })
+    const reviewRaw = stripCodeFence(reviewMsg.content[0].text)
+    const review = JSON.parse(reviewRaw)
+    reviewScore = review.score
+    reviewNotes = review
+
+    console.log(`✓ Self-review score: ${review.score}/10 | Approved: ${review.approved}`)
+    if (review.issues?.length) console.log(`  Issues: ${review.issues.join('; ')}`)
+
+    // If score < 7, regenerate once with improvement notes
+    if (!review.approved) {
+      console.log('→ Score below threshold — regenerating with improvements...')
+      const improvedPrompt = buildPrompt(target, products, today) +
+        `\n\nPREVIOUS DRAFT ISSUES TO FIX:\n${review.issues.map(i => `- ${i}`).join('\n')}\n` +
+        `IMPROVEMENTS REQUIRED:\n${review.improvements.map(i => `- ${i}`).join('\n')}`
+
+      const improvedMsg = await client.messages.create({
+        model: 'claude-opus-4-5',
+        max_tokens: 8192,
+        messages: [{ role: 'user', content: improvedPrompt }],
+      })
+      const improvedPost = JSON.parse(stripCodeFence(improvedMsg.content[0].text))
+      validatePost(improvedPost)
+      Object.assign(post, improvedPost)
+      post.slug = target.slug
+      reviewNotes.regenerated = true
+      console.log('✓ Regenerated with improvements')
+    }
+  } catch (err) {
+    console.warn('Self-review failed (non-fatal):', err.message)
+    reviewScore = null
+  }
+
   // Save as pending draft
   fs.writeFileSync(PENDING_PATH, JSON.stringify(post, null, 2))
   console.log(`✓ Draft saved: scripts/pending-post.json`)
 
   // Notify via Telegram
   const excerpt = post.intro?.slice(0, 200) ?? post.description?.slice(0, 200) ?? ''
+  const scoreLine = reviewScore !== null
+    ? `Quality score: ${reviewScore}/10${reviewNotes?.regenerated ? ' (auto-improved)' : ''}`
+    : ''
   const msg = [
     `📝 *New post ready for review*`,
     ``,
     `*${post.title}*`,
     `Category: ${post.category} | ${post.readingTimeMinutes} min read`,
+    scoreLine,
     ``,
     `${excerpt}...`,
     ``,
@@ -281,7 +355,7 @@ async function main() {
     `✅ /approve — publish now`,
     `⏭ /skip — discard and move to next keyword`,
     `👁 /preview — show full FAQ list`,
-  ].join('\n')
+  ].filter(Boolean).join('\n')
 
   await sendTelegram(msg)
   console.log(`✓ Telegram notification sent`)
