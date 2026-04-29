@@ -44,7 +44,7 @@
     "512GB storage — tight if hosting multiple large models (70B = ~40GB per Q4)"
   ],
   "verdict": "The GMKtec M6 Ultra is the best AMD mini PC for local AI in the sub-$400 tier. The Ryzen 7 7640HS Zen 4 core is noticeably faster than older Zen 3 mini PCs, and the Radeon 780M RDNA 3 iGPU is the most AI-capable integrated graphics on any Windows mini PC reviewed. For users committed to the AMD ecosystem, needing triple 4K displays, or wanting an upgradeable DDR5 system, this is the pick. Apple Silicon still wins on raw LLM speed per dollar, but the M6 Ultra is the right answer if you need Windows, AMD, or a dual-NIC AI server.",
-  "affiliateUrl": "https://amzn.to/4jFZzDG",
+  "affiliateUrl": "https://amzn.to/4t4ei39",
   "rating": 4.2,
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",
