@@ -84,82 +84,108 @@ export default function HomePage() {
       <SchemaMarkup schema={buildSpeakableSchema(['h1', '.hero-summary', '.key-facts'])} />
 
       {/* ── HERO ── */}
-      <section className="relative border border-edge min-h-[480px] flex items-center overflow-hidden" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(8px)' }}>
+      <section className="relative border border-edge min-h-[360px] sm:min-h-[480px] flex items-center overflow-hidden" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(8px)' }}>
         {/* Aurora top rule */}
         <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
-        {/* Crosshatch — white lines on void */}
+        {/* Crosshatch */}
         <div className="absolute inset-0 bg-crosshatch" />
-        {/* Radial glow behind title */}
+        {/* Left radial glow */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.05) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%)' }} />
+        {/* Right radial glow — desktop */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none hidden lg:block"
+          style={{ background: 'radial-gradient(circle, rgba(138,43,226,0.06) 0%, transparent 70%)' }} />
 
-        <div className="relative px-8 md:px-14 py-16 max-w-4xl">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Est. 2026</span>
-            <span className="h-px w-12" style={{ background: 'var(--aurora-gradient)' }} />
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
-              {allProducts.length} Products Reviewed
-            </span>
+        <div className="relative w-full flex flex-col lg:flex-row items-center">
+
+          {/* Left — copy */}
+          <div className="flex-1 px-8 md:px-14 py-14 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Est. 2026</span>
+              <span className="h-px w-12 shrink-0" style={{ background: 'var(--aurora-gradient)' }} />
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
+                {allProducts.length} Products Reviewed
+              </span>
+            </div>
+
+            <h1 className="font-display font-700 text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
+              Hardware<br />
+              <span className="text-ore">for the</span><br />
+              AI Age
+            </h1>
+
+            <p className="font-sans text-base md:text-lg text-zinc-600 max-w-xl leading-relaxed mb-10">
+              Independent reviews of GPUs, Mini PCs, and AI accessories — benchmarked for LLM inference, Stable Diffusion, and local AI workloads.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <Link
+                href="/products"
+                className="affiliate-btn inline-flex items-center gap-3 px-7 py-3.5 font-sans font-700 text-base tracking-tight"
+              >
+                Browse All Products
+                <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+              <Link
+                href="/categories/mini-pc"
+                className="nav-cta inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/50 hover:text-ore"
+              >
+                Mini PC Reviews
+              </Link>
+            </div>
+
+            {/* Stats strip */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-edge/40 pt-6">
+              {SIDE_STATS.map((s, i) => (
+                <div key={s.val} className={`flex flex-col ${i > 0 ? 'sm:border-l sm:border-edge/40 sm:pl-6' : ''}`}>
+                  <p className="font-mono font-600 text-xl text-ore leading-none">
+                    {s.val}
+                    <span className="text-sm text-zinc-600 ml-1">{s.unit}</span>
+                  </p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="font-display font-700 text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
-            Hardware<br />
-            <span className="text-ore">for the</span><br />
-            AI Age
-          </h1>
-
-          <p className="font-sans text-base md:text-lg text-zinc-600 max-w-xl leading-relaxed mb-10">
-            Independent reviews of GPUs, Mini PCs, and AI accessories — benchmarked for LLM inference, Stable Diffusion, and local AI workloads.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-4 mb-8">
-            {/* Primary CTA */}
-            <Link
-              href="/products"
-              className="affiliate-btn inline-flex items-center gap-3 px-7 py-3.5 font-sans font-700 text-base tracking-tight"
-            >
-              Browse All Products
-              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </Link>
-            <Link
-              href="/categories/mini-pc"
-              className="nav-cta inline-flex items-center gap-2 px-7 py-3 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/50 hover:text-ore"
-            >
-              Mini PC Reviews
-            </Link>
+          {/* Right — decorative spec panel (desktop only) */}
+          <div className="hidden lg:flex shrink-0 w-72 xl:w-80 self-stretch border-l border-edge/30 flex-col justify-center px-8 py-12 gap-6" aria-hidden="true">
+            {/* Large SVG circuit/radar art */}
+            <svg viewBox="0 0 200 200" className="w-48 h-48 mx-auto opacity-20" fill="none">
+              <circle cx="100" cy="100" r="90" stroke="url(#hg2)" strokeWidth="0.8" />
+              <circle cx="100" cy="100" r="68" stroke="url(#hg2)" strokeWidth="0.5" />
+              <circle cx="100" cy="100" r="46" stroke="url(#hg2)" strokeWidth="0.5" />
+              <circle cx="100" cy="100" r="24" stroke="url(#hg2)" strokeWidth="0.5" />
+              <circle cx="100" cy="100" r="4" fill="url(#hg2)" />
+              <line x1="10" y1="100" x2="190" y2="100" stroke="url(#hg2)" strokeWidth="0.4" />
+              <line x1="100" y1="10" x2="100" y2="190" stroke="url(#hg2)" strokeWidth="0.4" />
+              <line x1="36" y1="36" x2="164" y2="164" stroke="url(#hg2)" strokeWidth="0.3" />
+              <line x1="164" y1="36" x2="36" y2="164" stroke="url(#hg2)" strokeWidth="0.3" />
+              <defs>
+                <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#00E5FF" />
+                  <stop offset="100%" stopColor="#8A2BE2" />
+                </linearGradient>
+              </defs>
+            </svg>
+            {/* Key specs */}
+            <div className="space-y-3">
+              {[
+                { label: 'TOP BANDWIDTH', val: '672 GB/s', sub: 'RTX 5070 GDDR7' },
+                { label: 'MAX MODEL', val: '70B', sub: 'Llama 3 local' },
+                { label: 'MIN POWER', val: '20W', sub: 'M4 idle draw' },
+              ].map(item => (
+                <div key={item.label} className="border border-edge/40 bg-ink-2/50 px-4 py-3">
+                  <p className="font-mono text-[8px] uppercase tracking-widest text-zinc-600 mb-1">{item.label}</p>
+                  <p className="font-mono font-600 text-lg text-ore leading-none">{item.val}</p>
+                  <p className="font-mono text-[9px] text-zinc-600 mt-0.5">{item.sub}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Stats strip — visible on all screen sizes */}
-          <div className="flex items-center gap-6 border-t border-edge/40 pt-6">
-            {SIDE_STATS.map((s, i) => (
-              <div key={s.val} className={`flex flex-col ${i > 0 ? 'border-l border-edge/40 pl-6' : ''}`}>
-                <p className="font-mono font-600 text-xl text-ore leading-none">
-                  {s.val}
-                  <span className="text-sm text-zinc-600 ml-1">{s.unit}</span>
-                </p>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-1">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Side accent — desktop only decorative */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block opacity-10">
-          <svg viewBox="0 0 120 120" className="w-32 h-32" fill="none">
-            <circle cx="60" cy="60" r="55" stroke="url(#heroGrad)" strokeWidth="1" />
-            <circle cx="60" cy="60" r="40" stroke="url(#heroGrad)" strokeWidth="0.5" />
-            <circle cx="60" cy="60" r="25" stroke="url(#heroGrad)" strokeWidth="0.5" />
-            <line x1="5" y1="60" x2="115" y2="60" stroke="url(#heroGrad)" strokeWidth="0.5" />
-            <line x1="60" y1="5" x2="60" y2="115" stroke="url(#heroGrad)" strokeWidth="0.5" />
-            <defs>
-              <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#00E5FF" />
-                <stop offset="100%" stopColor="#8A2BE2" />
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </section>
 
