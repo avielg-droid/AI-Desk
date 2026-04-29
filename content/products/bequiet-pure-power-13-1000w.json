@@ -1,0 +1,62 @@
+{
+  "slug": "bequiet-pure-power-13-1000w",
+  "asin": "B0FBXX1D17",
+  "image": "/products/bequiet-pure-power-13-1000w.jpg",
+  "name": "be quiet! Pure Power 13 M 1000W ATX 3.1 PSU",
+  "category": "accessory",
+  "brand": "be quiet!",
+  "shortDescription": "The be quiet! Pure Power 13 M 1000W is a fully modular 80+ Gold ATX 3.1 PSU built for high-TDP GPU AI workstations — with native PCIe 5.1 connector support for RTX 5080 and 4090 builds, a semi-passive 120mm fan for silent idle, and enough headroom for sustained full-load AI inference.",
+  "specs": {
+    "interface": "ATX 3.1, PCIe 5.1 (native 16-pin connector)",
+    "form_factor": "ATX PSU",
+    "tdp_watts": 1000
+  },
+  "useCases": [
+    "Powering RTX 5080 (360W) or RTX 4090 (450W) AI workstation builds",
+    "Fully modular cabling for clean AI server builds with good airflow",
+    "Silent idle operation — fan stops completely at low load",
+    "ATX 3.1 compliance for transient power spikes during GPU AI inference",
+    "Future-proof PSU foundation for PCIe 5.0 GPU generations"
+  ],
+  "pros": [
+    "1000W 80+ Gold — 90%+ efficiency under typical AI inference loads",
+    "ATX 3.1 compliant — handles GPU transient power spikes up to 2× rated TDP",
+    "Native PCIe 5.1 16-pin connector — no adapters needed for RTX 5080 or 4090",
+    "Fully modular — only connect cables you need, improving airflow in AI server builds",
+    "Semi-passive 120mm fan — completely silent at idle, quiet under sustained GPU load",
+    "Single rail design — full 1000W available to any component without rail splitting"
+  ],
+  "cons": [
+    "80+ Gold, not Platinum/Titanium — Dark Power 13 offers higher efficiency if budget allows",
+    "1000W may be tight for RTX 4090 + high-end CPU at sustained full load — 1200W is safer",
+    "Semi-passive fan means no airflow at idle — ensure case has independent chassis fans"
+  ],
+  "verdict": "The be quiet! Pure Power 13 M 1000W is the correct PSU for RTX 5080 builds and a solid choice for RTX 4090 systems with moderate CPUs. ATX 3.1 compliance matters for AI workloads — GPU inference can spike well above rated TDP momentarily, and older PSUs can trip protection circuits. The fully modular design and semi-passive fan make it one of the quietest 1000W options available, well-suited for a 24/7 AI inference machine.",
+  "affiliateUrl": "https://amzn.to/4d8NQAF",
+  "rating": 4.5,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-29",
+  "featured": false,
+  "crossSells": [
+    "msi-rtx-5080-gaming-trio",
+    "msi-rtx-4090",
+    "apc-bx1500m"
+  ],
+  "notFor": [
+    "RTX 4090 builds with a 125W+ CPU — 1000W is tight; use 1200W+ for this combination",
+    "Builders who want 80+ Platinum/Titanium efficiency — be quiet! Dark Power 13 is the step up",
+    "Mini ITX builds — ATX form factor requires a standard-size case"
+  ],
+  "entityHeadline": "be quiet! Pure Power 13 M 1000W: ATX 3.1 PSU for RTX 5080 and 4090 AI Builds",
+  "faq": [
+    {
+      "question": "Is 1000W enough for an RTX 4090 AI workstation?",
+      "answer": "It depends on the CPU. RTX 4090 (450W) + Ryzen 7 (65W) + system overhead (~100W) = ~615W — comfortably within 1000W. With a Core i9-13900K or Ryzen 9 7950X (125W+) and overclocking, sustained draw can approach 750–850W, still within 1000W but with less headroom. For heavy CPU+GPU AI workloads, 1200W is more comfortable."
+    },
+    {
+      "question": "What is ATX 3.1 and why does it matter for AI?",
+      "answer": "ATX 3.1 specifies that a PSU must handle transient power spikes of up to 200% of GPU rated TDP for short durations without triggering over-current protection (OCP). Modern GPUs including the RTX 5080 and 4090 can spike well above their rated TDP during burst AI compute phases. A non-ATX 3.1 PSU may trip its OCP circuit, causing system shutdowns mid-inference. ATX 3.1 PSUs like the Pure Power 13 M are designed to handle these spikes correctly."
+    }
+  ]
+}

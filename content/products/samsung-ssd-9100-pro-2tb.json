@@ -1,0 +1,62 @@
+{
+  "slug": "samsung-ssd-9100-pro-2tb",
+  "asin": "B0DX2DPJZ5",
+  "image": "/products/samsung-ssd-9100-pro-2tb.jpg",
+  "name": "Samsung SSD 9100 PRO 2TB PCIe 5.0 NVMe",
+  "category": "accessory",
+  "brand": "Samsung",
+  "shortDescription": "The Samsung 9100 PRO is the fastest consumer NVMe SSD available — 14,700 MB/s sequential read over PCIe 5.0 halves model loading times compared to PCIe 4.0 drives, and Samsung markets it explicitly for AI computing. For builders with a PCIe 5.0 M.2 slot, this is the correct storage foundation for a serious AI workstation.",
+  "specs": {
+    "interface": "M.2 2280, PCIe 5.0 x4, NVMe 2.0",
+    "form_factor": "M.2 SSD",
+    "storage_gb": 2000
+  },
+  "useCases": [
+    "AI workstation primary drive — fastest possible model loading on PCIe 5.0 systems",
+    "Loading 70B Q4 models (~40GB) in under 3 seconds from cold start",
+    "Stable Diffusion model library with near-instant checkpoint switching",
+    "Heavy-duty AI development with frequent large file I/O",
+    "Future-proof storage for RTX 5080 / 4090 GPU builds on modern platforms"
+  ],
+  "pros": [
+    "14,700 MB/s sequential read — fastest consumer NVMe, roughly 2× PCIe 4.0 SSDs",
+    "PCIe 5.0 x4 — designed for AMD Ryzen 7000/9000 and Intel 13th Gen+ platforms",
+    "Samsung markets explicitly for AI computing — optimized firmware for large sequential reads",
+    "Samsung V-NAND reliability — proven endurance for write-heavy AI cache and checkpoint workloads",
+    "2TB capacity — sufficient for most active model collections"
+  ],
+  "cons": [
+    "Requires PCIe 5.0 M.2 slot — no performance advantage in PCIe 4.0 systems",
+    "Generates significant heat — a heatsink is mandatory; some boards require a dedicated one",
+    "2TB limit — the Samsung 990 PRO 4TB offers more capacity if Gen 5 is unavailable",
+    "Premium price vs PCIe 4.0 alternatives with nearly the same real-world model load times"
+  ],
+  "verdict": "The Samsung 9100 PRO is the right storage for a top-tier AI build — but only if your platform has a PCIe 5.0 M.2 slot. In a Ryzen 7000/9000 or Intel 13th+ system paired with an RTX 5080 or 4090, it eliminates storage as any kind of bottleneck. If your board is PCIe 4.0 only, the Samsung 990 PRO 4TB is the better buy: more capacity at lower cost with marginal real-world load time difference.",
+  "affiliateUrl": "https://amzn.to/4eclO8t",
+  "rating": 4.7,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-29",
+  "featured": false,
+  "crossSells": [
+    "msi-rtx-5080-gaming-trio",
+    "msi-rtx-4090",
+    "samsung-990-pro-4tb"
+  ],
+  "notFor": [
+    "PCIe 4.0 platform owners — no speed advantage; buy the 990 PRO 4TB instead",
+    "Mini PC builders — M.2 slots in mini PCs are PCIe 4.0 at most",
+    "Budget builds — PCIe 4.0 SSDs offer 90% of the real-world benefit at half the cost"
+  ],
+  "entityHeadline": "Samsung 9100 PRO PCIe 5.0: 14,700 MB/s AI Model Loading for Serious Workstations",
+  "faq": [
+    {
+      "question": "How much faster does the 9100 PRO load AI models vs a PCIe 4.0 SSD?",
+      "answer": "At 14,700 MB/s vs 7,450 MB/s, the 9100 PRO is roughly 2× faster in peak sequential read. A 70B Q4 model (~40GB) loads in approximately 2.7 seconds on the 9100 PRO vs 5.5 seconds on the 990 PRO. For 7B–13B models, the difference is under 1 second. The real-world benefit is most pronounced for users who frequently switch between large 70B+ model families."
+    },
+    {
+      "question": "Does the Samsung 9100 PRO need a heatsink?",
+      "answer": "Yes. PCIe 5.0 SSDs generate significantly more heat than PCIe 4.0 drives. Most Z790 and X670E motherboards include an M.2 heatsink — use it. Without thermal management, the 9100 PRO will throttle under sustained sequential reads, negating the speed advantage."
+    }
+  ]
+}

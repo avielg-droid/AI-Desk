@@ -1,0 +1,82 @@
+{
+  "slug": "msi-rtx-4090",
+  "asin": "B09YCLG5PB",
+  "image": "/products/msi-rtx-4090.jpg",
+  "name": "MSI GeForce RTX 4090 24GB GAMING X TRIO",
+  "category": "gpu",
+  "brand": "MSI",
+  "shortDescription": "The MSI RTX 4090 is the previous-generation flagship — and still the most capable GPU for local LLM inference at 24GB GDDR6X and 1008 GB/s bandwidth. With 24GB VRAM, it runs 32B models at Q4 quantization fully in GPU memory, making it the only consumer GPU under $2000 with a clear path to larger models without CPU offloading.",
+  "specs": {
+    "chip": "NVIDIA GeForce RTX 4090 (Ada Lovelace, AD102)",
+    "architecture": "NVIDIA Ada Lovelace (AD102)",
+    "gpu_cores": 16384,
+    "vram_gb": 24,
+    "memory_bandwidth_gbps": 1008,
+    "tdp_watts": 450,
+    "max_llm_size": "32B (Q4 quantized)",
+    "form_factor": "GPU",
+    "tokens_per_second_7b": 128,
+    "tokens_per_second_13b": 74,
+    "image_gen_sdxl_seconds": 1.8,
+    "cooling": "Triple-fan active (TRI FROZR 3)"
+  },
+  "useCases": [
+    "Local LLM inference with large models — 13B at full FP16, 32B at Q4 fully in VRAM",
+    "SDXL and FLUX.1 image generation with large batch sizes",
+    "ComfyUI video generation and advanced diffusion workflows",
+    "Fine-tuning small to mid-size models locally with LoRA adapters",
+    "CUDA AI development requiring maximum VRAM headroom"
+  ],
+  "pros": [
+    "24GB GDDR6X — largest consumer VRAM available, runs 32B Q4 fully in GPU memory",
+    "1008 GB/s bandwidth — competitive with RTX 5080 despite being a generation older",
+    "16384 CUDA cores (Ada Lovelace) — still one of the fastest GPUs for parallel AI compute",
+    "Runs 13B at full FP16 precision — highest output quality without quantization compromise",
+    "Strong resale value — the 4090 holds price better than mid-range cards",
+    "Proven platform — extensive community support and optimization for AI workloads"
+  ],
+  "cons": [
+    "450W TDP — highest power draw of any reviewed GPU, needs 1000W+ PSU",
+    "Previous generation — Blackwell's 5th-Gen Tensor Cores are meaningfully faster per watt",
+    "Triple-slot, large cooler — needs a full-size ATX case with strong airflow",
+    "Significantly more expensive than RTX 5070 for ~10% more LLM speed",
+    "70B Q4 still requires offload — 24GB fits 70B only at very aggressive quantization (Q2)"
+  ],
+  "verdict": "The RTX 4090 remains the best GPU for local AI users who prioritize maximum VRAM capacity over the latest architecture. 24GB GDDR6X enables 32B Q4 models fully in GPU memory — a capability no current 16GB card can match — and inference at 128 t/s on 7B models remains excellent. The only case for choosing the RTX 5080 over the 4090 is power efficiency (360W vs 450W) and Blackwell's newer Tensor Core generation. If 24GB VRAM is your priority and you can handle the power draw, the 4090 delivers.",
+  "affiliateUrl": "https://amzn.to/4n0yQID",
+  "rating": 4.7,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-29",
+  "featured": false,
+  "crossSells": [
+    "apc-bx1500m",
+    "bequiet-pure-power-13-1000w",
+    "samsung-ssd-9100-pro-2tb"
+  ],
+  "notFor": [
+    "Power-conscious builders — 450W sustained is significant; RTX 5080 is more efficient",
+    "Anyone primarily running 7B models — RTX 5070 at half the price covers this use case",
+    "Mini ITX builds — triple-slot, high TDP, needs full ATX tower with strong airflow",
+    "macOS users — NVIDIA CUDA requires Windows or Linux"
+  ],
+  "entityHeadline": "RTX 4090 24GB for Local AI: The Only Consumer GPU That Runs 32B Models in VRAM",
+  "faq": [
+    {
+      "question": "Can the RTX 4090 run 70B LLMs fully in VRAM?",
+      "answer": "No. A 70B Q4 model requires approximately 40GB of VRAM. The 4090's 24GB cannot fit it without CPU offloading. You can run 70B at Q2 quantization (~20GB) fully in VRAM, but Q2 quality is significantly degraded. For 70B inference, the Mac Mini M4 Pro with 64GB unified memory is a better dedicated solution, or you can use CPU offload with llama.cpp at ~5–10 t/s."
+    },
+    {
+      "question": "Is the RTX 4090 still worth buying in 2026?",
+      "answer": "Yes, if 24GB VRAM is your priority. No current sub-$2000 GPU has more VRAM. The RTX 5080 is faster per watt but only offers 16GB. For users who regularly run 32B models or want to fine-tune 13B+ models with full precision, the 4090's VRAM advantage is decisive. If your workload stays at 7B–13B, the RTX 5070 or 5080 are better value."
+    },
+    {
+      "question": "How does the RTX 4090 compare to the RTX 5080 for AI inference?",
+      "answer": "The RTX 5080 wins on efficiency — 360W vs 450W TDP — and has newer Blackwell Tensor Cores that deliver better FP4/INT4 throughput. The RTX 4090 wins on VRAM: 24GB vs 16GB, enabling larger models without CPU offload. For 7B–13B inference speed, the RTX 5080 is roughly 20% faster. For model size capacity, the RTX 4090 is in a different class."
+    },
+    {
+      "question": "What PSU is required for the RTX 4090?",
+      "answer": "NVIDIA recommends a 1000W PSU minimum for RTX 4090 systems. With a high-end CPU, 1200W provides better headroom. The 4090 can spike well above its rated 450W TDP during burst AI workloads, so a quality 1000W+ 80+ Gold or Platinum unit is strongly recommended."
+    }
+  ]
+}

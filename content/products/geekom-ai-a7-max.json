@@ -1,0 +1,79 @@
+{
+  "slug": "geekom-ai-a7-max",
+  "asin": "B0G2C2CDR4",
+  "image": "/products/geekom-ai-a7-max.jpg",
+  "name": "GEEKOM AI A7 MAX Mini PC (Ryzen 9 7940HS, 16GB DDR5)",
+  "category": "mini-pc",
+  "brand": "GEEKOM",
+  "shortDescription": "The GEEKOM AI A7 MAX pairs AMD's fastest 8-core Zen 4 laptop chip with Radeon 780M RDNA 3 graphics in a compact mini PC chassis — delivering the best CPU inference speed in the sub-$400 AMD mini PC tier. With 1TB NVMe storage and USB4, it doubles as an always-on home AI server and handles 7B models smoothly via Ollama on Windows.",
+  "specs": {
+    "chip": "AMD Ryzen 9 7940HS (Zen 4 Phoenix, 8 Cores / 16 Threads, up to 5.2 GHz)",
+    "architecture": "AMD Zen 4 (RDNA 3 iGPU)",
+    "cpu_cores": 8,
+    "gpu_cores": 12,
+    "unified_memory_gb": 16,
+    "memory_bandwidth_gbps": 68,
+    "storage_gb": 1000,
+    "tdp_watts": 45,
+    "max_llm_size": "7B (Q4 via CPU)",
+    "interface": "USB4 40Gbps, Wi-Fi 6E, 2.5GbE LAN, BT 5.3, HDMI 2.0, DP 2.0",
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 14,
+    "cooling": "Single-fan active"
+  },
+  "useCases": [
+    "Running 7B LLMs locally via Ollama or LM Studio on Windows",
+    "Always-on home AI server with 2.5GbE networking",
+    "AMD Radeon 780M iGPU-accelerated inference on Linux with ROCm",
+    "AI-assisted development workstation with 8K display support",
+    "Private AI chat server with USB4 eGPU upgrade path"
+  ],
+  "pros": [
+    "Ryzen 9 7940HS (Zen 4, 8C/16T) — fastest AMD mini PC CPU available, 5.2 GHz boost",
+    "Radeon 780M RDNA 3 (12 CUs) — best AMD iGPU for AI with ROCm on Linux",
+    "1TB NVMe — enough to store multiple 7B–13B model weights without management",
+    "USB4 40Gbps — eGPU enclosure upgrade path for future discrete GPU performance",
+    "Wi-Fi 6E + 2.5GbE — ideal for AI server and NAS-connected workflows",
+    "Windows 11 Pro — full compatibility with Python AI ecosystem and LM Studio"
+  ],
+  "cons": [
+    "16GB RAM ceiling — limits to 7B Q4 models; 13B Q4 (~9GB) requires tight RAM management",
+    "68 GB/s DDR5 bandwidth — 4× slower than Mac Mini M4 Pro for LLM token generation",
+    "iGPU-only — Radeon 780M is too slow for Stable Diffusion XL or FLUX.1",
+    "ROCm Windows support limited — full iGPU AI acceleration requires Linux",
+    "Non-upgradeable RAM — 16GB is soldered, unlike some other mini PCs"
+  ],
+  "verdict": "The GEEKOM AI A7 MAX is the top AMD Zen 4 mini PC for local AI in 2026. The Ryzen 9 7940HS delivers the highest CPU inference throughput of any mini PC at this price — outpacing older Zen 3 chips by a meaningful margin — and the 1TB storage removes the model management headache. The 16GB RAM limit is the main constraint: it keeps you firmly in 7B territory unless you run very aggressive quantization. For the Windows AMD ecosystem with a clear eGPU upgrade path, this is the right pick.",
+  "affiliateUrl": "https://amzn.to/48wdZH0",
+  "rating": 4.3,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-29",
+  "featured": false,
+  "crossSells": [
+    "silkland-usb4-thunderbolt-5",
+    "apc-bx1500m",
+    "gigabyte-rx-9060-xt-gaming"
+  ],
+  "notFor": [
+    "Users who need 13B+ models — 16GB RAM makes this impractical without offloading",
+    "Stable Diffusion users — Radeon 780M is far too slow for SDXL or FLUX.1 on Windows",
+    "Speed-sensitive LLM chat — 14 t/s is functional but Mac Mini M4 is 3× faster",
+    "Linux ROCm primary users — works best on Windows due to GEEKOM's software stack"
+  ],
+  "entityHeadline": "GEEKOM AI A7 MAX: Ryzen 9 7940HS Zen 4 Mini PC for 7B Local AI",
+  "faq": [
+    {
+      "question": "Can the GEEKOM AI A7 MAX run 13B language models?",
+      "answer": "Marginally. With 16GB total RAM, a 13B Q4 model (~9GB) fits if you close background apps and have minimal system overhead. In practice, 7B Q4 models (~4GB) run reliably and smoothly. The 16GB ceiling makes 13B inference uncomfortable — if you need 13B, the GEEKOM A6 with 32GB DDR5 is a better choice."
+    },
+    {
+      "question": "How does the Ryzen 9 7940HS compare to the Ryzen 7 7640HS for AI?",
+      "answer": "The Ryzen 9 7940HS has 8 cores vs 6 cores on the 7640HS, and boosts to 5.2 GHz vs 4.9 GHz. For CPU-bound LLM inference, this translates to approximately 15–20% more tokens per second. Both use the same Radeon 780M RDNA 3 iGPU, so GPU-accelerated tasks on Linux are identical."
+    },
+    {
+      "question": "Does the GEEKOM AI A7 MAX support an external GPU?",
+      "answer": "Yes, via the USB4 40Gbps port. You can connect an eGPU enclosure (such as Razer Core X) with a discrete GPU like the RTX 5060 Ti or RX 9060 XT for full GPU-accelerated AI inference. USB4 has slightly lower bandwidth than Thunderbolt 4, so expect 10–15% throughput reduction vs native PCIe, but it's a viable upgrade path."
+    }
+  ]
+}
