@@ -1,212 +1,352 @@
 [
   {
-    "slug": "best-ai-pc-under-1000-2026",
-    "keyword": "best AI PC under $1000 2026",
+    "slug": "apple-mac-mini-m4-pro-local-llm-review",
+    "keyword": "apple mac mini m4 pro for local llm review",
     "category": "buying-guide",
-    "focus": "Complete AI workstation builds and pre-built mini PCs under $1000 for running 70B models, Stable Diffusion, and LLM inference locally",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "geekom-a6", "gigabyte-rtx-5070-windforce"]
+    "focus": "In-depth review of the Mac Mini M4 Pro for local LLM inference — unified memory bandwidth, Ollama performance, 70B model support, and value vs x86 alternatives",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "geekom-a6"]
   },
   {
-    "slug": "how-to-run-stable-diffusion-locally-2026",
-    "keyword": "how to run Stable Diffusion locally 2026",
-    "category": "how-to",
-    "focus": "Step-by-step guide to installing and running Stable Diffusion (SDXL, FLUX) using ComfyUI or Automatic1111 on GPU, Mac, and mini PC hardware",
-    "relatedProducts": ["gigabyte-rtx-5070-windforce", "apple-mac-mini-m4-pro", "asus-rtx-5070-sff"]
-  },
-  {
-    "slug": "apple-silicon-vs-nvidia-local-ai-2026",
-    "keyword": "Apple Silicon vs NVIDIA for local AI 2026",
+    "slug": "mac-mini-m4-pro-vs-m4-stable-diffusion",
+    "keyword": "mac mini m4 pro vs m4 stable diffusion",
     "category": "analysis",
-    "focus": "Deep comparison of Apple M4/M4 Pro unified memory vs NVIDIA RTX 5070 GDDR7 for LLM inference and Stable Diffusion — bandwidth, ecosystem, power, price",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
+    "focus": "Head-to-head comparison of Mac Mini M4 vs M4 Pro for Stable Diffusion and FLUX.1 — GPU cores, memory bandwidth, image generation speed, and which to buy",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4"]
   },
   {
-    "slug": "best-gpu-for-coding-assistant-2026",
-    "keyword": "best GPU for AI coding assistant 2026",
-    "category": "buying-guide",
-    "focus": "Best GPUs and mini PCs for running local coding assistants (Continue.dev, Codeium, Cursor local mode) with Codestral, DeepSeek Coder, and Qwen2.5-Coder",
-    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "apple-mac-mini-m4-pro", "apple-mac-mini-m4"]
-  },
-  {
-    "slug": "how-to-run-deepseek-r1-on-mac-2026",
-    "keyword": "how to run DeepSeek R1 on Mac 2026",
-    "category": "how-to",
-    "focus": "Step-by-step: install Ollama on macOS, pull DeepSeek R1 7B/8B/14B quantized models, benchmark tokens/second on M4 and M4 Pro Mac Mini",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro"]
-  },
-  {
-    "slug": "amd-vs-nvidia-local-ai-2026",
-    "keyword": "AMD vs NVIDIA for local AI 2026",
-    "category": "analysis",
-    "focus": "AMD RDNA 4 (RX 9060 XT) vs NVIDIA Ada/Blackwell (RTX 5070) for local AI: ROCm vs CUDA ecosystem, software compatibility, VRAM, price/performance",
-    "relatedProducts": ["gigabyte-rx-9060-xt-gaming", "gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
-  },
-  {
-    "slug": "what-is-ollama-complete-guide-2026",
-    "keyword": "what is Ollama complete guide 2026",
-    "category": "how-to",
-    "focus": "Complete beginner guide to Ollama: what it is, how to install on Mac/Windows/Linux, how to pull models, API usage, and which hardware to pair with it",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "geekom-a6"]
-  },
-  {
-    "slug": "best-mini-pc-stable-diffusion-2026",
-    "keyword": "best mini PC for Stable Diffusion 2026",
-    "category": "buying-guide",
-    "focus": "Best compact machines for Stable Diffusion — Mac Mini M4 Pro vs x86 mini PCs with eGPU — SDXL generation speed, VRAM requirements, and value",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro"]
-  },
-  {
-    "slug": "rtx-5070-local-ai-benchmarks-2026",
-    "keyword": "RTX 5070 local AI benchmarks 2026",
+    "slug": "mac-mini-m4-pro-ollama-benchmark",
+    "keyword": "mac mini m4 pro ollama benchmark",
     "category": "benchmarks",
-    "focus": "RTX 5070 benchmark deep-dive: 12GB VRAM, 672 GB/s GDDR7 bandwidth, tokens/second on 7B/13B/34B models in Ollama, SDXL generation times, power draw",
+    "focus": "Real benchmark data for Mac Mini M4 Pro running Ollama — tokens/second on Llama 3 8B, 70B, Qwen2.5, Mistral, and Phi-3 with methodology notes",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4"]
+  },
+  {
+    "slug": "best-mac-mini-for-llama-3-70b",
+    "keyword": "best mac mini for running llama 3 70b",
+    "category": "buying-guide",
+    "focus": "Which Mac Mini model can run Llama 3 70B — memory requirements, M4 vs M4 Pro vs M4 Max unified memory configurations, and real-world inference speeds",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4"]
+  },
+  {
+    "slug": "geekom-a6-mini-pc-ai-review",
+    "keyword": "geekom a6 mini pc ai review",
+    "category": "buying-guide",
+    "focus": "Full review of GEEKOM A6 for local AI — Ryzen 7 6800H CPU inference, 32GB DDR5, USB4 eGPU potential, and performance vs Mac Mini M4 for LLMs",
+    "relatedProducts": ["geekom-a6", "geekom-it12", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "geekom-a6-vs-mac-mini-m4-local-ai",
+    "keyword": "geekom a6 vs mac mini m4 for local ai",
+    "category": "analysis",
+    "focus": "GEEKOM A6 vs Mac Mini M4 comparison for local AI — price, tokens/second, model size support, power draw, Windows vs macOS ecosystem trade-offs",
+    "relatedProducts": ["geekom-a6", "apple-mac-mini-m4"]
+  },
+  {
+    "slug": "geekom-it12-ollama-performance-review",
+    "keyword": "geekom it12 ollama performance review",
+    "category": "benchmarks",
+    "focus": "GEEKOM IT12 Ollama benchmark review — Intel Core i9-12900H performance, 32GB DDR4, real tokens/second on 7B and 13B models vs AMD alternatives",
+    "relatedProducts": ["geekom-it12", "geekom-a6", "kamrui-pinova-p1"]
+  },
+  {
+    "slug": "geekom-it12-vs-geekom-a6-local-llm",
+    "keyword": "geekom it12 vs geekom a6 for local llm",
+    "category": "analysis",
+    "focus": "GEEKOM IT12 (Intel) vs GEEKOM A6 (AMD) for local LLM inference — architecture differences, memory bandwidth, iGPU AI acceleration, and price-performance",
+    "relatedProducts": ["geekom-it12", "geekom-a6"]
+  },
+  {
+    "slug": "gmktec-nucbox-m5-pro-stable-diffusion-review",
+    "keyword": "gmktec nucbox m5 pro stable diffusion review",
+    "category": "benchmarks",
+    "focus": "GMKtec NucBox M5 Pro Stable Diffusion performance — Radeon 780M iGPU with ROCm on Linux, SD 1.5 and SDXL benchmark times, and setup guide",
+    "relatedProducts": ["gmktec-nucbox-m5-pro", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "gmktec-nucbox-m5-pro-llm-benchmark",
+    "keyword": "gmktec nucbox m5 pro llm benchmark",
+    "category": "benchmarks",
+    "focus": "Real benchmark data for GMKtec NucBox M5 Pro running Ollama and LM Studio — Ryzen 9 CPU inference speeds, iGPU acceleration, and 7B vs 13B model comparison",
+    "relatedProducts": ["gmktec-nucbox-m5-pro", "geekom-a6", "kamrui-pinova-p1"]
+  },
+  {
+    "slug": "kamrui-hyper-h2-local-ai-performance",
+    "keyword": "kamrui hyper h2 local ai performance",
+    "category": "benchmarks",
+    "focus": "Kamrui Hyper H2 local AI performance review — CPU inference benchmark for 7B LLMs, power efficiency, and how it fits in the budget mini PC landscape",
+    "relatedProducts": ["kamrui-hyper-h2", "kamrui-pinova-p1", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "best-mini-pc-for-ollama-under-400",
+    "keyword": "best mini pc for ollama under 400",
+    "category": "buying-guide",
+    "focus": "Top mini PCs under $400 for running Ollama in 2026 — ranked by tokens/second, memory capacity, and real LLM inference performance with benchmark data",
+    "relatedProducts": ["geekom-a6", "geekom-it12", "gmktec-nucbox-m5-pro", "kamrui-pinova-p1"]
+  },
+  {
+    "slug": "best-mini-pc-for-lm-studio-2026",
+    "keyword": "best mini pc for lm studio 2026",
+    "category": "buying-guide",
+    "focus": "Best mini PCs for LM Studio in 2026 — hardware requirements, GGUF model compatibility, RAM recommendations, and ranked picks from budget to pro",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "rtx-5070-stable-diffusion-benchmark",
+    "keyword": "rtx 5070 stable diffusion benchmark",
+    "category": "benchmarks",
+    "focus": "RTX 5070 Stable Diffusion benchmark — SDXL, FLUX.1 dev, and SD 3.5 generation times at 1024×1024 with ComfyUI, compared to RTX 4070 and RX 9060 XT",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"]
+  },
+  {
+    "slug": "rtx-5070-12gb-vram-enough-llm",
+    "keyword": "rtx 5070 12gb vram enough for llm",
+    "category": "analysis",
+    "focus": "Is 12GB VRAM on the RTX 5070 enough for LLMs in 2026 — which model sizes fit, quantization trade-offs (Q4 vs Q8), and when to choose 16GB+ alternatives",
     "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
   },
   {
-    "slug": "mac-mini-m4-vs-rtx-5070-local-ai-2026",
-    "keyword": "Mac Mini M4 vs RTX 5070 local AI 2026",
-    "category": "benchmarks",
-    "focus": "Head-to-head: Mac Mini M4 Pro (120-273 GB/s unified) vs RTX 5070 (672 GB/s GDDR7) — LLM speed, Stable Diffusion, power efficiency, total cost",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "gigabyte-rtx-5070-windforce"]
-  },
-  {
-    "slug": "how-to-use-continue-dev-local-llm-2026",
-    "keyword": "how to use Continue.dev with local LLM 2026",
-    "category": "how-to",
-    "focus": "Setup guide: Continue.dev VS Code extension + Ollama backend for fully local AI coding assistant — model selection, hardware requirements, config file",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
-  },
-  {
-    "slug": "70b-model-hardware-requirements-2026",
-    "keyword": "70B model hardware requirements 2026",
+    "slug": "gigabyte-rtx-5070-windforce-review-ai",
+    "keyword": "gigabyte rtx 5070 windforce review ai",
     "category": "buying-guide",
-    "focus": "What hardware you actually need to run Llama 3 70B, DeepSeek 67B, Mixtral 8x7B locally — VRAM/unified memory requirements, speed expectations, budget options",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
+    "focus": "Gigabyte RTX 5070 Windforce OC review for AI workloads — GDDR7 bandwidth, LLM inference speed, Stable Diffusion performance, and thermal benchmarks",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
   },
   {
-    "slug": "how-to-quantize-llm-gguf-2026",
-    "keyword": "how to quantize LLM GGUF 2026",
-    "category": "how-to",
-    "focus": "Practical guide to GGUF quantization: Q4_K_M vs Q5_K_M vs Q8_0 — quality vs speed tradeoffs, llama.cpp quantization commands, which to pick for your VRAM",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
-  },
-  {
-    "slug": "best-hardware-for-comfyui-2026",
-    "keyword": "best hardware for ComfyUI 2026",
-    "category": "buying-guide",
-    "focus": "Best GPUs and machines for ComfyUI workflows — SDXL, FLUX, ControlNet, upscaling — VRAM requirements per workflow type, speed benchmarks",
-    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming", "apple-mac-mini-m4-pro"]
-  },
-  {
-    "slug": "amd-rdna4-rx-9060-xt-ai-review-2026",
-    "keyword": "AMD RX 9060 XT AI performance 2026",
-    "category": "benchmarks",
-    "focus": "RX 9060 XT 16GB deep-dive for local AI: ROCm on Linux, 16GB VRAM advantage, LLM inference speed vs RTX 5070, Stable Diffusion performance, price analysis",
-    "relatedProducts": ["gigabyte-rx-9060-xt-gaming", "gigabyte-rtx-5070-windforce"]
-  },
-  {
-    "slug": "vram-vs-unified-memory-local-ai-2026",
-    "keyword": "VRAM vs unified memory for local AI 2026",
+    "slug": "rtx-5070-vs-rtx-4070-local-ai",
+    "keyword": "rtx 5070 vs rtx 4070 for local ai",
     "category": "analysis",
-    "focus": "Architectural comparison: discrete GPU VRAM (GDDR7) vs Apple unified memory — bandwidth, latency, capacity limits, what matters more for LLM inference",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
+    "focus": "RTX 5070 vs RTX 4070 for local AI in 2026 — GDDR7 vs GDDR6X bandwidth impact on tokens/second, FLUX.1 generation speed, and upgrade justification",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
   },
   {
-    "slug": "local-ai-home-server-setup-guide-2026",
-    "keyword": "local AI home server setup guide 2026",
-    "category": "how-to",
-    "focus": "Complete guide to building a 24/7 home AI server: hardware selection, Ollama server mode, Open WebUI, networking, UPS protection, power cost calculation",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "apc-bx1500m", "geekom-a6"]
-  },
-  {
-    "slug": "gemma-3-local-hardware-requirements-2026",
-    "keyword": "Gemma 3 local hardware requirements 2026",
+    "slug": "best-gpu-for-comfyui-2026",
+    "keyword": "best gpu for comfyui 2026",
     "category": "buying-guide",
-    "focus": "Hardware guide for running Google Gemma 3 (1B, 4B, 12B, 27B) locally — VRAM/memory requirements, Ollama setup, speed benchmarks on reviewed hardware",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6"]
+    "focus": "Best GPUs for ComfyUI in 2026 — VRAM requirements for SDXL, FLUX.1, and SD 3.5 workflows, ranked picks by budget with benchmark generation times",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"]
   },
   {
-    "slug": "local-ai-privacy-vs-cloud-2026",
-    "keyword": "local AI privacy vs cloud 2026",
-    "category": "analysis",
-    "focus": "Why privacy-conscious users and businesses choose local AI over cloud APIs — data never leaves your machine, GDPR compliance, cost at scale, practical trade-offs",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "geekom-a6"]
-  },
-  {
-    "slug": "how-to-run-phi-4-locally-2026",
-    "keyword": "how to run Phi-4 locally 2026",
-    "category": "how-to",
-    "focus": "Step-by-step: run Microsoft Phi-4 (14B) locally with Ollama — hardware requirements, quantization options, speed benchmarks, coding and reasoning performance",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "apple-mac-mini-m4"]
-  },
-  {
-    "slug": "ups-for-home-ai-server-2026",
-    "keyword": "best UPS for home AI server 2026",
+    "slug": "best-gpu-for-flux1-image-generation",
+    "keyword": "best gpu for flux.1 image generation",
     "category": "buying-guide",
-    "focus": "Why you need a UPS for local AI hardware, capacity calculations for Mac Mini and GPU rigs, APC BX1500M review for AI workloads, runtime estimates",
-    "relatedProducts": ["apc-bx1500m", "apple-mac-mini-m4", "apple-mac-mini-m4-pro"]
+    "focus": "Best GPUs for FLUX.1 image generation — minimum VRAM needed, dev vs schnell model differences, generation times by GPU tier, and budget recommendations",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"]
   },
   {
-    "slug": "mac-mini-m4-pro-vs-m4-ai-comparison-2026",
-    "keyword": "Mac Mini M4 Pro vs M4 local AI 2026",
-    "category": "benchmarks",
-    "focus": "M4 vs M4 Pro: is the upgrade worth it for AI? Memory bandwidth (120 vs 273 GB/s), 16GB vs 24/48GB, tokens/second on 7B/13B/34B, price difference analysis",
+    "slug": "apc-ups-for-ai-workstation",
+    "keyword": "apc ups for ai workstation why you need it",
+    "category": "buying-guide",
+    "focus": "Why AI workstation builders need a UPS — power draw spikes during GPU inference, brownout risk, and how the APC BX1500M protects expensive hardware",
+    "relatedProducts": ["apc-bx1500m", "gigabyte-rtx-5070-windforce", "geekom-a6"]
+  },
+  {
+    "slug": "best-ups-for-gpu-workstation",
+    "keyword": "best ups for gpu workstation",
+    "category": "buying-guide",
+    "focus": "Best UPS options for GPU AI workstations in 2026 — VA rating requirements for RTX 5070 builds, runtime calculations, and top picks at each budget",
+    "relatedProducts": ["apc-bx1500m", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "apc-bx1500m-review-ai-builders",
+    "keyword": "apc bx1500m review for ai builders",
+    "category": "buying-guide",
+    "focus": "APC BX1500M review for AI workstation builders — 1500VA capacity, runtime on GPU inference loads, AVR protection, and why it's the top pick under $200",
+    "relatedProducts": ["apc-bx1500m", "gigabyte-rtx-5070-windforce", "geekom-a6"]
+  },
+  {
+    "slug": "how-to-run-llama-3-70b-mac-mini-m4-pro",
+    "keyword": "how to run llama 3 70b on mac mini m4 pro",
+    "category": "how-to",
+    "focus": "Step-by-step guide to running Llama 3 70B on Mac Mini M4 Pro using Ollama — memory requirements, quantization settings, speed expectations, and optimization tips",
+    "relatedProducts": ["apple-mac-mini-m4-pro"]
+  },
+  {
+    "slug": "how-to-run-stable-diffusion-rtx-5070",
+    "keyword": "how to run stable diffusion on rtx 5070",
+    "category": "how-to",
+    "focus": "Complete guide to running Stable Diffusion on RTX 5070 — ComfyUI installation, FLUX.1 model setup, VRAM optimization, and benchmark expectations",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
+  },
+  {
+    "slug": "ollama-setup-guide-mac-mini-m4",
+    "keyword": "ollama setup guide mac mini m4",
+    "category": "how-to",
+    "focus": "Complete Ollama setup guide for Mac Mini M4 — installation, model download, Metal GPU acceleration, performance tuning, and best models by memory tier",
     "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro"]
   },
   {
-    "slug": "best-hardware-for-whisper-transcription-2026",
-    "keyword": "best hardware for Whisper transcription 2026",
-    "category": "buying-guide",
-    "focus": "Hardware guide for running OpenAI Whisper locally — faster-whisper, whisper.cpp — GPU vs CPU vs Apple Silicon, real-time factor benchmarks, VRAM requirements",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6"]
-  },
-  {
-    "slug": "open-webui-setup-guide-2026",
-    "keyword": "Open WebUI setup guide local AI 2026",
+    "slug": "lm-studio-setup-guide-mini-pc",
+    "keyword": "lm studio setup guide mini pc",
     "category": "how-to",
-    "focus": "How to install and configure Open WebUI with Ollama — local ChatGPT-like interface, model management, system prompts, multi-user setup, hardware requirements",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "geekom-a6"]
+    "focus": "LM Studio setup guide for mini PCs — Windows and Linux installation, GGUF model selection, hardware acceleration configuration, and performance expectations",
+    "relatedProducts": ["geekom-a6", "gmktec-nucbox-m5-pro", "geekom-it12"]
   },
   {
-    "slug": "geekom-a6-ai-review-benchmarks-2026",
-    "keyword": "GEEKOM A6 AI benchmarks review 2026",
-    "category": "benchmarks",
-    "focus": "GEEKOM A6 deep-dive: Ryzen 9 6900HX + 32GB DDR5 for local AI — LLM inference speed vs Apple Silicon, Ollama performance, eGPU expansion potential",
-    "relatedProducts": ["geekom-a6", "apple-mac-mini-m4", "gmktec-nucbox-m5-pro"]
-  },
-  {
-    "slug": "how-to-run-llava-vision-locally-2026",
-    "keyword": "how to run LLaVA vision model locally 2026",
+    "slug": "comfyui-setup-guide-rtx-5070",
+    "keyword": "comfyui setup guide rtx 5070",
     "category": "how-to",
-    "focus": "Setup guide for running multimodal vision LLMs (LLaVA, Llama 3.2 Vision, MiniCPM-V) locally with Ollama — hardware requirements, speed, use cases",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "apple-mac-mini-m4"]
+    "focus": "ComfyUI setup guide for RTX 5070 — installation on Windows and Linux, FLUX.1 workflow setup, VRAM management nodes, and troubleshooting common errors",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
   },
   {
-    "slug": "local-llm-rag-hardware-guide-2026",
-    "keyword": "local LLM RAG hardware requirements 2026",
+    "slug": "best-local-llm-hardware-under-500-2026",
+    "keyword": "best local llm hardware under 500 2026",
     "category": "buying-guide",
-    "focus": "Hardware requirements for local RAG (Retrieval Augmented Generation) pipelines — vector databases, embedding models, LLM inference combined workload requirements",
+    "focus": "Best local LLM hardware under $500 in 2026 — ranked by tokens/second per dollar, model size support, and use case fit for developers and enthusiasts",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "best-local-llm-hardware-under-1000-2026",
+    "keyword": "best local llm hardware under 1000 2026",
+    "category": "buying-guide",
+    "focus": "Best local LLM hardware under $1000 in 2026 — Mac Mini M4 Pro vs custom GPU builds vs premium mini PCs, with real benchmark data and buying recommendations",
     "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6"]
   },
   {
-    "slug": "how-to-run-flux-locally-2026",
-    "keyword": "how to run FLUX image generation locally 2026",
-    "category": "how-to",
-    "focus": "Step-by-step: run FLUX.1 Schnell and FLUX.1 Dev locally with ComfyUI — VRAM requirements (8GB minimum, 12GB recommended), speed benchmarks, Mac support",
-    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming", "apple-mac-mini-m4-pro"]
-  },
-  {
-    "slug": "ai-hardware-electricity-cost-2026",
-    "keyword": "AI hardware electricity cost running 24/7 2026",
+    "slug": "apple-silicon-vs-nvidia-rtx-local-ai-2026",
+    "keyword": "apple silicon vs nvidia rtx for local ai 2026",
     "category": "analysis",
-    "focus": "Real cost of running local AI hardware 24/7 — power draw calculations, electricity cost per year for Mac Mini vs RTX GPU rig, break-even vs cloud API",
-    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "apc-bx1500m", "gigabyte-rtx-5070-windforce"]
+    "focus": "Apple Silicon (M4/M4 Pro) vs NVIDIA RTX 5070 for local AI in 2026 — unified memory vs GDDR7 VRAM, ecosystem trade-offs, power efficiency, and use-case fit",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
   },
   {
-    "slug": "best-local-ai-hardware-developers-2026",
-    "keyword": "best local AI hardware for developers 2026",
+    "slug": "mac-mini-m4-pro-vs-custom-gpu-build-ai",
+    "keyword": "mac mini m4 pro vs custom gpu build for ai",
+    "category": "analysis",
+    "focus": "Mac Mini M4 Pro vs custom RTX 5070 PC build for local AI — total cost, inference speed, Stable Diffusion capability, power draw, and who each is right for",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "mini-pc-vs-gpu-desktop-stable-diffusion",
+    "keyword": "mini pc vs gpu desktop for stable diffusion",
+    "category": "analysis",
+    "focus": "Mini PC vs discrete GPU desktop for Stable Diffusion — why integrated graphics can't compete with GDDR7 VRAM, and when a mini PC is still the right choice",
+    "relatedProducts": ["geekom-a6", "gigabyte-rtx-5070-windforce", "apple-mac-mini-m4-pro"]
+  },
+  {
+    "slug": "how-much-vram-for-stable-diffusion-xl",
+    "keyword": "how much vram for stable diffusion xl",
+    "category": "analysis",
+    "focus": "How much VRAM you need for Stable Diffusion XL — minimum requirements, batch size impact, ControlNet and LoRA overhead, and recommended GPU tiers in 2026",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"]
+  },
+  {
+    "slug": "how-much-vram-for-flux1-dev",
+    "keyword": "how much vram for flux.1 dev",
+    "category": "analysis",
+    "focus": "How much VRAM is needed for FLUX.1 dev — FP8 vs FP16 requirements, offloading tricks for low VRAM GPUs, and minimum viable hardware for acceptable generation times",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff", "gigabyte-rx-9060-xt-gaming"]
+  },
+  {
+    "slug": "can-rtx-5070-run-70b-llm",
+    "keyword": "can rtx 5070 run 70b llm",
+    "category": "analysis",
+    "focus": "Can the RTX 5070 12GB VRAM run 70B LLMs — quantization math, CPU offloading with llama.cpp, speed penalties, and realistic expectations for Llama 3 70B",
+    "relatedProducts": ["gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
+  },
+  {
+    "slug": "best-hardware-for-running-deepseek-locally",
+    "keyword": "best hardware for running deepseek locally",
     "category": "buying-guide",
-    "focus": "Developer-focused buying guide: best hardware for running local LLMs for code completion, agent workflows, and RAG — Mac vs GPU, latency vs throughput tradeoffs",
-    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "apple-mac-mini-m4", "geekom-a6"]
+    "focus": "Best hardware for running DeepSeek R1 and DeepSeek V3 locally in 2026 — VRAM requirements, quantization options, and ranked hardware picks by model size",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6"]
+  },
+  {
+    "slug": "best-hardware-for-running-qwen2-locally",
+    "keyword": "best hardware for running qwen2 locally",
+    "category": "buying-guide",
+    "focus": "Best hardware for running Qwen2.5 7B, 14B, and 72B locally — memory requirements by model size, recommended hardware at each budget tier, and benchmark speeds",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "best-hardware-for-private-ai-home-server",
+    "keyword": "best hardware for private ai home server",
+    "category": "buying-guide",
+    "focus": "Best hardware for a private AI home server in 2026 — always-on power draw, remote access setup, Ollama API serving, and mini PC vs GPU server trade-offs",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "apc-bx1500m"]
+  },
+  {
+    "slug": "local-ai-server-home-setup-guide-2026",
+    "keyword": "local ai server home setup guide 2026",
+    "category": "how-to",
+    "focus": "Complete guide to building a local AI server at home in 2026 — hardware selection, Ollama API setup, networking, remote access, and model management",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "apc-bx1500m"]
+  },
+  {
+    "slug": "cloud-ai-vs-local-ai-cost-comparison",
+    "keyword": "cloud ai vs local ai cost comparison",
+    "category": "analysis",
+    "focus": "Cloud AI API costs vs local hardware ROI — break-even analysis for ChatGPT Plus, Claude Pro, and API usage against Mac Mini M4 and RTX 5070 hardware costs",
+    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "is-mac-mini-m4-worth-it-for-ai-developers",
+    "keyword": "is mac mini m4 worth it for ai developers",
+    "category": "analysis",
+    "focus": "Is the Mac Mini M4 worth it for AI developers — Ollama performance, Python ML ecosystem on macOS, Metal GPU compute, and comparison to Windows x86 alternatives",
+    "relatedProducts": ["apple-mac-mini-m4", "apple-mac-mini-m4-pro", "geekom-a6"]
+  },
+  {
+    "slug": "best-mini-pc-for-ai-developers-2026",
+    "keyword": "best mini pc for ai developers 2026",
+    "category": "buying-guide",
+    "focus": "Best mini PCs for AI developers in 2026 — ranked by LLM inference speed, model size support, software ecosystem, and price for professional use",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "geekom-a6"]
+  },
+  {
+    "slug": "amd-rdna-4-vs-nvidia-blackwell-stable-diffusion",
+    "keyword": "amd rdna 4 vs nvidia blackwell for stable diffusion",
+    "category": "analysis",
+    "focus": "AMD RDNA 4 (RX 9060 XT) vs NVIDIA Blackwell (RTX 5070) for Stable Diffusion — architecture differences, VRAM, ROCm vs CUDA ecosystem, and real benchmark data",
+    "relatedProducts": ["gigabyte-rx-9060-xt-gaming", "gigabyte-rtx-5070-windforce", "asus-rtx-5070-sff"]
+  },
+  {
+    "slug": "gigabyte-rx-9060-xt-ai-performance-review",
+    "keyword": "gigabyte rx 9060 xt ai performance review",
+    "category": "buying-guide",
+    "focus": "Gigabyte RX 9060 XT review for AI — RDNA 4 architecture, 16GB GDDR6 VRAM, ROCm support on Linux, FLUX.1 and LLM inference performance vs RTX 5070",
+    "relatedProducts": ["gigabyte-rx-9060-xt-gaming", "gigabyte-rtx-5070-windforce"]
+  },
+  {
+    "slug": "best-budget-ai-workstation-2026",
+    "keyword": "best budget ai workstation 2026",
+    "category": "buying-guide",
+    "focus": "Best budget AI workstation builds in 2026 — complete system recommendations from $300 to $800 covering mini PCs, GPU upgrades, and Apple Silicon options",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro", "gigabyte-rx-9060-xt-gaming"]
+  },
+  {
+    "slug": "mini-pc-buying-guide-local-ai-2026",
+    "keyword": "mini pc buying guide for local ai 2026",
+    "category": "buying-guide",
+    "focus": "Complete mini PC buying guide for local AI in 2026 — key specs explained (memory bandwidth, CPU cores, TDP), ranked picks by budget, and common mistakes to avoid",
+    "relatedProducts": ["apple-mac-mini-m4", "geekom-a6", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "what-is-unified-memory-ai",
+    "keyword": "what is unified memory and why it matters for ai",
+    "category": "analysis",
+    "focus": "What unified memory is and why it matters for local AI — how Apple Silicon and AMD APUs share CPU/GPU memory, bandwidth implications, and LLM model size limits",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "apple-mac-mini-m4", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "memory-bandwidth-explained-llm-inference",
+    "keyword": "memory bandwidth explained for llm inference",
+    "category": "analysis",
+    "focus": "Memory bandwidth explained for LLM inference — why GB/s determines tokens/second, LPDDR5X vs GDDR7 vs DDR5 comparisons, and what to look for when buying AI hardware",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6"]
+  },
+  {
+    "slug": "tokens-per-second-benchmark-mini-pc-vs-gpu",
+    "keyword": "tokens per second benchmark comparison mini pc vs gpu",
+    "category": "benchmarks",
+    "focus": "Tokens per second benchmark comparison — mini PCs vs discrete GPUs for Llama 3 8B and 70B inference, with methodology, hardware tested, and ranked results",
+    "relatedProducts": ["apple-mac-mini-m4-pro", "gigabyte-rtx-5070-windforce", "geekom-a6", "gmktec-nucbox-m5-pro"]
+  },
+  {
+    "slug": "best-hardware-for-running-phi-3-locally",
+    "keyword": "best hardware for running phi 3 locally",
+    "category": "buying-guide",
+    "focus": "Best hardware for running Microsoft Phi-3 and Phi-4 locally — small model VRAM requirements, CPU inference viability, and why budget mini PCs shine for small models",
+    "relatedProducts": ["apple-mac-mini-m4", "gmktec-nucbox-m5-pro", "kamrui-pinova-p1"]
   }
 ]
