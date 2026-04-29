@@ -102,7 +102,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="font-display font-700 text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
+          <h1 className="font-display font-700 text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-foreground mb-6">
             Hardware<br />
             <span className="text-ore">for the</span><br />
             AI Age
@@ -208,7 +208,7 @@ export default function HomePage() {
             All {allProducts.length} products →
           </Link>
         </div>
-        <div className="grid md:grid-cols-3 gap-px bg-ink-3 border border-edge">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-3 md:gap-px md:bg-ink-3 border border-edge">
           {featured.map(product => (
             <ProductCard key={product.slug} product={product} />
           ))}

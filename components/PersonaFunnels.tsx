@@ -120,7 +120,7 @@ export default function PersonaFunnels() {
                     className="flex items-center justify-between p-3 bg-background border border-edge/60 hover:border-edge transition-colors group"
                   >
                     <div>
-                      <p className="font-sans font-600 text-xs text-foreground group-hover:text-ore transition-colors">
+                      <p className="font-sans font-600 text-xs text-foreground group-hover:text-ore transition-colors truncate max-w-[160px]">
                         {prod.name}
                       </p>
                       <p className="font-mono text-[9px] text-slate-500 mt-0.5">{prod.sub}</p>

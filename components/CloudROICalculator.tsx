@@ -65,11 +65,11 @@ export default function CloudROICalculator() {
 
         {/* Slider */}
         <div>
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 mb-3">
             <label className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
               Monthly cloud AI spend
             </label>
-            <span className="font-mono font-500 text-2xl text-ore">
+            <span className="font-mono font-500 text-xl sm:text-2xl text-ore">
               ${monthly}
               <span className="text-sm text-slate-500 ml-1">/mo</span>
             </span>

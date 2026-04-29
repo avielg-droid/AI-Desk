@@ -115,7 +115,7 @@ export default function BlogThumbnail({ category, tags = [], className = '', com
                 key={i}
                 className="font-mono font-bold leading-none tracking-widest"
                 style={{
-                  fontSize: 'clamp(13px, 2.5vw, 18px)',
+                  fontSize: 'clamp(11px, 3vw, 18px)',
                   color: i === 0 ? '#ffffff' : cfg.accent,
                   opacity: i === 0 ? 0.9 : 0.5,
                 }}

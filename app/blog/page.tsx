@@ -48,7 +48,7 @@ export default function BlogIndexPage() {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-3">
               The AI Desk Blog
             </p>
-            <h1 className="font-display font-700 text-4xl md:text-5xl text-foreground mb-4">
+            <h1 className="font-display font-700 text-3xl sm:text-4xl md:text-5xl text-foreground mb-4">
               Local AI Hardware<br />Guides & Analysis
             </h1>
             <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-xl">
@@ -124,7 +124,7 @@ function PostCard({ post, featured }: { post: ReturnType<typeof getAllBlogPosts>
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex flex-col border border-edge bg-ink-1 hover:border-ore/30 aurora-glow-hover transition-all duration-200 overflow-hidden"
+      className="group flex flex-col border border-edge bg-ink-1 hover:border-ore/30 active:border-ore/50 aurora-glow-hover transition-all duration-200 overflow-hidden"
     >
       {/* Thumbnail */}
       <BlogThumbnail

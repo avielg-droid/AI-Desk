@@ -82,6 +82,7 @@ function NavDropdown({ item }: { item: NavItem }) {
         className="relative px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-foreground transition-colors duration-150 flex items-center gap-1 group"
         aria-expanded={open}
         aria-haspopup="true"
+        aria-label={`${item.label} menu`}
       >
         {item.label}
         <svg

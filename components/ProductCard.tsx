@@ -37,7 +37,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Product image — white panel pops on void */}
       <Link
         href={`/products/${product.slug}`}
-        className="block bg-white border-b border-edge p-4 flex items-center justify-center min-h-[120px] md:min-h-[160px]"
+        className="block bg-white border-b border-edge p-4 flex items-center justify-center min-h-[120px] md:min-h-[160px] max-h-[180px] md:max-h-none overflow-hidden"
       >
         <AmazonImage
           asin={product.asin}
