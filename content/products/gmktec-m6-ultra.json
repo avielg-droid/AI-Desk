@@ -1,0 +1,83 @@
+{
+  "slug": "gmktec-m6-ultra",
+  "asin": "B0FLX58XQY",
+  "image": "/products/gmktec-m6-ultra.jpg",
+  "name": "GMKtec M6 Ultra Mini PC (Ryzen 7 7640HS, 32GB DDR5)",
+  "category": "mini-pc",
+  "brand": "GMKtec",
+  "shortDescription": "The GMKtec M6 Ultra pairs AMD's Ryzen 7 7640HS (Zen 4, Phoenix) with 32GB DDR5 and a Radeon 780M RDNA 3 iGPU — making it the fastest AMD iGPU mini PC for local AI in 2026. Triple 4K display output, USB4, dual 2.5GbE, and a compact footprint round out a capable always-on AI server at a fraction of Apple Silicon prices.",
+  "specs": {
+    "chip": "AMD Ryzen 7 7640HS (Zen 4 Phoenix, 6 Cores / 12 Threads, up to 4.9 GHz)",
+    "architecture": "AMD Zen 4 (RDNA 3 iGPU)",
+    "cpu_cores": 6,
+    "gpu_cores": 12,
+    "unified_memory_gb": 32,
+    "memory_bandwidth_gbps": 68,
+    "storage_gb": 512,
+    "tdp_watts": 45,
+    "max_llm_size": "14B (Q4 via CPU)",
+    "interface": "USB4 40Gbps, Wi-Fi 6, Dual 2.5GbE LAN, BT 5.2, HDMI 2.0, DisplayPort",
+    "form_factor": "Mini PC",
+    "tokens_per_second_7b": 12,
+    "cooling": "Dual-fan active"
+  },
+  "useCases": [
+    "Running 7B–14B LLMs locally via Ollama or LM Studio on Windows",
+    "Always-on home AI server with dual 2.5GbE networking",
+    "AMD Radeon 780M iGPU-accelerated inference with DirectML or ROCm on Linux",
+    "Triple 4K display workstation for AI-assisted development",
+    "Budget eGPU candidate via USB4 40Gbps"
+  ],
+  "pros": [
+    "Ryzen 7 7640HS (Zen 4) — faster IPC than previous Zen 3+ mini PCs at same TDP",
+    "Radeon 780M RDNA 3 — best AMD iGPU available, measurable AI acceleration on Linux",
+    "32GB DDR5 SO-DIMM — user-upgradeable to 64GB for 32B model headroom",
+    "USB4 40Gbps — eGPU upgrade path for future GPU expansion",
+    "Dual 2.5GbE — ideal for always-on LAN AI server with redundant networking",
+    "Triple 4K support — HDMI 2.0 + DisplayPort + USB-C display out"
+  ],
+  "cons": [
+    "iGPU-only — 12 t/s is functional but 3–4× slower than Mac Mini M4 for LLMs",
+    "68 GB/s DDR5 bandwidth — 4× lower than Mac Mini M4 Pro's 273 GB/s",
+    "6-core CPU — one fewer active core than Ryzen 9 alternatives for CPU inference",
+    "ROCm Windows support limited — full iGPU AI acceleration requires Linux",
+    "512GB storage — tight if hosting multiple large models (70B = ~40GB per Q4)"
+  ],
+  "verdict": "The GMKtec M6 Ultra is the best AMD mini PC for local AI in the sub-$400 tier. The Ryzen 7 7640HS Zen 4 core is noticeably faster than older Zen 3 mini PCs, and the Radeon 780M RDNA 3 iGPU is the most AI-capable integrated graphics on any Windows mini PC reviewed. For users committed to the AMD ecosystem, needing triple 4K displays, or wanting an upgradeable DDR5 system, this is the pick. Apple Silicon still wins on raw LLM speed per dollar, but the M6 Ultra is the right answer if you need Windows, AMD, or a dual-NIC AI server.",
+  "affiliateUrl": "https://amzn.to/4jFZzDG",
+  "rating": 4.2,
+  "reviewCount": 1,
+  "priceDisplay": "Check Price on Amazon",
+  "lastUpdated": "2026-04-26",
+  "featured": false,
+  "crossSells": [
+    "silkland-usb4-thunderbolt-5",
+    "apc-bx1500m",
+    "gigabyte-rtx-5070-windforce"
+  ],
+  "notFor": [
+    "Users wanting the fastest LLM chat speed — Mac Mini M4 is 3–4× faster at similar price",
+    "Stable Diffusion at full resolution — 780M iGPU is too slow for SDXL or FLUX.1 without an eGPU",
+    "Running 70B models — 32GB RAM fits Q4 but CPU speed makes it impractical",
+    "Users who need plug-and-play AMD GPU AI on Windows — ROCm requires Linux for best results"
+  ],
+  "entityHeadline": "GMKtec M6 Ultra Review: Ryzen 7 7640HS Zen 4 Mini PC for Local AI in 2026",
+  "faq": [
+    {
+      "question": "Can the GMKtec M6 Ultra run 14B language models?",
+      "answer": "Yes. With 32GB DDR5, it loads a 14B Q4 model (~9GB) fully into RAM and runs it at around 6–8 t/s via CPU through llama.cpp or Ollama. That's slower than Apple Silicon but functional for batch tasks, coding assistance, and summarization. On Linux with ROCm, the Radeon 780M iGPU can accelerate 7B models to roughly 20–30 t/s."
+    },
+    {
+      "question": "How does the Radeon 780M compare to older AMD iGPUs for AI?",
+      "answer": "The Radeon 780M (RDNA 3, 12 CUs) is meaningfully faster than the Radeon 680M (RDNA 2, 12 CUs) in the older Zen 3+ chips. RDNA 3 adds improved ML acceleration and better ROCm support. On Linux with ROCm, the 780M delivers roughly 30–50% more AI inference throughput than the 680M at the same power budget."
+    },
+    {
+      "question": "Does the GMKtec M6 Ultra support an external GPU?",
+      "answer": "Yes, via the USB4 40Gbps port. You can connect an eGPU enclosure such as the Razer Core X with an RTX 5070 or RX 9060 XT to get full discrete GPU performance. USB4 bandwidth is slightly lower than Thunderbolt 4 PCIe, expect 10–20% lower throughput than native PCIe, but it's a viable upgrade path."
+    },
+    {
+      "question": "How does the GMKtec M6 Ultra compare to the Mac Mini M4 for local AI?",
+      "answer": "The Mac Mini M4 runs Llama 3.1 8B at ~42 t/s vs the M6 Ultra's ~12 t/s — about 3.5× faster. The Mac Mini M4 is priced similarly. The M6 Ultra advantages are: Windows OS, user-upgradeable DDR5 RAM, dual 2.5GbE for home server use, USB4 eGPU path, and triple 4K display support. If raw LLM speed is the priority, the Mac Mini wins. If Windows compatibility or upgradability matters, the M6 Ultra is the better fit."
+    }
+  ]
+}
