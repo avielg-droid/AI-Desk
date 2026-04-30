@@ -57,6 +57,17 @@ export default function AboutPage() {
 
       <section className="space-y-3">
         <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          Who Writes This
+        </h2>
+        <p className="text-sm text-zinc-600 leading-relaxed">
+          Reviews and benchmarks are written by{' '}
+          <a href="/about/author" className="text-ore hover:underline">Alex Voss</a>,
+          an independent hardware reviewer specializing in local AI inference since 2022.
+        </p>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           FTC Compliance
         </h2>
         <p className="text-sm text-zinc-600 leading-relaxed">

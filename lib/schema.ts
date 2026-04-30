@@ -187,6 +187,34 @@ export function buildSpeakableSchema(cssSelectors: string[]) {
   }
 }
 
+export function buildPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Alex Voss',
+    url: 'https://ai-desk.tech/about/author',
+    jobTitle: 'Hardware Reviewer',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'The AI Desk',
+      url: 'https://ai-desk.tech',
+    },
+    description: 'Independent reviewer specializing in local AI hardware — GPUs, Mini PCs, and inference performance benchmarks.',
+    knowsAbout: [
+      'GPU benchmarking',
+      'Local LLM inference',
+      'VRAM and memory bandwidth',
+      'Ollama',
+      'llama.cpp',
+      'Stable Diffusion',
+      'CUDA',
+      'ROCm',
+      'Apple Silicon',
+      'Mini PCs for AI',
+    ],
+  }
+}
+
 export function buildBlogPostingSchema({
   title,
   description,
@@ -209,9 +237,9 @@ export function buildBlogPostingSchema({
     dateModified: updatedAt,
     url: `https://ai-desk.tech/blog/${slug}`,
     author: {
-      '@type': 'Organization',
-      name: 'The AI Desk',
-      url: 'https://ai-desk.tech',
+      '@type': 'Person',
+      name: 'Alex Voss',
+      url: 'https://ai-desk.tech/about/author',
     },
     publisher: {
       '@type': 'Organization',
