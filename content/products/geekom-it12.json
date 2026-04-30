@@ -63,7 +63,8 @@
   ],
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
-    "apc-bx1500m"
+    "apc-bx1500m",
+    "owc-envoy-express"
   ],
   "notFor": [
     "Anyone who wants fast LLM responses \u2014 CPU inference at 12 t/s feels sluggish for interactive chat",

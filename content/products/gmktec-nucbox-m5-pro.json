@@ -63,7 +63,8 @@
   ],
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
-    "apc-bx1500m"
+    "apc-bx1500m",
+    "owc-envoy-express"
   ],
   "notFor": [
     "Anyone expecting GPU-class speed \u2014 Ryzen AI NPU assists but this is still CPU inference",

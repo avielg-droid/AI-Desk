@@ -5,7 +5,7 @@
   "name": "MSI GeForce RTX 5080 16G Gaming Trio OC",
   "category": "gpu",
   "brand": "MSI",
-  "shortDescription": "The MSI RTX 5080 Gaming Trio OC is NVIDIA's near-flagship Blackwell GPU, delivering 960 GB/s GDDR7 bandwidth with 16GB VRAM — fast enough to run 13B models at full Q8 precision and generate FLUX.1 images in under 2 seconds. The TRI FROZR 4 cooler keeps thermals flat during sustained AI inference without the size or power draw of the RTX 5090.",
+  "shortDescription": "The MSI RTX 5080 Gaming Trio OC is NVIDIA's near-flagship Blackwell GPU, delivering 960 GB/s GDDR7 bandwidth with 16GB VRAM \u2014 fast enough to run 13B models at full Q8 precision and generate FLUX.1 images in under 2 seconds. The TRI FROZR 4 cooler keeps thermals flat during sustained AI inference without the size or power draw of the RTX 5090.",
   "specs": {
     "chip": "NVIDIA GeForce RTX 5080 (Blackwell, GB102)",
     "architecture": "NVIDIA Blackwell (GB102)",
@@ -21,27 +21,27 @@
     "cooling": "Triple-fan active (TRI FROZR 4)"
   },
   "useCases": [
-    "Local LLM inference at full precision — 7B FP16, 13B Q8 fully in VRAM",
+    "Local LLM inference at full precision \u2014 7B FP16, 13B Q8 fully in VRAM",
     "FLUX.1 dev and SDXL image generation at under 2 seconds per image",
     "ComfyUI multi-model workflows with ControlNet and LoRA stacking",
     "Whisper large-v3 audio transcription at real-time speeds",
     "CUDA-accelerated AI development and PyTorch training"
   ],
   "pros": [
-    "960 GB/s GDDR7 — 43% more bandwidth than RTX 5070, tokens/second scales directly",
-    "16GB VRAM — runs 13B at full Q8 precision, no quantization compromise needed",
-    "Blackwell 5th-Gen Tensor Cores — meaningfully faster per watt than Ada Lovelace",
-    "TRI FROZR 4 cooling — 3 large fans keep thermals stable under 24/7 inference load",
-    "PCIe 5.0 interface — future-proof for AI data throughput from NVMe storage",
-    "HDMI 2.1b + DisplayPort 2.1b — 8K display support"
+    "960 GB/s GDDR7 \u2014 43% more bandwidth than RTX 5070, tokens/second scales directly",
+    "16GB VRAM \u2014 runs 13B at full Q8 precision, no quantization compromise needed",
+    "Blackwell 5th-Gen Tensor Cores \u2014 meaningfully faster per watt than Ada Lovelace",
+    "TRI FROZR 4 cooling \u2014 3 large fans keep thermals stable under 24/7 inference load",
+    "PCIe 5.0 interface \u2014 future-proof for AI data throughput from NVMe storage",
+    "HDMI 2.1b + DisplayPort 2.1b \u2014 8K display support"
   ],
   "cons": [
-    "360W TDP — requires 850W+ PSU and strong case airflow",
-    "16GB VRAM still caps out at 32B Q4 partially — 70B requires CPU offload",
-    "Premium price over RTX 5070 — justify only if 13B Q8 precision matters",
-    "Full-size triple-slot cooler — won't fit compact ITX cases"
+    "360W TDP \u2014 requires 850W+ PSU and strong case airflow",
+    "16GB VRAM still caps out at 32B Q4 partially \u2014 70B requires CPU offload",
+    "Premium price over RTX 5070 \u2014 justify only if 13B Q8 precision matters",
+    "Full-size triple-slot cooler \u2014 won't fit compact ITX cases"
   ],
-  "verdict": "The MSI RTX 5080 Gaming Trio OC is the sweet spot between price and performance for serious local AI builders who've outgrown 12GB cards. The 16GB GDDR7 at 960 GB/s enables 13B models at full Q8 precision — a meaningful quality jump over the Q4 quantization required on 12GB cards — while FLUX.1 image generation is nearly twice as fast as the RTX 5070. If the RTX 5090's $2000+ price is hard to justify, the RTX 5080 is where most professional local AI workflows top out.",
+  "verdict": "The MSI RTX 5080 Gaming Trio OC is the sweet spot between price and performance for serious local AI builders who've outgrown 12GB cards. The 16GB GDDR7 at 960 GB/s enables 13B models at full Q8 precision \u2014 a meaningful quality jump over the Q4 quantization required on 12GB cards \u2014 while FLUX.1 image generation is nearly twice as fast as the RTX 5070. If the RTX 5090's $2000+ price is hard to justify, the RTX 5080 is where most professional local AI workflows top out.",
   "affiliateUrl": "https://amzn.to/3P7057G",
   "rating": 4.6,
   "reviewCount": 1,
@@ -51,13 +51,13 @@
   "crossSells": [
     "apc-bx1500m",
     "bequiet-pure-power-13-1000w",
-    "samsung-ssd-9100-pro-2tb"
+    "noctua-nh-d15"
   ],
   "notFor": [
-    "Budget buyers — the RTX 5070 costs significantly less for 70% of the performance",
-    "70B model users — 16GB VRAM still requires CPU offload for 70B Q4 (~40GB)",
-    "Mini PC or compact build users — 360W TDP needs full ATX airflow",
-    "macOS users — NVIDIA requires Windows or Linux"
+    "Budget buyers \u2014 the RTX 5070 costs significantly less for 70% of the performance",
+    "70B model users \u2014 16GB VRAM still requires CPU offload for 70B Q4 (~40GB)",
+    "Mini PC or compact build users \u2014 360W TDP needs full ATX airflow",
+    "macOS users \u2014 NVIDIA requires Windows or Linux"
   ],
   "entityHeadline": "MSI RTX 5080 Gaming Trio OC: 155 Tokens Per Second and 13B Q8 in VRAM",
   "faq": [
@@ -67,7 +67,7 @@
     },
     {
       "question": "How much faster is the RTX 5080 vs the RTX 5070 for LLMs?",
-      "answer": "Approximately 30–40% faster. The RTX 5080 has 960 GB/s vs 672 GB/s on the RTX 5070 — bandwidth is the primary determinant of tokens/second for quantized LLM inference. Expect ~155 t/s on Llama 3.1 8B vs ~118 t/s on the RTX 5070. For 13B models, the RTX 5080 also benefits from running at higher precision (Q8 vs Q4), improving output quality."
+      "answer": "Approximately 30\u201340% faster. The RTX 5080 has 960 GB/s vs 672 GB/s on the RTX 5070 \u2014 bandwidth is the primary determinant of tokens/second for quantized LLM inference. Expect ~155 t/s on Llama 3.1 8B vs ~118 t/s on the RTX 5070. For 13B models, the RTX 5080 also benefits from running at higher precision (Q8 vs Q4), improving output quality."
     },
     {
       "question": "Does the RTX 5080 work with Ollama and LM Studio?",
@@ -75,7 +75,7 @@
     },
     {
       "question": "What PSU is needed for the RTX 5080?",
-      "answer": "NVIDIA recommends an 850W PSU minimum for RTX 5080 systems. For AI inference workloads that sustain GPU load for extended periods, 1000W is a more comfortable margin — especially if paired with a power-hungry CPU like an Intel Core i9 or AMD Ryzen 9."
+      "answer": "NVIDIA recommends an 850W PSU minimum for RTX 5080 systems. For AI inference workloads that sustain GPU load for extended periods, 1000W is a more comfortable margin \u2014 especially if paired with a power-hungry CPU like an Intel Core i9 or AMD Ryzen 9."
     }
   ]
 }

@@ -59,7 +59,8 @@
   ],
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
-    "apc-bx1500m"
+    "apc-bx1500m",
+    "owc-envoy-express"
   ],
   "notFor": [
     "Real-time chat \u2014 9 t/s is below the interactive threshold",

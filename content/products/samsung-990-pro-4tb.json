@@ -5,32 +5,32 @@
   "name": "Samsung 990 PRO Heatsink SSD 4TB NVMe M.2",
   "category": "accessory",
   "brand": "Samsung",
-  "shortDescription": "The Samsung 990 PRO 4TB is the highest-capacity PCIe 4.0 NVMe SSD in Samsung's lineup — purpose-built for AI builders who store multiple large model families without constant weight management. At 7,450 MB/s sequential read, model loading times are negligible even for 70B quantized weights.",
+  "shortDescription": "The Samsung 990 PRO 4TB is the highest-capacity PCIe 4.0 NVMe SSD in Samsung's lineup \u2014 purpose-built for AI builders who store multiple large model families without constant weight management. At 7,450 MB/s sequential read, model loading times are negligible even for 70B quantized weights.",
   "specs": {
     "interface": "M.2 2280, PCIe 4.0 x4, NVMe 2.0",
     "form_factor": "M.2 SSD",
     "storage_gb": 4000
   },
   "useCases": [
-    "Storing multiple LLM model families without disk management — 70B, 32B, 13B, 7B simultaneously",
-    "Fast model loading — 70B Q4 weights (~40GB) load in under 6 seconds",
-    "Stable Diffusion model library — SDXL, FLUX.1, SD 3.5, and LoRA collections",
+    "Storing multiple LLM model families without disk management \u2014 70B, 32B, 13B, 7B simultaneously",
+    "Fast model loading \u2014 70B Q4 weights (~40GB) load in under 6 seconds",
+    "Stable Diffusion model library \u2014 SDXL, FLUX.1, SD 3.5, and LoRA collections",
     "AI workstation primary drive with OS, tools, and model cache on one disk",
     "PS5 expansion for console AI gaming workflows"
   ],
   "pros": [
-    "4TB capacity — enough for 10+ large model families without rotating weights",
-    "7,450 MB/s sequential read — fastest PCIe 4.0 SSD, loads 13B model in ~1.5 seconds",
-    "Included heatsink — prevents thermal throttling during sustained model loading",
-    "Samsung MLC NAND — proven longevity and endurance for write-heavy AI caching",
-    "Works in any PCIe 4.0 or 5.0 M.2 slot — universal compatibility"
+    "4TB capacity \u2014 enough for 10+ large model families without rotating weights",
+    "7,450 MB/s sequential read \u2014 fastest PCIe 4.0 SSD, loads 13B model in ~1.5 seconds",
+    "Included heatsink \u2014 prevents thermal throttling during sustained model loading",
+    "Samsung MLC NAND \u2014 proven longevity and endurance for write-heavy AI caching",
+    "Works in any PCIe 4.0 or 5.0 M.2 slot \u2014 universal compatibility"
   ],
   "cons": [
-    "PCIe 4.0 — the Samsung 9100 PRO is twice as fast on PCIe 5.0 systems",
+    "PCIe 4.0 \u2014 the Samsung 9100 PRO is twice as fast on PCIe 5.0 systems",
     "Premium price per TB vs DRAM-less budget NVMe options",
-    "Heatsink adds height — may not fit under some GPU coolers in tight builds"
+    "Heatsink adds height \u2014 may not fit under some GPU coolers in tight builds"
   ],
-  "verdict": "For AI workstation builders, storage capacity is the underrated bottleneck. The Samsung 990 PRO 4TB eliminates model weight management entirely — store every model you actively use, load any of them in seconds, and never delete to free space. The included heatsink and Samsung's reliability track record make this the default storage recommendation for any serious local AI build.",
+  "verdict": "For AI workstation builders, storage capacity is the underrated bottleneck. The Samsung 990 PRO 4TB eliminates model weight management entirely \u2014 store every model you actively use, load any of them in seconds, and never delete to free space. The included heatsink and Samsung's reliability track record make this the default storage recommendation for any serious local AI build.",
   "affiliateUrl": "https://amzn.to/4vXvdXF",
   "rating": 4.6,
   "reviewCount": 1,
@@ -38,14 +38,14 @@
   "lastUpdated": "2026-04-29",
   "featured": false,
   "crossSells": [
-    "gigabyte-rtx-5070-windforce",
+    "msi-rtx-4070-ti-super-ventus",
     "msi-rtx-5080-gaming-trio",
     "apc-bx1500m"
   ],
   "notFor": [
-    "PCIe 5.0 system owners — the Samsung 9100 PRO doubles read speed on Gen 5 slots",
-    "Budget builders — a 2TB PCIe 4.0 option costs significantly less with half the capacity",
-    "Mac Mini users — M.2 is not user-accessible on Apple Silicon Mac Minis"
+    "PCIe 5.0 system owners \u2014 the Samsung 9100 PRO doubles read speed on Gen 5 slots",
+    "Budget builders \u2014 a 2TB PCIe 4.0 option costs significantly less with half the capacity",
+    "Mac Mini users \u2014 M.2 is not user-accessible on Apple Silicon Mac Minis"
   ],
   "entityHeadline": "Samsung 990 PRO 4TB: The Right Storage for a Local AI Model Library",
   "faq": [
@@ -55,7 +55,7 @@
     },
     {
       "question": "Is PCIe 4.0 fast enough for AI model loading?",
-      "answer": "Yes. At 7,450 MB/s, the 990 PRO loads a 13B Q4 model (~9GB) in approximately 1.2 seconds and a 70B Q4 model (~40GB) in about 5–6 seconds. PCIe 5.0 is roughly twice as fast in peak sequential reads, but the real-world difference in model load times is under 3 seconds for most models — not meaningful for typical usage."
+      "answer": "Yes. At 7,450 MB/s, the 990 PRO loads a 13B Q4 model (~9GB) in approximately 1.2 seconds and a 70B Q4 model (~40GB) in about 5\u20136 seconds. PCIe 5.0 is roughly twice as fast in peak sequential reads, but the real-world difference in model load times is under 3 seconds for most models \u2014 not meaningful for typical usage."
     }
   ]
 }

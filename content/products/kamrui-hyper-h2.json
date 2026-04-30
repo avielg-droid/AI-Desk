@@ -63,7 +63,8 @@
   ],
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
-    "apc-bx1500m"
+    "apc-bx1500m",
+    "owc-envoy-express"
   ],
   "notFor": [
     "Fast LLM generation \u2014 10 t/s CPU inference is fine for background tasks, not interactive chat",

@@ -59,7 +59,8 @@
   ],
   "crossSells": [
     "silkland-usb4-thunderbolt-5",
-    "apc-bx1500m"
+    "apc-bx1500m",
+    "owc-envoy-express"
   ],
   "notFor": [
     "Interactive chat \u2014 8 t/s is too slow for real-time back-and-forth",

@@ -5,7 +5,7 @@
   "name": "Noctua NH-D15 Premium CPU Cooler",
   "category": "accessory",
   "brand": "Noctua",
-  "shortDescription": "The Noctua NH-D15 is the benchmark air cooler for AI PC builders — its dual NF-A15 140mm fans and twin-tower heatsink dissipate 250W+ of sustained CPU load silently, making it the right choice for Ryzen 9 or Core i9 systems running continuous LLM inference where fan noise and cooling headroom matter.",
+  "shortDescription": "The Noctua NH-D15 is the benchmark air cooler for AI PC builders \u2014 its dual NF-A15 140mm fans and twin-tower heatsink dissipate 250W+ of sustained CPU load silently, making it the right choice for Ryzen 9 or Core i9 systems running continuous LLM inference where fan noise and cooling headroom matter.",
   "specs": {
     "interface": "LGA1851 / LGA1700 / AM5 / AM4 / AM3+",
     "form_factor": "CPU Cooler",
@@ -13,25 +13,25 @@
   },
   "useCases": [
     "Keeping Ryzen 9 or Core i9 CPUs cool during sustained CPU-bound LLM inference",
-    "Silent 24/7 AI server operation — 18–24 dBA at full load",
+    "Silent 24/7 AI server operation \u2014 18\u201324 dBA at full load",
     "High-TDP CPU cooling for custom GPU AI builds (RTX 5080, 4090 pairing)",
     "Thermal headroom for CPU-heavy AI workloads like Whisper, embeddings, RAG pipelines",
     "Overclock-friendly cooling for boosted AI inference performance"
   ],
   "pros": [
-    "250W+ TDP rating — handles Ryzen 9 7940HS-class desktop CPUs at sustained full load",
-    "Dual NF-A15 140mm fans — industry-leading airflow-to-noise ratio",
-    "SecuFirm2+ mounting — tool-free installation on LGA1700, AM5, AM4",
-    "Semi-passive capable — fans can be set to stop at idle for silent background operation",
-    "6-year warranty — Noctua's reliability track record is unmatched in air cooling",
-    "Low noise adapter included — further reduces noise at the cost of small performance margin"
+    "250W+ TDP rating \u2014 handles Ryzen 9 7940HS-class desktop CPUs at sustained full load",
+    "Dual NF-A15 140mm fans \u2014 industry-leading airflow-to-noise ratio",
+    "SecuFirm2+ mounting \u2014 tool-free installation on LGA1700, AM5, AM4",
+    "Semi-passive capable \u2014 fans can be set to stop at idle for silent background operation",
+    "6-year warranty \u2014 Noctua's reliability track record is unmatched in air cooling",
+    "Low noise adapter included \u2014 further reduces noise at the cost of small performance margin"
   ],
   "cons": [
-    "165mm height — won't fit most mATX or ITX cases, requires full or mid-tower",
-    "RAM clearance — may block the first DDR5 slot on some boards; check compatibility",
-    "Noctua brown aesthetic — some builders use the chromax.black variant for aesthetics"
+    "165mm height \u2014 won't fit most mATX or ITX cases, requires full or mid-tower",
+    "RAM clearance \u2014 may block the first DDR5 slot on some boards; check compatibility",
+    "Noctua brown aesthetic \u2014 some builders use the chromax.black variant for aesthetics"
   ],
-  "verdict": "For AI PC builders who run continuous CPU inference, the NH-D15 is the only air cooler worth considering. LLM inference sustains CPU load for hours — not seconds — and the NH-D15 is specifically designed for exactly this sustained thermal load. Quieter than most 240mm AIOs at equivalent TDP, and with no liquid to leak after years of 24/7 operation, it's the most reliable choice for an always-on AI server.",
+  "verdict": "For AI PC builders who run continuous CPU inference, the NH-D15 is the only air cooler worth considering. LLM inference sustains CPU load for hours \u2014 not seconds \u2014 and the NH-D15 is specifically designed for exactly this sustained thermal load. Quieter than most 240mm AIOs at equivalent TDP, and with no liquid to leak after years of 24/7 operation, it's the most reliable choice for an always-on AI server.",
   "affiliateUrl": "https://amzn.to/4dbRbii",
   "rating": 4.8,
   "reviewCount": 1,
@@ -41,22 +41,22 @@
   "crossSells": [
     "bequiet-pure-power-13-1000w",
     "msi-rtx-5080-gaming-trio",
-    "apc-bx1500m"
+    "msi-rtx-4070-ti-super-ventus"
   ],
   "notFor": [
-    "Small form factor builders — 165mm height requires a full or mid-tower case",
-    "Builders with tight RAM clearance — verify DIMM slot A1 compatibility on your motherboard",
-    "Water cooling enthusiasts — a 360mm AIO exceeds the NH-D15 at very high TDPs"
+    "Small form factor builders \u2014 165mm height requires a full or mid-tower case",
+    "Builders with tight RAM clearance \u2014 verify DIMM slot A1 compatibility on your motherboard",
+    "Water cooling enthusiasts \u2014 a 360mm AIO exceeds the NH-D15 at very high TDPs"
   ],
   "entityHeadline": "Noctua NH-D15: The Reference Air Cooler for 24/7 AI Inference Builds",
   "faq": [
     {
       "question": "Is the Noctua NH-D15 overkill for an AI workstation?",
-      "answer": "No — it's exactly right. Gaming workloads spike and drop; AI inference sustains near-maximum CPU utilization for minutes or hours. The NH-D15's 250W continuous rating and dual fan setup are designed for exactly this kind of sustained thermal load. A cheaper cooler may handle gaming peaks but will throttle or run loud under sustained AI inference."
+      "answer": "No \u2014 it's exactly right. Gaming workloads spike and drop; AI inference sustains near-maximum CPU utilization for minutes or hours. The NH-D15's 250W continuous rating and dual fan setup are designed for exactly this kind of sustained thermal load. A cheaper cooler may handle gaming peaks but will throttle or run loud under sustained AI inference."
     },
     {
       "question": "Does the NH-D15 fit with DDR5 RAM on AM5 or LGA1700?",
-      "answer": "Usually, but verify your specific motherboard. The NH-D15 can block the first DDR5 DIMM slot (A1 or A2 depending on layout) on some boards. Noctua's compatibility list at noctua.at covers most popular AM5 and LGA1700 boards. If A1 is blocked, install RAM in B1+B2 slots for dual-channel — performance is identical."
+      "answer": "Usually, but verify your specific motherboard. The NH-D15 can block the first DDR5 DIMM slot (A1 or A2 depending on layout) on some boards. Noctua's compatibility list at noctua.at covers most popular AM5 and LGA1700 boards. If A1 is blocked, install RAM in B1+B2 slots for dual-channel \u2014 performance is identical."
     }
   ]
 }
