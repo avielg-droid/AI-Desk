@@ -226,7 +226,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   className="flex items-center gap-4 px-6 py-4 hover:bg-ink-2 transition-colors group"
                 >
                   <div className="w-14 h-14 shrink-0 bg-white border border-edge flex items-center justify-center overflow-hidden">
-                    <AmazonImage asin={item.asin} name={item.name} size={56} compact className="w-full h-full p-1" />
+                    <AmazonImage asin={item.asin} name={item.name} localSrc={item.image} size={56} compact className="w-full h-full p-1" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-sans font-600 text-sm text-foreground group-hover:text-ore transition-colors truncate">
