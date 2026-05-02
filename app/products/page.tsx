@@ -11,6 +11,7 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'Best AI Hardware Reviews (2026) — GPUs, Mini PCs & More',
   description: 'Browse all expert-reviewed GPUs, Mini PCs, and AI accessories for running AI locally in 2026. Benchmarked for LLM inference and Stable Diffusion.',
+  alternates: { canonical: 'https://ai-desk.tech/products' },
 }
 
 const FILTERS: { label: string; value: Category | 'all' }[] = [

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'AI Hardware Comparisons (2026) — Head-to-Head Reviews',
   description:
     'Side-by-side comparisons of the best AI hardware: GPUs vs GPUs, GPUs vs Mini PCs, and Mini PCs vs Mini PCs. Memory, bandwidth, power, and verdict for every pair.',
+  alternates: { canonical: 'https://ai-desk.tech/compare' },
 }
 
 export default function CompareHubPage() {

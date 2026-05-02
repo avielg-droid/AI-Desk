@@ -9,6 +9,7 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'AI Hardware Buying Guides (2026)',
   description: 'Expert buying guides for local AI hardware — best GPUs for Stable Diffusion, best Mini PCs for Ollama, best hardware for Llama 3 70B, and more.',
+  alternates: { canonical: 'https://ai-desk.tech/best' },
 }
 
 const TASK_LABELS: Record<string, string> = {

@@ -96,6 +96,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <span className="font-mono text-[9px] text-zinc-600">
                   {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                 </span>
+                <Link href="/about/author" className="font-mono text-[9px] text-ore hover:underline">
+                  By Alex Voss
+                </Link>
               </div>
               <h1 className="font-display font-800 text-3xl md:text-4xl uppercase tracking-tight text-foreground mb-4 leading-[1.1]">
                 {post.headline}

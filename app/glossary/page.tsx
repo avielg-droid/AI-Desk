@@ -5,6 +5,7 @@ import { getGlossaryByCategory, CATEGORY_LABELS, type GlossaryCategory } from '@
 export const metadata: Metadata = {
   title: 'AI Hardware Glossary — Every Local AI Term Explained',
   description: 'Plain-English definitions of every AI hardware term: VRAM, quantization, tokens per second, CUDA, ROCm, Ollama, and more. Built for local AI beginners.',
+  alternates: { canonical: 'https://ai-desk.tech/glossary' },
   openGraph: {
     title: 'AI Hardware Glossary',
     description: 'Every local AI and hardware term explained in plain English.',

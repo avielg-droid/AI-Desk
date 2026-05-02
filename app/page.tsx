@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { getAllProducts, getFeaturedProducts } from '@/lib/products'
 import ProductCard from '@/components/ProductCard'
 import HardwareMatcher from '@/components/HardwareMatcher'
@@ -7,6 +8,10 @@ import CloudROICalculator from '@/components/CloudROICalculator'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { buildSpeakableSchema } from '@/lib/schema'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://ai-desk.tech' },
+}
 
 const CATEGORIES = [
   {

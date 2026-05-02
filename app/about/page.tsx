@@ -4,6 +4,7 @@ import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 export const metadata: Metadata = {
   title: 'About The AI Desk',
   description: 'Learn about The AI Desk, our review methodology, and our Amazon Associates disclosure.',
+  alternates: { canonical: 'https://ai-desk.tech/about' },
 }
 
 export default function AboutPage() {

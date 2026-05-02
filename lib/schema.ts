@@ -34,8 +34,9 @@ export function buildProductSchema(product: Product) {
         worstRating: 1,
       },
       author: {
-        '@type': 'Organization',
-        name: 'The AI Desk',
+        '@type': 'Person',
+        name: 'Alex Voss',
+        url: 'https://ai-desk.tech/about/author',
       },
       reviewBody: product.verdict,
       datePublished: product.lastUpdated,

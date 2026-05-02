@@ -10,6 +10,7 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'Local AI Blog — Hardware Guides, Benchmarks & Analysis (2026)',
   description: 'In-depth articles on running AI locally: GPU comparisons, VRAM guides, Ollama setup, Stable Diffusion hardware, and real benchmark data for 2026.',
+  alternates: { canonical: 'https://ai-desk.tech/blog' },
   openGraph: {
     title: 'Local AI Hardware Blog — The AI Desk',
     description: 'Hardware guides, benchmarks, and analysis for running AI locally in 2026.',

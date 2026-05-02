@@ -11,16 +11,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const personas = getAllPersonas()
   const BASE = 'https://ai-desk.tech'
 
+  const now = new Date()
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE,                            lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 1.0 },
-    { url: `${BASE}/products`,              lastModified: new Date('2026-04-19'), changeFrequency: 'daily',   priority: 0.9 },
-    { url: `${BASE}/best`,                  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE}/compare`,               lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.85 },
-    { url: `${BASE}/categories/gpu`,        lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/categories/mini-pc`,    lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE}/categories/ai-pc`,      lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
-    { url: `${BASE}/categories/accessory`,  lastModified: new Date('2026-04-19'), changeFrequency: 'weekly',  priority: 0.7 },
-    { url: `${BASE}/about`,                 lastModified: new Date('2026-04-19'), changeFrequency: 'monthly', priority: 0.3 },
+    { url: BASE,                            lastModified: now,                    changeFrequency: 'daily',   priority: 1.0 },
+    { url: `${BASE}/products`,              lastModified: now,                    changeFrequency: 'daily',   priority: 0.9 },
+    { url: `${BASE}/best`,                  lastModified: now,                    changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${BASE}/compare`,               lastModified: now,                    changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE}/categories/gpu`,        lastModified: now,                    changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/categories/mini-pc`,    lastModified: now,                    changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/categories/ai-pc`,      lastModified: now,                    changeFrequency: 'weekly',  priority: 0.7 },
+    { url: `${BASE}/categories/accessory`,  lastModified: now,                    changeFrequency: 'weekly',  priority: 0.7 },
+    { url: `${BASE}/about`,                 lastModified: new Date('2026-05-02'), changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${BASE}/about/author`,          lastModified: new Date('2026-05-02'), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/how-we-test`,           lastModified: new Date('2026-04-24'), changeFrequency: 'monthly', priority: 0.5 },
   ]
 
@@ -38,42 +41,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  const comparisonPages: MetadataRoute.Sitemap = getAllComparisonSlugs().map(s => ({
+  const comparisonSlugs = getAllComparisonSlugs()
+  const comparisonPages: MetadataRoute.Sitemap = comparisonSlugs.map(s => ({
     url: `${BASE}/compare/${s}`,
-    lastModified: new Date('2026-04-19'),
+    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
-  const glossaryIndex: MetadataRoute.Sitemap = [
-    { url: `${BASE}/glossary`, lastModified: new Date('2026-04-21'), changeFrequency: 'weekly', priority: 0.85 },
-  ]
+  const glossarySlugs = getAllGlossarySlugs()
+  const glossaryIndex: MetadataRoute.Sitemap = glossarySlugs.length > 0
+    ? [{ url: `${BASE}/glossary`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 }]
+    : []
 
-  const glossaryPages: MetadataRoute.Sitemap = getAllGlossarySlugs().map(slug => ({
+  const glossaryPages: MetadataRoute.Sitemap = glossarySlugs.map(slug => ({
     url: `${BASE}/glossary/${slug}`,
-    lastModified: new Date('2026-04-21'),
+    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.75,
   }))
 
-  const guidesIndex: MetadataRoute.Sitemap = [
-    { url: `${BASE}/guides`, lastModified: new Date('2026-04-21'), changeFrequency: 'weekly', priority: 0.85 },
-  ]
+  const guideSlugs = getAllGuideSlugs()
+  const guidesIndex: MetadataRoute.Sitemap = guideSlugs.length > 0
+    ? [{ url: `${BASE}/guides`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 }]
+    : []
 
-  const guidePages: MetadataRoute.Sitemap = getAllGuideSlugs().map(slug => ({
+  const guidePages: MetadataRoute.Sitemap = guideSlugs.map(slug => ({
     url: `${BASE}/guides/${slug}`,
-    lastModified: new Date('2026-04-21'),
+    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
   const blogIndex: MetadataRoute.Sitemap = [
-    { url: `${BASE}/blog`, lastModified: new Date('2026-04-22'), changeFrequency: 'daily', priority: 0.85 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.85 },
   ]
 
   const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map(slug => ({
     url: `${BASE}/blog/${slug}`,
-    lastModified: new Date('2026-04-22'),
+    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))

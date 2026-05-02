@@ -5,6 +5,7 @@ import { getAllGuides } from '@/lib/guides'
 export const metadata: Metadata = {
   title: 'Local AI Setup Guides — Run LLMs & Stable Diffusion on Your Hardware',
   description: 'Step-by-step guides for running Llama, DeepSeek, SDXL, and FLUX locally on Mac Mini, RTX GPUs, AMD, and mini PCs. Real benchmarks, no fluff.',
+  alternates: { canonical: 'https://ai-desk.tech/guides' },
   openGraph: {
     title: 'Local AI Setup Guides',
     description: 'Run Llama, DeepSeek, SDXL and FLUX on your own hardware.',
