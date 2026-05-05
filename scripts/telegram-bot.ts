@@ -6,6 +6,7 @@
 
 import TelegramBot from 'node-telegram-bot-api'
 import { Octokit } from '@octokit/rest'
+import cron from 'node-cron'
 
 // ── Config ─────────────────────────────────────────────────────────────────────
 
@@ -382,6 +383,39 @@ bot.onText(/\/resume/, async (msg) => {
     bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)
   }
 })
+
+// ── Reddit daily digest (09:00 UTC) ───────────────────────────────────────────
+
+cron.schedule('0 9 * * *', async () => {
+  try {
+    const posts = await fetchRedditPosts('LocalLLaMA')
+    const relevant = filterRelevantPosts(posts).slice(0, 5)
+
+    if (relevant.length === 0) {
+      await bot.sendMessage(ALLOWED_USER_ID, '📡 Reddit digest: no relevant threads today.')
+      return
+    }
+
+    relevant.forEach(p => REDDIT_SEEN_IDS.add(p.id))
+
+    const lines = [
+      `📡 *r/LocalLLaMA — Today's relevant threads (${relevant.length})*\n`,
+      ...relevant.map((p, i) =>
+        `*${i + 1}\\. ${escape(p.title)}*\n` +
+        `↑${p.score} · ${p.num_comments} comments\n` +
+        `[View thread](https://reddit.com${p.permalink})\n` +
+        `Reply: \`/draft https://reddit.com${p.permalink}\``
+      ),
+    ]
+
+    await bot.sendMessage(ALLOWED_USER_ID, lines.join('\n'), {
+      parse_mode: 'MarkdownV2',
+      disable_web_page_preview: true,
+    })
+  } catch (err: any) {
+    console.error('Reddit digest error:', err.message)
+  }
+}, { timezone: 'UTC' })
 
 // ── Start ──────────────────────────────────────────────────────────────────────
 
