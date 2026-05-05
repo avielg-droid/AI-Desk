@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="flex-1 px-8 md:px-14 py-14 max-w-3xl">
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore">Est. 2026</span>
-              <span className="h-px w-12 shrink-0" style={{ background: 'var(--aurora-gradient)' }} />
+              <span className="h-px w-12 shrink-0" style={{ background: 'var(--forge-gradient)' }} />
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
                 {allProducts.length} Products Reviewed
               </span>
