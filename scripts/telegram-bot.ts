@@ -237,6 +237,19 @@ bot.onText(/\/approve/, async (msg) => {
     // Delete pending file
     await deleteFile(PENDING_PATH, sha, 'chore: clear pending post after approval')
 
+    // Ping Bing IndexNow
+    const postUrl = `https://ai-desk.tech/blog/${post.slug}`
+    fetch('https://www.bing.com/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        host: 'ai-desk.tech',
+        key: '723b25305fa95703f9af04d50c461ed4',
+        keyLocation: 'https://ai-desk.tech/723b25305fa95703f9af04d50c461ed4.txt',
+        urlList: [postUrl, 'https://ai-desk.tech/blog'],
+      }),
+    }).catch(err => console.error('IndexNow ping failed:', err.message))
+
     bot.sendMessage(msg.chat.id,
       `✅ *Published!*\n\n*${post.title}*\n\nLive in ~30s: [ai\\-desk\\.tech/blog/${post.slug}](https://ai-desk.tech/blog/${post.slug})`,
       { parse_mode: 'MarkdownV2' }
