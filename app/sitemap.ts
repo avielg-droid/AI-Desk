@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllProducts } from '@/lib/products'
 import { getAllPersonas } from '@/lib/personas'
-import { getAllComparisonSlugs } from '@/lib/comparisons'
 import { getAllGlossarySlugs } from '@/lib/glossary'
 import { getAllGuideSlugs } from '@/lib/guides'
 import { getAllBlogSlugs } from '@/lib/blog'
@@ -17,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                            lastModified: now,                    changeFrequency: 'daily',   priority: 1.0 },
     { url: `${BASE}/products`,              lastModified: now,                    changeFrequency: 'daily',   priority: 0.9 },
     { url: `${BASE}/best`,                  lastModified: now,                    changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${BASE}/compare`,               lastModified: now,                    changeFrequency: 'weekly',  priority: 0.85 },
+    { url: `${BASE}/compare`,               lastModified: now,                    changeFrequency: 'weekly',  priority: 0.75 },
     { url: `${BASE}/categories/gpu`,        lastModified: now,                    changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/categories/mini-pc`,    lastModified: now,                    changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE}/categories/ai-pc`,      lastModified: now,                    changeFrequency: 'weekly',  priority: 0.7 },
@@ -39,14 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(p.lastUpdated),
     changeFrequency: 'weekly' as const,
     priority: 0.85,
-  }))
-
-  const comparisonSlugs = getAllComparisonSlugs()
-  const comparisonPages: MetadataRoute.Sitemap = comparisonSlugs.map(s => ({
-    url: `${BASE}/compare/${s}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
   }))
 
   const glossarySlugs = getAllGlossarySlugs()
@@ -84,5 +75,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...productPages, ...personaPages, ...comparisonPages, ...glossaryIndex, ...glossaryPages, ...guidesIndex, ...guidePages, ...blogIndex, ...blogPages]
+  return [...staticPages, ...productPages, ...personaPages, ...glossaryIndex, ...glossaryPages, ...guidesIndex, ...guidePages, ...blogIndex, ...blogPages]
 }

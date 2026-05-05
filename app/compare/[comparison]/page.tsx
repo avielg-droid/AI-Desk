@@ -28,6 +28,7 @@ export async function generateMetadata({
   return {
     title: data.title,
     description: data.metaDescription,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `https://ai-desk.tech/compare/${params.comparison}`,
     },
