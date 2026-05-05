@@ -128,6 +128,44 @@ function escape(text: string): string {
   return text.replace(/[_*[\]()~`>#+=|{}.!-]/g, '\\$&')
 }
 
+// ── Reddit helpers ─────────────────────────────────────────────────────────────
+
+interface RedditPost {
+  id: string
+  title: string
+  url: string
+  permalink: string
+  score: number
+  num_comments: number
+  selftext: string
+}
+
+async function fetchRedditPosts(subreddit: string, limit = 100): Promise<RedditPost[]> {
+  const res = await fetch(
+    `https://www.reddit.com/r/${subreddit}/new.json?limit=${limit}`,
+    { headers: { 'User-Agent': 'ai-desk-monitor/1.0 (by /u/ai_desk_tech)' } }
+  )
+  if (!res.ok) throw new Error(`Reddit API ${res.status}`)
+  const json = await res.json() as any
+  return json.data.children.map((c: any) => c.data as RedditPost)
+}
+
+function filterRelevantPosts(posts: RedditPost[]): RedditPost[] {
+  return posts.filter(post => {
+    if (REDDIT_SEEN_IDS.has(post.id)) return false
+    const text = `${post.title} ${post.selftext}`.toLowerCase()
+    return REDDIT_KEYWORDS.some(kw => text.includes(kw))
+  })
+}
+
+function pickBestProductLink(title: string): string {
+  const lower = title.toLowerCase()
+  for (const [kw, url] of Object.entries(PRODUCT_LINKS)) {
+    if (kw !== 'default' && lower.includes(kw)) return url
+  }
+  return PRODUCT_LINKS['default']
+}
+
 // ── /help ──────────────────────────────────────────────────────────────────────
 
 bot.onText(/\/help/, async (msg) => {
