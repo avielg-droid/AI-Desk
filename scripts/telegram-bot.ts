@@ -176,7 +176,8 @@ bot.onText(/\/help/, async (msg) => {
     `*Approval flow:*\n` +
     `/approve — publish pending post live\n` +
     `/skip — discard pending post, move to next\n` +
-    `/preview — show pending post details\n\n` +
+    `/preview — show pending post details\n` +
+    `/draft \\[url\\] — generate Reddit reply for a thread\n\n` +
     `*Controls:*\n` +
     `/run — generate a post now\n` +
     `/status — queue status \\+ recent posts\n` +
@@ -379,6 +380,77 @@ bot.onText(/\/resume/, async (msg) => {
     if (!file) return void bot.sendMessage(msg.chat.id, '▶️ Already running.')
     await deleteFile('scripts/paused.flag', file.sha, 'chore: resume SEO agent')
     bot.sendMessage(msg.chat.id, '▶️ Agent resumed. Next run at 08:00 UTC.')
+  } catch (err: any) {
+    bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)
+  }
+})
+
+// ── /draft ─────────────────────────────────────────────────────────────────────
+
+bot.onText(/\/draft (.+)/, async (msg, match) => {
+  if (!guard(msg)) return
+  const url = match?.[1]?.trim()
+  if (!url || !url.includes('reddit.com')) {
+    return void bot.sendMessage(msg.chat.id, '❌ Usage: /draft <reddit_url>')
+  }
+
+  await bot.sendMessage(msg.chat.id, '⏳ Reading thread and drafting reply...')
+
+  try {
+    // Fetch thread JSON — append .json to Reddit URL
+    const jsonUrl = url.replace(/\/?$/, '.json')
+    const res = await fetch(jsonUrl, {
+      headers: { 'User-Agent': 'ai-desk-monitor/1.0 (by /u/ai_desk_tech)' }
+    })
+    if (!res.ok) throw new Error(`Reddit fetch failed: ${res.status}`)
+    const data = await res.json() as any
+
+    const postData = data[0]?.data?.children?.[0]?.data
+    if (!postData) throw new Error('Could not parse Reddit thread')
+
+    const title: string = postData.title
+    const selftext: string = postData.selftext || ''
+    const comments: string[] = (data[1]?.data?.children || [])
+      .slice(0, 8)
+      .map((c: any) => c.data?.body || '')
+      .filter(Boolean)
+
+    const productLink = pickBestProductLink(title)
+
+    // Call Claude
+    const Anthropic = (await import('@anthropic-ai/sdk')).default
+    const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
+
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 400,
+      messages: [{
+        role: 'user',
+        content: `You are a knowledgeable member of r/LocalLLaMA who runs a local AI hardware review site (ai-desk.tech). Write a helpful Reddit reply to this thread.
+
+Thread title: ${title}
+Thread body: ${selftext.slice(0, 500)}
+Top comments context:
+${comments.join('\n---\n').slice(0, 1000)}
+
+Rules:
+- Sound like a real community member, not an advertiser
+- Be genuinely helpful first — answer the question
+- Include ONE natural link to ${productLink} only if it directly answers something in the thread
+- Keep it under 150 words
+- No markdown headers, no bullet spam, write like a Reddit comment
+- Do NOT mention you run the site — just link it naturally ("I benchmarked this on [product] over at ai-desk.tech")
+
+Write only the comment text, nothing else.`,
+      }],
+    })
+
+    const draft = (response.content[0] as any).text
+
+    await bot.sendMessage(msg.chat.id,
+      `📝 *Draft reply:*\n\n${escape(draft)}\n\n_Copy and paste to Reddit_`,
+      { parse_mode: 'MarkdownV2' }
+    )
   } catch (err: any) {
     bot.sendMessage(msg.chat.id, `❌ Error: ${err.message}`)
   }
