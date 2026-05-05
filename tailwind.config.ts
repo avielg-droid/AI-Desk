@@ -35,10 +35,14 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'aurora-sm': '0 0 12px rgba(0,229,255,0.15), 0 0 30px rgba(138,43,226,0.08)',
-        'aurora-md': '0 0 20px rgba(0,229,255,0.20), 0 0 50px rgba(138,43,226,0.12)',
-        'aurora-lg': '0 0 40px rgba(0,229,255,0.25), 0 0 80px rgba(138,43,226,0.15)',
+        'forge-sm': '0 0 12px rgba(245,158,11,0.15), 0 0 30px rgba(217,119,6,0.06)',
+        'forge-md': '0 0 20px rgba(245,158,11,0.20), 0 0 50px rgba(217,119,6,0.10)',
+        'forge-lg': '0 0 40px rgba(245,158,11,0.25), 0 0 80px rgba(217,119,6,0.12)',
         'win-glow':  '0 0 20px rgba(0,229,153,0.20), 0 0 50px rgba(0,229,153,0.10)',
+        // Keep old names as aliases so existing usages don't break
+        'aurora-sm': '0 0 12px rgba(245,158,11,0.15), 0 0 30px rgba(217,119,6,0.06)',
+        'aurora-md': '0 0 20px rgba(245,158,11,0.20), 0 0 50px rgba(217,119,6,0.10)',
+        'aurora-lg': '0 0 40px rgba(245,158,11,0.25), 0 0 80px rgba(217,119,6,0.12)',
       },
     },
   },
