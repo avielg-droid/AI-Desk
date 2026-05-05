@@ -239,7 +239,7 @@ bot.onText(/\/approve/, async (msg) => {
 
     // Ping Bing IndexNow
     const postUrl = `https://ai-desk.tech/blog/${post.slug}`
-    fetch('https://www.bing.com/indexnow', {
+    fetch('https://api.indexnow.org/IndexNow', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
