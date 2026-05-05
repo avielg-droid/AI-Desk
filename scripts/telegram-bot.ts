@@ -17,6 +17,35 @@ const REPO = 'AI-Desk'
 const BRANCH = 'main'
 const PENDING_PATH = 'scripts/pending-post.json'
 
+// ── Reddit Monitor Config ──────────────────────────────────────────────────────
+
+const REDDIT_KEYWORDS = [
+  // Products
+  'rtx 5070', 'rtx 5080', 'rtx 4090', 'rtx 4070', 'rtx 5060',
+  'rx 9060', 'mac mini m4', 'geekom', 'gmktec', 'kamrui', 'noctua',
+  // Topics
+  'local llm', 'local ai', 'ollama', 'llama.cpp', 'gpu for llm',
+  'vram', 'tokens per second', 'inference speed', 'mini pc for ai',
+  'stable diffusion gpu', 'flux gpu', 'amd rocm', 'unified memory',
+]
+
+const PRODUCT_LINKS: Record<string, string> = {
+  'rtx 5070':        'https://ai-desk.tech/products/gigabyte-rtx-5070-windforce',
+  'rtx 5080':        'https://ai-desk.tech/products/msi-rtx-5080-gaming-trio',
+  'rtx 4090':        'https://ai-desk.tech/products/msi-rtx-4090',
+  'rtx 5060':        'https://ai-desk.tech/products/asus-rtx-5060-ti-dual',
+  'rx 9060':         'https://ai-desk.tech/products/gigabyte-rx-9060-xt-gaming',
+  'mac mini m4 pro': 'https://ai-desk.tech/products/apple-mac-mini-m4-pro',
+  'mac mini m4':     'https://ai-desk.tech/products/apple-mac-mini-m4',
+  'geekom':          'https://ai-desk.tech/products/geekom-ai-a7-max',
+  'gmktec':          'https://ai-desk.tech/products/gmktec-m6-ultra',
+  'kamrui':          'https://ai-desk.tech/products/kamrui-pinova-p1',
+  'noctua':          'https://ai-desk.tech/products/noctua-nh-d15',
+  'default':         'https://ai-desk.tech',
+}
+
+const REDDIT_SEEN_IDS = new Set<string>() // in-memory dedup within same day
+
 if (!BOT_TOKEN) throw new Error('TELEGRAM_BOT_TOKEN not set')
 if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN not set')
 if (!ALLOWED_USER_ID) throw new Error('TELEGRAM_ALLOWED_USER_ID not set')
