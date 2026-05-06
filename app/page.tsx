@@ -115,10 +115,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-5 mb-20">
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base text-white transition-colors duration-150"
-              style={{ background: '#D97706' }}
-              onMouseOver={e => (e.currentTarget.style.background = '#B45309')}
-              onMouseOut={e => (e.currentTarget.style.background = '#D97706')}
+              className="forge-btn inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base"
             >
               Browse Hardware
               <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">

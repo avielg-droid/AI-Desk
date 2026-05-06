@@ -231,6 +231,14 @@ body::after {
   opacity: 1;
 }
 
+/* ── Forge CTA Button — amber ─────────────────────────────────────────────── */
+.forge-btn {
+  background: #D97706;
+  color: #ffffff;
+  transition: background 0.15s ease;
+}
+.forge-btn:hover { background: #B45309; }
+
 /* ── View Deal Button (product cards) — Amazon orange ─────────────────────── */
 .view-deal-btn {
   background: #FF9900;

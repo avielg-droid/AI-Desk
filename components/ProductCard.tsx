@@ -82,10 +82,7 @@ export default function ProductCard({ product }: { product: Product }) {
           href={product.affiliateUrl}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 font-sans font-semibold text-sm text-white transition-colors duration-150"
-          style={{ background: '#D97706' }}
-          onMouseOver={e => (e.currentTarget.style.background = '#B45309')}
-          onMouseOut={e => (e.currentTarget.style.background = '#D97706')}
+          className="forge-btn inline-flex items-center justify-center gap-2 w-full px-4 py-3 font-sans font-semibold text-sm"
         >
           View Deal
           <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
