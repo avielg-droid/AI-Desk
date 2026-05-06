@@ -90,7 +90,7 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="border-b border-edge">
-        <div className="max-w-7xl mx-auto px-6 md:px-14 py-16 md:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-14 py-12 md:py-16 lg:py-20">
 
           {/* Eyebrow */}
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-6">
