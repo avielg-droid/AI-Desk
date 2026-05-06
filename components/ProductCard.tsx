@@ -24,70 +24,68 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <article className="
       group flex flex-col overflow-hidden
-      transition-all duration-300
-      border border-edge
-      bg-ink-1
-      hover:border-ore/30
-      hover:shadow-aurora-sm
-      aurora-glow-hover
+      bg-ink-0 border border-edge
+      transition-shadow duration-300
+      hover:shadow-lg
     ">
-      {/* Aurora top bar — animated on hover */}
-      <div className="h-[2px] bg-edge group-hover:aurora-bar transition-colors duration-300 aurora-bar" />
-
-      {/* Product image — white panel pops on void */}
+      {/* Product image */}
       <Link
         href={`/products/${product.slug}`}
-        className="block bg-white border-b border-edge p-4 flex items-center justify-center min-h-[120px] md:min-h-[160px] max-h-[180px] md:max-h-none overflow-hidden"
+        className="block bg-white p-6 flex items-center justify-center min-h-[180px] md:min-h-[200px] overflow-hidden border-b border-edge"
       >
         <AmazonImage
           asin={product.asin}
           name={product.name}
           localSrc={product.image}
           size={200}
-          className="max-h-[140px] w-auto mx-auto transition-transform duration-300 group-hover:scale-[1.04]"
+          className="max-h-[150px] w-auto mx-auto transition-transform duration-500 group-hover:scale-[1.04]"
         />
       </Link>
 
-      <div className="flex flex-col flex-1 p-5 glass">
+      <div className="flex flex-col flex-1 p-5">
 
-        {/* Category badge + key spec */}
+        {/* Category + key spec */}
         <div className="flex items-start justify-between mb-3">
-          <span className="font-mono text-[9px] uppercase tracking-widest text-ore border-l-2 border-ore pl-2">
+          <span className="font-mono text-[9px] uppercase tracking-widest" style={{ color: 'var(--text-subtle)' }}>
             {product.category.replace('-', ' ')}
           </span>
           {spec && (
-            <span className="font-mono text-[10px] text-zinc-600">
-              {spec.label} <span className="text-ore font-500">{spec.value}</span>
+            <span className="font-mono text-[10px]" style={{ color: 'var(--text-subtle)' }}>
+              {spec.label} <span className="text-foreground font-medium">{spec.value}</span>
             </span>
           )}
         </div>
 
         {/* Title */}
-        <h3 className="font-display font-700 text-xl leading-tight text-foreground mb-2 group-hover:text-ore transition-colors duration-200">
-          <Link href={`/products/${product.slug}`} className="block">
+        <h3 className="font-display font-bold text-lg leading-tight text-foreground mb-2">
+          <Link href={`/products/${product.slug}`} className="block hover:underline underline-offset-2">
             {product.name}
           </Link>
         </h3>
 
         <StarRating rating={product.rating} className="mb-3" />
 
-        <p className="font-sans text-sm text-zinc-600 leading-relaxed line-clamp-3 mb-4 flex-1">
+        <p className="text-sm leading-relaxed line-clamp-2 mb-4 flex-1" style={{ color: 'var(--text-muted)' }}>
           {product.shortDescription}
         </p>
 
-        {/* Benchmark — hero stat */}
+        {/* Benchmark stat */}
         {bench && (
-          <div className="flex items-end gap-1.5 mb-4 border-l-2 border-win/40 pl-3">
-            <span className="font-mono font-700 text-2xl leading-none text-win">{bench.value}</span>
-            <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mb-0.5">t/s · Llama 8B</span>
+          <div className="flex items-baseline gap-1.5 mb-4">
+            <span className="font-mono font-bold text-xl text-win leading-none">{bench.value}</span>
+            <span className="font-mono text-[9px] uppercase tracking-widest" style={{ color: 'var(--text-subtle)' }}>t/s · Llama 8B</span>
           </div>
         )}
 
+        {/* CTA */}
         <a
           href={product.affiliateUrl}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="view-deal-btn inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 font-sans font-700 text-sm"
+          className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 font-sans font-semibold text-sm text-white transition-colors duration-150"
+          style={{ background: '#D97706' }}
+          onMouseOver={e => (e.currentTarget.style.background = '#B45309')}
+          onMouseOut={e => (e.currentTarget.style.background = '#D97706')}
         >
           View Deal
           <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
