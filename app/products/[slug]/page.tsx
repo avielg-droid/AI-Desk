@@ -90,7 +90,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Entity headline — AI model context for GEO/AEO */}
         {product.entityHeadline && (
           <section>
-            <h2 className="font-display font-800 text-2xl md:text-3xl tracking-tight text-foreground">
+            <h2 className="font-display font-bold text-2xl md:text-3xl tracking-tight text-foreground">
               {product.entityHeadline}
             </h2>
           </section>
@@ -98,14 +98,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Use cases */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+          <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+            <span className="block w-0.5 h-5 bg-ore shrink-0" />
             What Can You Run on This?
           </h2>
           <ul className="grid sm:grid-cols-2 gap-2">
             {product.useCases.map(uc => (
-              <li key={uc} className="flex items-start gap-3 border border-edge/60 bg-ink-1 px-4 py-3">
-                <span className="text-win font-mono mt-0.5 shrink-0 text-sm">✓</span>
-                <span className="text-sm text-zinc-600">{uc}</span>
+              <li key={uc} className="flex items-start gap-3 bg-ink-1 border border-edge px-4 py-3">
+                <svg className="w-4 h-4 text-win shrink-0 mt-0.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l3.5 3.5L13 4" />
+                </svg>
+                <span className="text-sm leading-snug" style={{ color: 'var(--text-muted)' }}>{uc}</span>
               </li>
             ))}
           </ul>
@@ -113,7 +116,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Specs */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+          <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+            <span className="block w-0.5 h-5 bg-ore shrink-0" />
             Full Specifications
           </h2>
           <ComparisonTable specs={product.specs} />
@@ -121,32 +125,38 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Pros / Cons */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">Pros &amp; Cons</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="border border-win/20 bg-win/5 p-5">
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-win mb-4">Pros</h3>
-              <ul className="space-y-2.5">
+          <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+            <span className="block w-0.5 h-5 bg-ore shrink-0" />
+            Pros &amp; Cons
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="border-l-2 border-win bg-ink-1 border border-l-win/0 p-5" style={{ borderLeftColor: 'rgb(var(--color-win))' }}>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-win mb-4">Pros</p>
+              <ul className="space-y-3">
                 {product.pros.map(pro => (
-                  <li key={pro} className="flex gap-3 text-sm text-zinc-600">
-                    <span className="text-win shrink-0 mt-0.5">+</span>
+                  <li key={pro} className="flex gap-3 text-sm leading-snug" style={{ color: 'var(--text-muted)' }}>
+                    <svg className="w-4 h-4 text-win shrink-0 mt-0.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l3.5 3.5L13 4" />
+                    </svg>
                     {pro}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="border border-loss/20 bg-loss/5 p-5">
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">Cons</h3>
-              <ul className="space-y-2.5">
+            <div className="border-l-2 border-loss bg-ink-1 p-5" style={{ borderLeftColor: 'rgb(var(--color-loss))' }}>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">Cons</p>
+              <ul className="space-y-3">
                 {product.cons.map(con => (
-                  <li key={con} className="flex gap-3 text-sm text-zinc-600">
-                    <span className="text-loss shrink-0 mt-0.5">−</span>
+                  <li key={con} className="flex gap-3 text-sm leading-snug" style={{ color: 'var(--text-muted)' }}>
+                    <svg className="w-4 h-4 text-loss shrink-0 mt-0.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 4l8 8M12 4l-8 8" />
+                    </svg>
                     {con}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          {/* Repeat CTA after pros/cons — high purchase intent moment */}
           <div className="mt-5 flex items-center gap-4 flex-wrap">
             <AffiliateButton href={product.affiliateUrl} size="sm" />
             <span className="font-mono text-sm text-foreground">{product.priceDisplay}</span>
@@ -155,17 +165,19 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* Anti-Sell */}
         {product.notFor && product.notFor.length > 0 && (
-          <section className="border border-loss/20 bg-loss/5 p-6">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-1">
+          <section className="border-l-2 border-loss bg-ink-1 p-6" style={{ borderLeftColor: 'rgb(var(--color-loss))' }}>
+            <h2 className="font-display font-bold text-xl uppercase text-foreground mb-1">
               Who Should NOT Buy This
             </h2>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-loss mb-4">
-              Honest assessment — skip it if any of these apply to you
+            <p className="text-[11px] uppercase tracking-widest text-loss mb-4 font-mono">
+              Honest assessment
             </p>
             <ul className="space-y-2.5">
               {product.notFor.map(item => (
-                <li key={item} className="flex gap-3 text-sm text-zinc-600">
-                  <span className="text-loss shrink-0 mt-0.5 font-mono">✕</span>
+                <li key={item} className="flex gap-3 text-sm leading-snug" style={{ color: 'var(--text-muted)' }}>
+                  <svg className="w-4 h-4 text-loss shrink-0 mt-0.5" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4l8 8M12 4l-8 8" />
+                  </svg>
                   {item}
                 </li>
               ))}
@@ -174,10 +186,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         )}
 
         {/* Verdict */}
-        <section id="verdict" className="border border-ore/25 bg-ore/5 p-6 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ore/60 to-transparent" />
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">Our Verdict</h2>
-          <p className="text-zinc-600 leading-relaxed mb-6">{product.verdict}</p>
+        <section id="verdict" className="border border-ore/20 bg-ink-1 p-6 relative overflow-hidden">
+          <div className="h-[2px] rule-ember absolute top-0 left-0 right-0" />
+          <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Our Verdict</p>
+          <h2 className="font-display font-bold text-xl uppercase text-foreground mb-3">
+            {product.name}
+          </h2>
+          <p className="leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>{product.verdict}</p>
           <div className="flex items-center gap-4 flex-wrap">
             <AffiliateButton href={product.affiliateUrl} />
             <span className="font-mono text-lg text-foreground">{product.priceDisplay}</span>
@@ -186,35 +201,38 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         {/* FAQ */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-5">
+          <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+            <span className="block w-0.5 h-5 bg-ore shrink-0" />
             Frequently Asked Questions
           </h2>
-          <div className="space-y-1">
+          <div className="divide-y divide-edge border border-edge">
             {product.faq.map((item, i) => (
-              <div key={item.question} className="border border-edge bg-ink-1 p-5">
-                <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
-                  <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
+              <div key={item.question} className="p-5 bg-ink-0 hover:bg-ink-1 transition-colors">
+                <h3 className="font-semibold text-sm text-foreground mb-2 flex items-start gap-3">
+                  <span className="font-mono text-[10px] text-ore bg-ore/10 px-1.5 py-0.5 shrink-0 mt-0.5">
+                    Q{i + 1}
+                  </span>
                   {item.question}
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed pl-6">{item.answer}</p>
+                <p className="text-sm leading-relaxed pl-8" style={{ color: 'var(--text-muted)' }}>{item.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Cross-sell: Don't Bottleneck Your Rig (GPU/PC) or Complete Your Setup (accessory) */}
+        {/* Cross-sell */}
         {crossSellProducts.length > 0 && (
-          <section className="border border-edge bg-ink-1 overflow-hidden">
-            <div className="h-[2px] aurora-bar" />
+          <section className="border border-edge bg-ink-0 overflow-hidden">
+            <div className="h-[2px] rule-ember" />
             <div className="px-6 py-4 border-b border-edge">
-              <h2 className="font-display font-800 text-xl uppercase text-foreground">
+              <h2 className="font-display font-bold text-xl uppercase text-foreground">
                 {(product.category === 'gpu' || product.category === 'mini-pc')
                   ? "Don't Bottleneck Your Rig"
                   : 'Complete Your Setup'}
               </h2>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-0.5">
+              <p className="text-[10px] uppercase tracking-widest mt-0.5 font-mono" style={{ color: 'var(--text-subtle)' }}>
                 {(product.category === 'gpu' || product.category === 'mini-pc')
-                  ? 'Accessories that unlock this hardware\'s full potential'
+                  ? "Accessories that unlock this hardware's full potential"
                   : 'Recommended accessories'}
               </p>
             </div>
@@ -223,22 +241,22 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 <Link
                   key={item.slug}
                   href={`/products/${item.slug}`}
-                  className="flex items-center gap-4 px-6 py-4 hover:bg-ink-2 transition-colors group"
+                  className="flex items-center gap-4 px-6 py-4 hover:bg-ink-1 transition-colors group"
                 >
                   <div className="w-14 h-14 shrink-0 bg-white border border-edge flex items-center justify-center overflow-hidden">
                     <AmazonImage asin={item.asin} name={item.name} localSrc={item.image} size={56} compact className="w-full h-full p-1" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-sans font-600 text-sm text-foreground group-hover:text-ore transition-colors truncate">
+                    <p className="font-semibold text-sm text-foreground group-hover:text-ore transition-colors truncate">
                       {item.name}
                     </p>
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-0.5">
+                    <p className="font-mono text-[10px] uppercase tracking-widest mt-0.5" style={{ color: 'var(--text-subtle)' }}>
                       {item.category} · {item.priceDisplay}
                     </p>
                   </div>
-                  <span className="font-mono text-xs text-ore shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                    View →
-                  </span>
+                  <svg className="w-4 h-4 text-ore shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
                 </Link>
               ))}
             </div>
@@ -248,15 +266,16 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Also featured in */}
         {PRODUCT_PERSONA_MAP[product.slug]?.length > 0 && (
           <section>
-            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+              <span className="block w-0.5 h-5 bg-ore shrink-0" />
               Also Featured In
             </h2>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {PRODUCT_PERSONA_MAP[product.slug].map(p => (
                 <Link
                   key={p.slug}
                   href={`/best/${p.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 border border-edge bg-ink-1 font-mono text-xs tracking-wide text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-edge bg-ink-1 text-sm font-mono text-zinc-600 hover:border-ore/50 hover:text-ore transition-colors"
                 >
                   {p.title} →
                 </Link>
@@ -268,10 +287,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         {/* Compare with */}
         {comparisonSlugs.length > 0 && (
           <section>
-            <h2 className="font-display font-800 text-xl uppercase text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl uppercase text-foreground mb-4 flex items-center gap-3">
+              <span className="block w-0.5 h-5 bg-ore shrink-0" />
               Compare With
             </h2>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {comparisonSlugs.map(s => {
                 const other = s.replace(`${product.slug}-vs-`, '').replace(`-vs-${product.slug}`, '')
                 const label = other.replace(/-/g, ' ')
@@ -279,7 +299,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <Link
                     key={s}
                     href={`/compare/${s}`}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 border border-edge bg-ink-1 font-mono text-xs tracking-wide text-zinc-600 hover:border-ore/40 hover:text-ore transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-edge bg-ink-1 text-sm font-mono text-zinc-600 hover:border-ore/50 hover:text-ore transition-colors"
                   >
                     vs {label} →
                   </Link>
@@ -289,7 +309,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-        <AffiliateDisclosure className="border-t border-edge pt-6 text-slate-500" />
+        <AffiliateDisclosure className="border-t border-edge pt-6 text-zinc-500" />
       </div>
 
       <StickyAffiliateCta
