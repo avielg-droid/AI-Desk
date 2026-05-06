@@ -75,5 +75,6 @@
       "question": "Does the GEEKOM AI A7 MAX support an external GPU?",
       "answer": "Yes, via the USB4 40Gbps port. You can connect an eGPU enclosure (such as Razer Core X) with a discrete GPU like the RTX 5060 Ti or RX 9060 XT for full GPU-accelerated AI inference. USB4 has slightly lower bandwidth than Thunderbolt 4, so expect 10–15% throughput reduction vs native PCIe, but it's a viable upgrade path."
     }
-  ]
+  ],
+  "price": 699
 }

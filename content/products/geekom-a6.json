@@ -79,5 +79,6 @@
       "question": "Can the GEEKOM A6 run Stable Diffusion?",
       "answer": "Technically yes, but slowly. The AMD Radeon 680M on Linux with ROCm can run SD 1.5 at 512×512 in 30–60 seconds. SDXL and FLUX.1 are impractical. The USB4 port is the real path to image generation: add an RTX 5070 in an eGPU enclosure and you get full FLUX.1 capability."
     }
-  ]
+  ],
+  "price": 349
 }

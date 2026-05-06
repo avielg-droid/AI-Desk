@@ -5,7 +5,7 @@
   "name": "APC Back-UPS Pro 1500VA / 900W (BX1500M)",
   "category": "accessory",
   "brand": "APC",
-  "shortDescription": "The APC BX1500M is a 1500VA/900W UPS with Automatic Voltage Regulation and 10 outlets. For AI workstation builders, it is the only way to protect hours of model fine-tuning or dataset processing from a power outage \u2014 providing enough battery runtime to save work and shut down gracefully.",
+  "shortDescription": "The APC BX1500M is a 1500VA/900W UPS with Automatic Voltage Regulation and 10 outlets. For AI workstation builders, it is the only way to protect hours of model fine-tuning or dataset processing from a power outage — providing enough battery runtime to save work and shut down gracefully.",
   "specs": {
     "interface": "AC Power / UPS",
     "tdp_watts": 900,
@@ -15,22 +15,22 @@
     "Protecting fine-tuning runs and training jobs from power loss",
     "Safe graceful shutdown during outages for always-on AI servers",
     "Voltage regulation for sensitive GPU and Mini PC hardware",
-    "Any AI workstation build \u2014 GPU rigs, Mac Minis, Mini PCs",
+    "Any AI workstation build — GPU rigs, Mac Minis, Mini PCs",
     "Home lab setups with 24/7 uptime requirements"
   ],
   "pros": [
-    "900W capacity \u2014 handles RTX 5070 system under full AI inference load",
-    "Automatic Voltage Regulation (AVR) \u2014 protects hardware from voltage sags and surges",
-    "10 outlets (5 battery + 5 surge) \u2014 powers full workstation setup",
-    "LCD display \u2014 shows load percentage, estimated runtime, battery health",
+    "900W capacity — handles RTX 5070 system under full AI inference load",
+    "Automatic Voltage Regulation (AVR) — protects hardware from voltage sags and surges",
+    "10 outlets (5 battery + 5 surge) — powers full workstation setup",
+    "LCD display — shows load percentage, estimated runtime, battery health",
     "USB connectivity for automatic graceful OS shutdown on power loss"
   ],
   "cons": [
     "900W max limits simultaneous GPU + monitor + NAS draw at full load",
-    "Battery replacement required every 3\u20135 years",
-    "Bulky \u2014 needs floor or shelf space near the workstation"
+    "Battery replacement required every 3–5 years",
+    "Bulky — needs floor or shelf space near the workstation"
   ],
-  "verdict": "The APC BX1500M is the most important accessory in this entire catalog \u2014 and the most overlooked. Every minute of a fine-tuning run or dataset processing job is compute time that cannot be recovered if the power flickers. The BX1500M provides 5\u201315 minutes of battery runtime at typical AI workstation loads, enough for any OS to detect the power loss, save state, and shut down cleanly via the USB connection. Buy this before you start your first serious training job.",
+  "verdict": "The APC BX1500M is the most important accessory in this entire catalog — and the most overlooked. Every minute of a fine-tuning run or dataset processing job is compute time that cannot be recovered if the power flickers. The BX1500M provides 5–15 minutes of battery runtime at typical AI workstation loads, enough for any OS to detect the power loss, save state, and shut down cleanly via the USB connection. Buy this before you start your first serious training job.",
   "affiliateUrl": "https://www.amazon.com/dp/B06VY6FXMM?th=1&linkCode=ll2&tag=aidesk-20&linkId=8a629b4264a6022410dd26303d4a57a8&language=en_US&ref_=as_li_ss_tl",
   "rating": 4.7,
   "reviewCount": 1,
@@ -45,21 +45,22 @@
   "faq": [
     {
       "question": "Will the APC BX1500M handle an RTX 5070 system under load?",
-      "answer": "Yes. The RTX 5070 draws ~150W under full AI inference load. A full system (GPU + CPU + memory + drives + monitor) typically draws 300\u2013500W total. The BX1500M's 900W capacity provides comfortable headroom. At 400W draw, it provides approximately 8\u201312 minutes of battery runtime \u2014 enough to save progress and shut down gracefully."
+      "answer": "Yes. The RTX 5070 draws ~150W under full AI inference load. A full system (GPU + CPU + memory + drives + monitor) typically draws 300–500W total. The BX1500M's 900W capacity provides comfortable headroom. At 400W draw, it provides approximately 8–12 minutes of battery runtime — enough to save progress and shut down gracefully."
     },
     {
       "question": "How does the UPS protect AI training runs?",
-      "answer": "The BX1500M connects to your PC via USB and works with APC PowerChute or native OS UPS support (Windows and macOS both detect it). When power fails, the OS receives a signal and can trigger an automatic graceful shutdown script \u2014 saving model checkpoints, pausing training, and writing logs before the battery runs out. Without this, a power cut means corrupted weights and lost hours of work."
+      "answer": "The BX1500M connects to your PC via USB and works with APC PowerChute or native OS UPS support (Windows and macOS both detect it). When power fails, the OS receives a signal and can trigger an automatic graceful shutdown script — saving model checkpoints, pausing training, and writing logs before the battery runs out. Without this, a power cut means corrupted weights and lost hours of work."
     },
     {
       "question": "Does the APC BX1500M work with a Mac Mini?",
-      "answer": "Yes. macOS natively supports UPS devices connected via USB. Go to System Settings \u2192 Battery \u2192 UPS and configure shutdown behavior. When power fails, macOS will automatically save state and shut down the Mac Mini before the battery depletes. The BX1500M's 900W capacity is more than enough for any Mac Mini setup \u2014 the M4 Pro draws under 40W at peak."
+      "answer": "Yes. macOS natively supports UPS devices connected via USB. Go to System Settings → Battery → UPS and configure shutdown behavior. When power fails, macOS will automatically save state and shut down the Mac Mini before the battery depletes. The BX1500M's 900W capacity is more than enough for any Mac Mini setup — the M4 Pro draws under 40W at peak."
     }
   ],
   "notFor": [
-    "Datacenters or server racks \u2014 this is a consumer/prosumer device",
-    "GPU builds drawing over 900W sustained \u2014 check your load before buying",
+    "Datacenters or server racks — this is a consumer/prosumer device",
+    "GPU builds drawing over 900W sustained — check your load before buying",
     "Anyone in a region with very stable power who never experiences outages"
   ],
-  "entityHeadline": "Protecting a Local AI Server During Power Outages: Why a UPS Is Essential"
+  "entityHeadline": "Protecting a Local AI Server During Power Outages: Why a UPS Is Essential",
+  "price": 199
 }

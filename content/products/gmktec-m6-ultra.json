@@ -79,5 +79,6 @@
       "question": "How does the GMKtec M6 Ultra compare to the Mac Mini M4 for local AI?",
       "answer": "The Mac Mini M4 runs Llama 3.1 8B at ~42 t/s vs the M6 Ultra's ~12 t/s — about 3.5× faster. The Mac Mini M4 is priced similarly. The M6 Ultra advantages are: Windows OS, user-upgradeable DDR5 RAM, dual 2.5GbE for home server use, USB4 eGPU path, and triple 4K display support. If raw LLM speed is the priority, the Mac Mini wins. If Windows compatibility or upgradability matters, the M6 Ultra is the better fit."
     }
-  ]
+  ],
+  "price": 699
 }

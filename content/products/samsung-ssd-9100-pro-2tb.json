@@ -58,5 +58,6 @@
       "question": "Does the Samsung 9100 PRO need a heatsink?",
       "answer": "Yes. PCIe 5.0 SSDs generate significantly more heat than PCIe 4.0 drives. Most Z790 and X670E motherboards include an M.2 heatsink — use it. Without thermal management, the 9100 PRO will throttle under sustained sequential reads, negating the speed advantage."
     }
-  ]
+  ],
+  "price": 299
 }

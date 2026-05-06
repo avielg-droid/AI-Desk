@@ -92,5 +92,6 @@
     "Anyone already invested in CUDA software — switching ecosystems has friction",
     "Running 13B+ models at speed — 16 GB is enough capacity, but bandwidth caps throughput"
   ],
-  "entityHeadline": "Running Mistral 7B on the RX 9060 XT: 88 Tokens Per Second on AMD"
+  "entityHeadline": "Running Mistral 7B on the RX 9060 XT: 88 Tokens Per Second on AMD",
+  "price": 299
 }

@@ -38,6 +38,7 @@ export interface Product {
   affiliateUrl: string
   rating: number
   reviewCount: number
+  price?: number
   priceDisplay: string
   lastUpdated: string
   featured: boolean

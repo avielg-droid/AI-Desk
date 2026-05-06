@@ -5,7 +5,7 @@
   "name": "MSI GeForce RTX 4070 Ti Super 16G Ventus 3X OC",
   "category": "gpu",
   "brand": "MSI",
-  "shortDescription": "The MSI RTX 4070 Ti Super Ventus 3X OC pairs Ada Lovelace architecture with 16GB GDDR6X at 672 GB/s \u2014 the same memory bandwidth as the newer RTX 5070, but with 4GB more VRAM at a lower price point. For local AI builders who need 13B Q8 headroom without paying for Blackwell, this is the value pick in the 16GB GPU tier.",
+  "shortDescription": "The MSI RTX 4070 Ti Super Ventus 3X OC pairs Ada Lovelace architecture with 16GB GDDR6X at 672 GB/s — the same memory bandwidth as the newer RTX 5070, but with 4GB more VRAM at a lower price point. For local AI builders who need 13B Q8 headroom without paying for Blackwell, this is the value pick in the 16GB GPU tier.",
   "specs": {
     "chip": "NVIDIA GeForce RTX 4070 Ti Super (Ada Lovelace, AD103)",
     "architecture": "NVIDIA Ada Lovelace (AD103)",
@@ -21,27 +21,27 @@
     "cooling": "Triple-fan active (VENTUS 3X)"
   },
   "useCases": [
-    "Local LLM inference \u2014 7B at full FP16, 13B at Q8 fully in 16GB VRAM",
+    "Local LLM inference — 7B at full FP16, 13B at Q8 fully in 16GB VRAM",
     "Stable Diffusion XL and FLUX.1 image generation with room for ControlNet",
     "ComfyUI workflows with multiple loaded models simultaneously",
     "Whisper audio transcription and real-time speech-to-text",
     "CUDA AI development on a mid-cycle GPU budget"
   ],
   "pros": [
-    "16GB GDDR6X \u2014 runs 13B at Q8 precision fully in VRAM, meaningful quality advantage over 12GB cards",
-    "672 GB/s bandwidth \u2014 matches the RTX 5070 in raw memory throughput for LLM inference",
-    "8448 Ada Lovelace CUDA cores \u2014 mature, battle-tested AI compute architecture",
-    "285W TDP \u2014 lower power draw than RTX 5080 or 4090, works with 750W+ PSUs",
-    "Strong value \u2014 delivers 16GB at significantly lower cost than Blackwell 16GB options",
-    "Wide software support \u2014 Ada generation is extremely well-supported by all AI frameworks"
+    "16GB GDDR6X — runs 13B at Q8 precision fully in VRAM, meaningful quality advantage over 12GB cards",
+    "672 GB/s bandwidth — matches the RTX 5070 in raw memory throughput for LLM inference",
+    "8448 Ada Lovelace CUDA cores — mature, battle-tested AI compute architecture",
+    "285W TDP — lower power draw than RTX 5080 or 4090, works with 750W+ PSUs",
+    "Strong value — delivers 16GB at significantly lower cost than Blackwell 16GB options",
+    "Wide software support — Ada generation is extremely well-supported by all AI frameworks"
   ],
   "cons": [
-    "Ada Lovelace vs Blackwell \u2014 4th-Gen Tensor Cores are slower per core than 5th-Gen",
-    "GDDR6X vs GDDR7 \u2014 same bandwidth number but GDDR7 is more power-efficient",
-    "Boost clock 2655 MHz \u2014 cannot be tuned far past spec due to Ada thermals at 285W",
-    "Previous generation \u2014 no FP4 Tensor Core support that Blackwell adds for future models"
+    "Ada Lovelace vs Blackwell — 4th-Gen Tensor Cores are slower per core than 5th-Gen",
+    "GDDR6X vs GDDR7 — same bandwidth number but GDDR7 is more power-efficient",
+    "Boost clock 2655 MHz — cannot be tuned far past spec due to Ada thermals at 285W",
+    "Previous generation — no FP4 Tensor Core support that Blackwell adds for future models"
   ],
-  "verdict": "The MSI RTX 4070 Ti Super Ventus 3X OC is the smartest buy in the 16GB GPU tier for local AI builders on a budget. It delivers the same 672 GB/s memory bandwidth as the RTX 5070 with 4GB more VRAM \u2014 enabling 13B Q8 models that the 12GB Blackwell cards cannot fit \u2014 at a meaningfully lower price. The Ada Lovelace architecture is mature, widely supported, and the Tensor Cores remain fast for all current AI workloads. Choose this over the RTX 5070 if VRAM headroom matters more than cutting-edge Tensor Core generation.",
+  "verdict": "The MSI RTX 4070 Ti Super Ventus 3X OC is the smartest buy in the 16GB GPU tier for local AI builders on a budget. It delivers the same 672 GB/s memory bandwidth as the RTX 5070 with 4GB more VRAM — enabling 13B Q8 models that the 12GB Blackwell cards cannot fit — at a meaningfully lower price. The Ada Lovelace architecture is mature, widely supported, and the Tensor Cores remain fast for all current AI workloads. Choose this over the RTX 5070 if VRAM headroom matters more than cutting-edge Tensor Core generation.",
   "affiliateUrl": "https://amzn.to/4vYv46o",
   "rating": 4.5,
   "reviewCount": 1,
@@ -54,16 +54,16 @@
     "noctua-nh-d15"
   ],
   "notFor": [
-    "Buyers who want the latest Blackwell architecture \u2014 this is Ada Lovelace (previous gen)",
-    "Anyone running 70B+ models \u2014 16GB still requires CPU offload for 70B Q4 (~40GB)",
-    "Mini ITX builders \u2014 285W TDP and triple-slot cooler need full ATX airflow",
-    "macOS users \u2014 NVIDIA CUDA requires Windows or Linux"
+    "Buyers who want the latest Blackwell architecture — this is Ada Lovelace (previous gen)",
+    "Anyone running 70B+ models — 16GB still requires CPU offload for 70B Q4 (~40GB)",
+    "Mini ITX builders — 285W TDP and triple-slot cooler need full ATX airflow",
+    "macOS users — NVIDIA CUDA requires Windows or Linux"
   ],
   "entityHeadline": "RTX 4070 Ti Super 16GB: Ada Lovelace at 672 GB/s for 13B Q8 Inference",
   "faq": [
     {
       "question": "How does the RTX 4070 Ti Super compare to the RTX 5070 for AI?",
-      "answer": "Both cards share the same 672 GB/s memory bandwidth, so token generation speed is nearly identical \u2014 roughly 105 t/s vs 118 t/s on Llama 3.1 8B, with the RTX 5070's advantage coming from Blackwell's newer Tensor Cores. The key difference is VRAM: the 4070 Ti Super has 16GB vs 12GB on the RTX 5070, enabling 13B Q8 models. If model size matters more than top-end inference speed, the 4070 Ti Super wins on value."
+      "answer": "Both cards share the same 672 GB/s memory bandwidth, so token generation speed is nearly identical — roughly 105 t/s vs 118 t/s on Llama 3.1 8B, with the RTX 5070's advantage coming from Blackwell's newer Tensor Cores. The key difference is VRAM: the 4070 Ti Super has 16GB vs 12GB on the RTX 5070, enabling 13B Q8 models. If model size matters more than top-end inference speed, the 4070 Ti Super wins on value."
     },
     {
       "question": "Can the RTX 4070 Ti Super run 13B models at full quality?",
@@ -71,7 +71,8 @@
     },
     {
       "question": "Is a 750W PSU enough for the RTX 4070 Ti Super?",
-      "answer": "Yes, in most builds. The 285W TDP combined with a typical gaming/AI CPU (65\u2013125W) and other components generally stays within a quality 750W PSU's comfortable range. For sustained 24/7 AI inference workloads, 850W provides better headroom and reduces PSU stress."
+      "answer": "Yes, in most builds. The 285W TDP combined with a typical gaming/AI CPU (65–125W) and other components generally stays within a quality 750W PSU's comfortable range. For sustained 24/7 AI inference workloads, 850W provides better headroom and reduces PSU stress."
     }
-  ]
+  ],
+  "price": 699
 }

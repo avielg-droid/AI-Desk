@@ -91,5 +91,6 @@
     "MacOS-only households — NVIDIA requires Windows or Linux",
     "Running 70B+ models — 12 GB VRAM won't fit them even at Q4"
   ],
-  "entityHeadline": "Running Llama 3.1 8B on the RTX 5070: 118 Tokens Per Second"
+  "entityHeadline": "Running Llama 3.1 8B on the RTX 5070: 118 Tokens Per Second",
+  "price": 599
 }

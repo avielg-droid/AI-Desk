@@ -5,7 +5,7 @@
   "name": "GEEKOM IT12 Mini PC (Intel i5-12450H)",
   "category": "mini-pc",
   "brand": "GEEKOM",
-  "shortDescription": "The GEEKOM IT12 is a business-grade mini PC with Intel Core i5-12450H and Intel Iris Xe Graphics, running local 7B\u201313B LLMs via Ollama. With 16GB DDR4, a 3-year warranty, and WiFi 6E, it is one of the best-built compact AI inference machines under $400 in 2026.",
+  "shortDescription": "The GEEKOM IT12 is a business-grade mini PC with Intel Core i5-12450H and Intel Iris Xe Graphics, running local 7B–13B LLMs via Ollama. With 16GB DDR4, a 3-year warranty, and WiFi 6E, it is one of the best-built compact AI inference machines under $400 in 2026.",
   "specs": {
     "chip": "Intel Core i5-12450H (12th Gen Alder Lake)",
     "cpu_cores": 8,
@@ -21,26 +21,26 @@
     "cooling": "Single-fan active"
   },
   "useCases": [
-    "Local LLM inference via Ollama (7B\u201313B models)",
+    "Local LLM inference via Ollama (7B–13B models)",
     "Intel Iris Xe GPU-accelerated AI with OpenVINO",
     "Always-on private AI assistant",
     "Windows 11 Pro AI development workstation",
     "Business desktop replacement with AI capabilities"
   ],
   "pros": [
-    "3-year warranty \u2014 best-in-class support for a mini PC",
-    "Intel Iris Xe with 96 EUs \u2014 faster iGPU than N95 or basic UHD for AI",
+    "3-year warranty — best-in-class support for a mini PC",
+    "Intel Iris Xe with 96 EUs — faster iGPU than N95 or basic UHD for AI",
     "16GB DDR4 supports 7B at full precision, 13B at Q4",
-    "WiFi 6E and 2.5Gbps Ethernet \u2014 ideal for a home AI server",
+    "WiFi 6E and 2.5Gbps Ethernet — ideal for a home AI server",
     "Upgradeable RAM and storage via SO-DIMM and M.2 slots"
   ],
   "cons": [
     "Iris Xe iGPU is too slow for Stable Diffusion at usable quality",
     "51 GB/s bandwidth limits LLM inference vs Apple Silicon",
-    "Intel OpenVINO required for iGPU acceleration \u2014 not plug-and-play",
-    "Windows only \u2014 no native macOS Ollama Metal acceleration"
+    "Intel OpenVINO required for iGPU acceleration — not plug-and-play",
+    "Windows only — no native macOS Ollama Metal acceleration"
   ],
-  "verdict": "The GEEKOM IT12 earns its reputation as a reliable business mini PC that moonlights as a local AI node. The i5-12450H handles 7B models smoothly at 8\u201315 tokens/second via CPU, and Intel Iris Xe can accelerate OpenVINO-compatible models. The 3-year warranty sets it apart from budget brands. For a dependable, always-on AI assistant that also handles everyday computing, the IT12 is an excellent choice.",
+  "verdict": "The GEEKOM IT12 earns its reputation as a reliable business mini PC that moonlights as a local AI node. The i5-12450H handles 7B models smoothly at 8–15 tokens/second via CPU, and Intel Iris Xe can accelerate OpenVINO-compatible models. The 3-year warranty sets it apart from budget brands. For a dependable, always-on AI assistant that also handles everyday computing, the IT12 is an excellent choice.",
   "affiliateUrl": "https://amzn.to/3QkyGQ2",
   "rating": 4.4,
   "reviewCount": 1,
@@ -50,7 +50,7 @@
   "faq": [
     {
       "question": "Can the GEEKOM IT12 run local LLMs?",
-      "answer": "Yes. Using Ollama on Windows 11 Pro, the IT12 runs Llama 3.1 8B at approximately 8\u201315 tokens/second via the i5-12450H CPU. For OpenVINO-optimized models, the Intel Iris Xe iGPU can push this higher. 13B Q4 models run at 4\u20138 tokens/second. Not fast by GPU standards, but reliable and consistent."
+      "answer": "Yes. Using Ollama on Windows 11 Pro, the IT12 runs Llama 3.1 8B at approximately 8–15 tokens/second via the i5-12450H CPU. For OpenVINO-optimized models, the Intel Iris Xe iGPU can push this higher. 13B Q4 models run at 4–8 tokens/second. Not fast by GPU standards, but reliable and consistent."
     },
     {
       "question": "What makes the GEEKOM IT12 different from other budget mini PCs?",
@@ -58,7 +58,7 @@
     },
     {
       "question": "Can the GEEKOM IT12 run Stable Diffusion?",
-      "answer": "Technically yes, but slowly. The Intel Iris Xe iGPU with DirectML on Windows can run SD 1.5 at 512\u00d7512, but expect 30\u201360 seconds per image. SDXL is impractical. For image generation, a dedicated GPU is strongly recommended."
+      "answer": "Technically yes, but slowly. The Intel Iris Xe iGPU with DirectML on Windows can run SD 1.5 at 512×512, but expect 30–60 seconds per image. SDXL is impractical. For image generation, a dedicated GPU is strongly recommended."
     }
   ],
   "crossSells": [
@@ -67,10 +67,11 @@
     "owc-envoy-express"
   ],
   "notFor": [
-    "Anyone who wants fast LLM responses \u2014 CPU inference at 12 t/s feels sluggish for interactive chat",
-    "Stable Diffusion \u2014 no discrete GPU means SDXL takes minutes per image",
-    "Running 13B+ models \u2014 32 GB RAM is sufficient but CPU speed is the bottleneck",
-    "Power users who benchmark hardware \u2014 this is a convenience buy, not a performance buy"
+    "Anyone who wants fast LLM responses — CPU inference at 12 t/s feels sluggish for interactive chat",
+    "Stable Diffusion — no discrete GPU means SDXL takes minutes per image",
+    "Running 13B+ models — 32 GB RAM is sufficient but CPU speed is the bottleneck",
+    "Power users who benchmark hardware — this is a convenience buy, not a performance buy"
   ],
-  "entityHeadline": "Running Ollama on the GEEKOM IT12: Always-On Local AI Without a GPU"
+  "entityHeadline": "Running Ollama on the GEEKOM IT12: Always-On Local AI Without a GPU",
+  "price": 499
 }

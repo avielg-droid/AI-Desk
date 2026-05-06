@@ -5,7 +5,7 @@
   "name": "Cable Matters Intel Certified Thunderbolt 5 Cable (3.3ft)",
   "category": "accessory",
   "brand": "Cable Matters",
-  "shortDescription": "The Cable Matters Thunderbolt 5 cable delivers 80Gbps bidirectional data and up to 120Gbps video bandwidth \u2014 Intel Certified for full TB5 compliance. Essential for Mac Mini M4 Pro users connecting external NVMe drives or high-bandwidth displays without bottlenecking data pipelines.",
+  "shortDescription": "The Cable Matters Thunderbolt 5 cable delivers 80Gbps bidirectional data and up to 120Gbps video bandwidth — Intel Certified for full TB5 compliance. Essential for Mac Mini M4 Pro users connecting external NVMe drives or high-bandwidth displays without bottlenecking data pipelines.",
   "specs": {
     "interface": "Thunderbolt 5 / USB4 40Gbps compatible",
     "memory_bandwidth_gbps": 80,
@@ -19,18 +19,18 @@
     "Daisy-chaining Thunderbolt peripherals without bottlenecking"
   ],
   "pros": [
-    "Intel Certified \u2014 guaranteed full TB5 spec compliance",
+    "Intel Certified — guaranteed full TB5 spec compliance",
     "80Gbps bidirectional + 120Gbps video boost mode",
-    "240W Power Delivery \u2014 charges MacBooks and laptops simultaneously",
+    "240W Power Delivery — charges MacBooks and laptops simultaneously",
     "Backward compatible with USB4, TB4, TB3, USB 3.x",
-    "Compact 3.3ft length \u2014 ideal for desk setups"
+    "Compact 3.3ft length — ideal for desk setups"
   ],
   "cons": [
-    "3.3ft may be short for some desk layouts \u2014 longer runs need active cables",
-    "TB5 host required for full 80Gbps \u2014 USB4 hosts cap at 40Gbps",
+    "3.3ft may be short for some desk layouts — longer runs need active cables",
+    "TB5 host required for full 80Gbps — USB4 hosts cap at 40Gbps",
     "Premium price over standard USB-C cables"
   ],
-  "verdict": "If you own a Mac Mini M4 Pro or any Thunderbolt 5 host, this cable is non-negotiable for external NVMe storage. Standard USB-C cables cap at 10\u201320Gbps and will bottleneck your external drive's read speeds when loading large LLMs or datasets. The Cable Matters TB5 cable delivers the full 80Gbps the M4 Pro's port is capable of \u2014 Intel Certification means no compatibility surprises.",
+  "verdict": "If you own a Mac Mini M4 Pro or any Thunderbolt 5 host, this cable is non-negotiable for external NVMe storage. Standard USB-C cables cap at 10–20Gbps and will bottleneck your external drive's read speeds when loading large LLMs or datasets. The Cable Matters TB5 cable delivers the full 80Gbps the M4 Pro's port is capable of — Intel Certification means no compatibility surprises.",
   "affiliateUrl": "https://amzn.to/4ucxGfv",
   "rating": 4.7,
   "reviewCount": 1,
@@ -45,7 +45,7 @@
   "faq": [
     {
       "question": "Does the Cable Matters TB5 cable work with Mac Mini M4 Pro?",
-      "answer": "Yes. The Mac Mini M4 Pro has three Thunderbolt 5 ports that support up to 120Gbps video and 80Gbps data. This Intel Certified cable unlocks the full bandwidth of those ports. For external NVMe drives, you'll see real-world read speeds of 3,000\u20136,000 MB/s vs 1,000\u20131,200 MB/s with a standard USB-C cable."
+      "answer": "Yes. The Mac Mini M4 Pro has three Thunderbolt 5 ports that support up to 120Gbps video and 80Gbps data. This Intel Certified cable unlocks the full bandwidth of those ports. For external NVMe drives, you'll see real-world read speeds of 3,000–6,000 MB/s vs 1,000–1,200 MB/s with a standard USB-C cable."
     },
     {
       "question": "Is Thunderbolt 5 backward compatible with older Thunderbolt cables?",
@@ -53,13 +53,14 @@
     },
     {
       "question": "Why do I need a special cable for AI workloads?",
-      "answer": "Large language models like Llama 3 70B occupy 39\u201380GB of storage. Loading a model from an external drive over a standard USB-C cable (10Gbps) takes 30\u201360 seconds. Over TB5 at 80Gbps, the same load completes in 3\u20136 seconds. For workflows that frequently switch between models, this difference adds up significantly over a session."
+      "answer": "Large language models like Llama 3 70B occupy 39–80GB of storage. Loading a model from an external drive over a standard USB-C cable (10Gbps) takes 30–60 seconds. Over TB5 at 80Gbps, the same load completes in 3–6 seconds. For workflows that frequently switch between models, this difference adds up significantly over a session."
     }
   ],
   "notFor": [
-    "USB-A only setups \u2014 requires Thunderbolt 5 or USB4 ports on both devices",
-    "Budget-conscious buyers who just need USB-C data transfer \u2014 massive overkill",
-    "Anyone with Thunderbolt 3 or 4 only \u2014 you won't get the 80 Gbps speeds"
+    "USB-A only setups — requires Thunderbolt 5 or USB4 ports on both devices",
+    "Budget-conscious buyers who just need USB-C data transfer — massive overkill",
+    "Anyone with Thunderbolt 3 or 4 only — you won't get the 80 Gbps speeds"
   ],
-  "entityHeadline": "Connecting an eGPU for AI Inference: Why Thunderbolt 5 Bandwidth Matters"
+  "entityHeadline": "Connecting an eGPU for AI Inference: Why Thunderbolt 5 Bandwidth Matters",
+  "price": 39
 }

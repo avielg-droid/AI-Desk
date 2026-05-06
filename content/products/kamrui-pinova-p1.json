@@ -5,7 +5,7 @@
   "name": "KAMRUI Pinova P1 Mini PC (AMD Ryzen 4300U)",
   "category": "mini-pc",
   "brand": "KAMRUI",
-  "shortDescription": "The KAMRUI Pinova P1 is an affordable AMD mini PC for entry-level local AI inference. Powered by the Ryzen 4300U with 16GB DDR4 and 512GB SSD, it runs 7B LLMs via Ollama on Windows 11 Pro and supports triple 4K display output \u2014 in a compact black chassis with orange accents.",
+  "shortDescription": "The KAMRUI Pinova P1 is an affordable AMD mini PC for entry-level local AI inference. Powered by the Ryzen 4300U with 16GB DDR4 and 512GB SSD, it runs 7B LLMs via Ollama on Windows 11 Pro and supports triple 4K display output — in a compact black chassis with orange accents.",
   "specs": {
     "chip": "AMD Ryzen 3 4300U (Zen 2, 4C/4T)",
     "cpu_cores": 4,
@@ -28,16 +28,16 @@
     "Entry-level AI experimentation"
   ],
   "pros": [
-    "Competitive pricing \u2014 one of the most affordable AMD mini PCs",
+    "Competitive pricing — one of the most affordable AMD mini PCs",
     "16GB DDR4 runs 7B models comfortably, 13B Q4 with tight margins",
-    "Triple 4K display support \u2014 HDMI + DP + USB-C",
-    "28W TDP \u2014 energy-efficient for 24/7 always-on operation",
-    "Windows 11 Pro included \u2014 full compatibility with Ollama and LM Studio"
+    "Triple 4K display support — HDMI + DP + USB-C",
+    "28W TDP — energy-efficient for 24/7 always-on operation",
+    "Windows 11 Pro included — full compatibility with Ollama and LM Studio"
   ],
   "cons": [
-    "Ryzen 4300U is a 2020 Zen 2 chip \u2014 older than current-gen alternatives",
+    "Ryzen 4300U is a 2020 Zen 2 chip — older than current-gen alternatives",
     "Vega 5 iGPU provides no meaningful AI GPU acceleration",
-    "5\u20138 tokens/second on 7B models \u2014 slow for interactive use",
+    "5–8 tokens/second on 7B models — slow for interactive use",
     "Limited upgrade path compared to SO-DIMM desktop-class designs"
   ],
   "verdict": "The KAMRUI Pinova P1 is a no-frills budget entry point to local AI. It does what it promises: runs 7B models offline and privately at a low price. The Ryzen 4300U is dated by 2026 standards, so if you plan to use it heavily for AI, consider saving for the KAMRUI Hyper H2 which delivers significantly better performance. The P1 makes sense for an always-on lightweight assistant that does not need to be fast.",
@@ -50,11 +50,11 @@
   "faq": [
     {
       "question": "Can the KAMRUI Pinova P1 run local LLMs?",
-      "answer": "Yes. Using Ollama on Windows 11 Pro, the Pinova P1 runs Llama 3.1 8B at approximately 5\u20138 tokens/second using the Ryzen 4300U CPU. 13B Q4 models run at 3\u20135 tokens/second. It works for a private offline chatbot but is not suitable for fast, interactive sessions."
+      "answer": "Yes. Using Ollama on Windows 11 Pro, the Pinova P1 runs Llama 3.1 8B at approximately 5–8 tokens/second using the Ryzen 4300U CPU. 13B Q4 models run at 3–5 tokens/second. It works for a private offline chatbot but is not suitable for fast, interactive sessions."
     },
     {
       "question": "How does the KAMRUI Pinova P1 compare to the KAMRUI Hyper H2?",
-      "answer": "The Hyper H2 has a 10-core Intel Core 14450HX that is 40\u201360% faster for LLM inference than the P1's 4-core Ryzen 4300U. If you want the fastest CPU-only mini PC for local AI, the Hyper H2 is the clear choice. The P1 costs less and uses less power, making it better for lightweight always-on use cases."
+      "answer": "The Hyper H2 has a 10-core Intel Core 14450HX that is 40–60% faster for LLM inference than the P1's 4-core Ryzen 4300U. If you want the fastest CPU-only mini PC for local AI, the Hyper H2 is the clear choice. The P1 costs less and uses less power, making it better for lightweight always-on use cases."
     }
   ],
   "crossSells": [
@@ -63,10 +63,11 @@
     "owc-envoy-express"
   ],
   "notFor": [
-    "Interactive chat \u2014 8 t/s is too slow for real-time back-and-forth",
-    "Any model larger than 7B \u2014 only 16 GB RAM limits your options",
-    "Stable Diffusion \u2014 no GPU acceleration",
-    "Anyone who can spend $100 more \u2014 the Hyper H2 offers significantly better specs"
+    "Interactive chat — 8 t/s is too slow for real-time back-and-forth",
+    "Any model larger than 7B — only 16 GB RAM limits your options",
+    "Stable Diffusion — no GPU acceleration",
+    "Anyone who can spend $100 more — the Hyper H2 offers significantly better specs"
   ],
-  "entityHeadline": "Running TinyLlama on the KAMRUI Pinova P1: Local AI Under $230"
+  "entityHeadline": "Running TinyLlama on the KAMRUI Pinova P1: Local AI Under $230",
+  "price": 299
 }

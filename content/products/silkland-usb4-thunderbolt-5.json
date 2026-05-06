@@ -5,7 +5,7 @@
   "name": "Silkland USB4 / Thunderbolt 5 Braided Cable",
   "category": "accessory",
   "brand": "Silkland",
-  "shortDescription": "The Silkland USB4 / Thunderbolt 5 braided cable delivers 80Gbps data and 120Gbps display bandwidth with 240W charging \u2014 USB-IF Certified. The reinforced braided sleeve makes it the durable choice for users who move their setup frequently or need tight cable management.",
+  "shortDescription": "The Silkland USB4 / Thunderbolt 5 braided cable delivers 80Gbps data and 120Gbps display bandwidth with 240W charging — USB-IF Certified. The reinforced braided sleeve makes it the durable choice for users who move their setup frequently or need tight cable management.",
   "specs": {
     "interface": "USB4 / Thunderbolt 5 compatible",
     "memory_bandwidth_gbps": 80,
@@ -19,18 +19,18 @@
     "Tight cable management builds"
   ],
   "pros": [
-    "Braided sleeve \u2014 significantly more durable than standard TPE cables",
-    "USB-IF Certified \u2014 verified 80Gbps compliance",
+    "Braided sleeve — significantly more durable than standard TPE cables",
+    "USB-IF Certified — verified 80Gbps compliance",
     "80Gbps data + 120Gbps video bandwidth + 240W PD",
     "Flexible braid makes cable management easier",
-    "USB4 universal compatibility \u2014 works with TB5, TB4, TB3, USB 3.x hosts"
+    "USB4 universal compatibility — works with TB5, TB4, TB3, USB 3.x hosts"
   ],
   "cons": [
-    "Braided cables are stiffer than rubber \u2014 less flexible at tight angles",
+    "Braided cables are stiffer than rubber — less flexible at tight angles",
     "USB4 host required for full 80Gbps (not Intel TB5 Certified)",
     "Slightly thicker than standard cables"
   ],
-  "verdict": "The Silkland braided USB4 cable is the everyday workhorse alternative to the Cable Matters TB5. Same 80Gbps / 240W spec, rugged braided build that survives years of plug-unplug cycles. The choice between this and the Cable Matters comes down to use case: static desk setup \u2192 Cable Matters. Frequently moved setup or tight cable management \u2192 Silkland braided.",
+  "verdict": "The Silkland braided USB4 cable is the everyday workhorse alternative to the Cable Matters TB5. Same 80Gbps / 240W spec, rugged braided build that survives years of plug-unplug cycles. The choice between this and the Cable Matters comes down to use case: static desk setup → Cable Matters. Frequently moved setup or tight cable management → Silkland braided.",
   "affiliateUrl": "https://amzn.to/4tqzjWN",
   "rating": 4.6,
   "reviewCount": 1,
@@ -53,9 +53,10 @@
     }
   ],
   "notFor": [
-    "Mac Mini M4 Pro users who need maximum bandwidth \u2014 the Cable Matters TB5 cable is a better match",
+    "Mac Mini M4 Pro users who need maximum bandwidth — the Cable Matters TB5 cable is a better match",
     "Short-run setups where premium cables are unnecessary",
-    "Anyone using USB 3.x devices \u2014 you're paying for bandwidth you won't use"
+    "Anyone using USB 3.x devices — you're paying for bandwidth you won't use"
   ],
-  "entityHeadline": "Maximizing AI Data Transfer Between NAS and Mini PC with USB4"
+  "entityHeadline": "Maximizing AI Data Transfer Between NAS and Mini PC with USB4",
+  "price": 29
 }

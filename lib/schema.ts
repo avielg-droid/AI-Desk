@@ -6,6 +6,7 @@ export function buildProductSchema(product: Product) {
     '@type': 'Product',
     name: product.name,
     description: product.shortDescription,
+    image: product.image ? `https://ai-desk.tech${product.image}` : undefined,
     brand: {
       '@type': 'Brand',
       name: product.brand,
@@ -15,14 +16,45 @@ export function buildProductSchema(product: Product) {
       url: product.affiliateUrl,
       availability: 'https://schema.org/InStock',
       priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'USD',
-        description: 'See current price on Amazon',
-      },
+      ...(product.price != null && { price: product.price }),
       seller: {
         '@type': 'Organization',
         name: 'Amazon',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0',
+          currency: 'USD',
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 1,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 5,
+            unitCode: 'DAY',
+          },
+        },
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        returnMethod: 'https://schema.org/ReturnByMail',
+        returnFees: 'https://schema.org/FreeReturn',
       },
     },
     review: {

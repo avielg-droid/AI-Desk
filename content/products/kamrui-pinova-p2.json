@@ -5,7 +5,7 @@
   "name": "KAMRUI Pinova P2 Mini PC (AMD Ryzen 4300U)",
   "category": "mini-pc",
   "brand": "KAMRUI",
-  "shortDescription": "The KAMRUI Pinova P2 is a compact silver AMD mini PC for entry-level local AI inference. Powered by the Ryzen 4300U with 16GB LPDDR4 and 512GB SSD, it runs 7B LLMs via Ollama and supports triple 4K display output \u2014 all in a compact silver chassis at a budget-friendly price.",
+  "shortDescription": "The KAMRUI Pinova P2 is a compact silver AMD mini PC for entry-level local AI inference. Powered by the Ryzen 4300U with 16GB LPDDR4 and 512GB SSD, it runs 7B LLMs via Ollama and supports triple 4K display output — all in a compact silver chassis at a budget-friendly price.",
   "specs": {
     "chip": "AMD Ryzen 3 4300U (Zen 2, 4C/4T)",
     "cpu_cores": 4,
@@ -29,18 +29,18 @@
   ],
   "pros": [
     "Silver premium-looking design at a budget price",
-    "16GB LPDDR4 \u2014 enough for 7B models and light 13B Q4 inference",
+    "16GB LPDDR4 — enough for 7B models and light 13B Q4 inference",
     "Triple 4K display via HDMI + DP + USB-C Type-C",
-    "28W TDP \u2014 quiet and energy-efficient for always-on use",
-    "Compact footprint \u2014 fits on any desk or behind a monitor"
+    "28W TDP — quiet and energy-efficient for always-on use",
+    "Compact footprint — fits on any desk or behind a monitor"
   ],
   "cons": [
-    "Ryzen 4300U is a 2020 Zen 2 chip \u2014 older architecture than competitors",
+    "Ryzen 4300U is a 2020 Zen 2 chip — older architecture than competitors",
     "Vega 5 iGPU too weak for meaningful AI GPU acceleration",
     "34 GB/s memory bandwidth limits LLM tokens-per-second",
-    "LPDDR4 is soldered \u2014 not upgradeable unlike some SO-DIMM competitors"
+    "LPDDR4 is soldered — not upgradeable unlike some SO-DIMM competitors"
   ],
-  "verdict": "The KAMRUI Pinova P2 occupies the budget tier alongside the P1 \u2014 same Ryzen 4300U chip, different chassis. The silver design is a nice touch. At 5\u20138 tokens/second for 7B models, it is not fast, but it runs privately and locally without a subscription. Choose the Hyper H2 if you need more speed; choose the P2 if budget and aesthetics are the priority.",
+  "verdict": "The KAMRUI Pinova P2 occupies the budget tier alongside the P1 — same Ryzen 4300U chip, different chassis. The silver design is a nice touch. At 5–8 tokens/second for 7B models, it is not fast, but it runs privately and locally without a subscription. Choose the Hyper H2 if you need more speed; choose the P2 if budget and aesthetics are the priority.",
   "affiliateUrl": "https://amzn.to/3OKRreN",
   "rating": 4.0,
   "reviewCount": 1,
@@ -50,7 +50,7 @@
   "faq": [
     {
       "question": "Can the KAMRUI Pinova P2 run local LLMs?",
-      "answer": "Yes. Using Ollama on Windows 11 Pro, the Pinova P2 runs Llama 3.1 8B at approximately 5\u20138 tokens/second via the Ryzen 4300U CPU. 13B Q4 models run at 3\u20135 tokens/second. This is functional for offline chatbot use but noticeably slower than Intel Core 14450HX alternatives."
+      "answer": "Yes. Using Ollama on Windows 11 Pro, the Pinova P2 runs Llama 3.1 8B at approximately 5–8 tokens/second via the Ryzen 4300U CPU. 13B Q4 models run at 3–5 tokens/second. This is functional for offline chatbot use but noticeably slower than Intel Core 14450HX alternatives."
     },
     {
       "question": "What is the difference between the KAMRUI Pinova P1 and P2?",
@@ -63,10 +63,11 @@
     "owc-envoy-express"
   ],
   "notFor": [
-    "Real-time chat \u2014 9 t/s is below the interactive threshold",
-    "Running models larger than 7B comfortably \u2014 16 GB is the hard ceiling",
-    "Stable Diffusion \u2014 no GPU",
-    "Primary workstation \u2014 the N150 processor is efficient, not powerful"
+    "Real-time chat — 9 t/s is below the interactive threshold",
+    "Running models larger than 7B comfortably — 16 GB is the hard ceiling",
+    "Stable Diffusion — no GPU",
+    "Primary workstation — the N150 processor is efficient, not powerful"
   ],
-  "entityHeadline": "Running Llama 3.2 3B on the KAMRUI Pinova P2: The Cheapest Local AI Entry Point"
+  "entityHeadline": "Running Llama 3.2 3B on the KAMRUI Pinova P2: The Cheapest Local AI Entry Point",
+  "price": 349
 }

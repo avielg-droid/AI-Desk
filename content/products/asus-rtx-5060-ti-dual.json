@@ -5,7 +5,7 @@
   "name": "ASUS Dual GeForce RTX 5060 Ti OC 16GB GDDR7",
   "category": "gpu",
   "brand": "ASUS",
-  "shortDescription": "The ASUS Dual RTX 5060 Ti 16GB brings Blackwell architecture and 16GB GDDR7 to the entry-level discrete GPU tier \u2014 the only way to get 16GB VRAM at this price point in 2026. For local AI builders who need 13B model headroom on a tight budget, it runs SDXL and quantized LLMs fully in VRAM while staying under 180W.",
+  "shortDescription": "The ASUS Dual RTX 5060 Ti 16GB brings Blackwell architecture and 16GB GDDR7 to the entry-level discrete GPU tier — the only way to get 16GB VRAM at this price point in 2026. For local AI builders who need 13B model headroom on a tight budget, it runs SDXL and quantized LLMs fully in VRAM while staying under 180W.",
   "specs": {
     "chip": "NVIDIA GeForce RTX 5060 Ti (Blackwell)",
     "architecture": "NVIDIA Blackwell (GB206)",
@@ -21,27 +21,27 @@
     "cooling": "Dual-fan active (Axial-tech, 2.5-slot)"
   },
   "useCases": [
-    "Entry-level local LLM inference \u2014 7B at FP16, 13B at Q4 fully in 16GB VRAM",
+    "Entry-level local LLM inference — 7B at FP16, 13B at Q4 fully in 16GB VRAM",
     "Stable Diffusion XL and FLUX.1 schnell image generation",
     "ComfyUI workflows on a GPU budget",
     "Whisper transcription and audio AI tasks",
     "DLSS 4 upscaling and AI image enhancement"
   ],
   "pros": [
-    "16GB GDDR7 \u2014 the largest VRAM at this price tier, runs 13B Q4 fully in GPU memory",
-    "Blackwell 5th-Gen Tensor Cores \u2014 more efficient per watt than previous-gen Ada",
-    "180W TDP \u2014 works comfortably with a 650W PSU, easy to cool",
-    "2.5-slot Axial-tech design \u2014 fits compact mid-tower and mATX cases",
-    "0dB fan technology \u2014 completely silent at idle and light load",
-    "DLSS 4 support \u2014 future-proof for AI-upscaled gaming and rendering"
+    "16GB GDDR7 — the largest VRAM at this price tier, runs 13B Q4 fully in GPU memory",
+    "Blackwell 5th-Gen Tensor Cores — more efficient per watt than previous-gen Ada",
+    "180W TDP — works comfortably with a 650W PSU, easy to cool",
+    "2.5-slot Axial-tech design — fits compact mid-tower and mATX cases",
+    "0dB fan technology — completely silent at idle and light load",
+    "DLSS 4 support — future-proof for AI-upscaled gaming and rendering"
   ],
   "cons": [
-    "448 GB/s bandwidth \u2014 roughly half the RTX 5070's 672 GB/s, noticeably slower inference",
-    "78 t/s on 7B \u2014 functional but 30% slower than RTX 5070 for interactive AI chat",
-    "13B Q4 only \u2014 higher quantization levels don't fit; 13B Q8 needs 16GB but ~14GB fits tightly",
-    "No 70B support \u2014 even Q4 70B models (~40GB) are far beyond this VRAM capacity"
+    "448 GB/s bandwidth — roughly half the RTX 5070's 672 GB/s, noticeably slower inference",
+    "78 t/s on 7B — functional but 30% slower than RTX 5070 for interactive AI chat",
+    "13B Q4 only — higher quantization levels don't fit; 13B Q8 needs 16GB but ~14GB fits tightly",
+    "No 70B support — even Q4 70B models (~40GB) are far beyond this VRAM capacity"
   ],
-  "verdict": "The ASUS Dual RTX 5060 Ti 16GB is the best entry point into discrete GPU local AI in 2026. The 16GB GDDR7 is the headline \u2014 no other GPU at this price tier offers this much VRAM \u2014 and Blackwell's efficiency means it runs 13B Q4 LLMs and SDXL image generation on a 650W system. The 448 GB/s bandwidth is a meaningful step down from the RTX 5070, but for users building their first AI rig or upgrading from an iGPU, the jump in inference speed and model capability is substantial.",
+  "verdict": "The ASUS Dual RTX 5060 Ti 16GB is the best entry point into discrete GPU local AI in 2026. The 16GB GDDR7 is the headline — no other GPU at this price tier offers this much VRAM — and Blackwell's efficiency means it runs 13B Q4 LLMs and SDXL image generation on a 650W system. The 448 GB/s bandwidth is a meaningful step down from the RTX 5070, but for users building their first AI rig or upgrading from an iGPU, the jump in inference speed and model capability is substantial.",
   "affiliateUrl": "https://amzn.to/4vYvb1O",
   "rating": 4.4,
   "reviewCount": 1,
@@ -54,24 +54,25 @@
     "gpu-brace-support"
   ],
   "notFor": [
-    "Heavy 13B+ users \u2014 bandwidth limits make 13B inference noticeably slower than RTX 5070",
-    "70B model users \u2014 40GB required far exceeds this card's 16GB",
-    "High-volume FLUX.1 generation \u2014 3.8s per image adds up in batch workflows",
-    "macOS users \u2014 NVIDIA CUDA requires Windows or Linux"
+    "Heavy 13B+ users — bandwidth limits make 13B inference noticeably slower than RTX 5070",
+    "70B model users — 40GB required far exceeds this card's 16GB",
+    "High-volume FLUX.1 generation — 3.8s per image adds up in batch workflows",
+    "macOS users — NVIDIA CUDA requires Windows or Linux"
   ],
   "entityHeadline": "ASUS RTX 5060 Ti 16GB: The Most Affordable GPU for 13B Local LLM Inference",
   "faq": [
     {
       "question": "How does the RTX 5060 Ti 16GB compare to the RTX 5070 12GB for AI?",
-      "answer": "The RTX 5070 12GB is significantly faster \u2014 672 GB/s vs 448 GB/s bandwidth means roughly 50% more tokens per second. However, the RTX 5060 Ti wins on VRAM: 16GB vs 12GB, enabling 13B Q4 models the RTX 5070 can only run by compressing more aggressively. Choose the RTX 5060 Ti if running 13B models at any quality matters more than speed. Choose the RTX 5070 for faster 7B\u201313B Q4 inference."
+      "answer": "The RTX 5070 12GB is significantly faster — 672 GB/s vs 448 GB/s bandwidth means roughly 50% more tokens per second. However, the RTX 5060 Ti wins on VRAM: 16GB vs 12GB, enabling 13B Q4 models the RTX 5070 can only run by compressing more aggressively. Choose the RTX 5060 Ti if running 13B models at any quality matters more than speed. Choose the RTX 5070 for faster 7B–13B Q4 inference."
     },
     {
       "question": "Can the RTX 5060 Ti 16GB run FLUX.1?",
-      "answer": "Yes. FLUX.1 schnell (fast mode) runs comfortably in 16GB VRAM and generates 1024\u00d71024 images in approximately 4\u20135 seconds. FLUX.1 dev (higher quality) also fits within 16GB for standard resolutions. For faster FLUX.1 generation, the RTX 5070 or 5080 offer meaningful speed improvements."
+      "answer": "Yes. FLUX.1 schnell (fast mode) runs comfortably in 16GB VRAM and generates 1024×1024 images in approximately 4–5 seconds. FLUX.1 dev (higher quality) also fits within 16GB for standard resolutions. For faster FLUX.1 generation, the RTX 5070 or 5080 offer meaningful speed improvements."
     },
     {
       "question": "What PSU is needed for the RTX 5060 Ti?",
-      "answer": "A 650W 80+ Gold PSU is sufficient for most RTX 5060 Ti systems. The 180W TDP combined with a mid-range CPU (65\u201395W) stays well within a 650W unit's comfortable range, even under sustained AI inference load."
+      "answer": "A 650W 80+ Gold PSU is sufficient for most RTX 5060 Ti systems. The 180W TDP combined with a mid-range CPU (65–95W) stays well within a 650W unit's comfortable range, even under sustained AI inference load."
     }
-  ]
+  ],
+  "price": 499
 }

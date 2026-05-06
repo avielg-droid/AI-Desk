@@ -1,10 +1,10 @@
 {
   "slug": "gpu-brace-support",
   "asin": "B0DPPYB2QF",
-  "name": "GPU Anti-Sag Bracket with Magnet & Non-Slip Base (74\u2013120mm)",
+  "name": "GPU Anti-Sag Bracket with Magnet & Non-Slip Base (74–120mm)",
   "category": "accessory",
   "brand": "Generic",
-  "shortDescription": "Adjustable GPU sag bracket with magnetic base and non-slip sheet. Fits GPUs 74\u2013120mm wide. Supports heavy triple-fan cards like the RTX 5070 and RX 9060 XT during sustained AI inference runs.",
+  "shortDescription": "Adjustable GPU sag bracket with magnetic base and non-slip sheet. Fits GPUs 74–120mm wide. Supports heavy triple-fan cards like the RTX 5070 and RX 9060 XT during sustained AI inference runs.",
   "specs": {
     "interface": "Universal PCIe GPU support",
     "form_factor": "Accessory"
@@ -16,18 +16,18 @@
     "Any PC build with a heavy dual or triple-slot GPU"
   ],
   "pros": [
-    "Adjustable height \u2014 fits most mid and full tower cases",
-    "Aluminum build \u2014 rigid support without adding excess weight",
-    "Anti-slip magnetic base \u2014 stays in position during vibrations",
+    "Adjustable height — fits most mid and full tower cases",
+    "Aluminum build — rigid support without adding excess weight",
+    "Anti-slip magnetic base — stays in position during vibrations",
     "Cheap insurance against expensive PCIe slot damage",
     "Tool-free installation"
   ],
   "cons": [
-    "Aesthetic impact in windowed cases \u2014 visible hardware",
+    "Aesthetic impact in windowed cases — visible hardware",
     "Not needed for lighter single-slot or blower-style GPUs",
     "Magnetic base may not adhere well to plastic case floors"
   ],
-  "verdict": "A $10\u201315 accessory that protects a $400+ GPU investment. Modern AI GPUs like the RTX 5070 and RX 9060 XT have large, heavy triple-fan heatsinks. During sustained inference \u2014 fans at high RPM for hours \u2014 micro-vibrations accelerate PCIe slot fatigue. GPU sag causes intermittent connection issues and, over time, bent slots. Get the brace when you get the GPU.",
+  "verdict": "A $10–15 accessory that protects a $400+ GPU investment. Modern AI GPUs like the RTX 5070 and RX 9060 XT have large, heavy triple-fan heatsinks. During sustained inference — fans at high RPM for hours — micro-vibrations accelerate PCIe slot fatigue. GPU sag causes intermittent connection issues and, over time, bent slots. Get the brace when you get the GPU.",
   "affiliateUrl": "https://amzn.to/4ctnoS5",
   "rating": 4.5,
   "reviewCount": 1,
@@ -42,11 +42,11 @@
   "faq": [
     {
       "question": "Do I need a GPU brace for the RTX 5070 or RX 9060 XT?",
-      "answer": "Recommended, yes. Both are heavy triple-fan cards. During sustained AI inference sessions where fans run at 60\u2013100% for hours, the vibration and weight stress the PCIe slot. A GPU brace eliminates that mechanical stress for minimal cost. It's particularly important if your case is horizontal or if the motherboard is mounted vertically."
+      "answer": "Recommended, yes. Both are heavy triple-fan cards. During sustained AI inference sessions where fans run at 60–100% for hours, the vibration and weight stress the PCIe slot. A GPU brace eliminates that mechanical stress for minimal cost. It's particularly important if your case is horizontal or if the motherboard is mounted vertically."
     },
     {
       "question": "Is GPU sag a real problem?",
-      "answer": "For intermittent gaming use, GPU sag is mostly cosmetic. For 24/7 AI inference workloads where fans run continuously for hours or days, sag becomes a real mechanical concern. The constant vibration from high-RPM fans, combined with gravity on a 1.5\u20132kg heatsink, can cause PCIe slot deformation over months of continuous operation."
+      "answer": "For intermittent gaming use, GPU sag is mostly cosmetic. For 24/7 AI inference workloads where fans run continuously for hours or days, sag becomes a real mechanical concern. The constant vibration from high-RPM fans, combined with gravity on a 1.5–2kg heatsink, can cause PCIe slot deformation over months of continuous operation."
     }
   ],
   "notFor": [
@@ -55,5 +55,6 @@
     "Budget builds where GPU sag isn't a concern yet"
   ],
   "entityHeadline": "Protecting Your RTX 5070 from PCIe Slot Damage: GPU Sag Prevention",
-  "image": "/products/gpu-brace-support.jpg"
+  "image": "/products/gpu-brace-support.jpg",
+  "price": 15
 }

@@ -92,5 +92,6 @@
     "Anyone who needs Windows — macOS only, no exceptions",
     "Heavy multi-task users — 16 GB fills up quickly with OS + model loaded simultaneously"
   ],
-  "entityHeadline": "Running Llama 3.2 on the Mac Mini M4: Zero-Setup Local AI for $599"
+  "entityHeadline": "Running Llama 3.2 on the Mac Mini M4: Zero-Setup Local AI for $599",
+  "price": 599
 }
