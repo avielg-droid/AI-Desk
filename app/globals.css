@@ -16,7 +16,7 @@
   --bg: #FAFAF9;
   --fg: #111111;
 
-  --color-ore:     217 119 6;    /* amber-600 — readable on white */
+  --color-ore:     8 145 178;    /* cyan-600 — readable on white */
   --color-data:    124 58 237;   /* violet-600 */
   --color-win:     22 163 74;    /* green-600 */
   --color-loss:    220 38 38;    /* red-600 */
@@ -27,12 +27,12 @@
   --color-edge:    218 218 212;
   --color-edge-hi: 196 196 190;
 
-  /* Forge palette */
-  --forge-amber:    #D97706;
-  --forge-gold:     #F59E0B;
-  --forge-glow:     rgba(217, 119, 6, 0.15);
-  --forge-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 60%, #B45309 100%);
-  --forge-gradient-animated: linear-gradient(135deg, #FBBF24, #F59E0B, #D97706, #FBBF24);
+  /* Forge palette — Cyan Tech (light) */
+  --forge-amber:    #0891B2;
+  --forge-gold:     #06B6D4;
+  --forge-glow:     rgba(8, 145, 178, 0.15);
+  --forge-gradient: linear-gradient(135deg, #22D3EE 0%, #0891B2 60%, #0E7490 100%);
+  --forge-gradient-animated: linear-gradient(135deg, #22D3EE, #06B6D4, #0891B2, #22D3EE);
   /* Alias for backward compat */
   --aurora-gradient: var(--forge-gradient);
   --aurora-gradient-animated: var(--forge-gradient-animated);
@@ -55,7 +55,7 @@
   --fg: #FFFFFF;
 
   /* RGB triplets for Tailwind opacity modifiers */
-  --color-ore:     245 158 11;   /* amber-400 — brighter on dark */
+  --color-ore:     59 130 246;   /* blue-500 — electric on dark */
   --color-data:    168 85 247;   /* violet */
   --color-win:     0 229 153;    /* neon green */
   --color-loss:    255 68 102;   /* hot red */
@@ -70,6 +70,13 @@
   --glass-bg:       rgba(255,255,255,0.03);
   --glass-border:   rgba(255,255,255,0.07);
   --glass-hover-bg: rgba(255,255,255,0.06);
+
+  /* Forge palette — Electric Blue (dark) */
+  --forge-amber:    #3B82F6;
+  --forge-gold:     #60A5FA;
+  --forge-glow:     rgba(59, 130, 246, 0.20);
+  --forge-gradient: linear-gradient(135deg, #60A5FA 0%, #3B82F6 60%, #2563EB 100%);
+  --forge-gradient-animated: linear-gradient(135deg, #60A5FA, #3B82F6, #2563EB, #60A5FA);
 
   /* Text */
   --text-muted:  #A1A1AA;
@@ -90,7 +97,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Forge ambient mesh — warm amber glow */
+/* Forge ambient mesh — tech glow */
 body::before {
   content: '';
   position: fixed;
@@ -98,15 +105,15 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(245,158,11,0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(217,119,6,0.03) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(8,145,178,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(6,182,212,0.03) 0%, transparent 70%);
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 [data-theme="dark"] body::before {
   background:
-    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(245,158,11,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(217,119,6,0.04) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(59,130,246,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(37,99,235,0.05) 0%, transparent 70%);
   opacity: 1;
 }
 
@@ -231,13 +238,15 @@ body::after {
   opacity: 1;
 }
 
-/* ── Forge CTA Button — amber ─────────────────────────────────────────────── */
+/* ── Forge CTA Button — cyan ──────────────────────────────────────────────── */
 .forge-btn {
-  background: #D97706;
+  background: #0891B2;
   color: #ffffff;
   transition: background 0.15s ease;
 }
-.forge-btn:hover { background: #B45309; }
+.forge-btn:hover { background: #0E7490; }
+[data-theme="dark"] .forge-btn { background: #3B82F6; }
+[data-theme="dark"] .forge-btn:hover { background: #2563EB; }
 
 /* ── View Deal Button (product cards) — Amazon orange ─────────────────────── */
 .view-deal-btn {
