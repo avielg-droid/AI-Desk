@@ -135,7 +135,7 @@ export default function PersonaFunnels() {
               {/* CTA */}
               <Link
                 href={p.href}
-                className={`mt-auto inline-flex items-center gap-2 px-4 py-2.5 border ${p.border} text-sm font-medium ${p.accent} hover:opacity-80 transition-opacity`}
+                className={`mt-auto inline-flex items-center gap-2 px-4 py-2.5 border ${p.border} rounded-lg text-sm font-medium ${p.accent} hover:opacity-80 transition-opacity`}
               >
                 {p.cta}
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>

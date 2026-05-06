@@ -80,7 +80,7 @@ export default function ProductsPage({
               <Link
                 key={f.value}
                 href={href}
-                className={`text-sm px-4 py-2 border transition-colors duration-150 ${
+                className={`text-sm px-4 py-2 border rounded-full transition-colors duration-150 ${
                   isActive
                     ? 'border-ore text-ore bg-ore/8 font-semibold'
                     : 'border-edge font-medium hover:border-ore/50 hover:text-ore'

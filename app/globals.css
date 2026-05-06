@@ -242,6 +242,7 @@ body::after {
 .forge-btn {
   background: #0891B2;
   color: #ffffff;
+  border-radius: 8px;
   transition: background 0.15s ease;
 }
 .forge-btn:hover { background: #0E7490; }
@@ -253,7 +254,7 @@ body::after {
   background: #FF9900;
   color: #0F1111;
   border: 1.5px solid #FF9900;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
@@ -295,7 +296,7 @@ body::after {
   color: #ffffff;
   border: 1.5px solid #111111;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
 }
 .affiliate-btn:hover {
