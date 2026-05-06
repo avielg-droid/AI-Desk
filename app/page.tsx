@@ -209,26 +209,26 @@ export default function HomePage() {
       <HardwareMatcher products={allProducts} />
 
       {/* ── BUYING GUIDE ── */}
-      <section className="border border-edge bg-ink-1 overflow-hidden">
-        <div className="h-[2px] bg-ore" />
+      <section className="border border-edge bg-ink-0 overflow-hidden">
+        <div className="h-[2px] rule-ember" />
         <div className="border-b border-edge px-8 py-5">
-          <h2 className="font-display font-800 text-2xl uppercase tracking-tight text-foreground">
+          <h2 className="font-display font-bold text-2xl uppercase tracking-tight text-foreground">
             How to Choose AI Hardware
           </h2>
-          <p className="font-sans text-sm text-slate-500 mt-1">
+          <p className="text-sm mt-1" style={{ color: 'var(--text-subtle)' }}>
             Three principles that determine local AI performance
           </p>
         </div>
         <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-edge">
           {GUIDE.map(item => (
-            <div key={item.num} className="p-8">
-              <p className="font-mono text-5xl font-500 text-ore/15 mb-4 leading-none select-none">
+            <div key={item.num} className="p-8 bg-ink-0 hover:bg-ink-1 transition-colors">
+              <p className="font-mono text-5xl font-semibold text-ore/10 mb-4 leading-none select-none">
                 {item.num}
               </p>
-              <h3 className="font-display font-800 text-xl uppercase text-foreground mb-2">
+              <h3 className="font-display font-bold text-lg uppercase text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="font-sans text-sm text-zinc-600 leading-relaxed">{item.body}</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{item.body}</p>
             </div>
           ))}
         </div>

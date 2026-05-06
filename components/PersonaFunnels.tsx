@@ -95,7 +95,7 @@ export default function PersonaFunnels() {
               </p>
 
               {/* Body */}
-              <p className="font-sans text-sm text-zinc-600 leading-relaxed mb-6">
+              <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
                 {p.body}
               </p>
 
@@ -123,7 +123,7 @@ export default function PersonaFunnels() {
                       <p className="font-sans font-600 text-xs text-foreground group-hover:text-ore transition-colors truncate max-w-[160px]">
                         {prod.name}
                       </p>
-                      <p className="font-mono text-[9px] text-slate-500 mt-0.5">{prod.sub}</p>
+                      <p className="font-mono text-[9px] mt-0.5" style={{ color: 'var(--text-subtle)' }}>{prod.sub}</p>
                     </div>
                     <span className={`font-mono text-xs ${p.accent} opacity-0 group-hover:opacity-100 transition-opacity`}>
                       →
@@ -135,7 +135,7 @@ export default function PersonaFunnels() {
               {/* CTA */}
               <Link
                 href={p.href}
-                className={`mt-auto inline-flex items-center gap-2 px-4 py-2.5 border ${p.border} font-mono text-[11px] uppercase tracking-widest ${p.accent} hover:opacity-80 transition-opacity`}
+                className={`mt-auto inline-flex items-center gap-2 px-4 py-2.5 border ${p.border} text-sm font-medium ${p.accent} hover:opacity-80 transition-opacity`}
               >
                 {p.cta}
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>
