@@ -35,7 +35,7 @@ function DropdownMenu({ items }: { items: NonNullable<NavItem['children']> }) {
     <div className="absolute top-full left-0 pt-2 z-50 min-w-[220px]">
       <div
         className="border border-edge bg-ink-0/95 backdrop-blur-md py-1"
-        style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,229,255,0.06)' }}
+        style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(var(--color-ore),0.08)' }}
       >
         {items.map(item => (
           <a

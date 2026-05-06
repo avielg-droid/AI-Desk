@@ -85,34 +85,34 @@ export default function HomePage() {
   const allProducts = getAllProducts()
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-16">
       <SchemaMarkup schema={buildSpeakableSchema(['h1', '.hero-summary', '.key-facts'])} />
 
       {/* ── HERO ── */}
       <section className="border-b border-edge">
-        <div className="max-w-7xl mx-auto px-6 md:px-14 py-28 md:py-36 lg:py-44">
+        <div className="max-w-7xl mx-auto px-6 md:px-14 py-16 md:py-20 lg:py-28">
 
           {/* Eyebrow */}
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-10">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-6">
             Independent AI Hardware Reviews · {allProducts.length} Products Benchmarked
           </p>
 
           {/* Headline */}
           <h1
-            className="font-display font-bold tracking-tight text-foreground mb-8 max-w-4xl hero-headline"
-            style={{ fontSize: 'clamp(3rem, 8vw, 7.5rem)', lineHeight: 1 }}
+            className="font-display font-bold tracking-tight text-foreground mb-6 max-w-4xl hero-headline"
+            style={{ fontSize: 'clamp(2.75rem, 7vw, 6.5rem)', lineHeight: 1.05 }}
           >
             The Hardware<br />
             That Runs AI.
           </h1>
 
           {/* Sub */}
-          <p className="text-lg md:text-xl leading-relaxed mb-12 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
             Benchmarked GPUs, Mini PCs, and accessories for LLM inference, Stable Diffusion, and local AI workloads.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-5 mb-20">
+          <div className="flex flex-wrap items-center gap-5 mb-12">
             <Link
               href="/products"
               className="forge-btn inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base"
@@ -132,7 +132,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-x-12 gap-y-5 border-t border-edge pt-8">
+          <div className="flex flex-wrap gap-x-10 gap-y-4 border-t border-edge pt-6">
             {SIDE_STATS.map(s => (
               <div key={s.val} className="flex flex-col">
                 <p className="font-mono font-semibold text-2xl text-foreground leading-none">
@@ -158,18 +158,18 @@ export default function HomePage() {
           </h2>
           <span className="h-px flex-1 bg-edge" />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink-3 border border-edge">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-edge border border-edge">
           {CATEGORIES.map(cat => (
             <Link
               key={cat.slug}
               href={`/categories/${cat.slug}`}
-              className="group bg-ink-1 p-6 flex flex-col hover:bg-ink-2 transition-colors aurora-glow-hover"
+              className="group bg-ink-0 p-6 flex flex-col hover:bg-ink-1 transition-colors duration-200 border-t-2 border-t-transparent hover:border-t-ore"
             >
               {cat.icon}
-              <p className="font-display font-800 text-xl uppercase text-foreground mb-1 group-hover:text-ore transition-colors">
+              <p className="font-display font-bold text-lg uppercase text-foreground mb-1 group-hover:text-ore transition-colors duration-200">
                 {cat.label}
               </p>
-              <p className="font-sans text-xs text-slate-500 mb-4">{cat.sub}</p>
+              <p className="text-xs mb-4" style={{ color: 'var(--text-subtle)' }}>{cat.sub}</p>
               <p className="font-mono text-[10px] text-ore mt-auto">{cat.stat}</p>
             </Link>
           ))}

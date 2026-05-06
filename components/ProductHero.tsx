@@ -19,9 +19,9 @@ export default function ProductHero({ product }: { product: Product }) {
   const specs = heroSpecs(product)
 
   return (
-    <section className="border border-edge overflow-hidden" style={{ background: 'var(--glass-bg)', backdropFilter: 'blur(12px)' }}>
-      {/* Aurora top rule */}
-      <div className="h-[2px] aurora-bar" />
+    <section className="border border-edge overflow-hidden bg-ink-0">
+      {/* Amber top rule */}
+      <div className="h-[2px] rule-ember" />
 
       <div className="flex flex-col md:flex-row">
 
@@ -73,23 +73,19 @@ export default function ProductHero({ product }: { product: Product }) {
             {product.shortDescription}
           </p>
 
-          {/* Spec strip — aurora border on grid */}
+          {/* Spec strip */}
           {specs.length > 0 && (
-            <div className="relative mb-8">
-              {/* Aurora border wrapper */}
-              <div className="absolute inset-0 aurora-bar opacity-20 pointer-events-none" style={{ padding: '1px' }} />
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-edge border border-ore/20">
-                {specs.map(spec => (
-                  <div key={spec.label} className="bg-ink-1 px-4 py-3">
-                    <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mb-1">
-                      {spec.label}
-                    </p>
-                    <p className="font-mono text-base font-500 text-ore">
-                      {spec.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-edge border border-edge mb-8">
+              {specs.map(spec => (
+                <div key={spec.label} className="bg-ink-1 px-4 py-3">
+                  <p className="font-mono text-[9px] uppercase tracking-widest mb-1" style={{ color: 'var(--text-subtle)' }}>
+                    {spec.label}
+                  </p>
+                  <p className="font-mono text-base font-semibold text-ore">
+                    {spec.value}
+                  </p>
+                </div>
+              ))}
             </div>
           )}
 
