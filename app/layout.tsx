@@ -49,19 +49,6 @@ export const metadata: Metadata = {
   other: { 'msvalidate.01': '96851A4CB49BB6869C9BFDABAAA7AAE1' },
 }
 
-const NAV_LINKS = [
-  { href: '/products',                label: 'Products'      },
-  { href: '/categories/gpu',          label: 'GPUs'          },
-  { href: '/categories/mini-pc',      label: 'Mini PCs'      },
-  { href: '/categories/accessory',    label: 'Accessories'   },
-  { href: '/best',                    label: 'Buying Guides' },
-  { href: '/guides',                  label: 'Setup Guides'  },
-  { href: '/blog',                   label: 'Blog'          },
-  { href: '/glossary',               label: 'Glossary'      },
-  { href: '/compare',                 label: 'Compare'       },
-  { href: '/about',                   label: 'About'         },
-  { href: '/how-we-test',             label: 'How We Test'   },
-]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -110,28 +97,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
 
         {/* Footer */}
-        <footer className="relative z-10 mt-24 border-t border-edge bg-ink-0">
-          <div className="h-[2px] aurora-bar" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-            <div className="grid md:grid-cols-3 gap-10">
+        <footer className="relative z-10 mt-16 border-t border-edge bg-ink-0">
+          <div className="h-[2px] rule-ember" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <div className="grid md:grid-cols-4 gap-10">
 
               {/* Brand */}
-              <div>
-                <p className="font-display font-600 text-2xl text-foreground mb-3">
+              <div className="md:col-span-2">
+                <p className="font-display font-bold text-xl text-foreground mb-3">
                   The AI Desk
                 </p>
-                <p className="font-sans text-sm text-zinc-600 leading-relaxed max-w-xs">
+                <p className="text-sm leading-relaxed max-w-sm mb-4" style={{ color: 'var(--text-muted)' }}>
                   Independent hardware reviews for running large language models and Stable Diffusion locally. No sponsored rankings.
                 </p>
+                <AffiliateDisclosure className="text-xs text-zinc-500" />
               </div>
 
-              {/* Navigate */}
+              {/* Explore */}
               <div>
-                <p className="text-label mb-4">Navigate</p>
-                <ul className="space-y-2">
-                  {NAV_LINKS.map(({ href, label }) => (
+                <p className="text-label mb-4">Explore</p>
+                <ul className="space-y-2.5">
+                  {[
+                    { href: '/products',   label: 'All Products'   },
+                    { href: '/best',       label: 'Buying Guides'  },
+                    { href: '/guides',     label: 'Setup Guides'   },
+                    { href: '/blog',       label: 'Blog'           },
+                    { href: '/glossary',   label: 'Glossary'       },
+                    { href: '/compare',    label: 'Compare'        },
+                  ].map(({ href, label }) => (
                     <li key={href}>
-                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore transition-colors">
+                      <a href={href} className="text-sm hover:text-ore transition-colors duration-150" style={{ color: 'var(--text-muted)' }}>
                         {label}
                       </a>
                     </li>
@@ -142,21 +137,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Legal */}
               <div>
                 <p className="text-label mb-4">Legal</p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
                     { href: '/privacy',       label: 'Privacy Policy'   },
                     { href: '/terms',         label: 'Terms of Service' },
-                    { href: '/accessibility', label: 'Accessibility'    },
+                    { href: '/about',         label: 'About'            },
+                    { href: '/how-we-test',   label: 'How We Test'      },
                   ].map(({ href, label }) => (
                     <li key={href}>
-                      <a href={href} className="font-mono text-[11px] uppercase tracking-widest text-zinc-600 hover:text-ore transition-colors">
+                      <a href={href} className="text-sm hover:text-ore transition-colors duration-150" style={{ color: 'var(--text-muted)' }}>
                         {label}
                       </a>
                     </li>
                   ))}
                 </ul>
-                <AffiliateDisclosure className="font-mono text-[10px] text-zinc-800 leading-relaxed" />
-                <p className="font-mono text-[10px] text-zinc-800 mt-3">
+                <p className="font-mono text-[10px] mt-4" style={{ color: 'var(--text-subtle)' }}>
                   © {new Date().getFullYear()} The AI Desk
                 </p>
               </div>

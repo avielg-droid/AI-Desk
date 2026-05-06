@@ -44,28 +44,27 @@ export default function ProductsPage({
       <div className="space-y-6">
 
         {/* Hero */}
-        <section className="relative border border-edge overflow-hidden" style={{ background: 'var(--glass-bg)' }}>
-          <div className="absolute top-0 left-0 right-0 h-[2px] aurora-bar" />
-          <div className="absolute inset-0 bg-crosshatch" />
-          <div className="relative px-8 py-10 flex items-end justify-between gap-6 flex-wrap">
+        <section className="border border-edge bg-ink-0 overflow-hidden">
+          <div className="h-[2px] rule-ember" />
+          <div className="px-8 py-8 flex items-end justify-between gap-6 flex-wrap">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-2">All Reviews</p>
-              <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
+              <h1 className="font-display font-bold text-4xl uppercase tracking-tight text-foreground mb-1">
                 AI Hardware
               </h1>
-              <p className="font-sans text-sm text-zinc-600">
+              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                 {products.length} product{products.length !== 1 ? 's' : ''} reviewed for LLM inference &amp; Stable Diffusion
               </p>
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               {[
                 { val: `${allProducts.length}`, label: 'Total Reviews'    },
                 { val: '16 GB',                 label: 'Max VRAM tracked' },
                 { val: '70B',                   label: 'Largest model run' },
               ].map(s => (
                 <div key={s.label} className="text-right">
-                  <p className="font-mono font-600 text-xl text-ore leading-none">{s.val}</p>
-                  <p className="font-mono text-[9px] uppercase tracking-widest text-zinc-600 mt-0.5">{s.label}</p>
+                  <p className="font-mono font-semibold text-xl text-ore leading-none">{s.val}</p>
+                  <p className="font-mono text-[9px] uppercase tracking-widest mt-0.5" style={{ color: 'var(--text-subtle)' }}>{s.label}</p>
                 </div>
               ))}
             </div>
@@ -81,15 +80,16 @@ export default function ProductsPage({
               <Link
                 key={f.value}
                 href={href}
-                className={`font-mono text-[11px] uppercase tracking-widest px-4 py-2 border transition-colors ${
+                className={`text-sm px-4 py-2 border transition-colors duration-150 ${
                   isActive
-                    ? 'border-ore text-ore bg-ore/10'
-                    : 'border-edge text-zinc-600 hover:border-ore/40 hover:text-ore'
+                    ? 'border-ore text-ore bg-ore/8 font-semibold'
+                    : 'border-edge font-medium hover:border-ore/50 hover:text-ore'
                 }`}
+                style={!isActive ? { color: 'var(--text-muted)' } : undefined}
               >
                 {f.label}
                 {f.value !== 'all' && (
-                  <span className="ml-1.5 opacity-50">
+                  <span className="ml-1.5 font-mono text-[11px] opacity-50">
                     {allProducts.filter(p => p.category === f.value).length}
                   </span>
                 )}
@@ -100,15 +100,15 @@ export default function ProductsPage({
 
         {/* Grid */}
         {products.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-edge border border-edge">
             {products.map(product => (
               <ProductCard key={product.slug} product={product} />
             ))}
           </div>
         ) : (
           <div className="border border-edge bg-ink-1 py-16 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-600 mb-2">No results</p>
-            <p className="text-sm text-zinc-600">No products in this category yet.</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest mb-2" style={{ color: 'var(--text-subtle)' }}>No results</p>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No products in this category yet.</p>
           </div>
         )}
 
