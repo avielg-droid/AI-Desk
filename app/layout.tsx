@@ -1,6 +1,21 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Plus_Jakarta_Sans, DM_Mono } from 'next/font/google'
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-jakarta',
+  display: 'swap',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-dm-mono',
+  display: 'swap',
+})
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import AffiliateDisclosure from '@/components/AffiliateDisclosure'
@@ -50,7 +65,7 @@ const NAV_LINKS = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${plusJakarta.variable} ${dmMono.variable}`}>
       <head>
         <SchemaMarkup schema={buildOrganizationSchema()} />
         <SchemaMarkup schema={buildWebSiteSchema()} />

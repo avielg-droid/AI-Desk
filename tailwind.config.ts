@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        sans:    ['var(--font-display)', 'system-ui', 'sans-serif'],
-        body:    ['var(--font-display)', 'system-ui', 'sans-serif'],
-        mono:    ['var(--font-mono)',    'monospace'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],  // Geist Sans — hero/titles
+        sans:    ['var(--font-body)',    'system-ui', 'sans-serif'],   // Plus Jakarta Sans — body/UI
+        body:    ['var(--font-body)',    'system-ui', 'sans-serif'],
+        mono:    ['var(--font-mono)',    'monospace'],                  // DM Mono — labels/specs
       },
       colors: {
         background: 'var(--bg)',

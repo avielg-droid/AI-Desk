@@ -4,9 +4,9 @@
 
 /* ── Font bridge ───────────────────────────────────────────────────────────── */
 :root {
-  --font-display: var(--font-geist-sans);
-  --font-body:    var(--font-geist-sans);
-  --font-mono:    var(--font-geist-mono);
+  --font-display: var(--font-geist-sans);   /* Hero/headline — keep Geist */
+  --font-body:    var(--font-jakarta);       /* Body/UI — Plus Jakarta Sans (warmer) */
+  --font-mono:    var(--font-dm-mono);       /* Labels/specs — DM Mono (less robotic) */
 }
 
 /* ── Light Theme (default) — Ambient Bright ───────────────────────────────── */
