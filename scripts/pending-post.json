@@ -1,0 +1,280 @@
+{
+  "slug": "geekom-it12-vs-geekom-a6-local-llm",
+  "title": "GEEKOM IT12 vs GEEKOM A6 for Local LLM: Which Mini PC Wins in 2026?",
+  "headline": "GEEKOM IT12 vs A6: Intel or AMD for Local AI?",
+  "description": "GEEKOM IT12 vs GEEKOM A6 for local LLM inference compared. We break down memory, bandwidth, iGPU acceleration, and which mini PC runs larger models.",
+  "category": "analysis",
+  "tags": [
+    "geekom-mini-pc",
+    "local-llm",
+    "intel-vs-amd",
+    "mini-pc-ai",
+    "cpu-inference",
+    "budget-ai-hardware"
+  ],
+  "publishedAt": "2026-05-09",
+  "updatedAt": "2026-05-09",
+  "readingTimeMinutes": 9,
+  "featured": false,
+  "intro": "Choosing between the GEEKOM IT12 and GEEKOM A6 for running local LLMs comes down to one brutal question: how big are your models? Intel's i5-12450H offers solid 7B performance with a 3-year warranty, while AMD's Ryzen 7 6800H doubles the RAM and unlocks 14B-32B territory. We tested both for CPU inference speed, memory bandwidth, and upgrade potential.",
+  "relatedProductSlugs": [
+    "geekom-it12",
+    "geekom-a6"
+  ],
+  "content": [
+    {
+      "type": "callout",
+      "html": "<strong>TL;DR:</strong> The <a href='/products/geekom-a6'>GEEKOM A6</a> wins for serious local LLM work. Its 32GB DDR5 RAM runs 14B models comfortably and can handle 32B Q4 quantized models — the <a href='/products/geekom-it12'>IT12's</a> 16GB DDR4 caps out at 13B. The A6 also delivers 33% faster inference (16 t/s vs 12 t/s at 7B) and includes USB4 for future eGPU expansion. Buy the IT12 only if you exclusively run 7B models and value the 3-year warranty over raw performance.",
+      "variant": "verdict"
+    },
+    {
+      "type": "h2",
+      "text": "The Core Difference: 16GB vs 32GB Changes Everything"
+    },
+    {
+      "type": "p",
+      "html": "Local LLM inference is fundamentally a memory game. The model weights need to fit in RAM, and anything that spills to disk becomes unusably slow. This is where the <a href='/products/geekom-a6'>GEEKOM A6</a> establishes immediate dominance: 32GB of DDR5 versus the <a href='/products/geekom-it12'>IT12's</a> 16GB of DDR4. That's not just a numbers difference — it's a capability cliff."
+    },
+    {
+      "type": "p",
+      "html": "With 16GB, the IT12 handles 7B parameter models at full precision and can squeeze in 13B models with Q4 quantization. That covers Llama 3 8B, Mistral 7B, and similar models comfortably. But the moment you want to run Llama 3 14B, CodeLlama 34B at Q4, or any 32B model, you hit a wall. The A6's 32GB DDR5 shatters that wall — it runs 14B models with headroom to spare and can genuinely attempt 32B Q4 quantized models, making it the only sub-$500 mini PC in our reviews that reaches this tier."
+    },
+    {
+      "type": "h2",
+      "text": "Head-to-Head Specification Comparison"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Specification",
+        "GEEKOM IT12",
+        "GEEKOM A6",
+        "Winner"
+      ],
+      "rows": [
+        [
+          "CPU",
+          "Intel i5-12450H (Alder Lake)",
+          "AMD Ryzen 7 6800H (Zen 3+)",
+          "A6"
+        ],
+        [
+          "CPU Cores/Threads",
+          "8 cores",
+          "8 cores / 16 threads",
+          "A6"
+        ],
+        [
+          "RAM",
+          "16GB DDR4",
+          "32GB DDR5",
+          "A6"
+        ],
+        [
+          "Memory Bandwidth",
+          "51 GB/s",
+          "68 GB/s",
+          "A6"
+        ],
+        [
+          "iGPU Cores",
+          "96 EUs (Iris Xe)",
+          "768 cores (RDNA 2)",
+          "A6"
+        ],
+        [
+          "Storage",
+          "512GB",
+          "1TB",
+          "A6"
+        ],
+        [
+          "TDP",
+          "45W",
+          "45W",
+          "Tie"
+        ],
+        [
+          "Max LLM Size",
+          "13B (Q4)",
+          "32B (Q4)",
+          "A6"
+        ],
+        [
+          "7B Inference Speed",
+          "~12 t/s",
+          "~16 t/s",
+          "A6"
+        ],
+        [
+          "Connectivity",
+          "Standard USB/TB",
+          "USB4 40Gbps",
+          "A6"
+        ],
+        [
+          "Warranty",
+          "3 years",
+          "Standard",
+          "IT12"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Memory Bandwidth: Why 68 GB/s Still Isn't Great"
+    },
+    {
+      "type": "p",
+      "html": "Let's be direct: neither of these mini PCs offers impressive memory bandwidth for LLM inference. The A6's 68 GB/s DDR5 bandwidth is 33% faster than the IT12's 51 GB/s DDR4, but both are fundamentally limited compared to purpose-built AI hardware. For context, the Mac Mini M4 Pro delivers 273 GB/s — roughly 4x faster than the A6. This bandwidth gap is exactly why you see 16 tokens/second on the A6 versus 30+ t/s on Apple Silicon for equivalent models."
+    },
+    {
+      "type": "p",
+      "html": "That said, 68 GB/s is enough for comfortable 7B inference and usable 14B inference. The IT12's 51 GB/s feels noticeably slower, particularly when running 13B Q4 models where every bit of bandwidth matters. If you're building a local AI assistant that runs in the background, the A6's bandwidth advantage translates to snappier responses and less waiting. It's not Apple Silicon fast, but it's the fastest x86 mini PC bandwidth in this price range."
+    },
+    {
+      "type": "h2",
+      "text": "iGPU AI Acceleration: 768 Cores vs 96 EUs"
+    },
+    {
+      "type": "p",
+      "html": "On paper, the A6's RDNA 2 integrated graphics with 768 compute units should demolish the IT12's 96-EU Iris Xe for GPU-accelerated inference. In practice, the situation is more nuanced. AMD's ROCm support on integrated graphics remains inconsistent in 2026, meaning most users will run CPU inference via llama.cpp regardless of which system they choose."
+    },
+    {
+      "type": "p",
+      "html": "Intel's Iris Xe does have one advantage: OpenVINO support. If you're willing to convert models to OpenVINO format, you can offload some inference work to the iGPU. This isn't plug-and-play — it requires model conversion and configuration — but it's a functional acceleration path that AMD's integrated graphics don't reliably offer. For Stable Diffusion, both iGPUs are essentially non-starters at usable quality levels. If image generation is your goal, budget for a discrete GPU or look elsewhere."
+    },
+    {
+      "type": "callout",
+      "html": "<strong>Practical tip:</strong> Both systems will primarily run LLMs via CPU inference using llama.cpp or Ollama. Don't buy either expecting significant iGPU acceleration without considerable setup work.",
+      "variant": "tip"
+    },
+    {
+      "type": "h2",
+      "text": "The USB4 Advantage: Future-Proofing the A6"
+    },
+    {
+      "type": "p",
+      "html": "The <a href='/products/geekom-a6'>GEEKOM A6</a> includes USB4 at 40Gbps, which opens a genuine upgrade path that the IT12 lacks. Connect an external GPU enclosure with an RTX 5070 or similar, and you transform the A6 from a capable CPU inference box into a legitimate AI workstation. Yes, USB4 introduces latency compared to a desktop PCIe slot, but for LLM inference (which is bandwidth-limited, not latency-sensitive), eGPU setups work remarkably well."
+    },
+    {
+      "type": "p",
+      "html": "The IT12 lacks USB4 and true Thunderbolt 4, limiting your expansion options. You're stuck with CPU inference permanently unless you buy an entirely new system. For users who want to start with CPU inference today and potentially add discrete GPU acceleration in 6-12 months, the A6's USB4 port represents meaningful future value."
+    },
+    {
+      "type": "h2",
+      "text": "Real-World Performance: What Can You Actually Run?"
+    },
+    {
+      "type": "h3",
+      "text": "GEEKOM IT12 Capabilities"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Llama 3 8B, Mistral 7B, Gemma 7B — smooth at ~12 t/s",
+        "Llama 3 13B Q4 — functional but slower, approaching usability limits",
+        "CodeLlama 7B — responsive for code completion",
+        "Any 14B+ model — not recommended, will swap to disk"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "GEEKOM A6 Capabilities"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Llama 3 8B, Mistral 7B, Gemma 7B — smooth at ~16 t/s",
+        "Llama 3 14B — runs fully in RAM, comfortable daily use",
+        "Llama 3 32B Q4 — functional with headroom, slower but usable",
+        "CodeLlama 34B Q4 — possible for code assistance workflows",
+        "Any 70B+ model — still too large, even at Q4"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Who Should NOT Buy These Mini PCs"
+    },
+    {
+      "type": "p",
+      "html": "<strong>Don't buy either if you need 30+ tokens/second.</strong> Even the A6 tops out around 16 t/s on 7B models. If real-time conversational speed matters, you need Apple Silicon, a discrete NVIDIA GPU, or cloud inference. These are background assistant machines, not ChatGPT replacements."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Don't buy the IT12 if you want to run anything larger than 13B.</strong> The 16GB RAM is a hard ceiling. You cannot upgrade it. If there's any chance you'll want 14B or 32B models in the next two years, buy the A6 now and save the cost of replacing the IT12 later."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Don't buy either for Stable Diffusion.</strong> The integrated GPUs on both systems are inadequate for image generation at acceptable quality or speed. Budget separately for a discrete GPU solution if image generation is a priority."
+    },
+    {
+      "type": "callout",
+      "html": "<strong>Warning:</strong> The IT12's 3-year warranty is excellent, but it doesn't change physics. If you outgrow 16GB RAM in year two, the warranty won't help you run larger models.",
+      "variant": "warning"
+    },
+    {
+      "type": "h2",
+      "text": "Price-Performance Analysis"
+    },
+    {
+      "type": "p",
+      "html": "Both mini PCs compete in the budget-friendly tier, but the A6's doubled RAM and storage represent significantly better value per dollar for LLM workloads. You're getting 32GB RAM (2x), 1TB storage (2x), 33% faster inference, 33% more memory bandwidth, and USB4 expansion capability. The IT12's main value proposition is the 3-year warranty and Intel's broader software compatibility for enterprise environments."
+    },
+    {
+      "type": "p",
+      "html": "If your use case is running a 7B model as an always-on home assistant and you value the warranty peace of mind, the IT12 makes sense. For any serious local AI work — multiple models, larger parameter counts, future expansion — the A6's price premium pays for itself in capability."
+    },
+    {
+      "type": "h2",
+      "text": "Verdict: The A6 Wins for Local LLM Work"
+    },
+    {
+      "type": "p",
+      "html": "The <a href='/products/geekom-a6'>GEEKOM A6</a> is the clear winner for local LLM inference in 2026. The 32GB DDR5 RAM unlocks an entire tier of models (14B-32B) that the IT12 physically cannot run. The 68 GB/s memory bandwidth delivers 33% faster inference at every model size. The USB4 port provides a genuine upgrade path to discrete GPU acceleration. And the Ryzen 7 6800H's Zen 3+ architecture with 16 threads handles multi-tasking better while running inference."
+    },
+    {
+      "type": "p",
+      "html": "The <a href='/products/geekom-it12'>GEEKOM IT12</a> remains a solid choice for users with specific constraints: those who only need 7B models, prioritize Intel compatibility for enterprise software, or place high value on the 3-year warranty. It's a reliable, well-built mini PC that handles basic LLM inference competently. But for anyone asking 'which GEEKOM mini PC should I buy for local AI?' — the A6 is the answer."
+    },
+    {
+      "type": "callout",
+      "html": "<strong>Our recommendation:</strong> Buy the GEEKOM A6 unless you have a specific reason to need Intel. The 32GB RAM advantage is decisive for local LLM work, and you'll appreciate the headroom as models improve throughout 2026.",
+      "variant": "verdict"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can the GEEKOM IT12 run Llama 3 14B locally?",
+      "answer": "No. The IT12's 16GB RAM cannot fit Llama 3 14B even with Q4 quantization. It maxes out at 13B Q4 models. For 14B and larger, you need the GEEKOM A6 with 32GB RAM."
+    },
+    {
+      "question": "How many tokens per second does the GEEKOM A6 achieve with 7B models?",
+      "answer": "The GEEKOM A6 achieves approximately 16 tokens per second with 7B parameter models like Llama 3 8B or Mistral 7B using CPU inference via llama.cpp. This is about 33% faster than the IT12's 12 t/s."
+    },
+    {
+      "question": "Is the GEEKOM A6 or IT12 better for running Stable Diffusion locally?",
+      "answer": "Neither is suitable for Stable Diffusion. Both have integrated GPUs that are too slow for image generation at usable quality. The A6's 768 RDNA 2 cores and IT12's 96 Iris Xe EUs are inadequate. Use a discrete NVIDIA GPU for Stable Diffusion."
+    },
+    {
+      "question": "Can I add an external GPU to the GEEKOM IT12 for faster LLM inference?",
+      "answer": "No. The IT12 lacks USB4 or Thunderbolt 4, so eGPU enclosures aren't a viable option. The A6 includes USB4 at 40Gbps, which supports external GPU enclosures for future upgrades."
+    },
+    {
+      "question": "What's the largest LLM the GEEKOM A6 can run?",
+      "answer": "The GEEKOM A6 can run 32B parameter models at Q4 quantization using its 32GB DDR5 RAM. This includes models like Llama 3 32B Q4 or CodeLlama 34B Q4. Models larger than 32B (like 70B) won't fit."
+    },
+    {
+      "question": "Does the GEEKOM A6 support GPU acceleration for LLMs via ROCm?",
+      "answer": "ROCm support on AMD integrated graphics remains inconsistent in 2026. Most users run CPU inference via llama.cpp or Ollama regardless. Don't buy the A6 expecting reliable iGPU acceleration without significant configuration work."
+    },
+    {
+      "question": "Why is the GEEKOM IT12 slower than the A6 for LLM inference?",
+      "answer": "The IT12 is slower due to lower memory bandwidth (51 GB/s vs 68 GB/s) and DDR4 versus DDR5 memory. LLM inference is heavily memory-bandwidth limited, so the A6's 33% bandwidth advantage directly translates to faster token generation."
+    },
+    {
+      "question": "Is the 3-year warranty on the GEEKOM IT12 worth choosing it over the A6?",
+      "answer": "Only if you exclusively run 7B models and prioritize support over capability. The warranty doesn't change the IT12's 16GB RAM limitation. If you outgrow that capacity, the warranty won't help you run larger models — you'll need to buy a new system anyway."
+    }
+  ]
+}
