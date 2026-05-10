@@ -21,14 +21,14 @@ export default function BlogContent({ blocks }: { blocks: ContentBlock[] }) {
         switch (block.type) {
           case 'h2':
             return (
-              <h2 key={i} className="font-display font-800 text-2xl uppercase tracking-tight text-foreground mt-10 mb-4 pt-6 border-t border-edge first:border-t-0 first:pt-0 first:mt-0">
+              <h2 key={i} className="font-display font-extrabold text-2xl uppercase tracking-tight text-foreground mt-10 mb-4 pt-6 border-t border-edge first:border-t-0 first:pt-0 first:mt-0">
                 {block.text}
               </h2>
             )
 
           case 'h3':
             return (
-              <h3 key={i} className="font-display font-700 text-lg uppercase tracking-tight text-foreground mt-6 mb-3">
+              <h3 key={i} className="font-display font-bold text-lg uppercase tracking-tight text-foreground mt-6 mb-3">
                 {block.text}
               </h3>
             )

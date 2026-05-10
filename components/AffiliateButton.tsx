@@ -22,7 +22,7 @@ export default function AffiliateButton({
         className={`
           view-deal-btn
           inline-flex items-center gap-2
-          font-sans font-700 tracking-tight
+          font-sans font-bold tracking-tight
           ${isMd
             ? 'px-7 py-3.5 text-base'
             : 'px-4 py-2.5 text-sm'

@@ -51,7 +51,7 @@ export default function ProductHero({ product }: { product: Product }) {
           </div>
 
           {/* Title */}
-          <h1 className="font-display font-700 text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.0] tracking-tight text-foreground mb-5">
+          <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.0] tracking-tight text-foreground mb-5">
             {product.name}
           </h1>
 
@@ -63,7 +63,7 @@ export default function ProductHero({ product }: { product: Product }) {
                 Our Score
               </span>
             </div>
-            <span className="font-mono text-xl font-600 text-foreground">
+            <span className="font-mono text-xl font-semibold text-foreground">
               {product.priceDisplay}
             </span>
           </div>

@@ -49,7 +49,7 @@ export default function BlogIndexPage() {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-3">
               The AI Desk Blog
             </p>
-            <h1 className="font-display font-700 text-3xl sm:text-4xl md:text-5xl text-foreground mb-4">
+            <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-foreground mb-4">
               Local AI Hardware<br />Guides & Analysis
             </h1>
             <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-xl">
@@ -62,7 +62,7 @@ export default function BlogIndexPage() {
         {featured.length > 0 && (
           <section>
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="font-display font-800 text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
+              <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
                 Featured
               </h2>
               <span className="h-px flex-1 bg-edge" />
@@ -79,7 +79,7 @@ export default function BlogIndexPage() {
         {rest.length > 0 && (
           <section>
             <div className="flex items-center gap-4 mb-6">
-              <h2 className="font-display font-800 text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
+              <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
                 All Articles
               </h2>
               <span className="h-px flex-1 bg-edge" />
@@ -98,14 +98,14 @@ export default function BlogIndexPage() {
         {/* CTA */}
         <section className="border border-edge bg-ink-1 p-8 text-center">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-2">Ready to buy?</p>
-          <h2 className="font-display font-700 text-2xl text-foreground mb-3">
+          <h2 className="font-display font-bold text-2xl text-foreground mb-3">
             Find the Right Hardware
           </h2>
           <p className="text-sm text-zinc-600 mb-6 max-w-md mx-auto">
             Every article links to our reviewed products. Browse all hardware or use the compare tool to find your match.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/products" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-700 text-sm">
+            <Link href="/products" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-bold text-sm">
               Browse All Hardware →
             </Link>
             <Link href="/compare" className="nav-cta inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore">
@@ -144,7 +144,7 @@ function PostCard({ post, featured }: { post: ReturnType<typeof getAllBlogPosts>
           </span>
         </div>
 
-        <h3 className={`font-mono font-600 leading-snug group-hover:text-ore transition-colors mb-2 ${featured ? 'text-base' : 'text-sm'} text-foreground`}>
+        <h3 className={`font-mono font-semibold leading-snug group-hover:text-ore transition-colors mb-2 ${featured ? 'text-base' : 'text-sm'} text-foreground`}>
           {post.headline}
         </h3>
 

@@ -133,7 +133,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
                 {guide.model.paramCount}
               </span>
             </div>
-            <h1 className="font-display font-700 text-3xl md:text-4xl text-foreground mb-4">
+            <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-4">
               {guide.title}
             </h1>
             <p className="font-sans text-base text-zinc-600 leading-relaxed">
@@ -185,7 +185,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
               <div className="flex-1 min-w-0">
                 <Link
                   href={`/products/${product.slug}`}
-                  className="font-sans font-600 text-sm text-foreground hover:text-ore transition-colors"
+                  className="font-sans font-semibold text-sm text-foreground hover:text-ore transition-colors"
                 >
                   {product.name}
                 </Link>
@@ -200,18 +200,18 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
 
         {/* Steps */}
         <section>
-          <h2 className="font-display font-700 text-2xl text-foreground mb-6">
+          <h2 className="font-display font-bold text-2xl text-foreground mb-6">
             Step-by-Step Setup
           </h2>
           <ol className="space-y-6">
             {guide.steps.map((step, i) => (
               <li key={i} className="border border-edge bg-ink-1">
                 <div className="flex items-start gap-4 p-5 pb-0">
-                  <span className="shrink-0 font-mono font-700 text-2xl text-ore/40 leading-none mt-0.5">
+                  <span className="shrink-0 font-mono font-bold text-2xl text-ore/40 leading-none mt-0.5">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div className="flex-1">
-                    <h3 className="font-mono font-600 text-sm text-ore mb-2">
+                    <h3 className="font-mono font-semibold text-sm text-ore mb-2">
                       {step.title}
                     </h3>
                     <p className="font-sans text-sm text-zinc-600 leading-relaxed">
@@ -249,7 +249,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         {/* Related products */}
         {relatedProducts.length > 1 && (
           <section>
-            <h2 className="font-display font-700 text-xl text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl text-foreground mb-4">
               Other Hardware for {guide.model.name}
             </h2>
             <div className="space-y-3">
@@ -271,7 +271,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
                     <div className="flex-1 min-w-0">
                       <Link
                         href={`/products/${p.slug}`}
-                        className="font-sans font-600 text-sm text-foreground hover:text-ore transition-colors"
+                        className="font-sans font-semibold text-sm text-foreground hover:text-ore transition-colors"
                       >
                         {p.name}
                       </Link>
@@ -291,7 +291,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         {/* Related guides */}
         {relatedGuides.length > 0 && (
           <section>
-            <h2 className="font-display font-700 text-xl text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl text-foreground mb-4">
               Related Guides
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">

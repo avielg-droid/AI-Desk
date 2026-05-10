@@ -81,7 +81,7 @@ function TaskCard({
       )}
 
       <div className="flex items-start justify-between gap-2 mb-2">
-        <p className={`font-display font-700 text-base leading-tight transition-colors
+        <p className={`font-display font-bold text-base leading-tight transition-colors
           ${selected ? 'text-ore' : 'text-foreground group-hover:text-ore/80'}`}>
           {task.label}
         </p>
@@ -131,7 +131,7 @@ function MatchCard({ product, memGb }: { product: Product; memGb: number }) {
         </div>
 
         {/* Product name */}
-        <h3 className="font-display font-700 text-base leading-tight text-foreground mb-1">
+        <h3 className="font-display font-bold text-base leading-tight text-foreground mb-1">
           <Link href={`/products/${product.slug}`} className="hover:text-ore transition-colors">
             {product.name}
           </Link>
@@ -144,7 +144,7 @@ function MatchCard({ product, memGb }: { product: Product; memGb: number }) {
         {bench && (
           <div className="flex items-center gap-2 mb-4 border-t border-edge/50 pt-3">
             <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-600">7B speed</span>
-            <span className="font-mono text-xs font-500 text-win">{bench} t/s</span>
+            <span className="font-mono text-xs font-medium text-win">{bench} t/s</span>
           </div>
         )}
 
@@ -180,7 +180,7 @@ function IncompatibleCard({ product }: { product: Product }) {
           </span>
           <span className="font-mono text-[10px] text-zinc-600">{memoryLabel(product)}</span>
         </div>
-        <h3 className="font-display font-700 text-base leading-tight text-zinc-600">
+        <h3 className="font-display font-bold text-base leading-tight text-zinc-600">
           {product.name}
         </h3>
         <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-700 mt-1">
@@ -228,7 +228,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
             <span className="h-px w-8 bg-ore/30" />
             <span className="font-mono text-[10px] text-zinc-600">{products.length} products indexed</span>
           </div>
-          <h2 className="font-display font-700 text-3xl md:text-4xl text-foreground">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground">
             Can I Run It?
           </h2>
           <p className="text-sm text-zinc-600 mt-1 max-w-lg">
@@ -293,7 +293,7 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
               </div>
             ) : (
               <div className="border border-loss/20 bg-loss/5 p-6 text-center">
-                <p className="font-display font-700 text-lg text-loss mb-1">No matches found</p>
+                <p className="font-display font-bold text-lg text-loss mb-1">No matches found</p>
                 <p className="text-sm text-zinc-600 mb-4">
                   This workload requires ≥{activeTask.minGb} GB — none of our current products qualify.
                 </p>

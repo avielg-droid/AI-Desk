@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Wordmark */}
             <a
               href="/"
-              className="shrink-0 font-display font-600 text-xl tracking-tight leading-none text-foreground hover:text-ore transition-colors duration-200"
+              className="shrink-0 font-display font-semibold text-xl tracking-tight leading-none text-foreground hover:text-ore transition-colors duration-200"
             >
               The AI Desk
             </a>

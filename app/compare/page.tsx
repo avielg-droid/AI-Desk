@@ -68,7 +68,7 @@ export default function CompareHubPage() {
         </nav>
 
         <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Head-to-Head</p>
-        <h1 className="font-display font-800 text-4xl md:text-5xl uppercase tracking-tight text-foreground mb-4">
+        <h1 className="font-display font-extrabold text-4xl md:text-5xl uppercase tracking-tight text-foreground mb-4">
           AI Hardware Comparisons
         </h1>
         <p className="text-zinc-600 max-w-xl leading-relaxed">
@@ -98,7 +98,7 @@ export default function CompareHubPage() {
       ].map(group => (
         <section key={group.label} className="mb-10">
           <div className="flex items-center gap-3 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground">{group.label}</h2>
+            <h2 className="font-display font-extrabold text-xl uppercase text-foreground">{group.label}</h2>
             <span className="font-mono text-[9px] uppercase tracking-widest text-ore border-l-2 border-ore pl-2">
               {group.badge}
             </span>
@@ -113,14 +113,14 @@ export default function CompareHubPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <div className="flex-1 min-w-0">
-                    <p className="font-display font-800 text-base uppercase text-foreground group-hover:text-ore transition-colors leading-tight truncate">
+                    <p className="font-display font-extrabold text-base uppercase text-foreground group-hover:text-ore transition-colors leading-tight truncate">
                       {pA.name}
                     </p>
                     <p className="font-mono text-[9px] text-slate-500">{memLabel(pA)}</p>
                   </div>
-                  <span className="font-mono text-[10px] text-ore shrink-0 font-700">VS</span>
+                  <span className="font-mono text-[10px] text-ore shrink-0 font-bold">VS</span>
                   <div className="flex-1 min-w-0">
-                    <p className="font-display font-800 text-base uppercase text-foreground group-hover:text-ore transition-colors leading-tight truncate">
+                    <p className="font-display font-extrabold text-base uppercase text-foreground group-hover:text-ore transition-colors leading-tight truncate">
                       {pB.name}
                     </p>
                     <p className="font-mono text-[9px] text-slate-500">{memLabel(pB)}</p>

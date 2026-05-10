@@ -100,7 +100,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   By Alex Voss
                 </Link>
               </div>
-              <h1 className="font-display font-800 text-3xl md:text-4xl uppercase tracking-tight text-foreground mb-4 leading-[1.1]">
+              <h1 className="font-display font-extrabold text-3xl md:text-4xl uppercase tracking-tight text-foreground mb-4 leading-[1.1]">
                 {post.headline}
               </h1>
               <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-2xl">
@@ -116,7 +116,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           {post.faq.length > 0 && (
             <section className="mt-12">
               <div className="flex items-center gap-4 mb-5">
-                <h2 className="font-display font-800 text-xl uppercase text-foreground">
+                <h2 className="font-display font-extrabold text-xl uppercase text-foreground">
                   Frequently Asked Questions
                 </h2>
                 <span className="h-px flex-1 bg-edge" />
@@ -124,7 +124,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <div className="space-y-1">
                 {post.faq.map((item, i) => (
                   <div key={i} className="border border-edge bg-ink-1 p-5">
-                    <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
+                    <h3 className="font-sans font-semibold text-sm text-foreground mb-2 flex items-start gap-2">
                       <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                       {item.question}
                     </h3>
@@ -139,7 +139,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           {relatedPosts.length > 0 && (
             <section className="mt-12">
               <div className="flex items-center gap-4 mb-5">
-                <h2 className="font-display font-800 text-xl uppercase text-foreground">Related Articles</h2>
+                <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Related Articles</h2>
                 <span className="h-px flex-1 bg-edge" />
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
@@ -172,7 +172,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <div className="divide-y divide-edge">
                 {relatedProducts.map(product => (
                   <div key={product.slug} className="p-4">
-                    <p className="font-sans font-600 text-sm text-foreground mb-1 leading-snug">{product.name}</p>
+                    <p className="font-sans font-semibold text-sm text-foreground mb-1 leading-snug">{product.name}</p>
                     <p className="font-mono text-[9px] text-zinc-600 mb-3">{product.shortDescription}</p>
                     <AffiliateButton href={product.affiliateUrl} size="sm" label="View Deal" />
                   </div>
@@ -185,7 +185,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="border border-edge bg-ink-1 p-4">
             <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Not sure which to pick?</p>
             <p className="font-sans text-xs text-zinc-600 mb-3 leading-relaxed">Compare up to 3 products side-by-side with AI-native metrics.</p>
-            <Link href="/compare" className="affiliate-btn inline-flex items-center gap-2 px-4 py-2 font-sans font-700 text-sm w-full justify-center">
+            <Link href="/compare" className="affiliate-btn inline-flex items-center gap-2 px-4 py-2 font-sans font-bold text-sm w-full justify-center">
               Compare Hardware →
             </Link>
           </div>

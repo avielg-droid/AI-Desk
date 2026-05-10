@@ -101,7 +101,7 @@ function SpecRow({ specKey, value, i }: { specKey: keyof ProductSpec; value: unk
       >
         {tip ? <Tooltip label={label} tip={tip} /> : label}
       </th>
-      <td className={`px-5 py-3.5 font-mono text-sm font-500 ${
+      <td className={`px-5 py-3.5 font-mono text-sm font-medium ${
         isBenchmark ? 'text-win' : DATA_KEYS.has(specKey) ? 'text-ore' : 'text-foreground'
       }`}>
         {formatValue(specKey, value)}

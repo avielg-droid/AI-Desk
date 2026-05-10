@@ -74,7 +74,7 @@ export default function MobileNav() {
             borderBottom: '1px solid rgba(255,255,255,0.08)',
           }}
         >
-          <span className="font-display font-600 text-base text-foreground">Menu</span>
+          <span className="font-display font-semibold text-base text-foreground">Menu</span>
           <button
             aria-label="Close menu"
             onClick={() => setOpen(false)}

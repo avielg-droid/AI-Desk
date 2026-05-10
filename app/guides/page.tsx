@@ -40,7 +40,7 @@ export default function GuidesIndexPage() {
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-3">
             How-To Guides
           </p>
-          <h1 className="font-display font-700 text-4xl md:text-5xl text-foreground mb-4">
+          <h1 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-4">
             Run AI Locally
           </h1>
           <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-xl">
@@ -63,7 +63,7 @@ export default function GuidesIndexPage() {
       {llmGuides.length > 0 && (
         <section id="llm">
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="font-display font-700 text-xl text-foreground whitespace-nowrap">
+            <h2 className="font-display font-bold text-xl text-foreground whitespace-nowrap">
               Language Model Guides
             </h2>
             <span className="h-px flex-1 bg-edge" />
@@ -80,7 +80,7 @@ export default function GuidesIndexPage() {
       {imageGuides.length > 0 && (
         <section id="image">
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="font-display font-700 text-xl text-foreground whitespace-nowrap">
+            <h2 className="font-display font-bold text-xl text-foreground whitespace-nowrap">
               Image Generation Guides
             </h2>
             <span className="h-px flex-1 bg-edge" />
@@ -96,14 +96,14 @@ export default function GuidesIndexPage() {
       {/* CTA */}
       <section className="border border-edge bg-ink-1 p-8 text-center">
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-2">Need the hardware first?</p>
-        <h2 className="font-display font-700 text-2xl text-foreground mb-3">
+        <h2 className="font-display font-bold text-2xl text-foreground mb-3">
           Find the Right Hardware for Your Use Case
         </h2>
         <p className="text-sm text-zinc-600 mb-6 max-w-md mx-auto">
           Every guide recommends specific hardware. Our buying guides match you to the right GPU or mini PC for your budget and workload.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/best" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-700 text-sm">
+          <Link href="/best" className="affiliate-btn inline-flex items-center gap-2 px-6 py-2.5 font-sans font-bold text-sm">
             Browse Buying Guides →
           </Link>
           <Link href="/products" className="nav-cta inline-flex items-center gap-2 px-6 py-2.5 border border-edge font-mono text-xs uppercase tracking-widest text-zinc-600 hover:border-ore/40 hover:text-ore">
@@ -130,7 +130,7 @@ function GuideCard({ guide }: { guide: ReturnType<typeof getAllGuides>[0] }) {
           {guide.model.paramCount}
         </span>
       </div>
-      <h3 className="font-mono font-500 text-sm text-foreground group-hover:text-ore transition-colors mb-2 leading-snug">
+      <h3 className="font-mono font-medium text-sm text-foreground group-hover:text-ore transition-colors mb-2 leading-snug">
         {guide.title}
       </h3>
       <p className="font-sans text-xs text-zinc-600 leading-relaxed line-clamp-2 flex-1 mb-3">

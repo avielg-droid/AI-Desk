@@ -64,7 +64,7 @@ export default function AuthorPage() {
         {/* Header */}
         <div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Author</p>
-          <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-1">
+          <h1 className="font-display font-extrabold text-4xl uppercase tracking-tight text-foreground mb-1">
             Alex Voss
           </h1>
           <p className="font-mono text-[11px] uppercase tracking-widest text-slate-500 mb-4">
@@ -79,7 +79,7 @@ export default function AuthorPage() {
 
         {/* Bio */}
         <section className="space-y-4">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Background
           </h2>
           <p className="text-sm text-zinc-600 leading-relaxed">
@@ -104,7 +104,7 @@ export default function AuthorPage() {
 
         {/* Expertise */}
         <section className="space-y-3">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Areas of Expertise
           </h2>
           <ul className="space-y-3">
@@ -112,7 +112,7 @@ export default function AuthorPage() {
               <li key={area} className="flex gap-4 border border-edge bg-ink-1 px-5 py-4">
                 <span className="text-ore font-mono mt-0.5 shrink-0">→</span>
                 <div>
-                  <p className="font-sans font-600 text-sm text-foreground">{area}</p>
+                  <p className="font-sans font-semibold text-sm text-foreground">{area}</p>
                   <p className="text-sm text-zinc-600 mt-0.5">{desc}</p>
                 </div>
               </li>
@@ -122,7 +122,7 @@ export default function AuthorPage() {
 
         {/* Methodology callout */}
         <section className="border border-ore/25 bg-ore/5 p-6 space-y-2">
-          <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground">
+          <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground">
             Review Methodology
           </h2>
           <p className="text-sm text-zinc-600 leading-relaxed">
@@ -135,7 +135,7 @@ export default function AuthorPage() {
 
         {/* Recent posts */}
         <section className="space-y-4">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Recent Articles
           </h2>
           <ul className="space-y-2">
@@ -147,7 +147,7 @@ export default function AuthorPage() {
                 >
                   <span className="text-ore font-mono mt-0.5 shrink-0 group-hover:translate-x-0.5 transition-transform">→</span>
                   <div className="min-w-0">
-                    <p className="text-sm font-500 text-foreground leading-snug">{post.title}</p>
+                    <p className="text-sm font-medium text-foreground leading-snug">{post.title}</p>
                     <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mt-1">
                       {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     </p>
@@ -163,7 +163,7 @@ export default function AuthorPage() {
 
         {/* Products reviewed */}
         <section className="space-y-3">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Products Reviewed
           </h2>
           <p className="text-sm text-zinc-600 leading-relaxed">

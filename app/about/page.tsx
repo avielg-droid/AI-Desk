@@ -13,7 +13,7 @@ export default function AboutPage() {
 
       <div>
         <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">About</p>
-        <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
+        <h1 className="font-display font-extrabold text-4xl uppercase tracking-tight text-foreground mb-2">
           The AI Desk
         </h1>
         <p className="text-base text-zinc-600 leading-relaxed">
@@ -23,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       <section className="space-y-3">
-        <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+        <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           Review Methodology
         </h2>
         <p className="text-sm text-zinc-600 leading-relaxed">
@@ -43,7 +43,7 @@ export default function AboutPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+        <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           Affiliate Disclosure
         </h2>
         <div className="rounded-xl border border-cta/30 bg-cta/5 p-5">
@@ -57,7 +57,7 @@ export default function AboutPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+        <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           Who Writes This
         </h2>
         <p className="text-sm text-zinc-600 leading-relaxed">
@@ -68,7 +68,7 @@ export default function AboutPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+        <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
           FTC Compliance
         </h2>
         <p className="text-sm text-zinc-600 leading-relaxed">

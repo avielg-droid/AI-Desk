@@ -98,6 +98,18 @@ body {
 }
 
 /* Forge ambient mesh — tech glow */
+@keyframes mesh-breathe {
+  0%   { transform: scale(1)    translateX(0%)   translateY(0%);   opacity: 0.5; }
+  33%  { transform: scale(1.06) translateX(1.5%) translateY(-1%);  opacity: 0.7; }
+  66%  { transform: scale(0.97) translateX(-1%)  translateY(1.5%); opacity: 0.45; }
+  100% { transform: scale(1)    translateX(0%)   translateY(0%);   opacity: 0.5; }
+}
+@keyframes mesh-breathe-dark {
+  0%   { transform: scale(1)    translateX(0%)   translateY(0%);   opacity: 1; }
+  33%  { transform: scale(1.06) translateX(1.5%) translateY(-1%);  opacity: 1.3; }
+  66%  { transform: scale(0.97) translateX(-1%)  translateY(1.5%); opacity: 0.85; }
+  100% { transform: scale(1)    translateX(0%)   translateY(0%);   opacity: 1; }
+}
 body::before {
   content: '';
   position: fixed;
@@ -105,16 +117,21 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(8,145,178,0.04) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(6,182,212,0.03) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(8,145,178,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(6,182,212,0.04) 0%, transparent 70%);
   opacity: 0.5;
-  transition: opacity 0.3s ease;
+  animation: mesh-breathe 12s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 [data-theme="dark"] body::before {
   background:
-    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(59,130,246,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(37,99,235,0.05) 0%, transparent 70%);
+    radial-gradient(ellipse 70% 50% at 10% 20%, rgba(59,130,246,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 70% at 90% 80%, rgba(37,99,235,0.07) 0%, transparent 70%);
   opacity: 1;
+  animation: mesh-breathe 12s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
 }
 
 /* Subtle texture */
@@ -203,6 +220,11 @@ body::after {
 }
 
 /* ── Forge Accent Bar ─────────────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 @keyframes forge-flow {
   0%   { background-position: 0% 50%;   }
   50%  { background-position: 100% 50%; }

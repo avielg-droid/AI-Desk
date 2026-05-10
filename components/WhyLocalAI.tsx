@@ -1,3 +1,7 @@
+'use client'
+
+import AnimatedStat from './AnimatedStat'
+
 const PILLARS = [
   {
     id: '01',
@@ -8,7 +12,7 @@ const PILLARS = [
     ),
     title: 'Complete Data Privacy',
     body: 'Your prompts, documents, and model outputs never leave your machine. No cloud provider storing your conversations. No risk of training on your proprietary data. What runs locally stays local — always.',
-    stat: '0 bytes',
+    stat: { prefix: '', from: 4200, to: 0, suffix: ' MB', finalLabel: '0 bytes' },
     statLabel: 'sent to cloud',
   },
   {
@@ -20,7 +24,7 @@ const PILLARS = [
     ),
     title: 'Zero API Costs',
     body: 'Cloud AI APIs bill per token. At $0.01–$0.06 per 1K tokens, a moderately active team hits $50–$300/month easily. Local inference has zero marginal cost — run 10 million tokens or 10 billion, your electricity bill barely moves.',
-    stat: '$0',
+    stat: { prefix: '$', from: 300, to: 0, suffix: '', finalLabel: '$0' },
     statLabel: 'per token',
   },
   {
@@ -32,19 +36,20 @@ const PILLARS = [
     ),
     title: 'Zero Latency',
     body: 'Cloud inference adds 100–800ms of network round-trip before the first token. Local models start generating instantly. For real-time applications, coding assistants, or agentic workflows that chain dozens of calls, that latency compounds into seconds of dead time per interaction.',
-    stat: '<5ms',
+    stat: { prefix: '', from: 800, to: 5, suffix: 'ms', finalLabel: '<5ms' },
     statLabel: 'time to first token',
   },
 ]
 
 export default function WhyLocalAI() {
   return (
-    <section>
+    <section className="border border-edge overflow-hidden">
       {/* Header */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="h-[3px] rule-ember" />
+      <div className="flex items-center gap-4 px-6 py-4 border-b border-edge bg-ink-1">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-1">The Case For Local</p>
-          <h2 className="font-display font-bold text-2xl uppercase tracking-tight text-foreground">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-0.5">The Case For Local</p>
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground">
             Why Run AI Locally?
           </h2>
         </div>
@@ -52,7 +57,7 @@ export default function WhyLocalAI() {
       </div>
 
       {/* Pillars */}
-      <div className="grid md:grid-cols-3 gap-px bg-edge border border-edge">
+      <div className="grid md:grid-cols-3 gap-px bg-edge">
         {PILLARS.map((p) => (
           <div key={p.id} className="relative bg-ink-0 p-7 flex flex-col group hover:bg-ink-1 transition-colors">
             {/* Number watermark */}
@@ -73,12 +78,18 @@ export default function WhyLocalAI() {
               {p.body}
             </p>
 
-            {/* Stat */}
-            <div className="border-t border-edge pt-4">
-              <p className="font-mono font-semibold text-2xl text-ore leading-none">
-                {p.stat}
+            {/* Animated stat */}
+            <div className="border-t border-ore/20 pt-4">
+              <p className="font-display font-bold text-3xl text-ore leading-none tracking-tight">
+                <AnimatedStat
+                  prefix={p.stat.prefix}
+                  from={p.stat.from}
+                  to={p.stat.to}
+                  suffix={p.stat.suffix}
+                  finalLabel={p.stat.finalLabel}
+                />
               </p>
-              <p className="font-mono text-[9px] uppercase tracking-widest mt-0.5" style={{ color: 'var(--text-subtle)' }}>
+              <p className="font-mono text-[9px] uppercase tracking-widest mt-1" style={{ color: 'var(--text-subtle)' }}>
                 {p.statLabel}
               </p>
             </div>

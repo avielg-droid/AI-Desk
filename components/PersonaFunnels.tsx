@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import AmazonImage from './AmazonImage'
 
 const PERSONAS = [
   {
@@ -11,8 +14,8 @@ const PERSONAS = [
     cta: 'Browse Mac Minis',
     tags: ['macOS Native', 'Ollama Ready', 'Zero Config'],
     products: [
-      { name: 'Mac Mini M4', sub: '16GB · 120 GB/s', href: '/products/apple-mac-mini-m4' },
-      { name: 'Mac Mini M4 Pro', sub: '24GB · 273 GB/s', href: '/products/apple-mac-mini-m4-pro' },
+      { name: 'Mac Mini M4', sub: '16GB · 120 GB/s', href: '/products/apple-mac-mini-m4', asin: 'B0DLBX4B1K', image: '/products/apple-mac-mini-m4.jpg' },
+      { name: 'Mac Mini M4 Pro', sub: '24GB · 273 GB/s', href: '/products/apple-mac-mini-m4-pro', asin: 'B0DLBVHSLD', image: '/products/apple-mac-mini-m4-pro.jpg' },
     ],
     accent: 'text-ore',
     border: 'border-ore/20',
@@ -29,8 +32,8 @@ const PERSONAS = [
     cta: 'Browse Mini PCs',
     tags: ['Windows 11 Pro', 'Ollama + LM Studio', '24/7 Capable'],
     products: [
-      { name: 'KAMRUI Hyper H2', sub: '16GB · Intel 14450HX', href: '/products/kamrui-hyper-h2' },
-      { name: 'GEEKOM IT12', sub: '16GB · i5-12450H', href: '/products/geekom-it12' },
+      { name: 'KAMRUI Hyper H2', sub: '16GB · Intel 14450HX', href: '/products/kamrui-hyper-h2', asin: 'B0G488CW54', image: '/products/kamrui-hyper-h2.jpg' },
+      { name: 'GEEKOM IT12', sub: '16GB · i5-12450H', href: '/products/geekom-it12', asin: 'B0C85YVQLW', image: '/products/geekom-it12.jpg' },
     ],
     accent: 'text-data',
     border: 'border-data/20',
@@ -47,8 +50,8 @@ const PERSONAS = [
     cta: 'Browse GPUs',
     tags: ['CUDA / ROCm', 'Stable Diffusion', 'Max VRAM'],
     products: [
-      { name: 'RTX 5070 WINDFORCE', sub: '12GB GDDR7 · 672 GB/s', href: '/products/gigabyte-rtx-5070-windforce' },
-      { name: 'RX 9060 XT 16G', sub: '16GB GDDR6 · RDNA 4', href: '/products/gigabyte-rx-9060-xt-gaming' },
+      { name: 'RTX 5070 WINDFORCE', sub: '12GB GDDR7 · 672 GB/s', href: '/products/gigabyte-rtx-5070-windforce', asin: 'B0DTQMLX4F', image: '/products/gigabyte-rtx-5070-windforce.jpg' },
+      { name: 'RX 9060 XT 16G', sub: '16GB GDDR6 · RDNA 4', href: '/products/gigabyte-rx-9060-xt-gaming', asin: 'B0F91KM1CK', image: '/products/gigabyte-rx-9060-xt-gaming.jpg' },
     ],
     accent: 'text-win',
     border: 'border-win/20',
@@ -59,48 +62,49 @@ const PERSONAS = [
 
 export default function PersonaFunnels() {
   return (
-    <section>
+    <section className="border border-edge overflow-hidden">
+      <div className="h-[3px] rule-ember" />
       {/* Header */}
-      <div className="flex items-center gap-4 mb-8">
+      <div className="flex items-center gap-4 px-6 py-4 border-b border-edge bg-ink-1">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-1">Find Your Path</p>
-          <h2 className="font-display font-800 text-2xl uppercase tracking-tight text-foreground">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-0.5">Find Your Path</p>
+          <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground">
             Which Setup Is Right For You?
           </h2>
         </div>
         <span className="h-px flex-1 bg-edge" />
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-px bg-edge">
         {PERSONAS.map((p) => (
           <div
             key={p.id}
-            className={`relative border ${p.border} ${p.bg} flex flex-col overflow-hidden`}
+            className="relative flex flex-col overflow-hidden bg-ink-0"
           >
             {/* Top accent bar */}
             <div className={`h-[3px] ${p.topBar}`} />
 
-            <div className="p-7 flex flex-col flex-1">
+            <div className="p-6 flex flex-col flex-1">
               {/* Badge */}
-              <span className={`font-mono text-[9px] uppercase tracking-[0.2em] ${p.accent} mb-4`}>
+              <span className={`font-mono text-[9px] uppercase tracking-[0.2em] ${p.accent} mb-3`}>
                 {p.badge}
               </span>
 
               {/* Headline */}
-              <h3 className="font-display font-900 text-3xl uppercase text-foreground leading-tight mb-1">
+              <h3 className="font-display font-black text-3xl uppercase text-foreground leading-tight mb-1">
                 {p.headline}
               </h3>
-              <p className={`font-mono text-[10px] uppercase tracking-widest ${p.accent} mb-5`}>
+              <p className={`font-mono text-[10px] uppercase tracking-widest ${p.accent} mb-4`}>
                 {p.subheadline}
               </p>
 
               {/* Body */}
-              <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--text-muted)' }}>
                 {p.body}
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-6">
+              <div className="flex flex-wrap gap-1.5 mb-5">
                 {p.tags.map(tag => (
                   <span
                     key={tag}
@@ -111,23 +115,34 @@ export default function PersonaFunnels() {
                 ))}
               </div>
 
-              {/* Featured products */}
-              <div className="space-y-2 mb-6">
+              {/* Featured products — 2-column card grid */}
+              <div className="grid grid-cols-2 gap-2 mb-5">
                 {p.products.map(prod => (
                   <Link
                     key={prod.href}
                     href={prod.href}
-                    className="flex items-center justify-between p-3 bg-background border border-edge/60 hover:border-edge transition-colors group"
+                    className={`group flex flex-col border ${p.border} bg-background hover:bg-ink-1 transition-colors overflow-hidden`}
                   >
-                    <div>
-                      <p className="font-sans font-600 text-xs text-foreground group-hover:text-ore transition-colors truncate max-w-[160px]">
+                    {/* Image area — square, white bg */}
+                    <div className="relative w-full aspect-square bg-white overflow-hidden">
+                      <AmazonImage
+                        asin={prod.asin}
+                        name={prod.name}
+                        localSrc={prod.image}
+                        size={160}
+                        compact
+                        className="w-full h-full p-3 object-contain"
+                      />
+                    </div>
+                    {/* Info below image */}
+                    <div className="px-2.5 py-2 border-t border-edge/40">
+                      <p className={`font-sans font-semibold text-[11px] text-foreground group-hover:${p.accent.replace('text-', 'text-')} transition-colors leading-snug truncate`}>
                         {prod.name}
                       </p>
-                      <p className="font-mono text-[9px] mt-0.5" style={{ color: 'var(--text-subtle)' }}>{prod.sub}</p>
+                      <p className="font-mono text-[9px] mt-0.5 leading-none" style={{ color: 'var(--text-subtle)' }}>
+                        {prod.sub}
+                      </p>
                     </div>
-                    <span className={`font-mono text-xs ${p.accent} opacity-0 group-hover:opacity-100 transition-opacity`}>
-                      →
-                    </span>
                   </Link>
                 ))}
               </div>

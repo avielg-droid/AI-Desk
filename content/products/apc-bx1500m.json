@@ -36,7 +36,7 @@
   "reviewCount": 1,
   "priceDisplay": "Check Price on Amazon",
   "lastUpdated": "2026-04-21",
-  "featured": true,
+  "featured": false,
   "crossSells": [
     "gigabyte-rtx-5070-windforce",
     "asus-rtx-5070-sff",

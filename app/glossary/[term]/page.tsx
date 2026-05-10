@@ -111,7 +111,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
                 {CATEGORY_LABELS[entry.category]}
               </span>
             </div>
-            <h1 className="font-display font-700 text-4xl md:text-5xl text-foreground mb-2">
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-2">
               What is {entry.term}?
             </h1>
             <p className="font-sans text-lg text-zinc-600 leading-relaxed mt-4">
@@ -144,7 +144,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
         {/* Related products */}
         {relatedProducts.length > 0 && (
           <section>
-            <h2 className="font-display font-700 text-xl text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl text-foreground mb-4">
               Hardware Relevant to {entry.term}
             </h2>
             <div className="space-y-3">
@@ -165,7 +165,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
                   <div className="flex-1 min-w-0">
                     <Link
                       href={`/products/${product.slug}`}
-                      className="font-sans font-600 text-sm text-foreground hover:text-ore transition-colors"
+                      className="font-sans font-semibold text-sm text-foreground hover:text-ore transition-colors"
                     >
                       {product.name}
                     </Link>
@@ -186,7 +186,7 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
         {/* Related terms */}
         {relatedTerms.length > 0 && (
           <section>
-            <h2 className="font-display font-700 text-xl text-foreground mb-4">
+            <h2 className="font-display font-bold text-xl text-foreground mb-4">
               Related Terms
             </h2>
             <div className="grid sm:grid-cols-2 gap-3">

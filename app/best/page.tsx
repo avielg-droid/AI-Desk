@@ -46,7 +46,7 @@ export default function BestHubPage() {
             </ol>
           </nav>
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-3">Buying Guides</p>
-          <h1 className="font-display font-800 text-4xl md:text-5xl text-foreground mb-4">
+          <h1 className="font-display font-extrabold text-4xl md:text-5xl text-foreground mb-4">
             Best Hardware For…
           </h1>
           <p className="font-sans text-base text-zinc-600 leading-relaxed max-w-xl">
@@ -67,7 +67,7 @@ export default function BestHubPage() {
               {TASK_LABELS[persona.slug] ?? 'Guide'}
             </span>
 
-            <h2 className="font-display font-800 text-xl uppercase leading-tight text-foreground mb-2 group-hover:text-ore transition-colors">
+            <h2 className="font-display font-extrabold text-xl uppercase leading-tight text-foreground mb-2 group-hover:text-ore transition-colors">
               {persona.h1}
             </h2>
 

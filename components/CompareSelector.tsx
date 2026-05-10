@@ -158,7 +158,7 @@ export default function CompareSelector({ products }: { products: Product[] }) {
                 <p className={`font-mono text-[9px] uppercase tracking-widest mb-1 ${isSelected ? 'text-ore' : 'text-zinc-600'}`}>
                   {p.category.replace('-', ' ')}
                 </p>
-                <p className={`font-sans font-600 text-xs leading-snug ${isSelected ? 'text-ore' : 'text-foreground'}`}>
+                <p className={`font-sans font-semibold text-xs leading-snug ${isSelected ? 'text-ore' : 'text-foreground'}`}>
                   {p.name}
                 </p>
                 {isSelected && (
@@ -183,7 +183,7 @@ export default function CompareSelector({ products }: { products: Product[] }) {
       {cols >= 2 && (
         <div>
           <div className="flex items-center gap-4 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
+            <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground whitespace-nowrap">
               Side-by-Side
             </h2>
             <span className="h-px flex-1 bg-edge" />
@@ -209,7 +209,7 @@ export default function CompareSelector({ products }: { products: Product[] }) {
                       <p className="font-mono text-[9px] uppercase tracking-widest text-ore mb-0.5">
                         Option {String.fromCharCode(65 + i)}
                       </p>
-                      <p className="font-sans font-700 text-sm text-foreground leading-snug">{p.name}</p>
+                      <p className="font-sans font-bold text-sm text-foreground leading-snug">{p.name}</p>
                     </div>
                     <button
                       onClick={() => toggle(p.slug)}
@@ -263,7 +263,7 @@ export default function CompareSelector({ products }: { products: Product[] }) {
                       }`}
                     >
                       <span className={`font-mono text-sm text-center ${
-                        winIdx === i ? 'text-win font-600' : 'text-zinc-600'
+                        winIdx === i ? 'text-win font-semibold' : 'text-zinc-600'
                       }`}>
                         {val.display}
                         {winIdx === i && <span className="ml-1 text-[10px] text-win">▲</span>}
@@ -280,7 +280,7 @@ export default function CompareSelector({ products }: { products: Product[] }) {
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <Link
                 href={`/compare/${seoSlug}`}
-                className="affiliate-btn inline-flex items-center gap-2 px-5 py-2.5 font-sans font-700 text-sm"
+                className="affiliate-btn inline-flex items-center gap-2 px-5 py-2.5 font-sans font-bold text-sm"
               >
                 Full In-Depth Comparison
                 <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5}>

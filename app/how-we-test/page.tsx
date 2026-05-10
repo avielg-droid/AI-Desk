@@ -72,7 +72,7 @@ export default function HowWeTestPage() {
             </ol>
           </nav>
           <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Methodology</p>
-          <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-4">
+          <h1 className="font-display font-extrabold text-4xl uppercase tracking-tight text-foreground mb-4">
             How We Test AI Hardware
           </h1>
           <p className="text-base text-zinc-600 leading-relaxed">
@@ -84,7 +84,7 @@ export default function HowWeTestPage() {
 
         {/* Core principles */}
         <section className="space-y-3">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Testing Principles
           </h2>
           <ul className="space-y-3">
@@ -98,7 +98,7 @@ export default function HowWeTestPage() {
               <li key={title as string} className="flex gap-4 border border-edge bg-ink-1 px-5 py-4">
                 <span className="text-win font-mono mt-0.5 shrink-0">✓</span>
                 <div>
-                  <p className="font-sans font-600 text-sm text-foreground">{title as string}</p>
+                  <p className="font-sans font-semibold text-sm text-foreground">{title as string}</p>
                   <p className="text-sm text-zinc-600 mt-0.5">{desc as string}</p>
                 </div>
               </li>
@@ -108,14 +108,14 @@ export default function HowWeTestPage() {
 
         {/* Benchmark specs */}
         <section className="space-y-4">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Benchmark Definitions
           </h2>
           <div className="space-y-3">
             {BENCHMARKS.map(b => (
               <div key={b.model} className="border border-edge bg-ink-1 p-5">
                 <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
-                  <p className="font-sans font-600 text-sm text-foreground">{b.model}</p>
+                  <p className="font-sans font-semibold text-sm text-foreground">{b.model}</p>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-ore shrink-0">{b.metric}</span>
                 </div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-slate-500 mb-1">Tool: {b.tool}</p>
@@ -127,7 +127,7 @@ export default function HowWeTestPage() {
 
         {/* What we don't test */}
         <section className="space-y-3">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             What We Don&apos;t Test
           </h2>
           <ul className="space-y-2.5">
@@ -147,7 +147,7 @@ export default function HowWeTestPage() {
 
         {/* Data sources */}
         <section className="space-y-3">
-          <h2 className="font-display font-700 text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-xl uppercase tracking-tight text-foreground border-b border-edge pb-2">
             Data Sources
           </h2>
           <p className="text-sm text-zinc-600 leading-relaxed">
@@ -170,7 +170,7 @@ export default function HowWeTestPage() {
 
         {/* Update policy */}
         <section className="border border-ore/25 bg-ore/5 p-6">
-          <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground mb-2">Update Policy</h2>
+          <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground mb-2">Update Policy</h2>
           <p className="text-sm text-zinc-600 leading-relaxed">
             Benchmark results are updated when a new driver or software version causes a meaningful performance change
             (≥10%). Each product page shows a &quot;Last Updated&quot; date. If you notice a benchmark that no longer matches

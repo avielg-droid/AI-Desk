@@ -36,7 +36,7 @@ export default function StickyAffiliateCta({
 
         {/* Name + price */}
         <div className="flex items-center gap-4 min-w-0">
-          <p className="font-sans font-600 text-sm text-foreground truncate">{productName}</p>
+          <p className="font-sans font-semibold text-sm text-foreground truncate">{productName}</p>
           <span className="font-mono text-sm text-ore shrink-0">{priceDisplay}</span>
         </div>
 
@@ -46,7 +46,7 @@ export default function StickyAffiliateCta({
             href={href}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="view-deal-btn inline-flex items-center gap-2 px-5 py-2 font-sans font-700 text-sm"
+            className="view-deal-btn inline-flex items-center gap-2 px-5 py-2 font-sans font-bold text-sm"
           >
             View Deal
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">

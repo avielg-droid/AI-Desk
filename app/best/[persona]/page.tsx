@@ -128,7 +128,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
               </span>
             </div>
 
-            <h1 className="font-display font-900 text-4xl md:text-5xl lg:text-6xl uppercase leading-none tracking-tight text-foreground mb-6">
+            <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl uppercase leading-none tracking-tight text-foreground mb-6">
               {persona.h1}
             </h1>
 
@@ -141,7 +141,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
         {/* ── RANKED LIST ── */}
         <section>
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="font-display font-800 text-2xl uppercase tracking-tight text-foreground">
+            <h2 className="font-display font-extrabold text-2xl uppercase tracking-tight text-foreground">
               Ranked Picks
             </h2>
             <span className="h-px flex-1 bg-edge/60" />
@@ -203,7 +203,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
                         <span className="font-mono text-[10px] text-slate-600">{product.brand}</span>
                       </div>
 
-                      <h3 className="font-display font-800 text-xl uppercase leading-tight text-foreground mb-1">
+                      <h3 className="font-display font-extrabold text-xl uppercase leading-tight text-foreground mb-1">
                         <Link href={`/products/${product.slug}`} className="hover:text-ore transition-colors">
                           {product.name}
                         </Link>
@@ -233,7 +233,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
         {/* ── REQUIREMENTS ── */}
         <section className="rounded-xl border border-data/20 bg-data/5 p-6 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-data/40 to-transparent" />
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
+          <h2 className="font-display font-extrabold text-xl uppercase text-foreground mb-3">
             Hardware Requirements
           </h2>
           <p className="text-sm text-zinc-700 leading-relaxed">{persona.requirements}</p>
@@ -241,7 +241,7 @@ export default function PersonaPage({ params }: { params: { persona: string } })
 
         {/* ── WHY THIS MATTERS ── */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-3">
+          <h2 className="font-display font-extrabold text-xl uppercase text-foreground mb-3">
             Why This Matters
           </h2>
           <p className="text-sm text-zinc-600 leading-relaxed">{persona.whyThisMatters}</p>
@@ -249,13 +249,13 @@ export default function PersonaPage({ params }: { params: { persona: string } })
 
         {/* ── FAQ ── */}
         <section>
-          <h2 className="font-display font-800 text-xl uppercase text-foreground mb-5">
+          <h2 className="font-display font-extrabold text-xl uppercase text-foreground mb-5">
             Frequently Asked Questions
           </h2>
           <div className="space-y-1">
             {persona.faq.map((item, i) => (
               <div key={item.question} className="rounded-xl border border-edge bg-ink-1 p-5">
-                <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
+                <h3 className="font-sans font-semibold text-sm text-foreground mb-2 flex items-start gap-2">
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
                 </h3>

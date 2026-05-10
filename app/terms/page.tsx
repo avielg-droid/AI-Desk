@@ -15,7 +15,7 @@ export default function TermsPage() {
       {/* Header */}
       <div>
         <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-2">Legal</p>
-        <h1 className="font-display font-800 text-4xl uppercase tracking-tight text-foreground mb-2">
+        <h1 className="font-display font-extrabold text-4xl uppercase tracking-tight text-foreground mb-2">
           Terms of Service
         </h1>
         <p className="font-mono text-xs text-slate-500">Last updated: {updated}</p>
@@ -94,7 +94,7 @@ export default function TermsPage() {
         },
       ].map(section => (
         <section key={section.heading} className="space-y-3">
-          <h2 className="font-display font-700 text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
+          <h2 className="font-display font-bold text-lg uppercase tracking-tight text-foreground border-b border-edge pb-2">
             {section.heading}
           </h2>
           {section.body.map((p, i) => (

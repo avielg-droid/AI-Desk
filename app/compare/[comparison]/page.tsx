@@ -59,7 +59,7 @@ function VerdictBadge({
       {winnerShort ? (
         <div className="flex items-center gap-1.5">
           <span className="text-win text-[10px]">▲</span>
-          <span className="font-sans font-700 text-sm text-foreground">{winnerShort}</span>
+          <span className="font-sans font-bold text-sm text-foreground">{winnerShort}</span>
         </div>
       ) : (
         <span className="font-mono text-[10px] uppercase tracking-widest text-zinc-600">Tie</span>
@@ -152,7 +152,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
 
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-ore mb-3">Head-to-Head</p>
-              <h1 className="font-display font-800 text-3xl md:text-4xl uppercase tracking-tight text-foreground">
+              <h1 className="font-display font-extrabold text-3xl md:text-4xl uppercase tracking-tight text-foreground">
                 {data.h1}
               </h1>
             </div>
@@ -162,7 +162,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
               {[{ product: a, side: 'A' }, { product: b, side: 'B' }].map(({ product, side }) => (
                 <div key={product.slug} className="border border-edge bg-ink-1 p-5 flex flex-col">
                   <span className="font-mono text-[9px] uppercase tracking-widest text-ore mb-2">Option {side}</span>
-                  <p className="font-display font-800 text-lg uppercase text-foreground leading-tight mb-1">
+                  <p className="font-display font-extrabold text-lg uppercase text-foreground leading-tight mb-1">
                     {product.name}
                   </p>
                   <p className="font-mono text-[10px] text-zinc-600 capitalize mb-4">
@@ -210,7 +210,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {/* ── Spec table ── */}
         <section>
           <div className="flex items-center gap-4 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground">Spec Comparison</h2>
+            <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Spec Comparison</h2>
             <span className="h-px flex-1 bg-edge" />
           </div>
           <div className="border border-edge overflow-hidden">
@@ -227,10 +227,10 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
                 } ${i < data.specs.length - 1 ? 'border-b border-edge/50' : ''}`}
               >
                 <span className="font-mono text-[10px] text-zinc-600">{row.label}</span>
-                <span className={`text-sm text-center font-mono ${row.winner === 'a' ? 'text-win font-600' : 'text-zinc-600'}`}>
+                <span className={`text-sm text-center font-mono ${row.winner === 'a' ? 'text-win font-semibold' : 'text-zinc-600'}`}>
                   {row.aVal}{row.winner === 'a' && <span className="ml-1 text-win text-[10px]">▲</span>}
                 </span>
-                <span className={`text-sm text-center font-mono ${row.winner === 'b' ? 'text-win font-600' : 'text-zinc-600'}`}>
+                <span className={`text-sm text-center font-mono ${row.winner === 'b' ? 'text-win font-semibold' : 'text-zinc-600'}`}>
                   {row.bVal}{row.winner === 'b' && <span className="ml-1 text-win text-[10px]">▲</span>}
                 </span>
               </div>
@@ -241,7 +241,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {/* ── Performance verdicts ── */}
         <section>
           <div className="flex items-center gap-4 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground">Performance Verdicts</h2>
+            <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Performance Verdicts</h2>
             <span className="h-px flex-1 bg-edge" />
           </div>
           <div className="space-y-2">
@@ -255,7 +255,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {/* ── Buy recommendations ── */}
         <section>
           <div className="flex items-center gap-4 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground">Who Should Buy Which?</h2>
+            <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Who Should Buy Which?</h2>
             <span className="h-px flex-1 bg-edge" />
           </div>
           <div className="grid md:grid-cols-2 gap-4">
@@ -280,7 +280,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {(otherA.length > 0 || otherB.length > 0) && (
           <section>
             <div className="flex items-center gap-4 mb-5">
-              <h2 className="font-display font-800 text-xl uppercase text-foreground">Related Comparisons</h2>
+              <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Related Comparisons</h2>
               <span className="h-px flex-1 bg-edge" />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -300,13 +300,13 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {/* ── FAQ ── */}
         <section>
           <div className="flex items-center gap-4 mb-5">
-            <h2 className="font-display font-800 text-xl uppercase text-foreground">Frequently Asked Questions</h2>
+            <h2 className="font-display font-extrabold text-xl uppercase text-foreground">Frequently Asked Questions</h2>
             <span className="h-px flex-1 bg-edge" />
           </div>
           <div className="space-y-1">
             {data.faq.map((item, i) => (
               <div key={item.question} className="border border-edge bg-ink-1 p-5">
-                <h3 className="font-sans font-600 text-sm text-foreground mb-2 flex items-start gap-2">
+                <h3 className="font-sans font-semibold text-sm text-foreground mb-2 flex items-start gap-2">
                   <span className="font-mono text-[10px] text-ore mt-0.5 shrink-0">Q{i + 1}</span>
                   {item.question}
                 </h3>
@@ -319,7 +319,7 @@ export default function ComparisonPage({ params }: { params: { comparison: strin
         {/* ── Full review links ── */}
         <section className="border border-edge bg-ink-1 p-6">
           <div className="flex items-center gap-4 mb-4">
-            <h2 className="font-display font-800 text-lg uppercase text-foreground">Full Reviews</h2>
+            <h2 className="font-display font-extrabold text-lg uppercase text-foreground">Full Reviews</h2>
             <span className="h-px flex-1 bg-edge" />
           </div>
           <div className="flex flex-wrap gap-3">
