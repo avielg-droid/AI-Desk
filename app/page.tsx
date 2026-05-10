@@ -89,59 +89,99 @@ export default function HomePage() {
       <SchemaMarkup schema={buildSpeakableSchema(['h1', '.hero-summary', '.key-facts'])} />
 
       {/* ── HERO ── */}
-      <section className="border-b border-edge">
-        <div className="max-w-7xl mx-auto px-6 md:px-14 py-6 md:py-8 lg:py-12">
+      <section className="border-b border-edge overflow-hidden">
+        <div className="grid lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_440px] min-h-0">
 
-          {/* Eyebrow */}
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-6">
-            Independent AI Hardware Reviews · {allProducts.length} Products Benchmarked
-          </p>
+          {/* LEFT — Headline + CTAs */}
+          <div className="px-6 md:px-10 lg:px-12 py-8 md:py-10 lg:py-14 border-r border-edge flex flex-col justify-between gap-10">
 
-          {/* Headline */}
-          <h1
-            className="font-display font-bold tracking-tight text-foreground mb-6 max-w-4xl hero-headline"
-            style={{ fontSize: 'clamp(2.75rem, 7vw, 6.5rem)', lineHeight: 1.05 }}
-          >
-            The Hardware<br />
-            That Runs AI.
-          </h1>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ore opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-ore" />
+              </span>
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em]" style={{ color: 'var(--text-subtle)' }}>
+                Independent AI Hardware Reviews · {allProducts.length} Products Benchmarked
+              </p>
+            </div>
 
-          {/* Sub */}
-          <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl" style={{ color: 'var(--text-muted)' }}>
-            Benchmarked GPUs, Mini PCs, and accessories for LLM inference, Stable Diffusion, and local AI workloads.
-          </p>
+            {/* Headline block */}
+            <div className="border-l-2 border-ore pl-5 md:pl-7">
+              <h1
+                className="font-display font-bold tracking-tight text-foreground hero-headline"
+                style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: 1.0, letterSpacing: '-0.03em' }}
+              >
+                The Hardware<br />
+                <span className="text-ore">That Runs</span><br />
+                AI.
+              </h1>
+              <p className="text-base md:text-lg leading-relaxed mt-5 max-w-xl hero-summary" style={{ color: 'var(--text-muted)' }}>
+                Benchmarked GPUs, Mini PCs, and accessories for LLM inference, Stable Diffusion, and local AI workloads.
+              </p>
+            </div>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-5 mb-12">
-            <Link
-              href="/products"
-              className="forge-btn inline-flex items-center gap-3 px-8 py-4 font-sans font-semibold text-base"
-            >
-              Browse Hardware
-              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </Link>
-            <Link
-              href="/best"
-              className="font-mono text-sm underline underline-offset-4 transition-colors duration-150"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              Find your setup →
-            </Link>
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                href="/products"
+                className="forge-btn inline-flex items-center gap-3 px-7 py-3.5 font-sans font-semibold text-sm"
+              >
+                Browse Hardware
+                <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="square" d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+              <Link
+                href="/best"
+                className="font-mono text-sm transition-colors duration-150 hover:text-ore"
+                style={{ color: 'var(--text-muted)' }}
+              >
+                Find your setup →
+              </Link>
+            </div>
+
           </div>
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-x-10 gap-y-4 border-t border-edge pt-6">
-            {SIDE_STATS.map(s => (
-              <div key={s.val} className="flex flex-col">
-                <p className="font-mono font-semibold text-2xl text-foreground leading-none">
+          {/* RIGHT — Benchmark data panel */}
+          <div className="hidden lg:flex flex-col divide-y divide-edge bg-ink-1">
+            {/* Panel header */}
+            <div className="px-6 py-4 flex items-center justify-between">
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em]" style={{ color: 'var(--text-subtle)' }}>Key Benchmarks</span>
+              <span className="font-mono text-[9px] text-ore uppercase tracking-widest">2026</span>
+            </div>
+
+            {/* Stats — large typographic display */}
+            {SIDE_STATS.map((s) => (
+              <div key={s.val} className="px-6 py-6 flex flex-col gap-1 hover:bg-ink-2 transition-colors key-facts">
+                <p
+                  className="font-display font-bold text-foreground leading-none tabular-nums"
+                  style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', letterSpacing: '-0.04em' }}
+                >
                   {s.val}
-                  <span className="text-sm ml-1.5" style={{ color: 'var(--text-muted)' }}>{s.unit}</span>
+                  <span
+                    className="font-mono ml-2 text-ore"
+                    style={{ fontSize: 'clamp(0.75rem, 1.5vw, 1rem)', letterSpacing: '0.05em' }}
+                  >
+                    {s.unit}
+                  </span>
                 </p>
-                <p className="font-mono text-[9px] uppercase tracking-widest mt-1" style={{ color: 'var(--text-subtle)' }}>{s.label}</p>
+                <p className="font-mono text-[9px] uppercase tracking-widest" style={{ color: 'var(--text-subtle)' }}>
+                  {s.label}
+                </p>
               </div>
             ))}
+
+            {/* Bottom CTA */}
+            <div className="px-6 py-4 mt-auto">
+              <Link
+                href="/compare"
+                className="font-mono text-[10px] uppercase tracking-widest hover:text-ore transition-colors"
+                style={{ color: 'var(--text-subtle)' }}
+              >
+                Compare all hardware →
+              </Link>
+            </div>
           </div>
 
         </div>
