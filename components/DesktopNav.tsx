@@ -26,6 +26,7 @@ const NAV: NavItem[] = [
     ],
   },
   { href: '/compare',  label: 'Compare'  },
+  { href: '/blog',     label: 'Blog'     },
   { href: '/glossary', label: 'Glossary' },
   { href: '/about',    label: 'About'    },
 ]
