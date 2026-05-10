@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const ASSOCIATE_TAG = process.env.NEXT_PUBLIC_AMAZON_TAG ?? 'YOUR_ASSOCIATE_TAG'
 
@@ -43,6 +43,7 @@ type Status = 'loading' | 'loaded' | 'error-local' | 'error-all'
 
 export default function AmazonImage({ asin, name, localSrc, size = 250, compact = false, className = '' }: AmazonImageProps) {
   const [status, setStatus] = useState<Status>(localSrc ? 'loading' : 'error-local')
+  const imgRef = useRef<HTMLImageElement>(null)
 
   const amazonSrc = `https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=${asin}&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL${size}_&tag=${ASSOCIATE_TAG}`
 
@@ -50,12 +51,18 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, compact 
   const isLoaded = status === 'loaded'
   const showPlaceholder = !isLoaded
 
+  // Detect images that loaded from cache before onLoad could fire
+  useEffect(() => {
+    const img = imgRef.current
+    if (img && img.complete && img.naturalHeight !== 0) {
+      setStatus('loaded')
+    }
+  }, [activeSrc])
+
   const handleError = () => {
     if (status === 'loading') {
-      // Local failed — fall back to Amazon CDN
       setStatus('error-local')
     } else {
-      // Amazon also failed — show placeholder permanently
       setStatus('error-all')
     }
   }
@@ -73,10 +80,10 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, compact 
         </div>
       )}
 
-      {/* Image is always in the DOM so browser loads it immediately.
-          Opacity 0 → 1 on load — never display:none which suppresses onLoad. */}
+      {/* Image always in DOM — opacity 0→1, never display:none (suppresses onLoad) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
+        ref={imgRef}
         key={activeSrc}
         src={activeSrc}
         alt={name}
@@ -86,7 +93,7 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, compact 
         onError={handleError}
         style={{
           opacity: isLoaded ? 1 : 0,
-          transition: 'opacity 0.2s ease',
+          transition: 'opacity 0.15s ease',
         }}
         className={`object-contain w-full h-full ${className}`}
       />

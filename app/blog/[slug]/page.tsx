@@ -7,6 +7,7 @@ import { buildBreadcrumbSchema, buildFAQSchema, buildBlogPostingSchema, buildSpe
 import SchemaMarkup from '@/components/SchemaMarkup'
 import AffiliateButton from '@/components/AffiliateButton'
 import BlogContent from '@/components/BlogContent'
+import AmazonImage from '@/components/AmazonImage'
 
 export const revalidate = 3600
 
@@ -171,11 +172,16 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </div>
               <div className="divide-y divide-edge">
                 {relatedProducts.map(product => (
-                  <div key={product.slug} className="p-4">
-                    <p className="font-sans font-semibold text-sm text-foreground mb-1 leading-snug">{product.name}</p>
-                    <p className="font-mono text-[9px] text-zinc-600 mb-3">{product.shortDescription}</p>
-                    <AffiliateButton href={product.affiliateUrl} size="sm" label="View Deal" />
-                  </div>
+                  <Link key={product.slug} href={`/products/${product.slug}`} className="flex gap-3 p-4 hover:bg-ink-0 transition-colors group">
+                    <div className="w-16 h-16 shrink-0 bg-white border border-edge/40 overflow-hidden flex items-center justify-center">
+                      <AmazonImage asin={product.asin} name={product.name} localSrc={product.image} size={64} compact className="w-full h-full p-1" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-sans font-semibold text-sm text-foreground group-hover:text-ore transition-colors leading-snug mb-1">{product.name}</p>
+                      <p className="font-mono text-[9px] text-zinc-600 mb-2 line-clamp-2 leading-relaxed">{product.priceDisplay}</p>
+                      <AffiliateButton href={product.affiliateUrl} size="sm" label="View Deal" />
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
