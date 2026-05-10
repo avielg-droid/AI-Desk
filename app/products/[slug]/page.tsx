@@ -5,6 +5,7 @@ import { getAllProducts, getProductBySlug } from '@/lib/products'
 import { buildProductSchema, buildFAQSchema, buildBreadcrumbSchema } from '@/lib/schema'
 import { PRODUCT_PERSONA_MAP } from '@/lib/personaLinks'
 import { getProductComparisonSlugs } from '@/lib/comparisons'
+import { GUIDE_ENTRIES } from '@/lib/guides'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ProductHero from '@/components/ProductHero'
 import ComparisonTable from '@/components/ComparisonTable'
@@ -28,15 +29,25 @@ export async function generateMetadata({
   if (!product) return {}
   const tps = product.specs.tokens_per_second_7b
   const titleSuffix = tps ? `: ${tps} t/s on Llama 3` : ' — Best for Local AI?'
+  const desc = product.shortDescription.length > 155
+    ? product.shortDescription.slice(0, 152) + '...'
+    : product.shortDescription
   return {
     title: `${product.name} Review${titleSuffix}`,
-    description: product.shortDescription,
+    description: desc,
     alternates: {
       canonical: `https://ai-desk.tech/products/${product.slug}`,
     },
     openGraph: {
       title: `${product.name} Review`,
-      description: product.shortDescription,
+      description: desc,
+      images: [{ url: `https://ai-desk.tech${product.image}`, width: 800, height: 600, alt: product.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} Review${titleSuffix}`,
+      description: desc,
+      images: [`https://ai-desk.tech${product.image}`],
     },
   }
 }
@@ -46,6 +57,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   if (!product) notFound()
 
   const comparisonSlugs = getProductComparisonSlugs(product.slug)
+  const relatedGuides = GUIDE_ENTRIES.filter(g => g.relatedProductSlugs.includes(product.slug))
   const crossSellProducts = (product.crossSells ?? [])
     .map(slug => getProductBySlug(slug))
     .filter(Boolean) as NonNullable<ReturnType<typeof getProductBySlug>>[]
@@ -257,6 +269,38 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                   <svg className="w-4 h-4 text-ore shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 16 16" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" d="M3 8h10M9 4l4 4-4 4" />
                   </svg>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Setup guides for this product */}
+        {relatedGuides.length > 0 && (
+          <section className="border border-edge bg-ink-0 overflow-hidden">
+            <div className="h-[2px] rule-ember" />
+            <div className="px-6 py-4 border-b border-edge bg-ink-1">
+              <h2 className="font-display font-bold text-xl uppercase text-foreground">Setup Guides</h2>
+              <p className="font-mono text-[10px] uppercase tracking-widest mt-0.5" style={{ color: 'var(--text-subtle)' }}>
+                Step-by-step instructions for this hardware
+              </p>
+            </div>
+            <div className="divide-y divide-edge">
+              {relatedGuides.map(guide => (
+                <Link
+                  key={guide.slug}
+                  href={`/guides/${guide.slug}`}
+                  className="flex items-center gap-4 px-6 py-4 hover:bg-ore/5 transition-colors group"
+                >
+                  <div className="shrink-0 w-8 h-8 flex items-center justify-center border border-ore/20 bg-ore/5 group-hover:border-ore/40 transition-colors">
+                    <svg className="w-4 h-4 text-ore" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                  </div>
+                  <p className="font-sans font-semibold text-sm text-foreground group-hover:text-ore transition-colors flex-1">
+                    {guide.title}
+                  </p>
+                  <span className="font-mono text-xs text-ore opacity-0 group-hover:opacity-100 transition-opacity shrink-0">→</span>
                 </Link>
               ))}
             </div>

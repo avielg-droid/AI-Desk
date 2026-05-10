@@ -22,12 +22,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const persona = getPersonaBySlug(params.persona)
   if (!persona) return {}
+  const desc = persona.metaDescription.length > 155
+    ? persona.metaDescription.slice(0, 152) + '...'
+    : persona.metaDescription
   return {
     title: persona.title,
-    description: persona.metaDescription,
+    description: desc,
     openGraph: {
       title: persona.title,
-      description: persona.metaDescription,
+      description: desc,
     },
   }
 }

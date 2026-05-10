@@ -305,6 +305,65 @@ export default function HomePage() {
       {/* ── CAN I RUN IT? ── */}
       <HardwareMatcher products={allProducts} />
 
+      {/* ── FROM THE BLOG + GUIDES ── */}
+      <section className="border border-edge overflow-hidden">
+        <div className="h-[3px] rule-ember" />
+        <div className="grid md:grid-cols-2 gap-px bg-edge">
+          {/* Blog */}
+          <div className="bg-ink-0">
+            <div className="px-6 py-4 border-b border-edge bg-ink-1 flex items-center justify-between">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-0.5">Editorial</p>
+                <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground">From the Blog</h2>
+              </div>
+              <Link href="/blog" className="font-mono text-[10px] uppercase tracking-widest hover:text-ore transition-colors" style={{ color: 'var(--text-subtle)' }}>
+                All posts →
+              </Link>
+            </div>
+            <div className="divide-y divide-edge">
+              {[
+                { slug: 'apple-silicon-vs-nvidia-local-ai-2026', title: 'Apple Silicon vs NVIDIA for Local AI in 2026', label: 'Comparison' },
+                { slug: 'how-much-vram-for-local-ai', title: 'How Much VRAM Do You Actually Need?', label: 'Guide' },
+                { slug: 'local-ai-vs-cloud-ai-cost-2026', title: 'Local AI vs Cloud AI: The Real Cost Breakdown', label: 'Analysis' },
+                { slug: 'ollama-vs-lm-studio-vs-jan-2026', title: 'Ollama vs LM Studio vs Jan — Which to Use?', label: 'Comparison' },
+              ].map(post => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="flex items-center gap-4 px-6 py-4 hover:bg-ore/5 transition-colors group">
+                  <span className="font-mono text-[9px] uppercase tracking-widest px-1.5 py-0.5 border border-ore/20 text-ore shrink-0">{post.label}</span>
+                  <p className="font-sans font-semibold text-sm text-foreground group-hover:text-ore transition-colors leading-snug">{post.title}</p>
+                  <span className="font-mono text-xs text-ore ml-auto opacity-0 group-hover:opacity-100 transition-opacity shrink-0">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          {/* Setup Guides */}
+          <div className="bg-ink-0">
+            <div className="px-6 py-4 border-b border-edge bg-ink-1 flex items-center justify-between">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-0.5">Step-by-Step</p>
+                <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground">Setup Guides</h2>
+              </div>
+              <Link href="/guides" className="font-mono text-[10px] uppercase tracking-widest hover:text-ore transition-colors" style={{ color: 'var(--text-subtle)' }}>
+                All guides →
+              </Link>
+            </div>
+            <div className="divide-y divide-edge">
+              {[
+                { slug: 'run-llama-3-on-mac-mini-m4', title: 'Run Llama 3 on Mac Mini M4', label: 'macOS' },
+                { slug: 'run-stable-diffusion-on-rtx-5070', title: 'Stable Diffusion on RTX 5070', label: 'Windows' },
+                { slug: 'run-ollama-on-mini-pc', title: 'Run Ollama on Any Mini PC', label: 'Windows' },
+                { slug: 'run-deepseek-r1-locally', title: 'Run DeepSeek R1 Locally', label: 'All OS' },
+              ].map(guide => (
+                <Link key={guide.slug} href={`/guides/${guide.slug}`} className="flex items-center gap-4 px-6 py-4 hover:bg-ore/5 transition-colors group">
+                  <span className="font-mono text-[9px] uppercase tracking-widest px-1.5 py-0.5 border border-ore/20 text-ore shrink-0">{guide.label}</span>
+                  <p className="font-sans font-semibold text-sm text-foreground group-hover:text-ore transition-colors leading-snug">{guide.title}</p>
+                  <span className="font-mono text-xs text-ore ml-auto opacity-0 group-hover:opacity-100 transition-opacity shrink-0">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── BUYING GUIDE ── */}
       <section className="border border-edge bg-ink-0 overflow-hidden">
         <div className="h-[3px] rule-ember" />

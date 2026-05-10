@@ -3,7 +3,7 @@ import { buildPersonSchema, buildBreadcrumbSchema } from '@/lib/schema'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata: Metadata = {
-  title: 'Alex Voss — Hardware Reviewer | The AI Desk',
+  title: { absolute: 'Alex Voss — Hardware Reviewer | The AI Desk' },
   description: 'Alex Voss is the hardware reviewer behind The AI Desk. Independent benchmarks of GPUs, Mini PCs, and local AI inference hardware since 2022.',
   alternates: { canonical: 'https://ai-desk.tech/about/author' },
   openGraph: {
