@@ -131,7 +131,8 @@ function PostCard({ post, featured }: { post: ReturnType<typeof getAllBlogPosts>
       <BlogThumbnail
         category={post.category}
         tags={post.tags}
-        className={`w-full border-b border-edge ${featured ? 'h-28' : 'h-20'}`}
+        className={`w-full border-b border-edge ${featured ? 'h-44' : 'h-32'}`}
+        compact={!featured}
       />
 
       <div className="flex flex-col flex-1 p-5">
