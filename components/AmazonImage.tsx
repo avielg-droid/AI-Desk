@@ -17,7 +17,6 @@ interface AmazonImageProps {
 
 function Placeholder({ name, compact }: { name: string; compact?: boolean }) {
   if (compact) {
-    // Small thumbnail: just icon, no text
     return (
       <div className="flex items-center justify-center w-full h-full">
         <svg className="h-6 w-6 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,34 +39,42 @@ function Placeholder({ name, compact }: { name: string; compact?: boolean }) {
   )
 }
 
-type Status = 'loading' | 'loaded' | 'error-local' | 'error-amazon' | 'error-all'
+type Status = 'loading' | 'loaded' | 'error-local' | 'error-all'
 
 export default function AmazonImage({ asin, name, localSrc, size = 250, compact = false, className = '' }: AmazonImageProps) {
-  // If localSrc provided, try it first. Otherwise go straight to Amazon.
   const [status, setStatus] = useState<Status>(localSrc ? 'loading' : 'error-local')
 
   const amazonSrc = `https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=${asin}&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL${size}_&tag=${ASSOCIATE_TAG}`
 
-  // All sources failed — show placeholder
-  if (status === 'error-all') return <Placeholder name={name} compact={compact} />
-
-  // Determine which src to render
   const activeSrc = status === 'error-local' ? amazonSrc : (localSrc ?? amazonSrc)
+  const isLoaded = status === 'loaded'
+  const showPlaceholder = !isLoaded
 
   const handleError = () => {
     if (status === 'loading') {
-      // Local image failed — try Amazon
+      // Local failed — fall back to Amazon CDN
       setStatus('error-local')
-    } else if (status === 'error-local') {
-      // Amazon also failed — show placeholder
+    } else {
+      // Amazon also failed — show placeholder permanently
       setStatus('error-all')
     }
   }
 
-  return (
-    <>
-      {status === 'loading' && <Placeholder name={name} compact={compact} />}
+  if (status === 'error-all') {
+    return <Placeholder name={name} compact={compact} />
+  }
 
+  return (
+    <div className="relative w-full h-full">
+      {/* Placeholder sits behind, fades out when image loads */}
+      {showPlaceholder && (
+        <div className="absolute inset-0">
+          <Placeholder name={name} compact={compact} />
+        </div>
+      )}
+
+      {/* Image is always in the DOM so browser loads it immediately.
+          Opacity 0 → 1 on load — never display:none which suppresses onLoad. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         key={activeSrc}
@@ -77,9 +84,12 @@ export default function AmazonImage({ asin, name, localSrc, size = 250, compact 
         height={size}
         onLoad={() => setStatus('loaded')}
         onError={handleError}
-        style={{ display: status === 'loaded' ? 'block' : 'none' }}
-        className={`object-contain ${className}`}
+        style={{
+          opacity: isLoaded ? 1 : 0,
+          transition: 'opacity 0.2s ease',
+        }}
+        className={`object-contain w-full h-full ${className}`}
       />
-    </>
+    </div>
   )
 }
