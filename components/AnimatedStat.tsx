@@ -20,10 +20,39 @@ export default function AnimatedStat({ prefix = '', from, to, suffix, finalLabel
   const [animating, setAnimating] = useState(false)
   const ref = useRef<HTMLSpanElement>(null)
   const hasRun = useRef(false)
+  // Capture props in refs so the IntersectionObserver callback closure is stable
+  const fromRef = useRef(from)
+  const toRef = useRef(to)
+  const prefixRef = useRef(prefix)
+  const suffixRef = useRef(suffix)
+  const finalLabelRef = useRef(finalLabel)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    function runAnimation() {
+      const duration = 1400
+      const start = performance.now()
+      setAnimating(true)
+
+      function tick(now: number) {
+        const elapsed = now - start
+        const progress = Math.min(elapsed / duration, 1)
+        const eased = easeOut(progress)
+        const current = Math.round(fromRef.current + (toRef.current - fromRef.current) * eased)
+
+        if (progress < 1) {
+          setDisplay(`${prefixRef.current}${current.toLocaleString()}${suffixRef.current}`)
+          requestAnimationFrame(tick)
+        } else {
+          setDisplay(finalLabelRef.current)
+          setAnimating(false)
+        }
+      }
+
+      requestAnimationFrame(tick)
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,30 +66,7 @@ export default function AnimatedStat({ prefix = '', from, to, suffix, finalLabel
 
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
-
-  function runAnimation() {
-    const duration = 1400
-    const start = performance.now()
-    setAnimating(true)
-
-    function tick(now: number) {
-      const elapsed = now - start
-      const progress = Math.min(elapsed / duration, 1)
-      const eased = easeOut(progress)
-      const current = Math.round(from + (to - from) * eased)
-
-      if (progress < 1) {
-        setDisplay(`${prefix}${current.toLocaleString()}${suffix}`)
-        requestAnimationFrame(tick)
-      } else {
-        setDisplay(finalLabel)
-        setAnimating(false)
-      }
-    }
-
-    requestAnimationFrame(tick)
-  }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <span
