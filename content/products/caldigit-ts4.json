@@ -37,7 +37,7 @@
   "reviewCount": 1,
   "priceDisplay": "~$299",
   "lastUpdated": "2026-05-10",
-  "featured": false,
+  "featured": true,
   "faq": [
     {
       "question": "Does the CalDigit TS4 work with the Mac Mini M4 Pro?",

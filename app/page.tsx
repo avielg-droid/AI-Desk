@@ -317,25 +317,44 @@ export default function HomePage() {
       {/* ── EDITOR'S PICKS ── */}
       <section className="border border-edge overflow-hidden">
         <div className="h-[3px] rule-ember" />
-        <div className="flex items-center justify-between px-6 py-4 border-b border-edge bg-ink-1">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-0.5">Top Rated</p>
-            <h2 className="font-display font-extrabold text-xl uppercase tracking-tight text-foreground">
-              Editor&apos;s Picks
-            </h2>
+
+        {/* Section head */}
+        <div className="px-8 py-8 border-b border-edge bg-ink-1">
+          <div className="grid md:grid-cols-[1fr_320px] gap-10 items-end">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ore mb-3 flex items-center gap-2">
+                <span className="text-ore">▍</span> Editor&apos;s picks · May 2026
+              </p>
+              <h2
+                className="font-display font-bold text-foreground"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', lineHeight: 1.0, letterSpacing: '-0.03em' }}
+              >
+                The {featured.length} we&apos;d buy<br />
+                if it were <em className="not-italic text-ore">our</em> money.
+              </h2>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+              Independently benchmarked. We buy our own units — Amazon Associates earns us a few percent on links, never editorial say-so.
+            </p>
           </div>
+        </div>
+
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-edge">
+          {featured.map((product, i) => (
+            <ProductCard key={product.slug} product={product} rank={i + 1} />
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="px-8 py-5 border-t border-edge bg-ink-1 text-center">
           <Link
             href="/products"
             className="font-mono text-[10px] uppercase tracking-widest hover:text-ore transition-colors"
             style={{ color: 'var(--text-subtle)' }}
           >
-            All {allProducts.length} products →
+            See all {allProducts.length} reviews →
           </Link>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-edge">
-          {featured.map(product => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
         </div>
       </section>
 

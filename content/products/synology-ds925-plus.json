@@ -37,7 +37,7 @@
   "reviewCount": 1,
   "priceDisplay": "~$500",
   "lastUpdated": "2026-05-10",
-  "featured": false,
+  "featured": true,
   "faq": [
     {
       "question": "How fast can the Synology DS925+ serve LLM model weights to Ollama?",

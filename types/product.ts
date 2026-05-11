@@ -18,6 +18,8 @@ export interface ProductSpec {
   npu_tops?: number
   storage_bays?: number
   charging_watts?: number
+  ports_count?: number
+  ethernet_speed?: string
 }
 
 export interface FAQ {

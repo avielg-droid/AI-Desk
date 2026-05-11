@@ -38,7 +38,7 @@
   "reviewCount": 1,
   "priceDisplay": "~$1,299",
   "lastUpdated": "2026-05-10",
-  "featured": false,
+  "featured": true,
   "faq": [
     {
       "question": "Can the ASUS Zenbook S14 run a 13B LLM locally?",
