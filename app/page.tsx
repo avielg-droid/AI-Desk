@@ -7,10 +7,9 @@ import PersonaFunnels from '@/components/PersonaFunnels'
 import CloudROICalculator from '@/components/CloudROICalculator'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { buildSpeakableSchema } from '@/lib/schema'
-import ScrollReveal from '@/components/ScrollReveal'
-import AnimatedCounter from '@/components/AnimatedCounter'
 import Link from 'next/link'
 import HeroTypewriter from '@/components/HeroTypewriter'
+import Marquee from '@/components/Marquee'
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://ai-desk.tech' },
@@ -248,6 +247,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── MARQUEE TICKER ── */}
+      <Marquee />
+
       {/* ── WHY LOCAL AI ── */}
       <WhyLocalAI />
 
@@ -274,7 +276,7 @@ export default function HomePage() {
               <Link
                 key={cat.slug}
                 href={`/categories/${cat.slug}`}
-                className="group bg-ink-0 p-7 md:p-8 flex flex-col relative overflow-hidden hover:bg-ore/5 transition-all duration-200 border-b-2 border-b-transparent hover:border-b-ore"
+                className="cat-slide-border group bg-ink-0 p-7 md:p-8 flex flex-col relative overflow-hidden hover:bg-ore/5 transition-all duration-200"
               >
                 {/* Number watermark — large, bottom-right */}
                 <span

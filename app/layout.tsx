@@ -18,12 +18,9 @@ const dmMono = DM_Mono({
 })
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import AffiliateDisclosure from '@/components/AffiliateDisclosure'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import CookieConsent from '@/components/CookieConsent'
-import ThemeToggle from '@/components/ThemeToggle'
-import MobileNav from '@/components/MobileNav'
-import DesktopNav from '@/components/DesktopNav'
+import StickyHeader from '@/components/StickyHeader'
 import BackToTop from '@/components/BackToTop'
 import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/schema'
 
@@ -65,98 +62,109 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans">
 
         {/* Nav */}
-        <header className="sticky top-0 z-40 bg-ink-0/90 backdrop-blur-md border-b border-edge">
-          {/* Aurora top rule */}
-          <div className="h-[2px] aurora-bar" />
-          <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-8">
-
-            {/* Wordmark */}
-            <a
-              href="/"
-              className="shrink-0 font-display font-semibold text-xl tracking-tight leading-none text-foreground hover:text-ore transition-colors duration-200"
-            >
-              The AI Desk
-            </a>
-
-            {/* Nav (desktop) */}
-            <div className="hidden md:flex items-center gap-0">
-              <DesktopNav />
-              <div className="ml-4 pl-4 border-l border-edge">
-                <ThemeToggle />
-              </div>
-            </div>
-
-            {/* Hamburger (mobile) */}
-            <MobileNav />
-
-          </nav>
-        </header>
+        <StickyHeader />
 
         <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10">
           {children}
         </main>
 
         {/* Footer */}
-        <footer className="relative z-10 mt-16 border-t border-edge bg-ink-0">
+        <footer className="relative z-10 mt-16 border-t border-edge" style={{ background: 'rgb(var(--color-ink-1))' }}>
           <div className="h-[2px] rule-ember" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-            <div className="grid md:grid-cols-4 gap-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-6">
+
+            {/* Main grid: brand left, 3-col links right */}
+            <div className="grid md:grid-cols-[1fr_1.5fr] gap-16 mb-12">
 
               {/* Brand */}
-              <div className="md:col-span-2">
-                <p className="font-display font-bold text-xl text-foreground mb-3">
-                  The AI Desk
+              <div>
+                {/* Wordmark */}
+                <div className="inline-flex items-baseline gap-2.5 font-display font-bold tracking-tight mb-6" style={{ fontSize: '22px' }}>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-ore pt-1">01</span>
+                  <span className="text-foreground">The <em className="not-italic text-ore">AI</em> Desk</span>
+                </div>
+                <p className="text-sm leading-relaxed max-w-sm mb-6" style={{ color: 'var(--text-muted)' }}>
+                  Independent hardware reviews for running large language models on your own machine.
                 </p>
-                <p className="text-sm leading-relaxed max-w-sm mb-4" style={{ color: 'var(--text-muted)' }}>
-                  Independent hardware reviews for running large language models and Stable Diffusion locally. No sponsored rankings.
-                </p>
-                <AffiliateDisclosure className="text-xs text-zinc-500" />
+                {/* Affiliate disclosure box */}
+                <div
+                  className="font-mono text-[10px] leading-relaxed p-4"
+                  style={{
+                    color: 'var(--text-muted)',
+                    border: '1px solid rgb(var(--color-edge))',
+                    borderLeft: '2px solid rgb(var(--color-ore))',
+                    background: 'rgb(var(--color-ink-0))',
+                  }}
+                >
+                  <strong>Amazon Associates disclosure.</strong> As an Amazon Associate, The AI Desk earns from qualifying purchases. This funds testing — never editorial direction.
+                </div>
               </div>
 
-              {/* Explore */}
-              <div>
-                <p className="text-label mb-4">Explore</p>
-                <ul className="space-y-2.5">
-                  {[
-                    { href: '/products',   label: 'All Products'   },
-                    { href: '/best',       label: 'Buying Guides'  },
-                    { href: '/guides',     label: 'Setup Guides'   },
-                    { href: '/blog',       label: 'Blog'           },
-                    { href: '/glossary',   label: 'Glossary'       },
-                    { href: '/compare',    label: 'Compare'        },
-                  ].map(({ href, label }) => (
-                    <li key={href}>
-                      <a href={href} className="text-sm hover:text-ore transition-colors duration-150" style={{ color: 'var(--text-muted)' }}>
+              {/* 3-col links */}
+              <div className="grid grid-cols-3 gap-8">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] mb-4" style={{ color: 'var(--text-subtle)' }}>Hardware</p>
+                  <div className="flex flex-col gap-1.5">
+                    {[
+                      { href: '/categories/gpu',        label: 'GPUs'        },
+                      { href: '/categories/mini-pc',    label: 'Mini PCs'    },
+                      { href: '/categories/ai-pc',      label: 'AI PCs'      },
+                      { href: '/categories/accessory',  label: 'Accessories' },
+                      { href: '/categories/dock',       label: 'Docks'       },
+                      { href: '/categories/nas',        label: 'NAS'         },
+                      { href: '/categories/npu-laptop', label: 'NPU Laptops' },
+                    ].map(({ href, label }) => (
+                      <a key={href} href={href} className="text-sm py-1.5 hover:text-ore transition-colors" style={{ color: 'var(--text-muted)' }}>
                         {label}
                       </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Legal */}
-              <div>
-                <p className="text-label mb-4">Legal</p>
-                <ul className="space-y-2.5 mb-6">
-                  {[
-                    { href: '/privacy',       label: 'Privacy Policy'   },
-                    { href: '/terms',         label: 'Terms of Service' },
-                    { href: '/about',         label: 'About'            },
-                    { href: '/how-we-test',   label: 'How We Test'      },
-                  ].map(({ href, label }) => (
-                    <li key={href}>
-                      <a href={href} className="text-sm hover:text-ore transition-colors duration-150" style={{ color: 'var(--text-muted)' }}>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] mb-4" style={{ color: 'var(--text-subtle)' }}>Guides</p>
+                  <div className="flex flex-col gap-1.5">
+                    {[
+                      { href: '/best',               label: 'Buying Guides' },
+                      { href: '/guides',             label: 'Setup Guides'  },
+                      { href: '/blog',               label: 'Blog'          },
+                      { href: '/glossary',           label: 'Glossary'      },
+                      { href: '/compare',            label: 'Compare'       },
+                    ].map(({ href, label }) => (
+                      <a key={href} href={href} className="text-sm py-1.5 hover:text-ore transition-colors" style={{ color: 'var(--text-muted)' }}>
                         {label}
                       </a>
-                    </li>
-                  ))}
-                </ul>
-                <p className="font-mono text-[10px] mt-4" style={{ color: 'var(--text-subtle)' }}>
-                  © {new Date().getFullYear()} The AI Desk
-                </p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] mb-4" style={{ color: 'var(--text-subtle)' }}>Desk</p>
+                  <div className="flex flex-col gap-1.5">
+                    {[
+                      { href: '/about',       label: 'About'       },
+                      { href: '/how-we-test', label: 'Methodology' },
+                      { href: '/privacy',     label: 'Privacy'     },
+                      { href: '/terms',       label: 'Terms'       },
+                    ].map(({ href, label }) => (
+                      <a key={href} href={href} className="text-sm py-1.5 hover:text-ore transition-colors" style={{ color: 'var(--text-muted)' }}>
+                        {label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
 
             </div>
+
+            {/* Footer bottom */}
+            <div className="flex justify-between items-center pt-6 border-t border-edge">
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'var(--text-subtle)' }}>
+                © {new Date().getFullYear()} The AI Desk
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em]" style={{ color: 'var(--text-subtle)' }}>
+                v1.0 · Built in public · Hand-benchmarked
+              </span>
+            </div>
+
           </div>
         </footer>
 

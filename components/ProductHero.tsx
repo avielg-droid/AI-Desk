@@ -3,6 +3,15 @@ import AffiliateButton from './AffiliateButton'
 import AmazonImage from './AmazonImage'
 import StarRating from './StarRating'
 
+function EditorPickBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-700 rounded-sm">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="shrink-0"><path d="M8 0l2.5 5.3L16 6.2l-4 3.8 1 5.5L8 12.8l-5 2.7 1-5.5L0 6.2l5.5-.9z"/></svg>
+      Editor&apos;s Pick
+    </span>
+  )
+}
+
 function heroSpecs(product: Product) {
   const s = product.specs
   const items: { label: string; value: string }[] = []
@@ -26,13 +35,13 @@ export default function ProductHero({ product }: { product: Product }) {
       <div className="flex flex-col md:flex-row">
 
         {/* Image panel — white box creates strong contrast on void */}
-        <div className="md:w-56 lg:w-64 shrink-0 bg-white border-b md:border-b-0 md:border-r border-edge flex items-center justify-center p-8">
+        <div className="md:w-56 lg:w-64 shrink-0 bg-white border-b md:border-b-0 md:border-r border-edge flex items-center justify-center p-8 group/img">
           <AmazonImage
             asin={product.asin}
             name={product.name}
             localSrc={product.image}
             size={300}
-            className="w-full max-w-[180px] md:max-w-full h-auto"
+            className="w-full max-w-[180px] md:max-w-full h-auto transition-transform duration-300 group-hover/img:scale-[1.02]"
           />
         </div>
 
@@ -54,6 +63,13 @@ export default function ProductHero({ product }: { product: Product }) {
           <h1 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.0] tracking-tight text-foreground mb-5">
             {product.name}
           </h1>
+
+          {/* Editor's Pick badge for highly rated products */}
+          {product.rating >= 4.7 && (
+            <div className="mb-5">
+              <EditorPickBadge />
+            </div>
+          )}
 
           {/* Rating + Price */}
           <div className="flex items-center gap-4 mb-5 flex-wrap">
@@ -90,13 +106,26 @@ export default function ProductHero({ product }: { product: Product }) {
           )}
 
           <div className="mt-auto flex items-center gap-5 flex-wrap">
-            <AffiliateButton href={product.affiliateUrl} />
+            <AffiliateButton href={product.affiliateUrl} className="[&_a]:py-4 [&_a]:px-8 [&_a]:text-lg [&_a]:hover:shadow-[0_0_20px_rgba(255,153,0,0.3)]" />
             <a
               href="#verdict"
               className="font-mono text-[11px] uppercase tracking-widest text-zinc-500 hover:text-ore transition-colors"
             >
               Skip to verdict ↓
             </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex items-center gap-4 mt-3 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-zinc-500">
+              <span className="text-emerald-500">✓</span> Free shipping
+            </span>
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-zinc-500">
+              <span className="text-emerald-500">✓</span> Amazon verified
+            </span>
+            <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-zinc-500">
+              <span className="text-emerald-500">✓</span> 30-day returns
+            </span>
           </div>
         </div>
       </div>
