@@ -4,7 +4,7 @@
   "name": "Microsoft Surface Laptop 7 (15\")",
   "category": "npu-laptop",
   "brand": "Microsoft",
-  "shortDescription": "The Microsoft Surface Laptop 7 15\" brings the 45 TOPS Snapdragon X Elite NPU to a 15\" PixelSense 120Hz touch display with 1TB storage — best large-screen Copilot+ PC for AI workflows.",
+  "shortDescription": "The Microsoft Surface Laptop 7 15\" brings the 45 TOPS Snapdragon X Elite NPU to a 15\" PixelSense 120Hz touch display with 1TB storage \u2014 best large-screen Copilot+ PC for AI workflows.",
   "specs": {
     "chip": "Qualcomm Snapdragon X Elite 12-core",
     "npu_tops": 45,
@@ -20,18 +20,18 @@
     "Developer workstation with 1TB local storage for model experimentation"
   ],
   "pros": [
-    "15\" PixelSense 120Hz touch — best screen size for AI workflow monitoring and multi-window development",
-    "1TB storage included — more room for downloaded models and datasets",
-    "Same 45 TOPS NPU as 13\" — full Copilot+ feature parity on a bigger screen",
+    "15\" PixelSense 120Hz touch \u2014 best screen size for AI workflow monitoring and multi-window development",
+    "1TB storage included \u2014 more room for downloaded models and datasets",
+    "Same 45 TOPS NPU as 13\" \u2014 full Copilot+ feature parity on a bigger screen",
     "Snapdragon X Elite 12-core for improved multi-threaded CPU inference",
-    "Outstanding battery life for a 15\" machine — 18–20 hours"
+    "Outstanding battery life for a 15\" machine \u2014 18\u201320 hours"
   ],
   "cons": [
-    "Same 16GB RAM ceiling as the 13\" — limits model size similarly",
-    "Larger and heavier than 13\" — less portable",
+    "Same 16GB RAM ceiling as the 13\" \u2014 limits model size similarly",
+    "Larger and heavier than 13\" \u2014 less portable",
     "$200 more than the 13\" primarily for screen size and storage"
   ],
-  "verdict": "The Surface Laptop 7 15\" is the right choice if you want more screen real estate for AI workflows without changing the core platform. Same NPU, same software ecosystem, same battery life — just a larger display and 2× the storage. The $200 premium over the 13\" is justified if you use the laptop as a primary workstation rather than a travel machine.",
+  "verdict": "The Surface Laptop 7 15\" is the right choice if you want more screen real estate for AI workflows without changing the core platform. Same NPU, same software ecosystem, same battery life \u2014 just a larger display and 2\u00d7 the storage. The $200 premium over the 13\" is justified if you use the laptop as a primary workstation rather than a travel machine.",
   "affiliateUrl": "https://amzn.to/4wrjMYM",
   "rating": 4.5,
   "reviewCount": 1,
@@ -54,8 +54,9 @@
     "samsung-galaxy-book5-pro-360"
   ],
   "notFor": [
-    "Frequent travelers — heavier and larger than the 13\" variant",
-    "Users who need more than 16GB RAM — neither Surface Laptop 7 variant goes higher"
+    "Frequent travelers \u2014 heavier and larger than the 13\" variant",
+    "Users who need more than 16GB RAM \u2014 neither Surface Laptop 7 variant goes higher"
   ],
-  "entityHeadline": "Surface Laptop 7 15\" Review: Best Large-Screen Copilot+ PC for On-Device AI Workflows"
+  "entityHeadline": "Surface Laptop 7 15\" Review: Best Large-Screen Copilot+ PC for On-Device AI Workflows",
+  "image": "/products/microsoft-surface-laptop-7-15.jpg"
 }

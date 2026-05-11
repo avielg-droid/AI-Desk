@@ -4,7 +4,7 @@
   "name": "CalDigit TS4 Thunderbolt 4 Dock",
   "category": "dock",
   "brand": "CalDigit",
-  "shortDescription": "The CalDigit TS4 is the gold standard Thunderbolt 4 dock for Mac Mini M4 Pro and AI workstations — 18 ports including 2.5GbE, 98W charging, and support for single 8K or dual 6K displays over a single cable.",
+  "shortDescription": "The CalDigit TS4 is the gold standard Thunderbolt 4 dock for Mac Mini M4 Pro and AI workstations \u2014 18 ports including 2.5GbE, 98W charging, and support for single 8K or dual 6K displays over a single cable.",
   "specs": {
     "interface": "Thunderbolt 4",
     "ports_count": 18,
@@ -20,18 +20,18 @@
     "Connecting 2.5GbE NAS for fast model weight loading"
   ],
   "pros": [
-    "18 ports is the most of any Thunderbolt 4 dock — covers every peripheral in one box",
+    "18 ports is the most of any Thunderbolt 4 dock \u2014 covers every peripheral in one box",
     "98W USB-C charging handles MacBook Pro 14\" at full speed",
-    "2.5GbE built-in — connects directly to a NAS at 2.5x Gigabit speeds",
+    "2.5GbE built-in \u2014 connects directly to a NAS at 2.5x Gigabit speeds",
     "Single 8K or dual 6K display support via Thunderbolt 4",
     "Solid aluminum chassis with excellent thermal management"
   ],
   "cons": [
     "At $299, it's the most expensive option in this roundup",
-    "Large desktop footprint — not ideal for compact setups",
-    "Requires Thunderbolt 4 host — won't deliver full feature set on USB-C only ports"
+    "Large desktop footprint \u2014 not ideal for compact setups",
+    "Requires Thunderbolt 4 host \u2014 won't deliver full feature set on USB-C only ports"
   ],
-  "verdict": "The CalDigit TS4 is the best Thunderbolt 4 dock for Mac Mini M4 Pro users who want a true single-cable workstation. At 98W charging, 2.5GbE networking, and 18 ports, it replaces every hub and dongle on the desk. The $299 price is high but justified — this dock lasts through multiple Mac generations and handles every peripheral you'll ever connect.",
+  "verdict": "The CalDigit TS4 is the best Thunderbolt 4 dock for Mac Mini M4 Pro users who want a true single-cable workstation. At 98W charging, 2.5GbE networking, and 18 ports, it replaces every hub and dongle on the desk. The $299 price is high but justified \u2014 this dock lasts through multiple Mac generations and handles every peripheral you'll ever connect.",
   "affiliateUrl": "https://amzn.to/4wlsqIf",
   "rating": 4.2,
   "reviewCount": 1,
@@ -41,7 +41,7 @@
   "faq": [
     {
       "question": "Does the CalDigit TS4 work with the Mac Mini M4 Pro?",
-      "answer": "Yes — the Mac Mini M4 Pro has two Thunderbolt 4 ports and the TS4 connects to either. You get 98W pass-through charging (useful if you power the Mac Mini via USB-C), 2.5GbE networking, and all 18 ports active simultaneously. It's the most capable single-cable dock for the M4 Pro."
+      "answer": "Yes \u2014 the Mac Mini M4 Pro has two Thunderbolt 4 ports and the TS4 connects to either. You get 98W pass-through charging (useful if you power the Mac Mini via USB-C), 2.5GbE networking, and all 18 ports active simultaneously. It's the most capable single-cable dock for the M4 Pro."
     },
     {
       "question": "Can the TS4 run dual monitors from a Mac Mini?",
@@ -53,7 +53,7 @@
     },
     {
       "question": "How does the TS4 compare to the Anker 777 Thunderbolt dock?",
-      "answer": "TS4 has 18 ports vs 12 on the Anker 777, and 98W vs 90W charging. TS4 also adds 2.5GbE vs Gigabit Ethernet on the Anker. The Anker 777 costs $100 less — if you need fewer ports and standard Ethernet, it's the better value."
+      "answer": "TS4 has 18 ports vs 12 on the Anker 777, and 98W vs 90W charging. TS4 also adds 2.5GbE vs Gigabit Ethernet on the Anker. The Anker 777 costs $100 less \u2014 if you need fewer ports and standard Ethernet, it's the better value."
     }
   ],
   "crossSells": [
@@ -62,8 +62,9 @@
     "kensington-sd5700t"
   ],
   "notFor": [
-    "USB-C only hosts — requires Thunderbolt 4 for full functionality",
-    "Travel setups — large desktop form factor"
+    "USB-C only hosts \u2014 requires Thunderbolt 4 for full functionality",
+    "Travel setups \u2014 large desktop form factor"
   ],
-  "entityHeadline": "CalDigit TS4 Review: 18 Ports, 98W Charging — Best Thunderbolt Dock for Mac Mini M4 Pro"
+  "entityHeadline": "CalDigit TS4 Review: 18 Ports, 98W Charging \u2014 Best Thunderbolt Dock for Mac Mini M4 Pro",
+  "image": "/products/caldigit-ts4.jpg"
 }

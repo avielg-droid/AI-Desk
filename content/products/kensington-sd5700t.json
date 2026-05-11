@@ -19,15 +19,15 @@
     "Budget-conscious Thunderbolt 4 docking at $169"
   ],
   "pros": [
-    "Best value in the roundup at $169 — lowest price for a certified TB4 dock",
+    "Best value in the roundup at $169 \u2014 lowest price for a certified TB4 dock",
     "True hybrid Mac/Windows compatibility with no driver quirks",
-    "Kensington enterprise build quality — designed for 8+ hour daily use",
+    "Kensington enterprise build quality \u2014 designed for 8+ hour daily use",
     "Dual 4K at 60Hz on both platforms",
     "90W charging handles most laptops"
   ],
   "cons": [
     "Fewer ports than CalDigit TS4 or Plugable TBT4-UD5",
-    "Only Gigabit Ethernet — no 2.5GbE",
+    "Only Gigabit Ethernet \u2014 no 2.5GbE",
     "Basic industrial design compared to CalDigit or Anker"
   ],
   "verdict": "The Kensington SD5700T is the best value Thunderbolt 4 dock for users who want reliability over port count. At $169, it undercuts the competition while delivering everything most users need: dual 4K, 90W charging, Ethernet, and true plug-and-play on both Mac and Windows. If you need 2.5GbE or more USB ports, step up to the Plugable TBT4-UD5. Otherwise, this is the easy budget recommendation.",
@@ -56,5 +56,6 @@
     "Users needing 2.5GbE networking",
     "Heavy USB peripheral users needing 12+ ports"
   ],
-  "entityHeadline": "Kensington SD5700T Review: Best Value Thunderbolt 4 Dock for Mac and Windows"
+  "entityHeadline": "Kensington SD5700T Review: Best Value Thunderbolt 4 Dock for Mac and Windows",
+  "image": "/products/kensington-sd5700t.jpg"
 }

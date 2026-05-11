@@ -4,7 +4,7 @@
   "name": "Plugable Thunderbolt 4 Dock (TBT4-UD5)",
   "category": "dock",
   "brand": "Plugable",
-  "shortDescription": "The Plugable TBT4-UD5 delivers 13 ports including 100W charging, dual 4K, 2.5GbE Ethernet, and 7 USB ports — the best TB4 dock for port density at $199.",
+  "shortDescription": "The Plugable TBT4-UD5 delivers 13 ports including 100W charging, dual 4K, 2.5GbE Ethernet, and 7 USB ports \u2014 the best TB4 dock for port density at $199.",
   "specs": {
     "interface": "Thunderbolt 4",
     "ports_count": 13,
@@ -20,18 +20,18 @@
     "Connecting 7 USB devices through a single Thunderbolt cable"
   ],
   "pros": [
-    "100W charging — highest of any dock in this roundup, handles 16\" MacBook Pro",
-    "2.5GbE included at the $199 price point — rare at this tier",
-    "7 USB ports total (mix of USB-A and USB-C) — maximum connectivity",
+    "100W charging \u2014 highest of any dock in this roundup, handles 16\" MacBook Pro",
+    "2.5GbE included at the $199 price point \u2014 rare at this tier",
+    "7 USB ports total (mix of USB-A and USB-C) \u2014 maximum connectivity",
     "Dual 4K at 60Hz on Windows and Mac",
     "Plugable's excellent driver support and compatibility documentation"
   ],
   "cons": [
     "Larger desktop footprint than Anker 777",
-    "Only dual 4K — not triple displays like Anker 777",
+    "Only dual 4K \u2014 not triple displays like Anker 777",
     "Less brand recognition than CalDigit or Anker"
   ],
-  "verdict": "The Plugable TBT4-UD5 is the best budget TB4 dock if 2.5GbE and 100W charging matter to you. At $199 it matches the Anker 777's price while adding 2.5GbE networking and 10W more charging — significant advantages for users with a NAS or large laptops. If you need triple displays, pick the Anker 777 instead.",
+  "verdict": "The Plugable TBT4-UD5 is the best budget TB4 dock if 2.5GbE and 100W charging matter to you. At $199 it matches the Anker 777's price while adding 2.5GbE networking and 10W more charging \u2014 significant advantages for users with a NAS or large laptops. If you need triple displays, pick the Anker 777 instead.",
   "affiliateUrl": "https://amzn.to/4uJuBUo",
   "rating": 4.3,
   "reviewCount": 1,
@@ -45,7 +45,7 @@
     },
     {
       "question": "Can the Plugable dock charge a 16-inch MacBook Pro at full speed?",
-      "answer": "Yes — the TBT4-UD5 delivers 100W via its Thunderbolt upstream cable, which matches Apple's recommended 96W charger for the 16\" MacBook Pro. Most docks top out at 90W, making this a meaningful advantage for heavy laptop users."
+      "answer": "Yes \u2014 the TBT4-UD5 delivers 100W via its Thunderbolt upstream cable, which matches Apple's recommended 96W charger for the 16\" MacBook Pro. Most docks top out at 90W, making this a meaningful advantage for heavy laptop users."
     }
   ],
   "crossSells": [
@@ -55,7 +55,8 @@
   ],
   "notFor": [
     "Users needing triple monitor support",
-    "Compact desk setups — larger form factor"
+    "Compact desk setups \u2014 larger form factor"
   ],
-  "entityHeadline": "Plugable TBT4-UD5 Review: 100W Charging + 2.5GbE at $199 — Best Budget TB4 Dock"
+  "entityHeadline": "Plugable TBT4-UD5 Review: 100W Charging + 2.5GbE at $199 \u2014 Best Budget TB4 Dock",
+  "image": "/products/plugable-thunderbolt-4-dock.jpg"
 }

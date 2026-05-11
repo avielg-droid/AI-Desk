@@ -4,7 +4,7 @@
   "name": "Synology DiskStation DS925+",
   "category": "nas",
   "brand": "Synology",
-  "shortDescription": "The Synology DS925+ is the best home NAS for storing local AI model weights — 4-bay diskless, AMD Ryzen V1500B, dual 2.5GbE, and Synology's industry-leading DSM software. Ideal for housing 70B model files and AI datasets.",
+  "shortDescription": "The Synology DS925+ is the best home NAS for storing local AI model weights \u2014 4-bay diskless, AMD Ryzen V1500B, dual 2.5GbE, and Synology's industry-leading DSM software. Ideal for housing 70B model files and AI datasets.",
   "specs": {
     "chip": "AMD Ryzen V1500B",
     "storage_bays": 4,
@@ -13,25 +13,25 @@
     "form_factor": "4-Bay NAS"
   },
   "useCases": [
-    "Storing 70B+ quantized LLM model weight files (40–80 GB each)",
+    "Storing 70B+ quantized LLM model weight files (40\u201380 GB each)",
     "Centralized AI dataset storage accessible from multiple machines",
     "Always-on model serving with fast 2.5GbE access",
     "Home media server doubling as AI model repository",
     "Docker host for self-hosted AI tools like Open WebUI or Ollama server"
   ],
   "pros": [
-    "DSM operating system is the best NAS software available — polished, reliable, regularly updated",
+    "DSM operating system is the best NAS software available \u2014 polished, reliable, regularly updated",
     "Dual 2.5GbE enables link aggregation for 5 Gbps effective throughput to a single client",
     "AMD Ryzen V1500B handles transcoding and Docker containers without slowdown",
-    "4-bay design with RAID support — protect irreplaceable model fine-tunes and datasets",
+    "4-bay design with RAID support \u2014 protect irreplaceable model fine-tunes and datasets",
     "Synology's 5-year warranty and excellent long-term software support"
   ],
   "cons": [
-    "Diskless — drives sold separately, adding $200–800 depending on capacity",
+    "Diskless \u2014 drives sold separately, adding $200\u2013800 depending on capacity",
     "4GB RAM is limiting for running multiple Docker containers simultaneously",
-    "No 10GbE built-in — 2.5GbE caps read speeds at ~280 MB/s"
+    "No 10GbE built-in \u2014 2.5GbE caps read speeds at ~280 MB/s"
   ],
-  "verdict": "The Synology DS925+ is the definitive home NAS for AI builders. The combination of DSM's reliability, dual 2.5GbE, and 4-bay expandability makes it the easiest way to build a centralized model weight library accessible from any machine on your network. Diskless means you control storage costs — pair with 4 × 4TB Seagate IronWolf drives for a 12TB usable RAID 5 array. If you run 70B models from multiple machines, this is the hub they should share.",
+  "verdict": "The Synology DS925+ is the definitive home NAS for AI builders. The combination of DSM's reliability, dual 2.5GbE, and 4-bay expandability makes it the easiest way to build a centralized model weight library accessible from any machine on your network. Diskless means you control storage costs \u2014 pair with 4 \u00d7 4TB Seagate IronWolf drives for a 12TB usable RAID 5 array. If you run 70B models from multiple machines, this is the hub they should share.",
   "affiliateUrl": "https://amzn.to/48Wh7fA",
   "rating": 4.6,
   "reviewCount": 1,
@@ -41,19 +41,19 @@
   "faq": [
     {
       "question": "How fast can the Synology DS925+ serve LLM model weights to Ollama?",
-      "answer": "Over dual 2.5GbE (link aggregated at 5 Gbps effective), a single client can read at ~280 MB/s sustained. A 40GB 70B Q4 model loads from the NAS in roughly 2–3 minutes — comparable to a mid-range NVMe SSD. For repeated loads of the same model, Ollama caches it locally, so NAS speed matters most on first load."
+      "answer": "Over dual 2.5GbE (link aggregated at 5 Gbps effective), a single client can read at ~280 MB/s sustained. A 40GB 70B Q4 model loads from the NAS in roughly 2\u20133 minutes \u2014 comparable to a mid-range NVMe SSD. For repeated loads of the same model, Ollama caches it locally, so NAS speed matters most on first load."
     },
     {
       "question": "Can I run Ollama directly on the Synology DS925+?",
-      "answer": "Yes, via Docker in DSM's Container Manager. The Ryzen V1500B handles CPU inference for small models (7B at 1–3 t/s). It's not fast enough for interactive use but works for background or batch AI tasks. For real inference speed, use the NAS as storage and run Ollama on a Mac Mini or GPU machine that mounts the NAS volume."
+      "answer": "Yes, via Docker in DSM's Container Manager. The Ryzen V1500B handles CPU inference for small models (7B at 1\u20133 t/s). It's not fast enough for interactive use but works for background or batch AI tasks. For real inference speed, use the NAS as storage and run Ollama on a Mac Mini or GPU machine that mounts the NAS volume."
     },
     {
       "question": "What hard drives should I pair with the DS925+?",
-      "answer": "Synology officially recommends NAS-grade drives on their compatibility list. Seagate IronWolf or WD Red Plus are the standard choices — both are designed for 24/7 operation and vibration compensation in multi-drive enclosures. For AI model storage (sequential reads, not random access), CMR drives (not SMR) are preferred. Avoid desktop drives in a NAS."
+      "answer": "Synology officially recommends NAS-grade drives on their compatibility list. Seagate IronWolf or WD Red Plus are the standard choices \u2014 both are designed for 24/7 operation and vibration compensation in multi-drive enclosures. For AI model storage (sequential reads, not random access), CMR drives (not SMR) are preferred. Avoid desktop drives in a NAS."
     },
     {
       "question": "Can I expand beyond 4 bays later?",
-      "answer": "Yes. Synology sells expansion units (DX517) that connect via eSATA and add 5 bays to the DS925+. A full setup of DS925+ plus DX517 gives you 9 bays — enough for 90+ TB of raw storage for very large model libraries."
+      "answer": "Yes. Synology sells expansion units (DX517) that connect via eSATA and add 5 bays to the DS925+. A full setup of DS925+ plus DX517 gives you 9 bays \u2014 enough for 90+ TB of raw storage for very large model libraries."
     }
   ],
   "crossSells": [
@@ -63,7 +63,8 @@
   ],
   "notFor": [
     "Users who want 10GbE without buying an add-in card",
-    "Those needing GPU inference on the NAS itself — use a separate Mac Mini or GPU machine"
+    "Those needing GPU inference on the NAS itself \u2014 use a separate Mac Mini or GPU machine"
   ],
-  "entityHeadline": "Synology DS925+ for Local AI: The Best NAS for Storing 70B Model Weights at Home"
+  "entityHeadline": "Synology DS925+ for Local AI: The Best NAS for Storing 70B Model Weights at Home",
+  "image": "/products/synology-ds925-plus.jpg"
 }

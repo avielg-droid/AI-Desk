@@ -4,7 +4,7 @@
   "name": "UGREEN DXP4800 Plus NAS",
   "category": "nas",
   "brand": "UGREEN",
-  "shortDescription": "The UGREEN DXP4800 Plus is the best value 4-bay NAS for AI builders — 10GbE networking included at $350, Intel Pentium Gold 8505, 8GB DDR5, dual M.2 NVMe slots, and 4K HDMI output.",
+  "shortDescription": "The UGREEN DXP4800 Plus is the best value 4-bay NAS for AI builders \u2014 10GbE networking included at $350, Intel Pentium Gold 8505, 8GB DDR5, dual M.2 NVMe slots, and 4K HDMI output.",
   "specs": {
     "chip": "Intel Pentium Gold 8505",
     "storage_bays": 4,
@@ -20,18 +20,18 @@
     "Budget 10GbE NAS alternative to Synology + 10GbE add-in card"
   ],
   "pros": [
-    "10GbE included at $350 — competitors charge $500+ for 10GbE or require add-in cards",
-    "Dual M.2 NVMe slots for SSD cache — dramatically speeds up hot model loading",
+    "10GbE included at $350 \u2014 competitors charge $500+ for 10GbE or require add-in cards",
+    "Dual M.2 NVMe slots for SSD cache \u2014 dramatically speeds up hot model loading",
     "8GB DDR5 RAM handles multiple Docker containers",
     "4K HDMI output lets you use it as a media player or connect a monitor",
     "Intel Pentium Gold 8505 is fast enough for CPU inference on small models"
   ],
   "cons": [
-    "UGOS Pro software is less mature than Synology DSM — fewer third-party integrations",
-    "Newer brand — less long-term track record than Synology or QNAP",
-    "4 bays only — same as DS925+ but without the same expansion ecosystem"
+    "UGOS Pro software is less mature than Synology DSM \u2014 fewer third-party integrations",
+    "Newer brand \u2014 less long-term track record than Synology or QNAP",
+    "4 bays only \u2014 same as DS925+ but without the same expansion ecosystem"
   ],
-  "verdict": "The UGREEN DXP4800 Plus is exceptional value for AI builders who want 10GbE without the Synology tax. At $350 with 10GbE included, it undercuts the DS925+ by $150 while adding a significant networking advantage — 10GbE delivers model weights at ~1 GB/s, loading a 40GB 70B model in under 45 seconds. The dual M.2 slots let you cache hot models on NVMe for near-local speeds. If you have a 10GbE switch or a machine with 10GbE, this is the smarter buy.",
+  "verdict": "The UGREEN DXP4800 Plus is exceptional value for AI builders who want 10GbE without the Synology tax. At $350 with 10GbE included, it undercuts the DS925+ by $150 while adding a significant networking advantage \u2014 10GbE delivers model weights at ~1 GB/s, loading a 40GB 70B model in under 45 seconds. The dual M.2 slots let you cache hot models on NVMe for near-local speeds. If you have a 10GbE switch or a machine with 10GbE, this is the smarter buy.",
   "affiliateUrl": "https://amzn.to/4nmpneN",
   "rating": 4.2,
   "reviewCount": 1,
@@ -41,11 +41,11 @@
   "faq": [
     {
       "question": "How fast does the UGREEN DXP4800 Plus load LLM models over 10GbE?",
-      "answer": "Over 10GbE, sustained read speeds from spinning HDDs are limited by the drives (~150–200 MB/s per drive in RAID 5). With an NVMe SSD in the M.2 cache slot, cached models load at 800–1000 MB/s — a 40GB 70B model transfers in under 45 seconds. 10GbE eliminates the network bottleneck entirely."
+      "answer": "Over 10GbE, sustained read speeds from spinning HDDs are limited by the drives (~150\u2013200 MB/s per drive in RAID 5). With an NVMe SSD in the M.2 cache slot, cached models load at 800\u20131000 MB/s \u2014 a 40GB 70B model transfers in under 45 seconds. 10GbE eliminates the network bottleneck entirely."
     },
     {
       "question": "Is UGOS Pro as good as Synology DSM?",
-      "answer": "Not yet. UGOS Pro is functional and improving rapidly, but Synology DSM has a decade of polish, a larger app ecosystem, and better community support. If the app ecosystem matters — for things like Plex, Home Assistant, or Synology's Photos — choose the DS925+. If raw 10GbE performance at lower cost is the priority, UGREEN wins."
+      "answer": "Not yet. UGOS Pro is functional and improving rapidly, but Synology DSM has a decade of polish, a larger app ecosystem, and better community support. If the app ecosystem matters \u2014 for things like Plex, Home Assistant, or Synology's Photos \u2014 choose the DS925+. If raw 10GbE performance at lower cost is the priority, UGREEN wins."
     },
     {
       "question": "Can I use the M.2 slots for model caching with Ollama?",
@@ -59,7 +59,8 @@
   ],
   "notFor": [
     "Users who rely heavily on Synology DSM app ecosystem",
-    "Those who don't have or plan to get a 10GbE switch — 2.5GbE still available but 10GbE is the key advantage"
+    "Those who don't have or plan to get a 10GbE switch \u2014 2.5GbE still available but 10GbE is the key advantage"
   ],
-  "entityHeadline": "UGREEN DXP4800 Plus Review: 10GbE NAS at $350 — Best Value AI Model Storage"
+  "entityHeadline": "UGREEN DXP4800 Plus Review: 10GbE NAS at $350 \u2014 Best Value AI Model Storage",
+  "image": "/products/ugreen-dxp4800-plus.jpg"
 }

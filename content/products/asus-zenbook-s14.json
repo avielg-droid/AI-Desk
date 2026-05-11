@@ -4,7 +4,7 @@
   "name": "ASUS Zenbook S14 (2025)",
   "category": "npu-laptop",
   "brand": "ASUS",
-  "shortDescription": "The ASUS Zenbook S14 is the best Intel Copilot+ laptop — Intel Core Ultra 7 Series 2, 47 TOPS NPU, 32GB RAM, 3K OLED 120Hz touch display, and Thunderbolt 4. Best-in-class display with the most RAM of any NPU laptop in this roundup.",
+  "shortDescription": "The ASUS Zenbook S14 is the best Intel Copilot+ laptop \u2014 Intel Core Ultra 7 Series 2, 47 TOPS NPU, 32GB RAM, 3K OLED 120Hz touch display, and Thunderbolt 4. Best-in-class display with the most RAM of any NPU laptop in this roundup.",
   "specs": {
     "chip": "Intel Core Ultra 7 Series 2",
     "npu_tops": 47,
@@ -14,25 +14,25 @@
     "form_factor": "14\" Laptop"
   },
   "useCases": [
-    "Running 13B models locally — 32GB RAM is sufficient for 13B Q4 with headroom",
+    "Running 13B models locally \u2014 32GB RAM is sufficient for 13B Q4 with headroom",
     "On-device AI with Intel OpenVINO and ONNX Runtime NPU acceleration",
     "High-quality AI-assisted creative work on a 3K OLED display",
     "Developer workstation with Thunderbolt 4 dock support",
     "Copilot+ Windows features via Intel NPU"
   ],
   "pros": [
-    "32GB RAM — the highest of any NPU laptop here, enables 13B Q4 local inference",
-    "47 TOPS NPU — slightly more than Snapdragon X Elite's 45 TOPS",
-    "3K OLED 120Hz touch display — best screen in the NPU laptop category",
-    "Thunderbolt 4 — docks, eGPUs, and fast external storage all supported",
-    "Full x64 native performance — no ARM emulation compatibility issues"
+    "32GB RAM \u2014 the highest of any NPU laptop here, enables 13B Q4 local inference",
+    "47 TOPS NPU \u2014 slightly more than Snapdragon X Elite's 45 TOPS",
+    "3K OLED 120Hz touch display \u2014 best screen in the NPU laptop category",
+    "Thunderbolt 4 \u2014 docks, eGPUs, and fast external storage all supported",
+    "Full x64 native performance \u2014 no ARM emulation compatibility issues"
   ],
   "cons": [
     "Intel Arc integrated GPU is less efficient than Snapdragon X Elite GPU for AI",
-    "Higher power consumption than ARM-based Snapdragon X Elite — shorter battery life",
+    "Higher power consumption than ARM-based Snapdragon X Elite \u2014 shorter battery life",
     "Intel NPU ecosystem (OpenVINO) less user-friendly than Qualcomm's for beginners"
   ],
-  "verdict": "The ASUS Zenbook S14 is the best Intel Copilot+ laptop and the only one in this roundup with 32GB RAM — a meaningful advantage for running 13B models locally. If you need x64 compatibility, a stunning display, and Thunderbolt 4, this beats the Surface Laptop 7 for developer use. Battery life is shorter than Snapdragon-based laptops, but the performance and display quality justify the trade-off for desk-forward workflows.",
+  "verdict": "The ASUS Zenbook S14 is the best Intel Copilot+ laptop and the only one in this roundup with 32GB RAM \u2014 a meaningful advantage for running 13B models locally. If you need x64 compatibility, a stunning display, and Thunderbolt 4, this beats the Surface Laptop 7 for developer use. Battery life is shorter than Snapdragon-based laptops, but the performance and display quality justify the trade-off for desk-forward workflows.",
   "affiliateUrl": "https://amzn.to/4u5DYxK",
   "rating": 4.4,
   "reviewCount": 1,
@@ -42,7 +42,7 @@
   "faq": [
     {
       "question": "Can the ASUS Zenbook S14 run a 13B LLM locally?",
-      "answer": "Yes. With 32GB unified memory, the Zenbook S14 loads Llama 2 13B at Q4_K_M (requires ~8GB) entirely in RAM with significant headroom. CPU inference via llama.cpp delivers 3–6 tokens/sec. Intel Arc's iGPU with OpenVINO can accelerate inference on compatible models to 8–15 tokens/sec — slower than dedicated GPU but usable for local chat."
+      "answer": "Yes. With 32GB unified memory, the Zenbook S14 loads Llama 2 13B at Q4_K_M (requires ~8GB) entirely in RAM with significant headroom. CPU inference via llama.cpp delivers 3\u20136 tokens/sec. Intel Arc's iGPU with OpenVINO can accelerate inference on compatible models to 8\u201315 tokens/sec \u2014 slower than dedicated GPU but usable for local chat."
     },
     {
       "question": "How does Intel's 47 TOPS NPU compare to Qualcomm's 45 TOPS?",
@@ -50,7 +50,7 @@
     },
     {
       "question": "Does Thunderbolt 4 matter for AI on the Zenbook S14?",
-      "answer": "Yes. Thunderbolt 4 enables connecting a TB4 dock (like the CalDigit TS4 or Anker 777) for multi-monitor setups, and more importantly enables external GPU enclosures via Thunderbolt — though eGPU performance on TB4 is bandwidth-limited compared to native PCIe. TB4 also enables fast external NVMe access for storing large model libraries."
+      "answer": "Yes. Thunderbolt 4 enables connecting a TB4 dock (like the CalDigit TS4 or Anker 777) for multi-monitor setups, and more importantly enables external GPU enclosures via Thunderbolt \u2014 though eGPU performance on TB4 is bandwidth-limited compared to native PCIe. TB4 also enables fast external NVMe access for storing large model libraries."
     }
   ],
   "crossSells": [
@@ -59,8 +59,9 @@
     "caldigit-ts4"
   ],
   "notFor": [
-    "All-day mobile use — battery life is shorter than Snapdragon X Elite laptops",
-    "Users needing ARM-native AI tool support — some Qualcomm-optimized models won't run on Intel NPU"
+    "All-day mobile use \u2014 battery life is shorter than Snapdragon X Elite laptops",
+    "Users needing ARM-native AI tool support \u2014 some Qualcomm-optimized models won't run on Intel NPU"
   ],
-  "entityHeadline": "ASUS Zenbook S14 Review: Best Intel Copilot+ Laptop — 32GB RAM, 3K OLED, 47 TOPS NPU"
+  "entityHeadline": "ASUS Zenbook S14 Review: Best Intel Copilot+ Laptop \u2014 32GB RAM, 3K OLED, 47 TOPS NPU",
+  "image": "/products/asus-zenbook-s14.jpg"
 }
