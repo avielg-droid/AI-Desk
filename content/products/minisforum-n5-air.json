@@ -1,0 +1,66 @@
+{
+  "slug": "minisforum-n5-air",
+  "asin": "B0GHQR2Z31",
+  "name": "MINISFORUM N5 Air NAS",
+  "category": "nas",
+  "brand": "MINISFORUM",
+  "shortDescription": "The MINISFORUM N5 Air is the most powerful AI NAS available — 5-bay, AMD Ryzen 7, USB4, a PCIe x16 slot for eGPU, OCuLink for external GPU inference, and dual 10GbE/5GbE networking.",
+  "specs": {
+    "chip": "AMD Ryzen 7",
+    "storage_bays": 5,
+    "ethernet_speed": "10GbE + 5GbE",
+    "interface": "USB4 + OCuLink",
+    "form_factor": "5-Bay NAS"
+  },
+  "useCases": [
+    "On-NAS GPU inference via OCuLink eGPU connection",
+    "High-performance 5-bay AI model storage with 10GbE delivery",
+    "Running Ollama directly on the NAS with an attached eGPU",
+    "PCIe expansion for add-in accelerators (NPU cards, 25GbE NICs)",
+    "Multi-client 10GbE model distribution to GPU workstations"
+  ],
+  "pros": [
+    "OCuLink port enables direct eGPU connection — run inference on the NAS itself at near-PCIe speeds",
+    "PCIe x16 slot for expansion — add 25GbE NIC, NPU accelerator, or additional storage",
+    "5-bay design holds more models than 4-bay alternatives",
+    "Dual 10GbE + 5GbE covers multiple high-speed clients simultaneously",
+    "AMD Ryzen 7 is powerful enough for 7B model CPU inference at 3–5 t/s"
+  ],
+  "cons": [
+    "At $600, significantly more expensive than DS925+ or DXP4800 Plus",
+    "OCuLink eGPU adds $400–800 more for a GPU enclosure",
+    "Newer product with less community support than Synology",
+    "Software ecosystem less mature than Synology DSM"
+  ],
+  "verdict": "The MINISFORUM N5 Air is in a class of its own — no other NAS lets you attach a full discrete GPU via OCuLink and run inference on the storage device itself. For users who want their NAS to be an AI inference node (not just storage), this is the only option. The 5-bay capacity, dual 10GbE, and PCIe x16 slot make it future-proof for whatever accelerator hardware comes next. The $600 base cost is steep but reasonable for what it delivers.",
+  "affiliateUrl": "https://amzn.to/4nn4foK",
+  "rating": 4.4,
+  "reviewCount": 1,
+  "priceDisplay": "~$600",
+  "lastUpdated": "2026-05-10",
+  "featured": false,
+  "faq": [
+    {
+      "question": "How does OCuLink work for GPU inference on the N5 Air?",
+      "answer": "OCuLink is a cabling standard for external PCIe — it delivers PCIe 4.0 x4 bandwidth (~8 GB/s) to an external GPU enclosure. You connect an eGPU case (like MINISFORUM's own enclosure) containing a discrete GPU, and the Ryzen 7 system treats it as an internal GPU. Ollama detects it via ROCm (for AMD GPUs) and runs full GPU-accelerated inference. This is unique to the N5 Air among NAS devices."
+    },
+    {
+      "question": "What GPU can I connect via OCuLink?",
+      "answer": "Any PCIe GPU that fits in an eGPU enclosure with OCuLink support — typically single-slot to dual-slot cards. AMD RX 7600 (8GB VRAM) or RX 6700 XT (12GB VRAM) are popular choices with ROCm Linux support. NVIDIA GPUs require CUDA which has less native NAS support, but can work with custom OS setups."
+    },
+    {
+      "question": "Can I use the N5 Air as just a NAS without the eGPU?",
+      "answer": "Yes — the N5 Air works as a high-performance 5-bay NAS out of the box. The 10GbE + 5GbE ports, Ryzen 7 CPU, and three M.2 NVMe slots provide excellent storage performance without any GPU attached. The eGPU and PCIe expansion are optional upgrades."
+    }
+  ],
+  "crossSells": [
+    "synology-ds925-plus",
+    "ugreen-dxp4800-plus",
+    "caldigit-ts4"
+  ],
+  "notFor": [
+    "Users who just need model storage without on-NAS inference — DS925+ or DXP4800 Plus are better value",
+    "Those unwilling to manage a Linux-based system — requires more technical setup than Synology DSM"
+  ],
+  "entityHeadline": "MINISFORUM N5 Air Review: The Only NAS with OCuLink eGPU — Run AI Inference on Your Storage"
+}

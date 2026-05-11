@@ -1,0 +1,61 @@
+{
+  "slug": "samsung-galaxy-book5-pro-360",
+  "asin": "B0DVCDC2NN",
+  "name": "Samsung Galaxy Book5 Pro 360",
+  "category": "npu-laptop",
+  "brand": "Samsung",
+  "shortDescription": "The Samsung Galaxy Book5 Pro 360 is the best 2-in-1 Copilot+ PC — Intel Core Ultra 7 256V, 47 TOPS NPU, 16\" 3K AMOLED 120Hz touch, convertible form factor, and Windows 11 Pro for tablet-mode AI use.",
+  "specs": {
+    "chip": "Intel Core Ultra 7 256V",
+    "npu_tops": 47,
+    "unified_memory_gb": 16,
+    "storage_gb": 512,
+    "form_factor": "16\" 2-in-1 Convertible"
+  },
+  "useCases": [
+    "Tablet-mode AI inference with touch and stylus input",
+    "Copilot+ AI features in convertible form factor",
+    "On-device AI for creative workflows on a 16\" AMOLED display",
+    "Windows 11 Pro enterprise AI applications",
+    "Portable AI workstation that doubles as a presentation device"
+  ],
+  "pros": [
+    "16\" 3K AMOLED 120Hz touch — best display in the category for content review",
+    "Convertible 360° hinge — use as laptop, tent, or tablet for different AI workflows",
+    "47 TOPS NPU — full Copilot+ feature support",
+    "Windows 11 Pro included — enterprise AI deployment and management",
+    "Samsung's premium build quality and display expertise"
+  ],
+  "cons": [
+    "16GB RAM — same ceiling as Surface Laptop 7, limits 13B model inference",
+    "16\" size makes tablet mode heavy for extended handheld use",
+    "Fewer available configurations vs Surface Laptop 7 or Zenbook S14"
+  ],
+  "verdict": "The Samsung Galaxy Book5 Pro 360 is uniquely positioned as a premium 2-in-1 for AI workflows. The 360° hinge enables tablet mode for reviewing AI-generated content with a stylus, presentation mode for demos, and tent mode for desk use. The 16\" 3K AMOLED is arguably the best screen in this roundup. If convertibility and display quality are your priorities over raw RAM, this is the right Copilot+ PC.",
+  "affiliateUrl": "https://amzn.to/4dB6fq0",
+  "rating": 4.3,
+  "reviewCount": 1,
+  "priceDisplay": "~$1,299",
+  "lastUpdated": "2026-05-10",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Can you use the Galaxy Book5 Pro 360 as a tablet for AI?",
+      "answer": "Yes. In tablet mode (screen folded 360° behind the keyboard), the 16\" AMOLED touch display works with Samsung's S Pen. You can run AI apps, review model outputs, annotate AI-generated content, and use Copilot+ touch features. The weight (~1.6kg) makes extended handheld use tiring, but tent mode and stand mode are comfortable."
+    },
+    {
+      "question": "Is Intel Core Ultra 7 256V good for local AI inference?",
+      "answer": "Yes. The Core Ultra 7 256V is Intel's most efficient laptop chip, built on the 4nm process. It delivers strong single-thread performance for CPU inference and the 47 TOPS NPU handles Copilot+ AI features. For 7B Q4 local models via llama.cpp, expect 4–8 tokens/sec on CPU. OpenVINO NPU acceleration can push this to 10–18 tokens/sec on optimized models."
+    }
+  ],
+  "crossSells": [
+    "asus-zenbook-s14",
+    "microsoft-surface-laptop-7-15",
+    "microsoft-surface-laptop-7-13"
+  ],
+  "notFor": [
+    "Users who won't use tablet/convertible features — non-convertible laptops offer better value",
+    "Those needing 32GB RAM — consider ASUS Zenbook S14 instead"
+  ],
+  "entityHeadline": "Samsung Galaxy Book5 Pro 360 Review: Best 2-in-1 Copilot+ PC for On-Device AI"
+}

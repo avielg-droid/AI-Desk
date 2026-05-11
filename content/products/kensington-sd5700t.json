@@ -1,0 +1,60 @@
+{
+  "slug": "kensington-sd5700t",
+  "asin": "B08KRTKX9V",
+  "name": "Kensington SD5700T Thunderbolt 4 Docking Station",
+  "category": "dock",
+  "brand": "Kensington",
+  "shortDescription": "The Kensington SD5700T is a reliable hybrid Thunderbolt 4 dock supporting both Mac and Windows with dual 4K, 90W charging, and Kensington's enterprise-grade build quality at $169.",
+  "specs": {
+    "interface": "Thunderbolt 4",
+    "charging_watts": 90,
+    "ethernet_speed": "Gigabit Ethernet",
+    "form_factor": "Desktop Dock"
+  },
+  "useCases": [
+    "Hybrid Mac/Windows environments with a single dock",
+    "Dual 4K monitor setup on any Thunderbolt 4 host",
+    "90W laptop charging for MacBook Air and 14\" MacBook Pro",
+    "Enterprise desk setups requiring reliable, warranty-backed hardware",
+    "Budget-conscious Thunderbolt 4 docking at $169"
+  ],
+  "pros": [
+    "Best value in the roundup at $169 — lowest price for a certified TB4 dock",
+    "True hybrid Mac/Windows compatibility with no driver quirks",
+    "Kensington enterprise build quality — designed for 8+ hour daily use",
+    "Dual 4K at 60Hz on both platforms",
+    "90W charging handles most laptops"
+  ],
+  "cons": [
+    "Fewer ports than CalDigit TS4 or Plugable TBT4-UD5",
+    "Only Gigabit Ethernet — no 2.5GbE",
+    "Basic industrial design compared to CalDigit or Anker"
+  ],
+  "verdict": "The Kensington SD5700T is the best value Thunderbolt 4 dock for users who want reliability over port count. At $169, it undercuts the competition while delivering everything most users need: dual 4K, 90W charging, Ethernet, and true plug-and-play on both Mac and Windows. If you need 2.5GbE or more USB ports, step up to the Plugable TBT4-UD5. Otherwise, this is the easy budget recommendation.",
+  "affiliateUrl": "https://amzn.to/42siVsX",
+  "rating": 4.3,
+  "reviewCount": 1,
+  "priceDisplay": "~$169",
+  "lastUpdated": "2026-05-10",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Is the Kensington SD5700T compatible with Mac Mini M4?",
+      "answer": "Yes. The SD5700T connects to Mac Mini M4 via Thunderbolt 4 and delivers dual 4K displays, USB-A ports, Ethernet, and pass-through power. It's one of the cleanest plug-and-play experiences on macOS."
+    },
+    {
+      "question": "Does the SD5700T work with Windows 11 mini PCs?",
+      "answer": "Yes. Kensington explicitly supports Windows 11 and has tested compatibility with major mini PC brands. On Thunderbolt 4 certified Windows mini PCs, all ports work immediately without driver installation."
+    }
+  ],
+  "crossSells": [
+    "caldigit-ts4",
+    "anker-777-thunderbolt-4-dock",
+    "plugable-thunderbolt-4-dock"
+  ],
+  "notFor": [
+    "Users needing 2.5GbE networking",
+    "Heavy USB peripheral users needing 12+ ports"
+  ],
+  "entityHeadline": "Kensington SD5700T Review: Best Value Thunderbolt 4 Dock for Mac and Windows"
+}

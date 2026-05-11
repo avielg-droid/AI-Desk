@@ -19,6 +19,9 @@ const TASK_LABELS: Record<string, string> = {
   'hardware-for-llama-3-70b': '70B Models',
   'gpu-for-comfyui': 'ComfyUI Workflows',
   'budget-ai-hardware': 'Budget Builds',
+  'best-thunderbolt-dock-for-ai': 'Docking Stations',
+  'best-nas-for-local-ai': 'NAS / Storage',
+  'best-npu-laptop-copilot-plus': 'NPU / Copilot+',
 }
 
 export default function BestHubPage() {

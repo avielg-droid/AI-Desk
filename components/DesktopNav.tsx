@@ -13,9 +13,12 @@ const NAV: NavItem[] = [
     label: 'Shop',
     children: [
       { href: '/products',             label: 'All Products',  sub: 'Full catalog'          },
-      { href: '/categories/gpu',       label: 'GPUs',          sub: 'Discrete graphics cards' },
-      { href: '/categories/mini-pc',   label: 'Mini PCs',      sub: 'Compact AI machines'   },
-      { href: '/categories/accessory', label: 'Accessories',   sub: 'Cables, UPS, mounts'   },
+      { href: '/categories/gpu',        label: 'GPUs',             sub: 'Discrete graphics cards'  },
+      { href: '/categories/mini-pc',   label: 'Mini PCs',         sub: 'Compact AI machines'      },
+      { href: '/categories/accessory', label: 'Accessories',      sub: 'Cables, UPS, mounts'      },
+      { href: '/categories/dock',      label: 'Docking Stations', sub: 'Thunderbolt 4 & USB4 docks' },
+      { href: '/categories/nas',       label: 'NAS Devices',      sub: 'AI model weight storage'  },
+      { href: '/categories/npu-laptop',label: 'NPU Laptops',      sub: 'Copilot+ on-device AI'    },
     ],
   },
   {

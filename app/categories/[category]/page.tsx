@@ -37,6 +37,27 @@ const CATEGORY_META: Record<Category, { title: string; description: string; h1: 
     lede: 'Local AI workloads are sustained, not bursty — a GPU inferencing tokens runs at 80–100% utilization for minutes at a time, unlike gaming which spikes and relaxes. That sustained load makes cooling and power quality the most important accessories you can buy. A GPU running thermally throttled will lose 15–20% of its tokens-per-second compared to a well-cooled card at the same power limit. A GPU brace eliminates sag on heavy triple-fan cards and prevents PCIe slot stress over time. For storage, NVMe bandwidth matters when loading large model weights: a 70B Q4 model is ~40 GB and a slow drive adds 30–60 seconds to load time. The right cables — Thunderbolt 5 for external GPU enclosures, DisplayPort 2.1 for high-resolution monitoring — complete a well-built local AI workstation.',
     pick: { label: 'Priority buy: UPS + GPU brace', reason: 'Protect uptime · prevent sag on long inference runs' },
   },
+  'dock': {
+    title: 'Best Thunderbolt Docks for AI Workstations (2026)',
+    description: 'Thunderbolt 4 and USB4 docking stations for Mac Mini, mini PCs, and AI workstations. Single-cable docking with dual 4K, fast Ethernet, and up to 100W charging.',
+    h1: 'Best Thunderbolt 4 Docks for AI Workstations (2026)',
+    lede: 'A Thunderbolt 4 dock turns a Mac Mini or mini PC into a full workstation via a single cable — delivering power, dual 4K displays, USB peripherals, and Ethernet simultaneously. For AI workflows, the key specs are Ethernet speed (2.5GbE enables faster NAS model loading vs Gigabit) and charging wattage (98W–100W for large laptops). The CalDigit TS4 is the best dock for Mac Mini M4 Pro users who want maximum ports and 2.5GbE. The Anker 777 is the best value for Windows mini PC users who need triple 4K display support at $199.',
+    pick: { label: 'Top Pick: CalDigit TS4', reason: '18 ports · 98W charging · 2.5GbE · $299' },
+  },
+  'nas': {
+    title: 'Best NAS for Local AI Model Storage (2026)',
+    description: 'Network-attached storage devices for housing LLM model weights and AI datasets locally. Reviewed for storage bays, Ethernet speed, and AI inference capability.',
+    h1: 'Best NAS Devices for Local AI Model Storage (2026)',
+    lede: 'A NAS (Network-Attached Storage) centralizes model weight storage across your entire local network — instead of duplicating 40 GB 70B model files on every machine, one NAS holds the library and all machines load from it. The key specs for AI use are Ethernet speed (2.5GbE vs 10GbE determines model load time) and storage bays (4-bay with 4×4TB drives = 12TB usable in RAID 5). The Synology DS925+ is the best home AI NAS for software reliability and ecosystem. The UGREEN DXP4800 Plus offers 10GbE at a lower price for users who need faster model delivery.',
+    pick: { label: 'Top Pick: Synology DS925+', reason: '4-bay · dual 2.5GbE · best software · $500' },
+  },
+  'npu-laptop': {
+    title: 'Best NPU Laptops (Copilot+ PCs) for On-Device AI (2026)',
+    description: 'Copilot+ PCs with dedicated NPUs for on-device AI inference — 40+ TOPS, no cloud required. Reviewed for NPU performance, RAM, and local LLM compatibility.',
+    h1: 'Best NPU Laptops for On-Device AI Inference (2026)',
+    lede: 'Copilot+ PCs with dedicated NPUs run AI models locally without sending data to the cloud — no API costs, no internet dependency, no privacy concerns. The minimum bar is 45 TOPS, which every laptop in this category meets. What differentiates them is RAM (16 GB limits you to 7B models; 32 GB enables 13B models), display quality, and platform — Snapdragon X Elite for best battery life and Copilot+ integration, Intel Core Ultra 7 Series 2 for x64 compatibility and higher RAM options. The Microsoft Surface Laptop 7 is the top-rated Copilot+ PC overall. The ASUS Zenbook S14 is the best for 13B model inference thanks to its 32 GB configuration.',
+    pick: { label: 'Top Pick: Surface Laptop 7 (13.8")', reason: '45 TOPS · 20hr battery · best Copilot+ · $1,099' },
+  },
 }
 
 export async function generateStaticParams() {
@@ -95,14 +116,12 @@ export default function CategoryPage({ params }: { params: { category: string } 
             {meta.h1}
           </h1>
 
-          {/* Our pick badge — GPUs and Mini PCs only */}
-          {(category === 'gpu' || category === 'mini-pc') && (
-            <div className="inline-flex items-center gap-3 border border-ore/30 bg-ore/5 px-4 py-2 mb-5">
-              <span className="font-mono text-[9px] uppercase tracking-widest text-ore">Our Pick</span>
-              <span className="font-sans font-semibold text-sm text-foreground">{meta.pick.label}</span>
-              <span className="font-mono text-[10px] text-zinc-600">{meta.pick.reason}</span>
-            </div>
-          )}
+          {/* Our pick badge — all categories */}
+          <div className="inline-flex items-center gap-3 border border-ore/30 bg-ore/5 px-4 py-2 mb-5">
+            <span className="font-mono text-[9px] uppercase tracking-widest text-ore">Our Pick</span>
+            <span className="font-sans font-semibold text-sm text-foreground">{meta.pick.label}</span>
+            <span className="font-mono text-[10px] text-zinc-600">{meta.pick.reason}</span>
+          </div>
 
           {/* Editorial lede */}
           <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl">{meta.lede}</p>

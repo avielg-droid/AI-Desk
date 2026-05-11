@@ -7,6 +7,8 @@ import PersonaFunnels from '@/components/PersonaFunnels'
 import CloudROICalculator from '@/components/CloudROICalculator'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import { buildSpeakableSchema } from '@/lib/schema'
+import ScrollReveal from '@/components/ScrollReveal'
+import AnimatedCounter from '@/components/AnimatedCounter'
 import Link from 'next/link'
 import HeroTypewriter from '@/components/HeroTypewriter'
 
@@ -59,6 +61,45 @@ const CATEGORIES = [
       </svg>
     ),
   },
+  {
+    num: '05',
+    slug: 'dock', label: 'Docks', sub: 'Thunderbolt 4 & USB4', stat: 'Single cable setup',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
+        <rect x="2" y="9" width="20" height="9" rx="1" />
+        <path d="M7 9V6M12 9V4M17 9V6" />
+        <rect x="5" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
+        <rect x="10" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
+        <rect x="16" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
+      </svg>
+    ),
+  },
+  {
+    num: '06',
+    slug: 'nas', label: 'NAS', sub: 'AI model weight storage', stat: 'Centralize models',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
+        <rect x="3" y="4" width="18" height="5" rx="1" />
+        <rect x="3" y="10" width="18" height="5" rx="1" />
+        <rect x="3" y="16" width="18" height="5" rx="1" fill="currentColor" fillOpacity="0.12" />
+        <circle cx="18" cy="6.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
+        <circle cx="18" cy="12.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
+        <circle cx="18" cy="18.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    num: '07',
+    slug: 'npu-laptop', label: 'NPU Laptops', sub: 'Copilot+ on-device AI', stat: '45+ TOPS NPU',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
+        <path d="M4 5h16a1 1 0 011 1v10H3V6a1 1 0 011-1z" />
+        <path d="M1 16h22v1a1 1 0 01-1 1H2a1 1 0 01-1-1v-1z" />
+        <rect x="9" y="8" width="6" height="5" rx="0.5" fill="currentColor" fillOpacity="0.15" />
+        <path d="M11 8V7M13 8V7M11 13v1M13 13v1M9 10H8M16 10h-1" strokeWidth={1} />
+      </svg>
+    ),
+  },
 ]
 
 const GUIDE = [
@@ -84,6 +125,7 @@ const SIDE_STATS = [
   { val: '<5',   unit: 'ms',     label: 'time to first token, local' },
   { val: '70B',  unit: 'params', label: 'largest model run locally'  },
 ]
+
 
 export default function HomePage() {
   const featured = getFeaturedProducts()
@@ -203,7 +245,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -226,7 +267,7 @@ export default function HomePage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-edge">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-edge">
           {CATEGORIES.map(cat => {
             const count = allProducts.filter(p => p.category === cat.slug).length
             return (

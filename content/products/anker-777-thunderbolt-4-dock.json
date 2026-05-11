@@ -1,0 +1,65 @@
+{
+  "slug": "anker-777-thunderbolt-4-dock",
+  "asin": "B0928W3XHD",
+  "name": "Anker 777 Thunderbolt 4 Dock (12-in-1)",
+  "category": "dock",
+  "brand": "Anker",
+  "shortDescription": "The Anker 777 is the best Thunderbolt 4 dock for Windows mini PC users — 12 ports, 90W charging, triple 4K display support, and Ethernet in a compact form factor at $199.",
+  "specs": {
+    "interface": "Thunderbolt 4",
+    "ports_count": 12,
+    "charging_watts": 90,
+    "ethernet_speed": "Gigabit Ethernet",
+    "form_factor": "Desktop Dock"
+  },
+  "useCases": [
+    "Single-cable docking for GEEKOM, KAMRUI, and Windows mini PCs",
+    "Triple 4K monitor setup via Thunderbolt 4",
+    "Connecting multiple USB-A peripherals to Thunderbolt-only hosts",
+    "90W laptop charging via USB-C",
+    "SD card and Ethernet for mobile workstation setups"
+  ],
+  "pros": [
+    "Best value Thunderbolt 4 dock for Windows mini PC users",
+    "Triple 4K display support — more than most docks at this price",
+    "Compact vertical design fits tight desk setups",
+    "90W charging covers most 15\" laptops",
+    "Anker's reliability and 18-month warranty"
+  ],
+  "cons": [
+    "Only Gigabit Ethernet — not 2.5GbE like CalDigit TS4",
+    "12 ports vs 18 on TS4 — fewer USB-A slots",
+    "Vertical stand can tip if cables pull from one side"
+  ],
+  "verdict": "The Anker 777 is the best Thunderbolt 4 dock under $200. It hits the sweet spot for GEEKOM, KAMRUI, and other Windows mini PC users who need triple monitors, USB-A expansion, and 90W charging without paying CalDigit TS4 prices. The Gigabit Ethernet limitation matters only if you have a 2.5GbE NAS — otherwise, this is the easy recommendation for Windows mini PC owners.",
+  "affiliateUrl": "https://amzn.to/4dedgM6",
+  "rating": 4.4,
+  "reviewCount": 1,
+  "priceDisplay": "~$199",
+  "lastUpdated": "2026-05-10",
+  "featured": false,
+  "faq": [
+    {
+      "question": "Does the Anker 777 work with GEEKOM mini PCs?",
+      "answer": "Yes. GEEKOM AI A7 Max and IT12 both have Thunderbolt 4 ports. The Anker 777 connects via the included Thunderbolt 4 cable and delivers power, displays, USB-A ports, Ethernet, and SD card simultaneously. One cable replaces a multi-hub setup."
+    },
+    {
+      "question": "Can the Anker 777 drive three 4K monitors?",
+      "answer": "Yes, on compatible hosts. Using the Thunderbolt 4 downstream port plus the two DisplayPort outputs, you can run three 4K displays. Host GPU support required — Windows mini PCs with Intel Iris Xe or AMD Radeon graphics handle three displays natively."
+    },
+    {
+      "question": "Is the Anker 777 compatible with Mac Mini?",
+      "answer": "Yes. The Anker 777 works with Mac Mini M4 and M4 Pro. Charging pass-through at 90W works. Note the Mac Mini already has its own power supply, so the 90W charging primarily matters for MacBook users."
+    }
+  ],
+  "crossSells": [
+    "caldigit-ts4",
+    "plugable-thunderbolt-4-dock",
+    "kensington-sd5700t"
+  ],
+  "notFor": [
+    "Users needing 2.5GbE — only Gigabit Ethernet included",
+    "Those needing more than 12 ports — consider CalDigit TS4"
+  ],
+  "entityHeadline": "Anker 777 Thunderbolt 4 Dock Review: Best Windows Mini PC Dock Under $200"
+}

@@ -7,7 +7,17 @@ import type { Product } from '@/types/product'
 
 // ── Task definitions ──────────────────────────────────────────────────────────
 
-const TASKS = [
+interface Task {
+  id: string
+  label: string
+  sub: string
+  note: string
+  minGb?: number
+  badge?: string
+  filter?: (product: Product) => boolean
+}
+
+const TASKS: Task[] = [
   {
     id: 'llm-7b',
     label: 'Run a 7B/8B LLM',
@@ -36,9 +46,25 @@ const TASKS = [
     minGb: 8,
     note: 'Minimum 8 GB VRAM or unified memory',
   },
-] as const
+  {
+    id: 'thunderbolt-dock',
+    label: 'Thunderbolt 4 Dock',
+    sub: 'CalDigit TS4 · Anker 777 · Plugable TBT4-UD5',
+    badge: 'Any System',
+    note: 'Any laptop or desktop with a Thunderbolt 4 or USB4 port can use a Thunderbolt 4 dock',
+    filter: (p) => p.category === 'dock',
+  },
+  {
+    id: 'on-device-ai',
+    label: 'On-Device AI (NPU)',
+    sub: 'Copilot+ PCs with 45+ TOPS NPU',
+    badge: 'NPU Required',
+    note: 'Requires a dedicated NPU — Copilot+ PCs listed here all qualify',
+    filter: (p) => p.category === 'npu-laptop',
+  },
+]
 
-type TaskId = (typeof TASKS)[number]['id']
+type TaskId = string
 
 function effectiveMemory(product: Product): number {
   const s = product.specs
@@ -59,7 +85,7 @@ function TaskCard({
   selected,
   onClick,
 }: {
-  task: (typeof TASKS)[number]
+  task: Task
   selected: boolean
   onClick: () => void
 }) {
@@ -90,7 +116,7 @@ function TaskCard({
             ? 'text-ore border-ore/30 bg-ore/10'
             : 'text-zinc-600 border-edge'
           }`}>
-          ≥{task.minGb} GB
+          {task.badge ?? `≥${task.minGb} GB`}
         </span>
       </div>
 
@@ -207,10 +233,14 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
   }, [activeId])
 
   const compatible = activeTask
-    ? products.filter(p => effectiveMemory(p) >= activeTask.minGb)
+    ? activeTask.filter
+      ? products.filter(activeTask.filter)
+      : products.filter(p => effectiveMemory(p) >= (activeTask.minGb ?? 0))
     : []
   const incompatible = activeTask
-    ? products.filter(p => effectiveMemory(p) > 0 && effectiveMemory(p) < activeTask.minGb)
+    ? activeTask.filter
+      ? []
+      : products.filter(p => effectiveMemory(p) > 0 && effectiveMemory(p) < (activeTask.minGb ?? 0))
     : []
 
   return (
@@ -274,8 +304,16 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
                   02 — Compatible Hardware
                 </p>
                 <p className="text-sm text-zinc-600">
-                  <span className="text-win font-medium">{compatible.length}</span> of {products.filter(p => effectiveMemory(p) > 0).length} products meet the{' '}
-                  <span className="font-mono text-ore">{activeTask.minGb} GB</span> requirement
+                  {activeTask.minGb ? (
+                    <>
+                      <span className="text-win font-medium">{compatible.length}</span> of {products.filter(p => effectiveMemory(p) > 0).length} products meet the{' '}
+                      <span className="font-mono text-ore">{activeTask.minGb} GB</span> requirement
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-win font-medium">{compatible.length}</span> products found
+                    </>
+                  )}
                 </p>
               </div>
               {compatible.length > 0 && (
@@ -288,14 +326,16 @@ export default function HardwareMatcher({ products }: { products: Product[] }) {
             {compatible.length > 0 ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {compatible.map(product => (
-                  <MatchCard key={product.slug} product={product} memGb={activeTask.minGb} />
+                  <MatchCard key={product.slug} product={product} memGb={activeTask.minGb ?? 0} />
                 ))}
               </div>
             ) : (
               <div className="border border-loss/20 bg-loss/5 p-6 text-center">
                 <p className="font-display font-bold text-lg text-loss mb-1">No matches found</p>
                 <p className="text-sm text-zinc-600 mb-4">
-                  This workload requires ≥{activeTask.minGb} GB — none of our current products qualify.
+                  {activeTask.minGb
+                    ? `This workload requires ≥${activeTask.minGb} GB — none of our current products qualify.`
+                    : 'No products found for this workload.'}
                 </p>
                 <Link
                   href="/products"

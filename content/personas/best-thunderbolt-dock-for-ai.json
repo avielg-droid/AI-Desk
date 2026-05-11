@@ -1,0 +1,36 @@
+{
+  "slug": "best-thunderbolt-dock-for-ai",
+  "title": "Best Thunderbolt Docks for AI Workstations in 2026",
+  "metaDescription": "Expert-ranked Thunderbolt 4 docks for Mac Mini, mini PCs, and AI workstations in 2026. Ranked by ports, charging wattage, Ethernet speed, and Mac/Windows compatibility.",
+  "h1": "Best Thunderbolt Docks for AI Workstations (2026)",
+  "intro": "The best Thunderbolt 4 dock for an AI workstation is the CalDigit TS4 — 18 ports, 98W charging, 2.5GbE, and single-cable docking for Mac Mini M4 Pro or any TB4 mini PC. For Windows mini PC users at a lower price, the Anker 777 delivers triple 4K and 90W charging at $199. A Thunderbolt 4 dock transforms a Mac Mini or mini PC into a full workstation: one cable carries power, displays, USB peripherals, and Ethernet simultaneously.",
+  "topPickSlug": "caldigit-ts4",
+  "productSlugs": ["caldigit-ts4", "anker-777-thunderbolt-4-dock", "plugable-thunderbolt-4-dock", "kensington-sd5700t"],
+  "productNotes": {
+    "caldigit-ts4": "Best dock for Mac Mini M4 Pro — 18 ports and 98W charging in a single-cable setup. The 2.5GbE port connects directly to a NAS for fast model loading. Premium price is justified by the port count and CalDigit's proven reliability.",
+    "anker-777-thunderbolt-4-dock": "Best for Windows mini PC users — triple 4K display support and 90W charging at $199. Vertical design fits tight desks. The go-to recommendation for GEEKOM, KAMRUI, and GMKTec mini PC owners.",
+    "plugable-thunderbolt-4-dock": "Best budget TB4 dock with 2.5GbE — matches Anker 777's price while adding 2.5GbE networking and 100W charging. Choose this over Anker 777 if you have a 2.5GbE NAS or need 100W for a large laptop.",
+    "kensington-sd5700t": "Best value overall — lowest price in the roundup ($169) with reliable hybrid Mac/Windows support. Fewer ports than others but covers the essentials: dual 4K, 90W charging, Ethernet. Best for users who don't need maximum port count."
+  },
+  "requirements": "Thunderbolt 4 or USB4 port on host device. Thunderbolt 3 hosts work but may have reduced display or port bandwidth. For full 98W–100W charging pass-through, host must support USB-C PD charging input.",
+  "whyThisMatters": "Local AI workstations — Mac Mini, mini PCs, small form factor AI PCs — often have limited ports and rely on a single Thunderbolt or USB-C connection for everything. A Thunderbolt 4 dock centralizes all connectivity into one cable: you plug in the dock once and connect all peripherals to it. Swapping between a laptop and a desktop becomes a single cable pull. For AI workflows specifically, the 2.5GbE Ethernet on CalDigit TS4 and Plugable TBT4-UD5 enables fast NAS connectivity — loading a 40GB 70B model from a 2.5GbE NAS takes 2–3 minutes vs 8+ minutes on Gigabit.",
+  "faq": [
+    {
+      "question": "Do I need a Thunderbolt 4 dock or will USB-C work?",
+      "answer": "USB-C hubs work for basic peripherals but can't deliver Thunderbolt 4's bandwidth (40 Gbps vs 10 Gbps for USB 3.2). For dual 4K displays, fast external NVMe, and full charging simultaneously, Thunderbolt 4 is required. A USB-C hub may handle one monitor and USB-A devices but will struggle with dual displays or high-speed storage."
+    },
+    {
+      "question": "Which dock is best for the Mac Mini M4 Pro?",
+      "answer": "CalDigit TS4 for maximum ports and 2.5GbE, Anker 777 for a more affordable option that still covers most needs. The Mac Mini M4 Pro has two Thunderbolt 4 ports — you can connect one dock and one direct display, or two docks for a multi-monitor setup."
+    },
+    {
+      "question": "Can I use a Thunderbolt 4 dock to add GPU to a Mac Mini?",
+      "answer": "No — Thunderbolt 4 docks don't include discrete GPUs. For external GPU on a Mac Mini, you'd need a Thunderbolt 4 eGPU enclosure (like Razer Core X) containing a compatible GPU. Note that macOS has limited eGPU support and doesn't support all GPUs."
+    },
+    {
+      "question": "What's the difference between Thunderbolt 4 and Thunderbolt 5 docks?",
+      "answer": "Thunderbolt 5 docks (120 Gbps bandwidth) support higher refresh rate displays and faster external storage — relevant for 8K or high-refresh 4K content. For typical AI workstations with dual 4K displays and NAS storage, TB4 at 40 Gbps is more than sufficient. TB5 docks are significantly more expensive and require a TB5-capable host."
+    }
+  ],
+  "lastUpdated": "2026-05-10"
+}

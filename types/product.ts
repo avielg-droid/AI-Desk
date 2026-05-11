@@ -1,7 +1,7 @@
 export interface ProductSpec {
   chip?: string
-  architecture?: string          // e.g. 'NVIDIA Blackwell', 'AMD RDNA 4', 'Apple Silicon M4 Pro'
-  cooling?: string               // e.g. 'Triple-fan active', 'Single blower', 'Fanless + blower'
+  architecture?: string
+  cooling?: string
   cpu_cores?: number
   gpu_cores?: number
   unified_memory_gb?: number
@@ -15,6 +15,9 @@ export interface ProductSpec {
   tokens_per_second_7b?: number
   tokens_per_second_13b?: number
   image_gen_sdxl_seconds?: number
+  npu_tops?: number
+  storage_bays?: number
+  charging_watts?: number
 }
 
 export interface FAQ {
@@ -25,9 +28,9 @@ export interface FAQ {
 export interface Product {
   slug: string
   asin: string
-  image?: string   // optional local image path, e.g. "/products/beelink-sei14.jpg"
+  image?: string
   name: string
-  category: 'mini-pc' | 'gpu' | 'ai-pc' | 'accessory'
+  category: 'mini-pc' | 'gpu' | 'ai-pc' | 'accessory' | 'dock' | 'nas' | 'npu-laptop'
   brand: string
   shortDescription: string
   specs: ProductSpec
