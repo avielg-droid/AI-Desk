@@ -132,6 +132,12 @@ body::before {
 }
 @media (prefers-reduced-motion: reduce) {
   body::before { animation: none; }
+  .marquee-bar-inner { animation: none; }
+  .pc-bench-bar span { animation: none; }
+  .scroll-reveal { transition: none; opacity: 1; transform: none; }
+  .scroll-reveal.revealed { transition: none; }
+  .cat-slide-border::after { transition: none; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
 /* Subtle texture */
@@ -265,9 +271,11 @@ body::after {
   background: #0891B2;
   color: #ffffff;
   border-radius: 8px;
-  transition: background 0.15s ease;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 .forge-btn:hover { background: #0E7490; }
+.forge-btn:active { transform: scale(0.98); }
 [data-theme="dark"] .forge-btn { background: #3B82F6; }
 [data-theme="dark"] .forge-btn:hover { background: #2563EB; }
 
@@ -520,7 +528,7 @@ body::after {
 .marquee-tick-sep { color: rgb(var(--color-edge)); }
 
 /* ── Category Card Slide Border ──────────────────────────────────────────── */
-.cat-slide-border { position: relative; }
+.cat-slide-border { position: relative; cursor: pointer; }
 .cat-slide-border::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: rgb(var(--color-ore)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(.2,.7,.2,1); }
 .cat-slide-border:hover::after { transform: scaleX(1); }
 

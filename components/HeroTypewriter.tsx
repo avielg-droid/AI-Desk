@@ -50,11 +50,12 @@ export default function HeroTypewriter() {
   const isActive = typing && displayed.length < WORDS[wordIdx].length
 
   return (
-    <span className="text-ore">
+    <span className="text-ore" aria-live="polite" aria-atomic="true">
       {displayed}
       <span
         className="inline-block w-[3px] h-[0.85em] bg-ore ml-0.5 align-middle"
         style={{ animation: isActive ? 'blink 0.7s step-end infinite' : 'none', opacity: isActive ? 1 : 0.6 }}
+        aria-hidden="true"
       />
     </span>
   )

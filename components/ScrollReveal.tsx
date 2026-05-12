@@ -22,9 +22,13 @@ export default function ScrollReveal({
   direction = 'up',
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [revealed, setRevealed] = useState(false);
+  const prefersReduced = typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false;
+  const [revealed, setRevealed] = useState(prefersReduced);
 
   useEffect(() => {
+    if (prefersReduced) { setRevealed(true); return; }
     const el = ref.current;
     if (!el) return;
 
@@ -40,12 +44,16 @@ export default function ScrollReveal({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [prefersReduced]);
+
+  if (prefersReduced) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <div
       ref={ref}
-      className={`${className}${revealed ? ' revealed' : ''}`}
+      className={className}
       style={{
         opacity: revealed ? 1 : 0,
         transform: revealed ? 'translate(0)' : transforms[direction],
