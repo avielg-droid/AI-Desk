@@ -6,7 +6,7 @@
 :root {
   --font-display: var(--font-geist-sans);   /* Hero/headline — keep Geist */
   --font-body:    var(--font-jakarta);       /* Body/UI — Plus Jakarta Sans (warmer) */
-  --font-mono:    var(--font-dm-mono);       /* Labels/specs — DM Mono (less robotic) */
+  --font-mono:    var(--font-geist-mono);    /* Labels/specs — Geist Mono (round, soft) */
 }
 
 /* ── Light Theme (default) — Ambient Bright ───────────────────────────────── */

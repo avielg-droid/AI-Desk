@@ -18,17 +18,6 @@ export const metadata: Metadata = {
 const CATEGORIES = [
   {
     num: '01',
-    slug: 'gpu', label: 'GPUs', sub: 'Discrete cards for max VRAM', stat: 'Up to 16 GB VRAM',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
-        <rect x="2" y="7" width="20" height="10" rx="1" />
-        <path d="M6 7V5M10 7V5M14 7V5M18 7V5M6 17v2M10 17v2M14 17v2M18 17v2" />
-        <rect x="6" y="9" width="4" height="6" rx="0.5" fill="currentColor" fillOpacity="0.2" />
-      </svg>
-    ),
-  },
-  {
-    num: '02',
     slug: 'mini-pc', label: 'Mini PCs', sub: 'Compact · always-on · quiet', stat: '70B model capable',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
@@ -40,28 +29,30 @@ const CATEGORIES = [
     ),
   },
   {
-    num: '03',
-    slug: 'ai-pc', label: 'AI PCs', sub: 'Full desktop · max throughput', stat: 'Highest tokens/s',
+    num: '02',
+    slug: 'gpu', label: 'GPUs', sub: 'Discrete cards for max VRAM', stat: 'Up to 16 GB VRAM',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
-        <rect x="5" y="2" width="14" height="20" rx="1" />
-        <rect x="7" y="5" width="10" height="6" rx="0.5" fill="currentColor" fillOpacity="0.18" />
-        <circle cx="12" cy="17" r="1.5" fill="currentColor" fillOpacity="0.35" />
-        <path d="M9 14h6M9 16h4" strokeWidth={1} />
+        <rect x="2" y="7" width="20" height="10" rx="1" />
+        <path d="M6 7V5M10 7V5M14 7V5M18 7V5M6 17v2M10 17v2M14 17v2M18 17v2" />
+        <rect x="6" y="9" width="4" height="6" rx="0.5" fill="currentColor" fillOpacity="0.2" />
+      </svg>
+    ),
+  },
+  {
+    num: '03',
+    slug: 'npu-laptop', label: 'NPU Laptops', sub: 'Copilot+ on-device AI', stat: '45+ TOPS NPU',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
+        <path d="M4 5h16a1 1 0 011 1v10H3V6a1 1 0 011-1z" />
+        <path d="M1 16h22v1a1 1 0 01-1 1H2a1 1 0 01-1-1v-1z" />
+        <rect x="9" y="8" width="6" height="5" rx="0.5" fill="currentColor" fillOpacity="0.15" />
+        <path d="M11 8V7M13 8V7M11 13v1M13 13v1M9 10H8M16 10h-1" strokeWidth={1} />
       </svg>
     ),
   },
   {
     num: '04',
-    slug: 'accessory', label: 'Accessories', sub: 'Cables, UPS & cooling', stat: 'From $12',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" fillOpacity="0.18" />
-      </svg>
-    ),
-  },
-  {
-    num: '05',
     slug: 'dock', label: 'Docks', sub: 'Thunderbolt 4 & USB4', stat: 'Single cable setup',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
@@ -70,6 +61,15 @@ const CATEGORIES = [
         <rect x="5" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
         <rect x="10" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
         <rect x="16" y="11" width="3" height="2" rx="0.3" fill="currentColor" fillOpacity="0.3" />
+      </svg>
+    ),
+  },
+  {
+    num: '05',
+    slug: 'accessory', label: 'Accessories', sub: 'Cables, UPS & cooling', stat: 'From $12',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" fillOpacity="0.18" />
       </svg>
     ),
   },
@@ -84,18 +84,6 @@ const CATEGORIES = [
         <circle cx="18" cy="6.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
         <circle cx="18" cy="12.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
         <circle cx="18" cy="18.5" r="0.8" fill="currentColor" fillOpacity="0.5" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    num: '07',
-    slug: 'npu-laptop', label: 'NPU Laptops', sub: 'Copilot+ on-device AI', stat: '45+ TOPS NPU',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8 text-ore">
-        <path d="M4 5h16a1 1 0 011 1v10H3V6a1 1 0 011-1z" />
-        <path d="M1 16h22v1a1 1 0 01-1 1H2a1 1 0 01-1-1v-1z" />
-        <rect x="9" y="8" width="6" height="5" rx="0.5" fill="currentColor" fillOpacity="0.15" />
-        <path d="M11 8V7M13 8V7M11 13v1M13 13v1M9 10H8M16 10h-1" strokeWidth={1} />
       </svg>
     ),
   },
@@ -269,45 +257,56 @@ export default function HomePage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-edge">
+        {/* Terminal rows */}
+        <div className="divide-y divide-edge">
           {CATEGORIES.map(cat => {
             const count = allProducts.filter(p => p.category === cat.slug).length
             return (
               <Link
                 key={cat.slug}
                 href={`/categories/${cat.slug}`}
-                className="cat-slide-border group bg-ink-0 p-7 md:p-8 flex flex-col relative overflow-hidden hover:bg-ore/5 transition-all duration-200"
+                className="group flex items-center gap-0 bg-ink-0 hover:bg-ore/5 transition-colors duration-150 cursor-pointer"
               >
-                {/* Number watermark — large, bottom-right */}
+                {/* Num */}
                 <span
-                  className="absolute bottom-2 right-3 font-display font-bold leading-none select-none pointer-events-none"
-                  style={{ fontSize: '5rem', color: 'rgb(var(--color-ore) / 0.05)', lineHeight: 1 }}
+                  className="hidden sm:flex shrink-0 w-14 self-stretch items-center justify-center font-mono text-[10px] border-r border-edge bg-ink-1 group-hover:bg-ore/10 transition-colors"
+                  style={{ color: 'var(--text-subtle)' }}
                 >
                   {cat.num}
                 </span>
 
-                {/* Icon in bordered container */}
-                <div className="w-14 h-14 flex items-center justify-center border border-ore/20 bg-ore/6 mb-5 group-hover:border-ore/40 group-hover:bg-ore/12 transition-all duration-200">
-                  {cat.icon}
-                </div>
-
-                {/* Label */}
-                <p className="font-display font-bold text-xl uppercase text-foreground mb-1.5 group-hover:text-ore transition-colors duration-200 leading-tight">
-                  {cat.label}
-                </p>
-
-                {/* Sub */}
-                <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--text-subtle)' }}>{cat.sub}</p>
-
-                {/* Footer */}
-                <div className="mt-auto flex items-center justify-between gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-ore/10 group-hover:bg-ore/20 transition-colors">
-                    <span className="font-mono text-[10px] text-ore leading-none">{cat.stat}</span>
+                {/* Icon */}
+                <span className="shrink-0 flex items-center justify-center w-12 sm:w-14 self-stretch border-r border-edge">
+                  <span className="w-7 h-7 text-ore opacity-70 group-hover:opacity-100 transition-opacity">
+                    {cat.icon}
                   </span>
-                  <span className="font-mono text-[9px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: 'var(--text-subtle)' }}>
-                    {count} reviews →
+                </span>
+
+                {/* Main content */}
+                <span className="flex-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 px-5 py-4 min-w-0">
+                  <span className="font-display font-bold text-base sm:text-lg uppercase tracking-tight text-foreground group-hover:text-ore transition-colors leading-snug">
+                    {cat.label}
                   </span>
-                </div>
+                  <span className="hidden sm:inline font-mono text-[10px] tracking-wide" style={{ color: 'var(--text-subtle)' }}>
+                    ·
+                  </span>
+                  <span className="w-full sm:w-auto font-mono text-[11px] sm:text-[10px]" style={{ color: 'var(--text-subtle)' }}>
+                    {cat.sub}
+                  </span>
+                </span>
+
+                {/* Right meta — stat + count */}
+                <span className="shrink-0 flex items-center gap-4 px-5 border-l border-edge self-stretch">
+                  <span className="hidden md:block font-mono text-[10px] text-ore whitespace-nowrap">
+                    {cat.stat}
+                  </span>
+                  <span className="font-mono text-[10px] whitespace-nowrap" style={{ color: 'var(--text-subtle)' }}>
+                    {count} <span className="hidden sm:inline">reviews</span>
+                  </span>
+                  <span className="text-ore opacity-0 group-hover:opacity-100 transition-opacity duration-150 font-mono text-sm leading-none">
+                    →
+                  </span>
+                </span>
               </Link>
             )
           })}
