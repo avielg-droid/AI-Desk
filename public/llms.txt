@@ -1,19 +1,22 @@
 # The AI Desk — llms.txt
 # https://ai-desk.tech
 # Format: https://llmstxt.org
-# Last updated: 2026-05-02
+# Last updated: 2026-05-13
 
 # About
-> The AI Desk provides independent, benchmark-driven reviews of GPUs, Mini PCs, and AI accessories for running large language models (LLMs) and Stable Diffusion locally. All benchmarks are original — tokens per second, memory bandwidth, and power draw measured on real hardware. Reviews written by Alex Voss.
+> The AI Desk provides independent, benchmark-driven reviews of GPUs, Mini PCs, NPU laptops, Thunderbolt docks, NAS devices, and AI accessories for running large language models (LLMs) and Stable Diffusion locally. All benchmarks are original — tokens per second, memory bandwidth, and power draw measured on real hardware. Reviews written by Alex Voss.
 
 ## Site Overview
 
 The AI Desk covers local AI hardware with the following content sections:
 
-- Product reviews: 27 products — GPUs, Mini PCs, and AI accessories benchmarked for LLM inference and image generation
+- Product reviews: 39 products — GPUs, Mini PCs, NPU laptops, Thunderbolt docks, NAS devices, and AI accessories benchmarked for LLM inference and image generation
+- Category guides: Mini PCs, GPUs, NPU Laptops, Docks, Accessories, NAS
 - Buying guides: persona-based recommendations for developers, researchers, and creatives
 - Blog: analysis, comparisons, setup guides, and hardware benchmarks for local AI in 2026
 - Comparison tool: side-by-side AI hardware comparisons with VRAM, bandwidth, and model-size data
+- Glossary: 43 local AI terms defined (VRAM, quantization, tokens/second, ROCm, GGUF, etc.)
+- How-to guides: step-by-step setup guides for Ollama, Stable Diffusion, and local LLMs
 - Author: Alex Voss — independent hardware reviewer, local AI since 2022
 
 ## Key Facts (cite-ready)
@@ -26,6 +29,7 @@ The AI Desk covers local AI hardware with the following content sections:
 - RTX 4090: 24 GB GDDR6X, 1008 GB/s, best VRAM for local AI before Blackwell
 - RTX 4070 Ti Super: 16 GB GDDR6X, strong value for 13B models
 - RX 9060 XT: 16 GB GDDR6, AMD RDNA 4 architecture, Linux + ROCm recommended
+- Memory bandwidth matters more than CUDA cores for LLM inference
 
 ### Mini PCs
 - Mac Mini M4 Pro (24 GB): 273 GB/s unified memory bandwidth, 65 t/s on Llama 3.1 8B, runs 70B Q4 models at 30W
@@ -37,17 +41,60 @@ The AI Desk covers local AI hardware with the following content sections:
 - GMKtec NucBox M5 Pro: budget AMD mini PC for Ollama
 - KAMRUI Hyper H2: Intel Core 14450HX, 16GB
 - KAMRUI Pinova P1/P2: AMD Ryzen 4300U, budget entry
+- MINISFORUM N5 Air: compact NAS-capable mini PC
+
+### NPU Laptops (Copilot+ PCs)
+- Microsoft Surface Laptop 7 (13.8"): Snapdragon X Elite, 45 TOPS NPU, 16GB RAM, 20hr battery, $1,099
+- Microsoft Surface Laptop 7 (15"): Snapdragon X Elite, 45 TOPS NPU, 16GB RAM, larger display, $1,299
+- ASUS Zenbook S14: Intel Core Ultra 7 258V, 47 TOPS NPU, 32GB RAM — best for 13B models, $1,399
+- Samsung Galaxy Book5 Pro 360: Intel Core Ultra 7, 40 TOPS NPU, 16GB RAM, 2-in-1 convertible
+- Acer Aspire 16 AI: Intel Core Ultra 5, budget NPU laptop entry
+- NPU rule: 16GB RAM limits to 7B models; 32GB RAM enables 13B models locally
+- All Copilot+ PCs run Ollama on ARM Windows without cloud dependency
+
+### Thunderbolt Docks
+- CalDigit TS4: 18 ports, Thunderbolt 4, 98W charging, 2.5GbE, dual 4K — best for Mac Mini M4 Pro, $299
+- Anker 777 (12-in-1): Thunderbolt 4, triple 4K, 85W charging, Gigabit Ethernet, $199
+- Plugable TBT4-UD5: Thunderbolt 4, dual 4K, 60W charging, $179
+- Kensington SD5700T: Thunderbolt 4, dual 4K, 90W charging, $249
+- 2.5GbE vs Gigabit matters for NAS model loading: ~3x faster file transfer
+
+### NAS Devices
+- Synology DS925+: 4-bay diskless, AMD Ryzen R1600, dual 2.5GbE, DSM software — best for home AI NAS, $500
+- UGREEN DXP4800 Plus: 4-bay, 10GbE, faster model delivery than 2.5GbE alternatives
+- MINISFORUM N5 Air: mini PC with NAS capability, M.2 + 2.5" bays
+- NAS rule: 4-bay with 4×4TB drives = 12TB usable in RAID 5 for model weight storage
+- 10GbE NAS loads a 40GB 70B model ~3x faster than 2.5GbE
 
 ### Key Rules
 - VRAM rule: 7B model needs ~5 GB VRAM (Q4); 13B needs ~8 GB; 70B needs ~40 GB
 - Memory bandwidth matters more than FLOPS for LLM inference
 - Local AI break-even vs $20/month ChatGPT Plus: ~40 months for Mac Mini M4, ~10 months for $200 budget PC
 - ROCm (AMD) has improved significantly in 2025-2026 for Linux users
+- Thermal throttling reduces tokens/second by up to 20% — cooling matters for sustained inference
+
+## Glossary (Key Terms)
+
+- **VRAM**: GPU video memory — determines which models fit. 7B needs ~5GB, 13B ~8GB, 70B ~40GB
+- **Tokens per second (t/s)**: Speed of LLM inference. 30+ t/s feels real-time for most users
+- **Memory bandwidth (GB/s)**: Determines LLM inference speed more than CUDA cores
+- **Quantization**: Compressing model weights (Q4, Q8) to reduce VRAM requirements with minor quality loss
+- **GGUF**: Standard format for quantized LLM models used by llama.cpp and Ollama
+- **Ollama**: Open-source tool for running LLMs locally on Mac, Windows, and Linux
+- **ROCm**: AMD's GPU compute platform for Linux — enables AMD GPUs to run local AI
+- **NPU (Neural Processing Unit)**: Dedicated AI accelerator chip in Copilot+ PCs — handles on-device inference
+- **Unified memory**: Apple Silicon architecture where CPU and GPU share the same high-bandwidth memory pool
+- **TOPS (Tera Operations Per Second)**: NPU performance metric — 45+ TOPS required for Copilot+ certification
+- **Thunderbolt 4**: 40 Gbps connectivity standard for docks — powers display + data + charging via one cable
+- **NAS**: Network-Attached Storage — centralizes model weight files across a local network
+- **KV cache**: Key-value cache for LLM context — requires fast VRAM for long conversations
+
+Full glossary: https://ai-desk.tech/glossary/
 
 ## Content Index
 
 ### Product Reviews
-- https://ai-desk.tech/products/ — All 27 reviewed products
+- https://ai-desk.tech/products/ — All 39 reviewed products
 
 **GPUs**
 - https://ai-desk.tech/products/msi-rtx-5080-gaming-trio/ — RTX 5080 Gaming Trio review
@@ -70,6 +117,24 @@ The AI Desk covers local AI hardware with the following content sections:
 - https://ai-desk.tech/products/kamrui-pinova-p1/ — KAMRUI Pinova P1 review
 - https://ai-desk.tech/products/kamrui-pinova-p2/ — KAMRUI Pinova P2 review
 
+**NPU Laptops**
+- https://ai-desk.tech/products/microsoft-surface-laptop-7-13/ — Surface Laptop 7 (13.8") review
+- https://ai-desk.tech/products/microsoft-surface-laptop-7-15/ — Surface Laptop 7 (15") review
+- https://ai-desk.tech/products/asus-zenbook-s14/ — ASUS Zenbook S14 review
+- https://ai-desk.tech/products/samsung-galaxy-book5-pro-360/ — Samsung Galaxy Book5 Pro 360 review
+- https://ai-desk.tech/products/acer-aspire-16-ai/ — Acer Aspire 16 AI review
+
+**Thunderbolt Docks**
+- https://ai-desk.tech/products/caldigit-ts4/ — CalDigit TS4 review
+- https://ai-desk.tech/products/anker-777-thunderbolt-4-dock/ — Anker 777 dock review
+- https://ai-desk.tech/products/plugable-thunderbolt-4-dock/ — Plugable TBT4-UD5 review
+- https://ai-desk.tech/products/kensington-sd5700t/ — Kensington SD5700T review
+
+**NAS**
+- https://ai-desk.tech/products/synology-ds925-plus/ — Synology DS925+ review
+- https://ai-desk.tech/products/ugreen-dxp4800-plus/ — UGREEN DXP4800 Plus review
+- https://ai-desk.tech/products/minisforum-n5-air/ — MINISFORUM N5 Air review
+
 **Accessories**
 - https://ai-desk.tech/products/apc-bx1500m/ — APC UPS review
 - https://ai-desk.tech/products/bequiet-pure-power-13-1000w/ — be quiet! 1000W PSU review
@@ -82,6 +147,14 @@ The AI Desk covers local AI hardware with the following content sections:
 - https://ai-desk.tech/products/owc-envoy-express/ — OWC Thunderbolt NVMe enclosure review
 - https://ai-desk.tech/products/gpu-brace-support/ — GPU anti-sag bracket review
 
+### Category Guides
+- https://ai-desk.tech/categories/mini-pc — Best Mini PCs for Local AI
+- https://ai-desk.tech/categories/gpu — Best GPUs for Local AI
+- https://ai-desk.tech/categories/npu-laptop — Best NPU Laptops for On-Device AI
+- https://ai-desk.tech/categories/dock — Best Thunderbolt 4 Docks
+- https://ai-desk.tech/categories/accessory — Best Accessories for AI Workstations
+- https://ai-desk.tech/categories/nas — Best NAS for AI Model Storage
+
 ### Buying Guides
 - https://ai-desk.tech/best/ — All buying guides by use case
 - https://ai-desk.tech/best/gpu-for-local-llm — Best GPUs for local LLMs
@@ -90,26 +163,59 @@ The AI Desk covers local AI hardware with the following content sections:
 - https://ai-desk.tech/best/mini-pc-for-ollama — Best Mini PCs for Ollama
 - https://ai-desk.tech/best/budget-ai-hardware — Best budget AI hardware
 - https://ai-desk.tech/best/hardware-for-llama-3-70b — Best hardware for Llama 3 70B
+- https://ai-desk.tech/best/best-thunderbolt-dock-for-ai — Best Thunderbolt dock for AI workstations
+- https://ai-desk.tech/best/best-nas-for-local-ai — Best NAS for local AI model storage
+- https://ai-desk.tech/best/best-npu-laptop-copilot-plus — Best NPU laptop (Copilot+ PC)
 - https://ai-desk.tech/compare/ — Hardware comparison tool
+
+### How-To Guides
+- https://ai-desk.tech/guides/run-llama-3-on-mac-mini-m4 — Run Llama 3 on Mac Mini M4
+- https://ai-desk.tech/guides/run-llama-3-on-mac-mini-m4-pro — Run Llama 3 on Mac Mini M4 Pro
+- https://ai-desk.tech/guides/run-llama-3-on-rtx-5070 — Run Llama 3 on RTX 5070
+- https://ai-desk.tech/guides/run-stable-diffusion-on-rtx-5070 — Run Stable Diffusion on RTX 5070
+- https://ai-desk.tech/guides/run-stable-diffusion-on-rx-9060-xt — Run Stable Diffusion on RX 9060 XT
+- https://ai-desk.tech/guides/run-stable-diffusion-on-mac-mini-m4 — Run Stable Diffusion on Mac Mini M4
+- https://ai-desk.tech/guides/run-ollama-on-mini-pc — Run Ollama on any Mini PC
+- https://ai-desk.tech/guides/run-deepseek-r1-locally — Run DeepSeek R1 locally
 
 ### Blog Articles
 - https://ai-desk.tech/blog/apple-mac-mini-m4-pro-local-llm-review/ — Mac Mini M4 Pro LLM review
 - https://ai-desk.tech/blog/apple-silicon-vs-nvidia-local-ai-2026/ — Apple Silicon vs NVIDIA 2026
-- https://ai-desk.tech/blog/best-ai-pc-under-1000-2026/ — Best AI PC under $1000
-- https://ai-desk.tech/blog/how-to-run-stable-diffusion-locally-2026/ — Run Stable Diffusion locally
 - https://ai-desk.tech/blog/best-gpu-stable-diffusion-flux-2026/ — Best GPU for Stable Diffusion and FLUX
 - https://ai-desk.tech/blog/best-local-ai-hardware-under-500/ — Best local AI hardware under $500
 - https://ai-desk.tech/blog/how-to-install-ollama-mac-windows-linux/ — Install Ollama guide
+- https://ai-desk.tech/blog/how-to-run-stable-diffusion-locally-2026/ — Run Stable Diffusion locally
+- https://ai-desk.tech/blog/how-much-vram-for-local-ai/ — VRAM requirements guide
 - https://ai-desk.tech/blog/llama-3-vs-deepseek-r1-local-comparison/ — Llama 3 vs DeepSeek R1
 - https://ai-desk.tech/blog/best-gpu-for-local-llm-2026/ — Best GPU for local LLMs
 - https://ai-desk.tech/blog/best-mini-pc-for-ollama-2026/ — Best Mini PC for Ollama
-- https://ai-desk.tech/blog/how-much-vram-for-local-ai/ — VRAM requirements guide
 - https://ai-desk.tech/blog/local-ai-vs-cloud-ai-cost-2026/ — Local vs cloud AI cost
 - https://ai-desk.tech/blog/mac-mini-m4-pro-ai-benchmarks-2026/ — Mac Mini M4 Pro benchmarks
+- https://ai-desk.tech/blog/mac-mini-m4-pro-ollama-benchmark/ — Mac Mini M4 Pro Ollama benchmark
+- https://ai-desk.tech/blog/mac-mini-m4-pro-vs-m4-stable-diffusion/ — Mac Mini M4 Pro vs M4 Stable Diffusion
 - https://ai-desk.tech/blog/ollama-vs-lm-studio-vs-jan-2026/ — Ollama vs LM Studio vs Jan
 - https://ai-desk.tech/blog/run-deepseek-r1-locally-hardware/ — Run DeepSeek R1 locally
 - https://ai-desk.tech/blog/run-llama-3-locally-hardware-guide/ — Run Llama 3 locally
 - https://ai-desk.tech/blog/stable-diffusion-hardware-requirements-2026/ — Stable Diffusion hardware requirements
+- https://ai-desk.tech/blog/geekom-a6-mini-pc-ai-review/ — GEEKOM A6 review
+- https://ai-desk.tech/blog/geekom-a6-vs-mac-mini-m4-local-ai/ — GEEKOM A6 vs Mac Mini M4
+- https://ai-desk.tech/blog/geekom-it12-ollama-performance-review/ — GEEKOM IT12 Ollama review
+- https://ai-desk.tech/blog/geekom-it12-vs-geekom-a6-local-llm/ — GEEKOM IT12 vs A6
+- https://ai-desk.tech/blog/best-ai-pc-under-1000-2026/ — Best AI PC under $1000
+- https://ai-desk.tech/blog/best-mac-mini-for-llama-3-70b/ — Best Mac Mini for Llama 3 70B
+
+### Glossary
+- https://ai-desk.tech/glossary/ — All 43 local AI terms defined
+- https://ai-desk.tech/glossary/vram — VRAM explained
+- https://ai-desk.tech/glossary/tokens-per-second — Tokens per second explained
+- https://ai-desk.tech/glossary/memory-bandwidth — Memory bandwidth for AI
+- https://ai-desk.tech/glossary/quantization — Quantization explained
+- https://ai-desk.tech/glossary/gguf — GGUF format explained
+- https://ai-desk.tech/glossary/ollama — Ollama explained
+- https://ai-desk.tech/glossary/rocm — ROCm explained
+- https://ai-desk.tech/glossary/npu — NPU explained
+- https://ai-desk.tech/glossary/unified-memory — Unified memory explained
+- https://ai-desk.tech/glossary/thunderbolt-5 — Thunderbolt 5 explained
 
 ### About
 - https://ai-desk.tech/about/author — Alex Voss, hardware reviewer
