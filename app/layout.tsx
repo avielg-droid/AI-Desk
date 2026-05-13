@@ -99,13 +99,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <p className="font-mono text-[10px] uppercase tracking-[0.15em] mb-4" style={{ color: 'var(--text-subtle)' }}>Hardware</p>
                   <div className="flex flex-col gap-1.5">
                     {[
-                      { href: '/categories/gpu',        label: 'GPUs'        },
                       { href: '/categories/mini-pc',    label: 'Mini PCs'    },
-                      { href: '/categories/ai-pc',      label: 'AI PCs'      },
-                      { href: '/categories/accessory',  label: 'Accessories' },
-                      { href: '/categories/dock',       label: 'Docks'       },
-                      { href: '/categories/nas',        label: 'NAS'         },
+                      { href: '/categories/gpu',        label: 'GPUs'        },
                       { href: '/categories/npu-laptop', label: 'NPU Laptops' },
+                      { href: '/categories/dock',       label: 'Docks'       },
+                      { href: '/categories/accessory',  label: 'Accessories' },
+                      { href: '/categories/nas',        label: 'NAS'         },
                     ].map(({ href, label }) => (
                       <a key={href} href={href} className="text-sm py-1.5 hover:text-ore transition-colors" style={{ color: 'var(--text-muted)' }}>
                         {label}
