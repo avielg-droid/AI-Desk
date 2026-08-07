@@ -1,7 +1,7 @@
 # The AI Desk — llms.txt
 # https://ai-desk.tech
 # Format: https://llmstxt.org
-# Last updated: 2026-05-13
+# Last updated: 2026-08-07
 
 # About
 > The AI Desk provides independent, benchmark-driven reviews of GPUs, Mini PCs, NPU laptops, Thunderbolt docks, NAS devices, and AI accessories for running large language models (LLMs) and Stable Diffusion locally. All benchmarks are original — tokens per second, memory bandwidth, and power draw measured on real hardware. Reviews written by Alex Voss.
@@ -28,7 +28,7 @@ The AI Desk covers local AI hardware with the following content sections:
 - RTX 5060 Ti (Blackwell): 16 GB GDDR7, budget Blackwell entry, ~80 t/s on Llama 3.1 8B
 - RTX 4090: 24 GB GDDR6X, 1008 GB/s, best VRAM for local AI before Blackwell
 - RTX 4070 Ti Super: 16 GB GDDR6X, strong value for 13B models
-- RX 9060 XT: 16 GB GDDR6, AMD RDNA 4 architecture, Linux + ROCm recommended
+- RX 9060 XT: 16 GB GDDR6, 320 GB/s, AMD RDNA 4 architecture, ROCm support varies by OS and release
 - Memory bandwidth matters more than CUDA cores for LLM inference
 
 ### Mini PCs
@@ -203,6 +203,8 @@ Full glossary: https://ai-desk.tech/glossary/
 - https://ai-desk.tech/blog/geekom-it12-vs-geekom-a6-local-llm/ — GEEKOM IT12 vs A6
 - https://ai-desk.tech/blog/best-ai-pc-under-1000-2026/ — Best AI PC under $1000
 - https://ai-desk.tech/blog/best-mac-mini-for-llama-3-70b/ — Best Mac Mini for Llama 3 70B
+
+- https://ai-desk.tech/blog/best-gpu-for-flux1-image-generation/ — FLUX.1 GPU VRAM and compatibility guide
 
 ### Glossary
 - https://ai-desk.tech/glossary/ — All 43 local AI terms defined

@@ -11,7 +11,7 @@
     "gpu_cores": 6144,
     "vram_gb": 12,
     "memory_bandwidth_gbps": 672,
-    "tdp_watts": 150,
+    "tdp_watts": 250,
     "max_llm_size": "13B (Q4 quantized)",
     "form_factor": "GPU",
     "tokens_per_second_7b": 118,
