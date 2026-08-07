@@ -183,7 +183,7 @@ export default function HomePage() {
                 className="font-mono text-sm transition-colors duration-150 hover:text-ore"
                 style={{ color: 'var(--text-muted)' }}
               >
-                Find your setup →
+                Help me choose →
               </Link>
             </div>
 
