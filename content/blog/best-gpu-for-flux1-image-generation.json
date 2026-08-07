@@ -1,0 +1,306 @@
+{
+  "slug": "best-gpu-for-flux1-image-generation",
+  "title": "Best GPU for FLUX.1 in 2026: VRAM and Compatibility Guide",
+  "headline": "Best GPUs for Running FLUX.1 Locally",
+  "description": "Choose the best GPU for FLUX.1 in 2026 with verified VRAM, power, and software-support data for NVIDIA RTX 5070 and AMD RX 9060 XT cards available today.",
+  "category": "buying-guide",
+  "tags": [
+    "flux-1",
+    "image-generation",
+    "gpu-buying-guide",
+    "comfyui",
+    "vram",
+    "local-ai"
+  ],
+  "publishedAt": "2026-08-07",
+  "updatedAt": "2026-08-07",
+  "readingTimeMinutes": 9,
+  "featured": false,
+  "intro": "FLUX.1 is a 12-billion-parameter image model, so choosing a GPU is less about a single benchmark score and more about memory capacity, software support, and how much offloading you will tolerate. This guide separates verified specifications from workflow-dependent estimates and compares the GPUs currently reviewed by The AI Desk.",
+  "relatedProductSlugs": [
+    "gigabyte-rtx-5070-windforce",
+    "asus-rtx-5070-sff",
+    "gigabyte-rx-9060-xt-gaming"
+  ],
+  "content": [
+    {
+      "type": "callout",
+      "variant": "verdict",
+      "html": "<strong>TL;DR:</strong> A 24GB-class GPU is the least-compromised target for the full FLUX.1 BF16 checkpoint. The reviewed 16GB RX 9060 XT offers more memory headroom, while the reviewed 12GB RTX 5070 cards offer the simpler CUDA path. Both 12GB and 16GB cards normally rely on quantization, CPU offload, or memory-efficient workflows; do not treat 12GB as a guarantee that every FLUX.1 workflow will fit."
+    },
+    {
+      "type": "h2",
+      "text": "The Short Answer: How Much VRAM Does FLUX.1 Need?"
+    },
+    {
+      "type": "p",
+      "html": "Black Forest Labs describes both FLUX.1 [schnell] and FLUX.1 [dev] as 12-billion-parameter rectified-flow transformers. The official BF16 checkpoint files are about 23.8GB before the text encoders, VAE, activations, and other runtime memory are considered. That makes <strong>24GB a practical starting point for running the original weights with fewer compromises</strong>, not a universal promise that every workflow will remain entirely in VRAM."
+    },
+    {
+      "type": "p",
+      "html": "Smaller cards can still run FLUX.1. Quantized weights reduce model memory, and CPU offloading moves inactive components into system RAM. Those techniques are useful, but they trade simplicity and usually speed for lower VRAM use. A 12GB or 16GB card should therefore be evaluated as part of a complete workflow—model precision, resolution, batch size, ControlNet or LoRA usage, and available system RAM all matter."
+    },
+    {
+      "type": "h2",
+      "text": "FLUX.1 Schnell vs. Dev: The Important Differences"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Model",
+        "Parameters",
+        "Official weight format",
+        "Sampling profile",
+        "Model license"
+      ],
+      "rows": [
+        [
+          "FLUX.1 [schnell]",
+          "12B",
+          "BF16; ~23.8GB checkpoint",
+          "Distilled for 1–4 steps",
+          "Apache 2.0"
+        ],
+        [
+          "FLUX.1 [dev]",
+          "12B",
+          "BF16; ~23.8GB checkpoint",
+          "Guidance-distilled; commonly run with more steps",
+          "FLUX.1-dev Non-Commercial License"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "html": "FLUX.1 [schnell] is the more approachable local option because Black Forest Labs designed it for one to four sampling steps and released it under Apache 2.0. FLUX.1 [dev] targets higher-quality experimentation and uses a separate non-commercial model license. The official model card says generated outputs may be used for personal, scientific, and commercial purposes subject to that license, but the model weights themselves are not offered under Apache 2.0."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "html": "<strong>Why this distinction matters:</strong> “Schnell” does not mean the model weights are small. Both official checkpoints are roughly 23.8GB in BF16. Schnell reduces sampling work; quantization and offloading are what make the model practical on lower-VRAM cards."
+    },
+    {
+      "type": "h2",
+      "text": "What Matters Most When Choosing a GPU"
+    },
+    {
+      "type": "h3",
+      "text": "1. Usable VRAM and workflow complexity"
+    },
+    {
+      "type": "p",
+      "html": "VRAM determines how much of the pipeline can stay on the GPU. Additional conditioning models, LoRAs, upscalers, higher resolutions, and larger batches increase memory pressure. If two cards have similar pricing, the card with more VRAM gives you more flexibility before components must be offloaded."
+    },
+    {
+      "type": "h3",
+      "text": "2. Software support"
+    },
+    {
+      "type": "p",
+      "html": "NVIDIA remains the easier route for many local image-generation users because CUDA is the default target for PyTorch and many ComfyUI nodes. AMD officially supports the RX 9060 XT in current ROCm compatibility documentation, but supported operating systems and framework versions must match the matrix. Check the current matrix before buying or upgrading drivers."
+    },
+    {
+      "type": "h3",
+      "text": "3. System RAM and storage"
+    },
+    {
+      "type": "p",
+      "html": "CPU offloading shifts memory pressure rather than eliminating it. A lower-VRAM build benefits from generous system RAM and fast NVMe storage, especially when loading multiple large model components. Offloading can make a workflow fit, but it is not equivalent to keeping the complete pipeline in GPU memory."
+    },
+    {
+      "type": "h2",
+      "text": "Reviewed GPU Comparison"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Reviewed GPU",
+        "VRAM",
+        "Memory bandwidth",
+        "Power reference",
+        "Software path",
+        "Best fit"
+      ],
+      "rows": [
+        [
+          "GIGABYTE RTX 5070 WINDFORCE OC",
+          "12GB GDDR7",
+          "672 GB/s",
+          "250W RTX 5070 reference",
+          "CUDA",
+          "Simpler setup; quantized or offloaded FLUX workflows"
+        ],
+        [
+          "ASUS Prime RTX 5070 SFF-Ready",
+          "12GB GDDR7",
+          "672 GB/s",
+          "250W RTX 5070 reference",
+          "CUDA",
+          "Compact builds; quantized or offloaded FLUX workflows"
+        ],
+        [
+          "GIGABYTE RX 9060 XT GAMING OC",
+          "16GB GDDR6",
+          "320 GB/s",
+          "160W AMD reference",
+          "ROCm",
+          "More VRAM headroom when the supported ROCm stack fits your OS"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "html": "The figures above are manufacturer specifications, not FLUX.1 generation benchmarks. Board-partner clocks, power limits, cooling, model precision, ComfyUI version, and workflow design can all change real generation time. We do not rank these cards by seconds per image without a controlled, reproducible FLUX.1 test run."
+    },
+    {
+      "type": "h2",
+      "text": "Best Reviewed GPU for the Easiest Setup"
+    },
+    {
+      "type": "h3",
+      "text": "GIGABYTE RTX 5070 WINDFORCE OC 12G"
+    },
+    {
+      "type": "p",
+      "html": "Choose the <a href='/products/gigabyte-rtx-5070-windforce'>GIGABYTE RTX 5070 WINDFORCE OC 12G</a> if your priority is broad CUDA compatibility and a straightforward ComfyUI setup. It has 12GB of GDDR7 memory on a 192-bit interface, producing 672 GB/s of theoretical bandwidth. NVIDIA lists 6,144 CUDA cores and a 250W reference total graphics power for the RTX 5070."
+    },
+    {
+      "type": "p",
+      "html": "Its limitation is capacity: the official FLUX.1 BF16 checkpoint is larger than the card's VRAM. Plan on a quantized model, component offloading, or both. This is a good choice for users who accept those optimizations and value software compatibility over maximum memory headroom."
+    },
+    {
+      "type": "h2",
+      "text": "Best Reviewed GPU for More VRAM"
+    },
+    {
+      "type": "h3",
+      "text": "GIGABYTE RX 9060 XT GAMING OC 16G"
+    },
+    {
+      "type": "p",
+      "html": "Choose the <a href='/products/gigabyte-rx-9060-xt-gaming'>GIGABYTE RX 9060 XT GAMING OC 16G</a> when 16GB of VRAM is more valuable to you than the CUDA ecosystem. AMD specifies 16GB of GDDR6, a 128-bit interface, up to 320 GB/s of memory bandwidth, and 160W typical board power for the reference RX 9060 XT."
+    },
+    {
+      "type": "p",
+      "html": "The extra 4GB can reduce offloading in some quantized workflows, but 16GB still does not hold the complete official BF16 pipeline. AMD lists the RX 9060 XT in its ROCm support documentation; verify the exact OS, driver, PyTorch, and ROCm combination you intend to use. This recommendation is strongest for users comfortable validating and maintaining that software stack."
+    },
+    {
+      "type": "h2",
+      "text": "Best Reviewed GPU for a Compact Build"
+    },
+    {
+      "type": "h3",
+      "text": "ASUS Prime RTX 5070 SFF-Ready 12GB"
+    },
+    {
+      "type": "p",
+      "html": "The <a href='/products/asus-rtx-5070-sff'>ASUS Prime RTX 5070 SFF-Ready</a> is the compact option in the reviewed group. ASUS specifies a 2.5-slot, 304 × 126 × 50mm card with 12GB GDDR7, 6,144 CUDA cores, and a 192-bit memory interface. It has the same fundamental 12GB FLUX.1 limitation as other RTX 5070 cards, so the reason to choose it is case compatibility rather than extra model capacity."
+    },
+    {
+      "type": "h2",
+      "text": "When a 24GB-Class GPU Is the Better Choice"
+    },
+    {
+      "type": "p",
+      "html": "If you want fewer compromises with the original BF16 weights, frequent high-resolution work, multiple conditioning models, or large batches, a 24GB-class GPU is the safer target. It still may not keep every component and activation in VRAM at every setting, but it gives the 23.8GB transformer checkpoint far more room than a 12GB or 16GB card."
+    },
+    {
+      "type": "p",
+      "html": "The AI Desk does not currently have a verified 24GB FLUX.1 benchmark in its reviewed catalog, so this guide does not name a speed winner in that class. Treat any purchase decision as workload-specific and look for tests that disclose model version, precision, resolution, steps, batch size, software version, and whether CPU offload was enabled."
+    },
+    {
+      "type": "h2",
+      "text": "Memory-Saving Techniques That Actually Change the Fit"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Quantize the transformer:</strong> FP8 or lower-bit community variants can substantially reduce weight memory, with possible quality or compatibility trade-offs.",
+        "<strong>Use model or sequential CPU offload:</strong> Diffusers can move inactive components to system RAM, reducing VRAM use at the cost of transfer overhead.",
+        "<strong>Keep batch size at one:</strong> batching increases activation memory quickly.",
+        "<strong>Reduce resolution while testing:</strong> validate the workflow before moving to larger outputs.",
+        "<strong>Add LoRAs and ControlNet nodes one at a time:</strong> measure memory after each component instead of assuming the base model result will hold."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "html": "<strong>Avoid magic-number claims:</strong> There is no single “minimum VRAM” that guarantees FLUX.1 will run well. A result is meaningful only when it names the checkpoint, quantization, resolution, step count, batch size, software version, and offload settings."
+    },
+    {
+      "type": "h2",
+      "text": "Who Should Not Buy These Cards"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Do not buy a 12GB RTX 5070 if you expect the full official BF16 FLUX.1 pipeline to remain entirely in VRAM.",
+        "Do not buy the RX 9060 XT solely for AI workloads before confirming that your intended operating system and framework versions appear in AMD's current ROCm support matrix.",
+        "Do not choose from theoretical bandwidth alone; capacity and software compatibility often decide whether the workflow is usable.",
+        "Do not rely on affiliate-page generation-time claims that omit model precision, steps, resolution, and offload settings.",
+        "Do not pay a compact-card premium unless your case genuinely needs the smaller form factor."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Verdict"
+    },
+    {
+      "type": "p",
+      "html": "For the simplest path among the GPUs reviewed here, choose the <a href='/products/gigabyte-rtx-5070-windforce'>RTX 5070 WINDFORCE OC 12G</a> and plan on quantization or CPU offload. For more VRAM headroom, choose the <a href='/products/gigabyte-rx-9060-xt-gaming'>RX 9060 XT 16G</a> only after confirming a supported ROCm configuration. For a compact CUDA build, choose the <a href='/products/asus-rtx-5070-sff'>ASUS Prime RTX 5070 SFF-Ready</a>."
+    },
+    {
+      "type": "p",
+      "html": "If your goal is the original BF16 checkpoint with fewer memory-management compromises, skip this 12GB–16GB tier and shop for a 24GB-class GPU. The honest answer is not that one reviewed card “wins” every FLUX.1 benchmark; it is that each card makes a different trade between VRAM, software support, form factor, and workflow complexity."
+    },
+    {
+      "type": "h2",
+      "text": "Sources and Verification Notes"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://github.com/black-forest-labs/flux/blob/main/model_cards/FLUX.1-schnell.md'>Black Forest Labs: FLUX.1 [schnell] model card</a>",
+        "<a href='https://github.com/black-forest-labs/flux/blob/main/model_cards/FLUX.1-dev.md'>Black Forest Labs: FLUX.1 [dev] model card</a>",
+        "<a href='https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/'>NVIDIA: GeForce RTX 5070 official specifications</a>",
+        "<a href='https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html'>AMD: Radeon RX 9060 XT official specifications</a>",
+        "<a href='https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html'>AMD: current ROCm compatibility matrix</a>",
+        "<a href='https://huggingface.co/docs/diffusers/optimization/memory'>Hugging Face Diffusers: reducing memory usage</a>"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How much VRAM do I need for FLUX.1?",
+      "answer": "The official FLUX.1 BF16 transformer checkpoint is about 23.8GB, before other pipeline components and runtime memory. A 24GB-class GPU is the least-compromised target, while 12GB and 16GB cards usually require quantization, CPU offload, or both. Exact needs vary with model precision, resolution, batch size, and added nodes."
+    },
+    {
+      "question": "Can FLUX.1 run on a 12GB RTX 5070?",
+      "answer": "Yes, but not as the complete official BF16 pipeline entirely in VRAM. Use a quantized checkpoint, CPU offload, or a memory-efficient ComfyUI workflow. Performance and image quality depend on the exact implementation, so benchmark claims should disclose all workflow settings."
+    },
+    {
+      "question": "Is 16GB enough for FLUX.1 dev?",
+      "answer": "Sixteen gigabytes provides more headroom than 12GB, but the official BF16 transformer checkpoint alone is about 23.8GB. A 16GB card still generally needs quantization or offloading. It may reduce how much is offloaded compared with 12GB, depending on the workflow."
+    },
+    {
+      "question": "Is FLUX.1 schnell less memory-hungry than FLUX.1 dev?",
+      "answer": "Not because the official weights are smaller: both are 12B models with roughly 23.8GB BF16 checkpoints. Schnell is distilled to generate in one to four steps, which reduces sampling work. Quantization and offloading are what make either model fit lower-VRAM GPUs."
+    },
+    {
+      "question": "RTX 5070 or RX 9060 XT for FLUX.1?",
+      "answer": "Choose the RTX 5070 for the simpler CUDA and ComfyUI software path. Choose the RX 9060 XT when its 16GB VRAM is more important and your operating system and framework versions are supported by AMD's ROCm matrix. Neither card holds the complete original BF16 pipeline without memory-management compromises."
+    },
+    {
+      "question": "Does FLUX.1 dev allow commercial use?",
+      "answer": "The FLUX.1 dev model weights use the FLUX.1-dev Non-Commercial License. Its official model card says generated outputs may be used for personal, scientific, and commercial purposes as described in that license. Review the current license for your specific use case; FLUX.1 schnell uses Apache 2.0."
+    },
+    {
+      "question": "Does CPU offload make a 12GB GPU equivalent to 24GB?",
+      "answer": "No. CPU offload can make a workflow fit by moving inactive components to system RAM, but data transfers add overhead and performance depends on system RAM, CPU, and interconnect speed. It improves compatibility, not physical GPU capacity."
+    },
+    {
+      "question": "What should a trustworthy FLUX.1 benchmark disclose?",
+      "answer": "At minimum: exact checkpoint and quantization, resolution, step count, sampler, batch size, ComfyUI or Diffusers version, GPU model, driver and framework versions, and whether CPU offload was enabled. Without those details, seconds-per-image comparisons are not reproducible."
+    }
+  ]
+}
