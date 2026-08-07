@@ -10,13 +10,13 @@
     "chip": "AMD Radeon RX 9060 XT (RDNA 4)",
     "gpu_cores": 2048,
     "vram_gb": 16,
-    "memory_bandwidth_gbps": 288,
-    "tdp_watts": 150,
+    "memory_bandwidth_gbps": 320,
+    "tdp_watts": 160,
     "max_llm_size": "14B (Q4) / 13B (Q8)",
     "form_factor": "GPU",
     "tokens_per_second_7b": 88,
     "tokens_per_second_13b": 50,
-    "image_gen_sdxl_seconds": 4.0,
+    "image_gen_sdxl_seconds": 4,
     "architecture": "AMD RDNA 4 (Navi 48)",
     "cooling": "Triple-fan active"
   },
@@ -36,7 +36,7 @@
   ],
   "cons": [
     "ROCm required for GPU-accelerated AI — steeper setup than CUDA on Windows",
-    "288 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 — slower tokens/sec",
+    "320 GB/s GDDR6 bandwidth is lower than RTX 5070's 672 GB/s GDDR7 — slower tokens/sec",
     "Windows ROCm support lags Linux — Linux recommended for AI workloads",
     "Fewer AI software integrations compared to NVIDIA CUDA ecosystem"
   ],
